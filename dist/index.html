@@ -2,139 +2,69 @@
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <meta name="theme-color" content="#101820" />
-    <meta
-      name="description"
-      content="OpenUSD-backed BIM scene viewer connected to the Phase 1 IFC knowledge graph."
-    />
-    <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='14' fill='%23101820'/%3E%3Cpath d='M17 44V20l15-8 15 8v24l-15 8-15-8Z' fill='none' stroke='%23f5b942' stroke-width='4'/%3E%3Cpath d='m17 20 15 8 15-8M32 28v24' fill='none' stroke='%2349d3c1' stroke-width='4'/%3E%3C/svg%3E" />
-    <link rel="stylesheet" href="./styles.css?v=20260918-premium2" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+    <meta name="theme-color" content="#081116" />
+    <meta name="description" content="Ultra-premium OpenUSD-backed BIM coordination viewer connected to the IFC knowledge graph." />
+    <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='16' fill='%23081116'/%3E%3Cpath d='M15 45V19l17-9 17 9v26l-17 9-17-9Z' fill='none' stroke='%2349d3c1' stroke-width='4'/%3E%3Cpath d='m15 19 17 9 17-9M32 28v26' fill='none' stroke='%23f5b942' stroke-width='4'/%3E%3C/svg%3E" />
+    <link rel="stylesheet" href="./styles.css?v=20260918-premium5" />
     <script src="https://cdn.babylonjs.com/babylon.js"></script>
     <script src="https://cdn.babylonjs.com/loaders/babylonjs.loaders.min.js"></script>
-    <title>OpenUSD BIM Scene Viewer</title>
+    <title>MBF5 · Coordination Studio</title>
   </head>
   <body>
     <main class="app-shell">
       <header class="topbar">
         <div class="brand-lockup">
           <div class="brand-mark" aria-hidden="true"><span></span><span></span><span></span></div>
-          <div>
-            <p class="eyebrow">Phase 1 / coordination intelligence</p>
-            <h1>OpenUSD BIM Scene Viewer</h1>
-          </div>
+          <div><p class="eyebrow">MBF5 / coordination studio</p><h1>Model intelligence workspace</h1></div>
         </div>
         <div class="topbar-meta">
           <span id="schema-badge" class="badge">IFC2X3 · USD</span>
           <span id="framework-badge" class="badge badge-teal">OpenUSD / Babylon.js</span>
           <span id="load-status" class="status-line"><i class="status-dot"></i>Preparing model</span>
+          <button class="topbar-icon" type="button" data-action="toggle-tools" title="Open model tools" aria-label="Open model tools">☷</button>
+          <button class="topbar-icon" type="button" data-action="toggle-inspector" title="Open inspector" aria-label="Open inspector">◫</button>
+          <button class="topbar-icon" type="button" data-action="fullscreen" title="Fullscreen" aria-label="Fullscreen">⛶</button>
         </div>
       </header>
 
-      <section class="intro-strip" aria-label="Viewer instructions">
-        <div>
-          <p class="section-kicker">One model, one identity layer</p>
-          <p class="intro-copy">Pick an object in 3D or choose a graph node. Both routes use the IFC STEP id and GlobalId to keep the OpenUSD scene, browser geometry, and knowledge graph in sync.</p>
+      <section class="workspace" aria-label="BIM model workspace">
+        <div id="viewer-container" class="viewer-container" aria-label="Interactive 3D OpenUSD-backed BIM scene">
+          <div class="viewer-loading"><div class="loader-ring"></div><p id="viewer-message">Loading the coordination scene…</p><small>Linking browser geometry, IFC identity, and the knowledge graph.</small></div>
+          <div class="viewport-ui" aria-label="Viewport controls">
+            <div class="viewport-topline glass-panel">
+              <div class="viewport-title"><span class="live-dot"></span><div><strong>MBF5 test coordination</strong><small id="stage2-state">Stage 2 · hallway coordination</small></div></div>
+              <div class="viewport-top-actions"><button class="compact-button" type="button" data-action="toggle-tools"><span>Tools</span><kbd>T</kbd></button><button class="compact-button" type="button" data-action="toggle-graph"><span>Graph</span><kbd>G</kbd></button><button class="compact-button" type="button" data-action="toggle-inspector"><span>Inspector</span><kbd>I</kbd></button></div>
+            </div>
+            <div class="viewport-toolbar primary-toolbar glass-panel" aria-label="Camera controls">
+              <button class="tool-button active" type="button" data-camera-action="frame-all" title="Fit model (F)"><span class="tool-glyph">⌗</span><span>Fit</span></button><button class="tool-button" type="button" data-camera-action="focus-selected" title="Focus selected (H)"><span class="tool-glyph">◎</span><span>Focus</span></button><button class="tool-button" type="button" data-camera-action="reset" title="Reset camera (R)"><span class="tool-glyph">↺</span><span>Reset</span></button><span class="toolbar-divider"></span><button class="tool-button mode-button active" type="button" data-view="perspective" title="Perspective camera"><span>3D</span></button><button class="tool-button mode-button" type="button" data-view="top" title="Top view"><span>TOP</span></button><button class="tool-button mode-button" type="button" data-view="front" title="Front view"><span>FRONT</span></button><button class="tool-button mode-button" type="button" data-view="right" title="Right view"><span>RIGHT</span></button><button class="tool-button mode-button" type="button" data-action="toggle-projection" title="Toggle perspective / orthographic"><span id="projection-label">PERS</span></button>
+            </div>
+            <div class="viewport-float-actions glass-panel"><button class="round-button" type="button" data-action="toggle-section" title="Section box (X)" aria-label="Toggle section box">✣</button><button class="round-button" type="button" data-action="toggle-measure" title="Measure (M)" aria-label="Measure">⌁</button><button class="round-button" type="button" data-action="toggle-walk" title="Walkthrough (W)" aria-label="Walkthrough">♧</button><button class="round-button" type="button" data-camera-action="help" title="Navigation help (?)" aria-label="Navigation help">?</button></div>
+            <div id="camera-help" class="camera-help glass-panel" hidden><div class="help-heading"><span>Navigation</span><button class="plain-button" type="button" data-action="close-help" aria-label="Close navigation help">×</button></div><div class="help-row"><kbd>drag</kbd><span>orbit</span><kbd>shift + drag</kbd><span>pan</span></div><div class="help-row"><kbd>scroll</kbd><span>zoom</span><kbd>W</kbd><span>walkthrough</span></div><div class="help-row"><kbd>F</kbd><span>fit</span><kbd>H</kbd><span>focus</span><kbd>R</kbd><span>reset</span></div><div class="help-row"><kbd>1 2 3</kbd><span>views</span><kbd>O</kbd><span>projection</span><kbd>Esc</kbd><span>clear</span></div></div>
+            <nav class="nav-rail glass-panel" aria-label="Viewport navigation"><button class="rail-button active" type="button" data-nav-mode="orbit" title="Orbit navigation"><span>◌</span><small>Orbit</small></button><button class="rail-button" type="button" data-nav-mode="walk" title="Walkthrough navigation"><span>♧</span><small>Walk</small></button><span class="rail-divider"></span><button class="rail-button" type="button" data-camera-action="frame-all" title="Fit model"><span>⌗</span><small>Fit</small></button><button class="rail-button" type="button" data-camera-action="focus-selected" title="Focus selected"><span>◎</span><small>Focus</small></button></nav>
+            <div class="view-cube" aria-label="View cube"><button class="cube-face cube-top" type="button" data-view="top" title="Top">TOP</button><button class="cube-face cube-front" type="button" data-view="front" title="Front">FRONT</button><button class="cube-face cube-right" type="button" data-view="right" title="Right">RIGHT</button><button class="cube-home" type="button" data-view="perspective" title="Perspective">3D</button><span class="cube-axis x">X</span><span class="cube-axis y">Y</span><span class="cube-axis z">Z</span></div>
+            <div class="axis-gizmo" aria-label="Local coordinate frame"><span class="axis-z">Z</span><span class="axis-y">Y</span><span class="axis-x">X</span><small>LOCAL FRAME</small></div>
+            <div class="selection-hud glass-panel" id="selection-hud"><span class="hud-kicker">Selection</span><strong id="selection-hud-title">Nothing selected</strong><span id="selection-hud-id">Click a model element or graph node</span></div>
+            <div class="walkthrough-hud glass-panel" id="walkthrough-hud" hidden><span class="live-dot"></span><strong>Walkthrough mode</strong><small>WASD / arrows to move · drag to look · Esc to exit</small></div>
+            <div class="measure-hud glass-panel" id="measure-hud" hidden><span class="hud-kicker">Measure</span><strong>Pick two points in the model</strong><small id="measure-hud-value">Distance will appear here</small><button class="plain-button" type="button" data-action="clear-measure">Clear</button></div>
+            <div class="viewport-footer"><span id="camera-readout">PERSPECTIVE</span><span class="footer-separator">•</span><span id="viewport-hint">Drag orbit · Shift drag pan · Scroll zoom</span><span class="footer-separator">•</span><span id="fps-readout">— fps</span></div><div id="toast" class="toast" role="status" aria-live="polite"></div>
+          </div>
         </div>
-        <div class="interaction-legend" aria-label="Selection modes">
-          <span><b class="legend-swatch model-swatch"></b>3D pick → graph</span>
-          <span><b class="legend-swatch graph-swatch"></b>Graph pick → 3D</span>
-          <span id="stage2-state" class="stage2-state">Stage 2 applied · hallway coordination</span>
-        </div>
+
+        <aside id="tools-panel" class="side-panel tools-panel" aria-label="Model tools" data-open="false"><div class="side-panel-header"><div><p class="section-kicker">Workspace</p><h2>Model controls</h2></div><button class="close-panel" type="button" data-action="toggle-tools" aria-label="Close model tools">×</button></div><div class="panel-scroll">
+          <section class="control-section"><div class="section-heading"><span>Visibility</span><span id="visibility-count" class="micro-badge">All visible</span></div><div class="control-grid three"><button class="control-button active" type="button" data-visibility-mode="normal">Normal</button><button class="control-button" type="button" data-visibility-mode="ghost">Ghost</button><button class="control-button" type="button" data-visibility-mode="xray">X-ray</button></div><div class="control-grid two"><button class="control-button" type="button" data-visibility-action="isolate">Isolate selected</button><button class="control-button" type="button" data-visibility-action="show-all">Show all</button></div><div class="control-grid two"><button class="control-button" type="button" data-visibility-action="hide-selected">Hide selected</button><button class="control-button" type="button" data-visibility-action="unhide-all">Unhide all</button></div></section>
+          <section class="control-section"><div class="section-heading"><span>Coordination filters</span><button class="plain-button" type="button" data-action="reset-filters">Reset</button></div><label class="field-label" for="discipline-filter">Discipline</label><select id="discipline-filter" class="select-control"><option value="all">All disciplines</option><option value="architecture">Architecture</option><option value="structure">Structure</option><option value="mechanical">Mechanical</option><option value="electrical">Electrical</option><option value="plumbing">Plumbing</option><option value="fire">Fire protection</option><option value="other">Other / unclassified</option></select><label class="field-label" for="level-filter">Level / branch</label><select id="level-filter" class="select-control"><option value="all">All levels</option></select><label class="field-label" for="system-filter">System</label><select id="system-filter" class="select-control"><option value="all">All systems</option></select></section>
+          <section class="control-section"><div class="section-heading"><span>Section tools</span><button class="plain-button" type="button" data-action="toggle-section">Open</button></div><p class="control-note">Clip the scene by six live planes. Drag the handles in the viewport or use precise controls.</p><div class="section-status"><span class="status-pill" id="section-status">OFF</span><span id="section-range-summary">Full model</span></div></section>
+          <section class="control-section"><div class="section-heading"><span>Saved views</span><button class="plain-button" type="button" data-action="save-view">Save current</button></div><div class="saved-view-row"><select id="saved-view-select" class="select-control"><option value="">Choose a view</option></select><button class="square-button" type="button" data-action="load-view" title="Load saved view">↗</button><button class="square-button" type="button" data-action="delete-view" title="Delete saved view">×</button></div><div class="view-chip-row"><button class="view-chip" type="button" data-view="perspective">Isometric</button><button class="view-chip" type="button" data-view="top">Top</button><button class="view-chip" type="button" data-view="front">Front</button><button class="view-chip" type="button" data-view="right">Right</button></div></section>
+          <section class="control-section provenance-card"><div class="section-heading"><span>Authoritative source</span><span class="status-pill pass">LINKED</span></div><p>IFC remains authoritative. OpenUSD and glTF are derived display layers linked by stable STEP IDs, GlobalIds, scene IDs, and source hashes.</p><a id="report-link" href="./data/hallway_coordination_implementation_report.md" target="_blank" rel="noreferrer">Open coordination evidence ↗</a></section>
+        </div></aside>
+
+        <aside id="inspector-panel" class="side-panel inspector-panel" aria-label="Inspector and graph" data-open="true"><div class="panel-resizer" aria-hidden="true"></div><div class="side-panel-header"><div><p class="section-kicker">Identity layer</p><h2>Inspector</h2></div><button class="close-panel" type="button" data-action="toggle-inspector" aria-label="Close inspector">×</button></div><div class="inspector-tabs" role="tablist"><button class="inspector-tab active" type="button" data-tab="inspector" role="tab">Inspector</button><button class="inspector-tab" type="button" data-tab="graph" role="tab">Graph <span id="node-count" class="tab-count">—</span></button></div><div id="inspector-view" class="tab-view active" data-tab-view="inspector"><div id="selection-detail" class="selection-detail empty-detail"><div class="empty-icon">◎</div><p>Select an element to inspect it</p><small>Pick geometry or a graph node. The selection remains linked by IFC identity.</small></div></div><div id="graph-view" class="tab-view" data-tab-view="graph" hidden><label class="search-box" for="node-search"><span aria-hidden="true">⌕</span><input id="node-search" type="search" placeholder="Search name, class, GlobalId, STEP…" autocomplete="off" aria-label="Search knowledge graph" /><button id="search-clear" class="search-clear" type="button" aria-label="Clear search" title="Clear search" hidden>×</button><kbd>/</kbd></label><div class="list-caption"><span id="list-caption">Graph nodes with model identity</span><span id="list-count" aria-live="polite"></span></div><div id="node-list" class="node-list" role="listbox" aria-label="Graph nodes"></div></div></aside>
+
+        <section id="section-panel" class="bottom-panel glass-panel" data-open="false" aria-label="Section box controls"><div class="bottom-panel-header"><div><p class="section-kicker">Live clipping</p><strong>Section box</strong><span id="section-readout">Full model</span></div><div class="bottom-panel-actions"><button class="plain-button" type="button" data-action="section-reset">Reset</button><button class="close-panel" type="button" data-action="toggle-section" aria-label="Close section controls">×</button></div></div><div class="section-sliders"><label><span><i class="axis-dot x-dot"></i>X min</span><input data-section-axis="minX" type="range" min="0" max="1" step="0.001" value="0" /><output data-section-output="minX">0%</output></label><label><span><i class="axis-dot x-dot"></i>X max</span><input data-section-axis="maxX" type="range" min="0" max="1" step="0.001" value="1" /><output data-section-output="maxX">100%</output></label><label><span><i class="axis-dot y-dot"></i>Y min</span><input data-section-axis="minY" type="range" min="0" max="1" step="0.001" value="0" /><output data-section-output="minY">0%</output></label><label><span><i class="axis-dot y-dot"></i>Y max</span><input data-section-axis="maxY" type="range" min="0" max="1" step="0.001" value="1" /><output data-section-output="maxY">100%</output></label><label><span><i class="axis-dot z-dot"></i>Z min</span><input data-section-axis="minZ" type="range" min="0" max="1" step="0.001" value="0" /><output data-section-output="minZ">0%</output></label><label><span><i class="axis-dot z-dot"></i>Z max</span><input data-section-axis="maxZ" type="range" min="0" max="1" step="0.001" value="1" /><output data-section-output="maxZ">100%</output></label></div></section>
       </section>
-
-      <section class="workspace" aria-label="BIM model and graph">
-        <article class="viewer-card panel">
-          <div class="panel-header">
-            <div>
-              <p class="section-kicker">Model viewport</p>
-              <h2>MBF5 test coordination</h2>
-            </div>
-            <div class="viewport-hint" id="viewport-hint">Click an element to inspect · F to frame · ? for help</div>
-          </div>
-          <div id="viewer-container" class="viewer-container" aria-label="Interactive 3D OpenUSD-backed BIM scene">
-            <div class="viewer-loading">
-              <div class="loader-ring"></div>
-              <p id="viewer-message">Loading OpenUSD-backed scene geometry…</p>
-              <small>Preparing the linked scene and IFC identity layer.</small>
-            </div>
-            <div class="viewport-chrome">
-              <div class="viewport-toolbar" aria-label="Viewport controls">
-                <span class="toolbar-label">Navigate</span>
-                <span id="camera-readout" class="camera-readout">3D</span>
-                <button class="icon-button" type="button" data-camera-action="frame-all" title="Frame all (F)" aria-label="Frame all">
-                  <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 9V5h4M15 5h4v4M19 15v4h-4M9 19H5v-4"/><path d="M8 8h8v8H8z"/></svg>
-                </button>
-                <button class="icon-button" type="button" data-camera-action="focus-selected" title="Focus selected (H)" aria-label="Focus selected">
-                  <svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="5"/><path d="M12 3v3M12 18v3M3 12h3M18 12h3"/></svg>
-                </button>
-                <button class="icon-button" type="button" data-camera-action="reset" title="Reset camera (R)" aria-label="Reset camera">
-                  <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 8V4m0 0h4M5 4a8 8 0 1 1-1.2 9.5"/><path d="M12 8v4l3 2"/></svg>
-                </button>
-                <span class="toolbar-divider" aria-hidden="true"></span>
-                <button class="view-button active" type="button" data-view="perspective" title="Perspective view">3D</button>
-                <button class="view-button" type="button" data-view="top" title="Top view">TOP</button>
-                <button class="view-button" type="button" data-view="front" title="Front view">FRONT</button>
-                <button class="view-button" type="button" data-view="right" title="Right view">RIGHT</button>
-              </div>
-              <div class="viewport-float-actions">
-                <button class="icon-button glass-button" type="button" data-camera-action="help" title="Navigation shortcuts (?)" aria-label="Navigation shortcuts">?</button>
-              </div>
-              <div id="camera-help" class="camera-help" hidden>
-                <div class="camera-help-title">Navigation shortcuts</div>
-                <div><kbd>drag</kbd> orbit <kbd>shift</kbd> + drag pan</div>
-                <div><kbd>scroll</kbd> zoom <kbd>F</kbd> frame all <kbd>H</kbd> focus</div>
-                <div><kbd>1</kbd> top <kbd>2</kbd> front <kbd>3</kbd> right <kbd>R</kbd> reset</div>
-              </div>
-              <div class="axis-gizmo" aria-label="Local coordinate frame">
-                <span class="axis-z">Z</span><span class="axis-y">Y</span><span class="axis-x">X</span>
-                <small>LOCAL FRAME</small>
-              </div>
-              <div class="viewport-keys" aria-hidden="true">
-                <span>Orbit <b>drag</b></span>
-                <span>Zoom <b>scroll</b></span>
-                <span>Pan <b>shift + drag</b></span>
-              </div>
-            </div>
-          </div>
-        </article>
-
-        <aside class="graph-card panel" aria-label="Knowledge graph browser">
-          <div class="panel-header graph-header">
-            <div>
-              <p class="section-kicker">Knowledge graph</p>
-              <h2>Selectable nodes</h2>
-            </div>
-            <span id="node-count" class="count-label">—</span>
-          </div>
-          <label class="search-box" for="node-search">
-            <span aria-hidden="true">⌕</span>
-            <input id="node-search" type="search" placeholder="Search elements, GlobalId, STEP…" autocomplete="off" aria-label="Search knowledge graph" />
-            <button id="search-clear" class="search-clear" type="button" aria-label="Clear search" title="Clear search" hidden>×</button>
-            <kbd>/</kbd>
-          </label>
-          <div class="list-caption"><span id="list-caption">Choose a node to focus both views</span><span id="list-count" aria-live="polite"></span></div>
-          <div id="node-list" class="node-list" role="listbox" aria-label="Graph nodes"></div>
-          <div id="selection-detail" class="selection-detail empty-detail">
-            <div class="empty-icon" aria-hidden="true">◎</div>
-            <p>Select a 3D element or graph node</p>
-            <small>The selected node and its explicit IFC relationships will appear here.</small>
-          </div>
-        </aside>
-      </section>
-
-      <section class="summary-grid" aria-label="Model summary">
-        <div class="metric-card"><span>Elements</span><strong id="metric-elements">—</strong><small>IfcElement occurrences</small></div>
-        <div class="metric-card"><span>Distribution ports</span><strong id="metric-ports">—</strong><small>Explicit port nodes</small></div>
-        <div class="metric-card"><span>Semantic edges</span><strong id="metric-edges">—</strong><small>Explicit IfcRel* projections</small></div>
-        <div class="metric-card"><span>Data integrity</span><strong id="metric-integrity">—</strong><small>Dangling references</small></div>
-      </section>
-
-      <footer class="footer-line">
-        <span>IFC remains authoritative; OpenUSD and glTF are derived linked scene layers.</span>
-        <span id="source-hash">Source hash pending</span>
-      </footer>
+      <section class="summary-strip" aria-label="Model summary"><div class="summary-item"><span>Elements</span><strong id="metric-elements">—</strong></div><div class="summary-item"><span>Ports</span><strong id="metric-ports">—</strong></div><div class="summary-item"><span>Semantic edges</span><strong id="metric-edges">—</strong></div><div class="summary-item"><span>Integrity</span><strong id="metric-integrity">—</strong></div><div class="summary-item wide"><span>Source hash</span><strong id="source-hash">Pending</strong></div></section>
     </main>
-    <script src="./viewer.js?v=20260918-premium2" defer></script>
+    <script src="./viewer.js?v=20260918-premium5" defer></script>
   </body>
 </html>
