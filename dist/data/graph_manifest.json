@@ -1,6 +1,6 @@
 {
   "graph_name": "IFC Phase 1 end-to-end knowledge graph",
-  "generated_at_utc": "2026-09-18T01:19:28.981607+00:00",
+  "generated_at_utc": "2026-09-18T02:01:35.440272+00:00",
   "source": {
     "path": "/Users/mohamedadel/Downloads/MBF5-TEST-COORDINATION.ifc",
     "file_name": "MBF5-TEST-COORDINATION.ifc",
@@ -60,5 +60,5 @@
     "duplicate_global_id_values": 0,
     "semantic_duplicate_pairs": 0
   },
-  "generation_seconds": 108.604
+  "generation_seconds": 143.382
 }
