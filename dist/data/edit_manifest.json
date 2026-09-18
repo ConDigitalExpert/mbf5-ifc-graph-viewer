@@ -4,7 +4,7 @@
   "hash_algorithm": "SHA-256",
   "instruction": {
     "path": "/Users/mohamedadel/Documents/ChatGPT/BIM Modeling Studio/stage2_hallway_coordination_20260918/edit_instruction.json",
-    "sha256": "f29040c685d5cfce31bb32044ada753db3f55e31de71dd2b311bd38427b9a714",
+    "sha256": "2d9fbb12947815919ec29f62680b0713496bf3c4d8be7370bd870934c7c278b6",
     "instruction_id": "stage2-hallway-coordination-20260918"
   },
   "base": {
@@ -15,24 +15,24 @@
   },
   "output": {
     "ifc_path": "/Users/mohamedadel/Documents/ChatGPT/BIM Modeling Studio/stage2_hallway_coordination_20260918/MBF5-TEST-COORDINATION.hallway-coordination.ifc",
-    "ifc_sha256": "74a5d741b3092ed531b6538ce4935f7251321b0ba8a64782f0142c75d509df2d",
+    "ifc_sha256": "1448f524ce0d5c53ff3afcca7ac515024c538cfa71623282f560e98fe163e90e",
     "ifc_schema": "IFC2X3",
     "recoverable": true,
     "parent_source_sha256": "faa5522210bdec70ac68b00287edbad1f509e18444124468e345b24154992089",
     "authoritative_original_sha256": "b50ea1aa9fefc232b8bf485388245111e6d6bf011eb7ebdaf180096ba162a1ea",
     "ifc_entity_count": 1327294,
-    "graph_manifest_sha256": "a0139b89cbb21338da31a1a5e5a6c1af6e3b2da13872292b21320924c4c7b25a",
-    "scene_bridge_sha256": "f4bd6e087b14e2576c95a4c7b517e2b4c741013fce60cc147eae95bac7be5e82",
-    "scene_manifest_sha256": "7cf84a35dd05d938e75c5ec9115078a419b332421b08c97de689d0d95a75077f",
-    "scene_validation_sha256": "f132445c6e562c87441664a066ca3fc7ea649fd886a315eca04f47a730a7b4cc",
-    "browser_glb_sha256": "33d938c1a0ccff6bdc58fd009058c1f19747e145d9d8fe2631be4a1f9432e859",
-    "working_scene_usdc_sha256": "f06c396eb58db46d6d24dd8718ad9375d4ba470f26dc51b1682dca1aa90b15c5"
+    "graph_manifest_sha256": "46234e7c72bcf8338e13062bbb1b76a246c5d0d14ec493799e503eb2b24a2a04",
+    "scene_bridge_sha256": "ca88354835550000a9ada947d15bb8a34a88d3334885f8146ed6793ec7fafa53",
+    "scene_manifest_sha256": "c885adc07d811236810c712143f021ddc4c2e844f4f83d1f28bf9ca5080aaf26",
+    "scene_validation_sha256": "227b14227a074446685ac08b00544f246a5b77021df8bc969b13614f37b7d74b",
+    "browser_glb_sha256": "fb0f4623c534e60404d443686fe6909200e50566061f56f8ba0889317dcaf9cd",
+    "working_scene_usdc_sha256": "7ed9ecaa82da6a3e556249508f6e10b01f5a16daeb4ed7e19e6c1ddeb96717b7"
   },
   "operations": [
     {
       "operation": "create_conduit_bay",
       "target": {
-        "global_id": "03R7aB9w58u8CnNYpUuTfB",
+        "global_id": "3HNodzs3H2OQYFrqEC$_gk",
         "source_step_id": 1328852,
         "entity_type": "IfcBuildingElementProxy"
       },
@@ -55,7 +55,7 @@
     {
       "operation": "create_unistrut",
       "target": {
-        "global_id": "1zE7H6bVb0XfLn_Tq7M3pH",
+        "global_id": "3Y9dkiis15P9ZM2ICqjvoX",
         "source_step_id": 1328867,
         "entity_type": "IfcMember"
       },
@@ -73,7 +73,7 @@
         "entity_type": "IfcFlowSegment"
       },
       "replacement": {
-        "global_id": "03R7aB9w58u8CnNYpUuTfB",
+        "global_id": "3HNodzs3H2OQYFrqEC$_gk",
         "source_step_id": 1328852,
         "entity_type": "IfcBuildingElementProxy"
       },
@@ -87,7 +87,7 @@
         "entity_type": "IfcFlowSegment"
       },
       "replacement": {
-        "global_id": "03R7aB9w58u8CnNYpUuTfB",
+        "global_id": "3HNodzs3H2OQYFrqEC$_gk",
         "source_step_id": 1328852,
         "entity_type": "IfcBuildingElementProxy"
       },
@@ -1229,6 +1229,7 @@
       "duct_sizes_unchanged": true,
       "fire_branches_clear_of_lighting": true,
       "north_wall_main_checks": true,
+      "sprinkler_main_adjacent_to_mechanical": true,
       "route_system_exists": true,
       "phase1_graph_validation_passed": true,
       "derived_scene_validation_passed": true,

@@ -1065,7 +1065,7 @@
         "usd_prim_path": null,
         "gltf_node_name": null,
         "name": "SUPERSEDED - Rectangular Duct:ELECTRICAL SPACE HOLDER:9165406",
-        "description": "Retired by Stage 2 hallway coordination; replacement STEP #1328852, GlobalId 03R7aB9w58u8CnNYpUuTfB.",
+        "description": "Retired by Stage 2 hallway coordination; replacement STEP #1328852, GlobalId 3HNodzs3H2OQYFrqEC$_gk.",
         "object_type": "Rectangular Duct:ELECTRICAL SPACE HOLDER",
         "placement_step_id": 1049955,
         "world_translation_m": [
@@ -1083,10 +1083,10 @@
           "insulation_thickness": 0.0,
           "insulation_overall_size": "1219 mmx305 mm"
         },
-        "entity_hash": "2668e79c44189a375862400db578e1570f4fd60c1d7dad1f8084d0094fc63e6a"
+        "entity_hash": "a0a2c69171259d79430af963138252cd51e1039fc77048424bf483e955ee5296"
       },
       "before_hash": "1780be5f59146640a208bacf244c244ccc7c427caf21a366992104f0e84f0237",
-      "after_hash": "2668e79c44189a375862400db578e1570f4fd60c1d7dad1f8084d0094fc63e6a",
+      "after_hash": "a0a2c69171259d79430af963138252cd51e1039fc77048424bf483e955ee5296",
       "change_status": "changed"
     },
     {
@@ -1129,7 +1129,7 @@
         "usd_prim_path": null,
         "gltf_node_name": null,
         "name": "SUPERSEDED - Rectangular Duct:ELECTRICAL SPACE HOLDER:9165699",
-        "description": "Retired by Stage 2 hallway coordination; replacement STEP #1328852, GlobalId 03R7aB9w58u8CnNYpUuTfB.",
+        "description": "Retired by Stage 2 hallway coordination; replacement STEP #1328852, GlobalId 3HNodzs3H2OQYFrqEC$_gk.",
         "object_type": "Rectangular Duct:ELECTRICAL SPACE HOLDER",
         "placement_step_id": 1050020,
         "world_translation_m": [
@@ -1147,10 +1147,10 @@
           "insulation_thickness": 0.0,
           "insulation_overall_size": "1219 mmx305 mm"
         },
-        "entity_hash": "57660ff145104bef38e067e66e0fb51ddce12a5074f5226eb7aefa0ac0706c15"
+        "entity_hash": "6fbb0ef06b016470812832eae67a56eacb3d467a612cacaa64b2b2266f7aae5e"
       },
       "before_hash": "fd33856a7622c2d35765e19fdb79b73df2d5cf6e62efba463a7768ea62571bf0",
-      "after_hash": "57660ff145104bef38e067e66e0fb51ddce12a5074f5226eb7aefa0ac0706c15",
+      "after_hash": "6fbb0ef06b016470812832eae67a56eacb3d467a612cacaa64b2b2266f7aae5e",
       "change_status": "changed"
     },
     {
@@ -2757,7 +2757,7 @@
       "step_id": 1328852,
       "before": null,
       "after": {
-        "ifc_global_id": "03R7aB9w58u8CnNYpUuTfB",
+        "ifc_global_id": "3HNodzs3H2OQYFrqEC$_gk",
         "source_step_id": 1328852,
         "entity_type": "IfcBuildingElementProxy",
         "graph_node": "ifc:step/1328852",
@@ -2783,17 +2783,17 @@
           "insulation_thickness": null,
           "insulation_overall_size": null
         },
-        "entity_hash": "9e42003d9fa4ba73c3517f496c76602b5536ccd29222c80a72429faffffa176f"
+        "entity_hash": "c717097cd62903fa3c0135b0b461e52009dbe8fdebac12327e9af95f0216c7f7"
       },
       "before_hash": null,
-      "after_hash": "9e42003d9fa4ba73c3517f496c76602b5536ccd29222c80a72429faffffa176f",
+      "after_hash": "c717097cd62903fa3c0135b0b461e52009dbe8fdebac12327e9af95f0216c7f7",
       "change_status": "created"
     },
     {
       "step_id": 1328867,
       "before": null,
       "after": {
-        "ifc_global_id": "1zE7H6bVb0XfLn_Tq7M3pH",
+        "ifc_global_id": "3Y9dkiis15P9ZM2ICqjvoX",
         "source_step_id": 1328867,
         "entity_type": "IfcMember",
         "graph_node": "ifc:step/1328867",
@@ -2819,10 +2819,10 @@
           "insulation_thickness": null,
           "insulation_overall_size": null
         },
-        "entity_hash": "693eaed048513e45cf21fbc867dba3c1e67a24aa6797770f03e2ed557484dbcd"
+        "entity_hash": "acf886236051c76bd6e1ffc089f128dd2ddee8a3423e7ceabb65b2ae371302da"
       },
       "before_hash": null,
-      "after_hash": "693eaed048513e45cf21fbc867dba3c1e67a24aa6797770f03e2ed557484dbcd",
+      "after_hash": "acf886236051c76bd6e1ffc089f128dd2ddee8a3423e7ceabb65b2ae371302da",
       "change_status": "created"
     }
   ]

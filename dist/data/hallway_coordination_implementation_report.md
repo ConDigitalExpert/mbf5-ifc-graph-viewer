@@ -10,7 +10,7 @@ This report records the derived Stage 2 branch created from the prior ceiling ac
 |---|---|---|
 | Authoritative original IFC | `/Users/mohamedadel/Downloads/MBF5-TEST-COORDINATION.ifc` | `b50ea1aa9fefc232b8bf485388245111e6d6bf011eb7ebdaf180096ba162a1ea` |
 | Parent Stage 2 access-panel IFC | `/Users/mohamedadel/Documents/ChatGPT/BIM Modeling Studio/stage2_ceiling_access_panels_20260918/MBF5-TEST-COORDINATION.ceiling-access-panels.ifc` | `faa5522210bdec70ac68b00287edbad1f509e18444124468e345b24154992089` |
-| Hallway coordination IFC | `/Users/mohamedadel/Documents/ChatGPT/BIM Modeling Studio/stage2_hallway_coordination_20260918/MBF5-TEST-COORDINATION.hallway-coordination.ifc` | `74a5d741b3092ed531b6538ce4935f7251321b0ba8a64782f0142c75d509df2d` |
+| Hallway coordination IFC | `/Users/mohamedadel/Documents/ChatGPT/BIM Modeling Studio/stage2_hallway_coordination_20260918/MBF5-TEST-COORDINATION.hallway-coordination.ifc` | `1448f524ce0d5c53ff3afcca7ac515024c538cfa71623282f560e98fe163e90e` |
 
 - IFC schema: `IFC2X3`.
 - The original source hash remains unchanged: `b50ea1aa9fefc232b8bf485388245111e6d6bf011eb7ebdaf180096ba162a1ea`.
@@ -121,6 +121,7 @@ Fire-protection branch segments and fittings that screened against lighting were
 | Duct sizes unchanged | PASS |
 | Fire branches clear of lighting | PASS |
 | North-wall main checks | PASS |
+| Sprinkler main beside mechanical rack (0.096 m gap within 0.50 m rule) | PASS |
 | Route system exists | PASS |
 
 Counts: bay service hits `0`, beam hits `0`, fire/lighting hits `0`.

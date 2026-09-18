@@ -7,7 +7,7 @@
     "authoritative_original_ifc": "/Users/mohamedadel/Downloads/MBF5-TEST-COORDINATION.ifc",
     "authoritative_original_sha256": "b50ea1aa9fefc232b8bf485388245111e6d6bf011eb7ebdaf180096ba162a1ea",
     "output_ifc": "/Users/mohamedadel/Documents/ChatGPT/BIM Modeling Studio/stage2_hallway_coordination_20260918/MBF5-TEST-COORDINATION.hallway-coordination.ifc",
-    "output_sha256": "74a5d741b3092ed531b6538ce4935f7251321b0ba8a64782f0142c75d509df2d"
+    "output_sha256": "1448f524ce0d5c53ff3afcca7ac515024c538cfa71623282f560e98fe163e90e"
   },
   "coordinate_frame": {
     "axis_d": [
@@ -40,6 +40,7 @@
     "unistrut_depth_m": 0.0508,
     "service_tolerance_m": 0.0254,
     "beam_clearance_m": 0.0254,
+    "sprinkler_main_adjacency_tolerance_m": 0.5,
     "bay_envelope": {
       "s": [
         5158057.410680801,
@@ -66,6 +67,7 @@
     "duct_sizes_unchanged": true,
     "fire_branches_clear_of_lighting": true,
     "north_wall_main_checks": true,
+    "sprinkler_main_adjacent_to_mechanical": true,
     "route_system_exists": true
   },
   "counts": {
@@ -123,6 +125,9 @@
       319608,
       110862,
       321617
+    ],
+    "sprinkler_main_steps": [
+      1092621
     ],
     "lowered_top_tap_steps": [
       809577,
@@ -404,6 +409,19 @@
         240.320518865188,
         240.36228113481243
       ],
+      "passed": true
+    }
+  ],
+  "sprinkler_main_checks": [
+    {
+      "step_id": 1092621,
+      "global_id": "2LJVo1G7v4XPhuOTaKY1Rn",
+      "q": [
+        -297699.4817707278,
+        -297699.3674707268
+      ],
+      "nearest_mechanical_q_gap_m": 0.09643622831208631,
+      "tolerance_m": 0.5,
       "passed": true
     }
   ],

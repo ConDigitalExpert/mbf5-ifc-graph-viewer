@@ -26,7 +26,7 @@
     {
       "operation": "create_conduit_bay",
       "target": {
-        "global_id": "03R7aB9w58u8CnNYpUuTfB",
+        "global_id": "3HNodzs3H2OQYFrqEC$_gk",
         "source_step_id": 1328852,
         "entity_type": "IfcBuildingElementProxy"
       },
@@ -49,7 +49,7 @@
     {
       "operation": "create_unistrut",
       "target": {
-        "global_id": "1zE7H6bVb0XfLn_Tq7M3pH",
+        "global_id": "3Y9dkiis15P9ZM2ICqjvoX",
         "source_step_id": 1328867,
         "entity_type": "IfcMember"
       },
@@ -67,7 +67,7 @@
         "entity_type": "IfcFlowSegment"
       },
       "replacement": {
-        "global_id": "03R7aB9w58u8CnNYpUuTfB",
+        "global_id": "3HNodzs3H2OQYFrqEC$_gk",
         "source_step_id": 1328852,
         "entity_type": "IfcBuildingElementProxy"
       },
@@ -81,7 +81,7 @@
         "entity_type": "IfcFlowSegment"
       },
       "replacement": {
-        "global_id": "03R7aB9w58u8CnNYpUuTfB",
+        "global_id": "3HNodzs3H2OQYFrqEC$_gk",
         "source_step_id": 1328852,
         "entity_type": "IfcBuildingElementProxy"
       },

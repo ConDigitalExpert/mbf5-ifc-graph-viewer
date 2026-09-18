@@ -1,6 +1,6 @@
 {
   "schema": "ifc-stage2-hallway-coordination-impact-1",
-  "generated_at_utc": "2026-09-18T12:39:14.145688+00:00",
+  "generated_at_utc": "2026-09-18T12:54:21.516427+00:00",
   "source": {
     "path": "/Users/mohamedadel/Documents/ChatGPT/BIM Modeling Studio/stage2_ceiling_access_panels_20260918/MBF5-TEST-COORDINATION.ceiling-access-panels.ifc",
     "sha256": "faa5522210bdec70ac68b00287edbad1f509e18444124468e345b24154992089",
@@ -38,7 +38,7 @@
   "routing_solution": {
     "conduit_bay": {
       "step_id": 1328852,
-      "global_id": "03R7aB9w58u8CnNYpUuTfB",
+      "global_id": "3HNodzs3H2OQYFrqEC$_gk",
       "width_m": 1.2192,
       "depth_m": 0.1524,
       "s_m": [
@@ -56,7 +56,7 @@
     },
     "unistrut": {
       "step_id": 1328867,
-      "global_id": "1zE7H6bVb0XfLn_Tq7M3pH",
+      "global_id": "3Y9dkiis15P9ZM2ICqjvoX",
       "depth_m": 0.0508,
       "z_m": [
         240.2164,
@@ -71,7 +71,7 @@
     {
       "operation": "create_conduit_bay",
       "target": {
-        "global_id": "03R7aB9w58u8CnNYpUuTfB",
+        "global_id": "3HNodzs3H2OQYFrqEC$_gk",
         "source_step_id": 1328852,
         "entity_type": "IfcBuildingElementProxy"
       },
@@ -94,7 +94,7 @@
     {
       "operation": "create_unistrut",
       "target": {
-        "global_id": "1zE7H6bVb0XfLn_Tq7M3pH",
+        "global_id": "3Y9dkiis15P9ZM2ICqjvoX",
         "source_step_id": 1328867,
         "entity_type": "IfcMember"
       },
@@ -112,7 +112,7 @@
         "entity_type": "IfcFlowSegment"
       },
       "replacement": {
-        "global_id": "03R7aB9w58u8CnNYpUuTfB",
+        "global_id": "3HNodzs3H2OQYFrqEC$_gk",
         "source_step_id": 1328852,
         "entity_type": "IfcBuildingElementProxy"
       },
@@ -126,7 +126,7 @@
         "entity_type": "IfcFlowSegment"
       },
       "replacement": {
-        "global_id": "03R7aB9w58u8CnNYpUuTfB",
+        "global_id": "3HNodzs3H2OQYFrqEC$_gk",
         "source_step_id": 1328852,
         "entity_type": "IfcBuildingElementProxy"
       },
@@ -749,5 +749,22 @@
     }
   ],
   "losses": [],
-  "validation_path": "/Users/mohamedadel/Documents/ChatGPT/BIM Modeling Studio/stage2_hallway_coordination_20260918/coordination_validation.json"
+  "validation_path": "/Users/mohamedadel/Documents/ChatGPT/BIM Modeling Studio/stage2_hallway_coordination_20260918/coordination_validation.json",
+  "derived_artifacts": {
+    "graph_manifest": "/Users/mohamedadel/Documents/ChatGPT/BIM Modeling Studio/stage2_hallway_coordination_20260918/ifc_phase1_knowledge_graph/graph_manifest.json",
+    "graph_validation": "/Users/mohamedadel/Documents/ChatGPT/BIM Modeling Studio/stage2_hallway_coordination_20260918/ifc_phase1_knowledge_graph/validation.json",
+    "scene_bridge": "/Users/mohamedadel/Documents/ChatGPT/BIM Modeling Studio/stage2_hallway_coordination_20260918/viewer/data/MBF5-TEST-COORDINATION.hallway-coordination.scene_bridge.json",
+    "scene_bridge_index": "/Users/mohamedadel/Documents/ChatGPT/BIM Modeling Studio/stage2_hallway_coordination_20260918/viewer/data/MBF5-TEST-COORDINATION.hallway-coordination.scene_bridge_index.json",
+    "scene_manifest": "/Users/mohamedadel/Documents/ChatGPT/BIM Modeling Studio/stage2_hallway_coordination_20260918/viewer/data/MBF5-TEST-COORDINATION.hallway-coordination.scene.manifest.json",
+    "scene_validation": "/Users/mohamedadel/Documents/ChatGPT/BIM Modeling Studio/stage2_hallway_coordination_20260918/viewer/data/MBF5-TEST-COORDINATION.hallway-coordination.scene.validation.json",
+    "browser_glb": "/Users/mohamedadel/Documents/ChatGPT/BIM Modeling Studio/stage2_hallway_coordination_20260918/viewer/data/MBF5-TEST-COORDINATION.hallway-coordination.scene.glb",
+    "working_scene_usdc": "/Users/mohamedadel/Documents/ChatGPT/BIM Modeling Studio/stage2_hallway_coordination_20260918/viewer/data/MBF5-TEST-COORDINATION.hallway-coordination.usdc",
+    "hashes": {
+      "graph_manifest": "46234e7c72bcf8338e13062bbb1b76a246c5d0d14ec493799e503eb2b24a2a04",
+      "scene_bridge": "ca88354835550000a9ada947d15bb8a34a88d3334885f8146ed6793ec7fafa53",
+      "scene_validation": "227b14227a074446685ac08b00544f246a5b77021df8bc969b13614f37b7d74b",
+      "browser_glb": "fb0f4623c534e60404d443686fe6909200e50566061f56f8ba0889317dcaf9cd",
+      "working_scene_usdc": "7ed9ecaa82da6a3e556249508f6e10b01f5a16daeb4ed7e19e6c1ddeb96717b7"
+    }
+  }
 }

@@ -1,12 +1,12 @@
 {
   "graph_name": "IFC Phase 1 end-to-end knowledge graph",
-  "generated_at_utc": "2026-09-18T12:40:13.715731+00:00",
+  "generated_at_utc": "2026-09-18T12:57:19.798328+00:00",
   "source": {
     "path": "/Users/mohamedadel/Documents/ChatGPT/BIM Modeling Studio/stage2_hallway_coordination_20260918/MBF5-TEST-COORDINATION.hallway-coordination.ifc",
     "file_name": "MBF5-TEST-COORDINATION.hallway-coordination.ifc",
     "bytes": 74406162,
-    "sha256": "74a5d741b3092ed531b6538ce4935f7251321b0ba8a64782f0142c75d509df2d",
-    "modified_at": "2026-09-18T12:38:42.778943+00:00"
+    "sha256": "1448f524ce0d5c53ff3afcca7ac515024c538cfa71623282f560e98fe163e90e",
+    "modified_at": "2026-09-18T12:52:51.247554+00:00"
   },
   "parser": {
     "library": "ifcopenshell",
@@ -60,5 +60,5 @@
     "duplicate_global_id_values": 0,
     "semantic_duplicate_pairs": 0
   },
-  "generation_seconds": 39.771
+  "generation_seconds": 131.85
 }
