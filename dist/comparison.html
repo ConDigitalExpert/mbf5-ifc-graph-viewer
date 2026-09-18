@@ -1,0 +1,91 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+    <meta name="theme-color" content="#061014" />
+    <meta name="description" content="Human-readable before and after BIM coordination comparison with linked 3D models and knowledge graph." />
+    <title>MBF5 · Hallway Change Studio</title>
+    <link rel="stylesheet" href="./comparison.css?v=20260918-change1" />
+    <script src="https://cdn.babylonjs.com/babylon.js"></script>
+    <script src="https://cdn.babylonjs.com/loaders/babylonjs.loaders.min.js"></script>
+  </head>
+  <body>
+    <main class="comparison-app">
+      <header class="comparison-header">
+        <div class="comparison-brand">
+          <a class="brand-back" href="./index.html" aria-label="Return to model viewer">←</a>
+          <div class="brand-emblem" aria-hidden="true"><span></span><span></span><span></span></div>
+          <div>
+            <p class="eyebrow">MBF5 / change studio</p>
+            <h1>Hallway coordination, explained</h1>
+          </div>
+        </div>
+        <div class="comparison-header-actions">
+          <span id="comparison-status" class="load-status"><i></i>Preparing comparison</span>
+          <button class="header-button" type="button" data-action="toggle-story">Story</button>
+          <button class="header-button" type="button" data-action="toggle-graph">Graph</button>
+          <button class="header-button accent" type="button" data-action="play">Play changes</button>
+          <button class="header-button" type="button" data-action="toggle-technical">Technical details</button>
+        </div>
+      </header>
+
+      <section class="comparison-workspace" id="comparison-workspace" data-mode="split">
+        <div class="model-stage" id="model-stage" aria-label="Synchronized before and after 3D models">
+          <section class="model-pane before-pane" data-side="before" aria-label="Original model">
+            <div class="pane-header">
+              <div class="pane-title"><span class="pane-dot before-dot"></span><div><strong>Original model</strong><small>Before coordination</small></div></div>
+              <span class="pane-badge original-badge">SOURCE</span>
+            </div>
+            <div class="pane-canvas-wrap"><canvas id="before-canvas" aria-label="Original model 3D view"></canvas><div class="pane-loading" id="before-loading">Loading original model…</div><div class="picked-label" id="before-picked" hidden></div></div>
+            <div class="pane-controls">
+              <button type="button" data-camera="fit" data-side="before">Fit</button><button type="button" data-camera="top" data-side="before">Top</button><button type="button" data-camera="front" data-side="before">Front</button><button type="button" data-camera="reset" data-side="before">Reset</button>
+            </div>
+          </section>
+          <section class="model-pane after-pane" data-side="after" aria-label="Revised model">
+            <div class="pane-header">
+              <div class="pane-title"><span class="pane-dot after-dot"></span><div><strong>Revised model</strong><small>After hallway coordination</small></div></div>
+              <span class="pane-badge revised-badge">REVISED IFC</span>
+            </div>
+            <div class="pane-canvas-wrap"><canvas id="after-canvas" aria-label="Revised model 3D view"></canvas><div class="pane-loading" id="after-loading">Loading revised model…</div><div class="picked-label" id="after-picked" hidden></div></div>
+            <div class="pane-controls">
+              <button type="button" data-camera="fit" data-side="after">Fit</button><button type="button" data-camera="top" data-side="after">Top</button><button type="button" data-camera="front" data-side="after">Front</button><button type="button" data-camera="reset" data-side="after">Reset</button>
+            </div>
+          </section>
+          <div class="model-divider" aria-hidden="true"><span>linked view</span></div>
+          <div class="viewport-hud glass-card"><span class="hud-label">Interaction</span><strong>Drag to orbit · Shift + drag to pan · Scroll to zoom</strong><small>Click any element to trace the same change in the graph and story.</small></div>
+        </div>
+
+        <aside id="story-dock" class="story-dock glass-card" aria-label="Human-readable change story" data-open="true">
+          <div class="dock-header"><div><p class="eyebrow">Change story</p><h2>What changed and why</h2></div><button class="dock-close" type="button" data-action="toggle-story" aria-label="Hide change story">×</button></div>
+          <div class="story-summary" id="story-summary"></div>
+          <div class="story-list" id="story-list"></div>
+          <div class="story-detail" id="story-detail"><div class="empty-story"><span>✦</span><strong>Select a change</strong><small>Choose a story card, graph node, or model element.</small></div></div>
+        </aside>
+
+        <aside id="graph-dock" class="graph-dock glass-card" aria-label="Knowledge graph" data-open="true">
+          <div class="dock-header"><div><p class="eyebrow">Connected graph</p><h2>Systems and interfaces</h2></div><button class="dock-close" type="button" data-action="toggle-graph" aria-label="Hide knowledge graph">×</button></div>
+          <div class="graph-caption"><span class="legend-dot issue-dot"></span>Issue <span class="legend-dot system-dot"></span>System <span class="legend-dot element-dot"></span>Element</div>
+          <div class="graph-wrap"><svg id="comparison-graph" viewBox="0 0 520 590" role="img" aria-label="Nodes and edges showing coordination interfaces"></svg></div>
+          <div class="graph-selection" id="graph-selection"><span>Select a node</span><small>Graph selection follows the model and the story.</small></div>
+        </aside>
+
+        <div class="comparison-controls glass-card" aria-label="Comparison controls">
+          <div class="control-group"><button class="mode-button active" type="button" data-mode="split">Split</button><button class="mode-button" type="button" data-mode="overlay">Overlay</button></div>
+          <label class="range-control" for="overlay-opacity"><span>Before opacity</span><input id="overlay-opacity" type="range" min="0" max="1" step="0.01" value="0.48" /><output id="overlay-opacity-value">48%</output></label>
+          <label class="toggle-control"><input id="sync-cameras" type="checkbox" checked /><span class="toggle-track"></span><span>Sync cameras</span></label>
+          <button class="control-button" type="button" data-action="fit-both">Fit both</button>
+          <button class="control-button" type="button" data-action="clear-selection">Clear</button>
+        </div>
+
+        <div class="timeline glass-card" aria-label="Change sequence"><span class="timeline-label">SOURCE</span><div class="timeline-line"><span class="timeline-progress" id="timeline-progress"></span></div><span class="timeline-label revised-label">REVISED</span><button class="timeline-play" type="button" data-action="play" id="timeline-play" aria-label="Play change sequence">▶</button></div>
+      </section>
+
+      <footer class="comparison-footer"><div><strong>IFC remains authoritative.</strong> The two 3D views are derived display layers linked to the same element identity and edit evidence.</div><div class="footer-metrics" id="footer-metrics">Loading evidence…</div><a href="./data/comparison_index.json" target="_blank" rel="noreferrer">Machine-readable comparison ↗</a></footer>
+    </main>
+
+    <aside id="technical-drawer" class="technical-drawer" data-open="false" aria-label="Technical provenance"><div class="technical-header"><div><p class="eyebrow">Secondary reference</p><h2>Technical provenance</h2></div><button class="dock-close" type="button" data-action="toggle-technical" aria-label="Close technical provenance">×</button></div><div id="technical-content" class="technical-content"><p>Select a change to inspect its stable IFC identity, hashes, scene identity, and source evidence.</p></div></aside>
+    <div id="comparison-toast" class="comparison-toast" role="status" aria-live="polite"></div>
+    <script src="./comparison.js?v=20260918-change2" defer></script>
+  </body>
+</html>

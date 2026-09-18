@@ -5,6 +5,7 @@
   "type": "module",
   "description": "Premium IFC knowledge graph viewer with a confidence gated Jev decision layer.",
   "scripts": {
+    "build:comparison": "node scripts/build-comparison-index.mjs",
     "typecheck": "tsc --noEmit",
     "jev:shadow": "tsx src/intelligence/jev/cli.ts",
     "jev:shadow:example": "tsx src/intelligence/jev/cli.ts --example",
