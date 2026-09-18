@@ -357,7 +357,7 @@ function renderLens() {
   els.lensChangeTitle.textContent = change?.label || "Change set selected";
   els.lensChangeCopy.textContent = change ? `${detailTextForChange(change)} ${group.validation ? `· ${group.validation}` : ""}` : group.why || "The linked change set is selected.";
   els.lensDeltaPill.textContent = delta;
-  els.lensSurfaceLabel.textContent = `${formatNumber(renderable)} model ${renderable === 1 ? "element" : "elements"} outlined · ${state.lensChangedOnly ? "context ghosted" : "context visible"}`;
+  els.lensSurfaceLabel.textContent = `${formatNumber(renderable)} model ${renderable === 1 ? "element" : "elements"} framed · ${state.lensChangedOnly ? "context ghosted" : "context visible"}`;
   els.lensContextToggle.textContent = state.lensChangedOnly ? "Show context" : "Changed only";
 }
 
@@ -366,6 +366,13 @@ function toggleLensContext() {
   applyVisualState();
   renderLens();
   showToast(state.lensChangedOnly ? "Changed elements isolated" : "Context restored");
+}
+
+function reframeLens() {
+  const group = state.groupById.get(state.selectedGroupId);
+  if (!group) return;
+  focusGroup(group);
+  showToast("Changed set framed in both views");
 }
 
 function cycleLensChange() {
@@ -559,7 +566,7 @@ function applyVisualState() {
   const guideChange = state.changeById.get(state.lensOpen ? state.lensActiveChangeId : state.selectedChangeId);
   const focus = groupFocusSet(group);
   const changed = groupChangedSet(group);
-  const selected = changeFocusSet(change);
+  const selected = changeFocusSet(state.lensOpen ? guideChange : change);
   for (const sideName of ["before", "after"]) {
     const side = state.sides[sideName]; if (!side) continue;
     side.highlight?.removeAllMeshes();
@@ -575,7 +582,7 @@ function applyVisualState() {
       }
       for (const mesh of meshes) {
         mesh.visibility = opacity;
-        mesh.isPickable = opacity > .01;
+        mesh.isPickable = !group || isChanged || !state.lensChangedOnly;
         mesh.renderOutline = Boolean(group && isChanged);
         if (mesh.renderOutline) {
           mesh.outlineColor = sideName === "before" ? new BABYLON.Color3(.98, .65, .18) : new BABYLON.Color3(.2, .95, .78);
@@ -598,6 +605,7 @@ function selectGroup(groupId, graphNodeId = `issue:${groupId}`) {
   renderGroupDetail(group);
   renderTechnical(null);
   applyVisualState();
+  focusGroup(group);
   renderGraph();
   if (state.lensOpen) renderLens();
   const firstStep = Number([...groupChangedSet(group)].find((step) => state.sides.after?.meshByStep.has(Number(step)) || state.sides.before?.meshByStep.has(Number(step))) || group.focus_step_ids?.find((step) => state.sides.after?.meshByStep.has(Number(step)) || state.sides.before?.meshByStep.has(Number(step))));
@@ -646,6 +654,15 @@ function updatePickedLabels(stepId, label) {
   }
 }
 
+function frameBounds(side, bounds, margin = 1.25, duration = 520, lensMinimumScale = .008) {
+  if (!side?.camera || !bounds) return;
+  const diagonal = Math.max(bounds.size.length(), .01);
+  const halfFov = Math.max((side.camera.fov || .8) * .5, .2);
+  const fitRadius = (diagonal * .5 / Math.tan(halfFov)) * margin;
+  const minimumRadius = state.lensOpen ? Math.max(side.modelBounds.size.length() * lensMinimumScale, .55) : .75;
+  animateCamera(side, { alpha: side.camera.alpha, beta: side.camera.beta, radius: Math.max(fitRadius, minimumRadius), target: bounds.center.clone() }, duration);
+}
+
 function focusChange(change) {
   const steps = [...changeFocusSet(change)];
   for (const sideName of ["before", "after"]) {
@@ -653,8 +670,7 @@ function focusChange(change) {
     const meshes = steps.flatMap((step) => side.meshByStep.get(step) || []);
     if (!meshes.length) continue;
     const bounds = boundsForMeshes(meshes);
-    const contextRadius = Math.max(side.modelBounds.size.length() * .035, 1.5);
-    animateCamera(side, { alpha: side.camera.alpha, beta: side.camera.beta, radius: Math.max(bounds.size.length() * 4.2, contextRadius), target: bounds.center.clone() }, 440);
+    frameBounds(side, bounds, state.lensOpen ? 1.4 : 1.7, 440, state.lensOpen ? .025 : .008);
   }
 }
 
@@ -665,11 +681,26 @@ function focusGroup(group) {
     const meshes = steps.flatMap((step) => side.meshByStep.get(step) || []);
     if (!meshes.length) continue;
     const bounds = boundsForMeshes(meshes);
-    animateCamera(side, { alpha: side.camera.alpha, beta: side.camera.beta, radius: Math.max(bounds.size.length() * 1.75, .75), target: bounds.center.clone() }, 520);
+    frameBounds(side, bounds, state.lensOpen ? 1.14 : 1.35, 520);
   }
 }
 
-function fitBoth(mode = "perspective") { for (const side of [state.sides.before, state.sides.after]) if (side) animateCamera(side, cameraPlan(side, mode), 520); }
+function fitBoth(mode = "perspective") {
+  if (state.lensOpen) {
+    const group = state.groupById.get(state.selectedGroupId);
+    if (group) { focusGroup(group); return; }
+  }
+  for (const side of [state.sides.before, state.sides.after]) if (side) animateCamera(side, cameraPlan(side, mode), 520);
+}
+
+function refocusCurrentSelection() {
+  const group = state.groupById.get(state.selectedGroupId);
+  if (!group) { fitBoth(); return; }
+  applyVisualState();
+  const change = state.changeById.get(state.selectedChangeId);
+  if (change) focusChange(change);
+  else focusGroup(group);
+}
 
 function clearSelection() {
   if (state.lensOpen) closeChangeLens();
@@ -744,6 +775,7 @@ function bindInterface() {
       if (target.dataset.lens === "revised") setLensReveal(0);
       if (target.dataset.lens === "toggle-context") toggleLensContext();
       if (target.dataset.lens === "next") cycleLensChange();
+      if (target.dataset.lens === "reframe") reframeLens();
       return;
     }
     const action = target.dataset.action;
@@ -798,7 +830,7 @@ async function init() {
     setStatus("Loading source and revised geometry");
     await Promise.all([loadSide(state.sides.before, state.index.authoritative_source.browser_geometry.url), loadSide(state.sides.after, state.index.revised_model.browser_geometry.url)]);
     bindCameraSync();
-    fitBoth("perspective");
+    refocusCurrentSelection();
     setStatus(`Comparison ready · ${formatNumber(state.index.summary.comparison_records)} linked records`, "ready");
     showToast("Select a story, graph node, or model element");
   } catch (error) {

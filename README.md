@@ -2,7 +2,7 @@
 
 ## Standalone before-and-after comparison
 
-The separate [`Hallway Change Studio`](./dist/comparison.html) presents the original IFC and the revised hallway-coordination model side by side or as an overlay. Its **Change lens** turns a selected issue into a full-viewport before/after curtain: changed elements stay outlined, unaffected context can be ghosted, the exact selected element gets a focus marker, and a Source ↔ Revised slider reveals the physical difference in place. It connects rendered elements to a human-readable change story and a true nodes-and-edges graph. Stable IFC identifiers, hashes, scene identity, and source provenance are available in the secondary technical drawer and [`comparison_index.json`](./dist/data/comparison_index.json).
+The separate [`Hallway Change Studio`](./dist/comparison.html) presents the original IFC and the revised hallway-coordination model side by side or as an overlay. Its **Change lens** turns a selected issue into a full-viewport before/after curtain: the camera automatically frames the changed set, surrounding context can be ghosted and made non-pickable, the exact selected element gets a focus marker, and a Source ↔ Revised slider reveals the physical difference in place. It connects rendered elements to a human-readable change story and a true nodes-and-edges graph. Stable IFC identifiers, hashes, scene identity, and source provenance are available in the secondary technical drawer and [`comparison_index.json`](./dist/data/comparison_index.json).
 
 This static site is the linked viewer for `MBF5-TEST-COORDINATION.ifc`.
 IFC remains authoritative. OpenUSD is the working scene layer, glTF is the
