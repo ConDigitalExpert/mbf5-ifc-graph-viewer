@@ -93,6 +93,7 @@ h2 { margin-bottom: 0; font-size: 14px; font-weight: 720; letter-spacing: -.02em
 .lens-button:hover, .lens-button:focus-visible { border-color: rgba(245, 186, 77, .55); background: var(--amber-soft); color: var(--amber); }
 .change-lens { position: absolute; z-index: 18; inset: 0; opacity: 0; pointer-events: none; transition: opacity .25s ease; }
 .change-lens[data-open="true"] { opacity: 1; }
+.change-lens[data-open="false"] > * { pointer-events: none; visibility: hidden; }
 .comparison-workspace[data-mode="lens"] .model-stage { display: block; }
 .comparison-workspace[data-mode="lens"] .model-pane { position: absolute; inset: 0; }
 .comparison-workspace[data-mode="lens"] .after-pane { z-index: 1; width: 100%; }
