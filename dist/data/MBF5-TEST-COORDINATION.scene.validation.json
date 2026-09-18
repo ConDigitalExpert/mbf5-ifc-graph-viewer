@@ -1,0 +1,59 @@
+{
+  "schema": "bim-scene-validation-1",
+  "source": {
+    "path": "/Users/mohamedadel/Downloads/MBF5-TEST-COORDINATION.ifc",
+    "sha256": "b50ea1aa9fefc232b8bf485388245111e6d6bf011eb7ebdaf180096ba162a1ea",
+    "ifc_schema": "IFC2X3"
+  },
+  "working_scene": {
+    "path": "bim_scene_delivery/MBF5-TEST-COORDINATION.usdc",
+    "exists": true
+  },
+  "framework": {
+    "working_scene": "OpenUSD",
+    "browser_payload": "glTF 2.0",
+    "browser_runtime": "Babylon.js",
+    "semantic_data_layer": "IFC Phase 1 knowledge graph"
+  },
+  "counts": {
+    "ifc_products": 7542,
+    "represented_products": 3648,
+    "gltf_identity_nodes": 3648,
+    "usd_identity_records": 3648,
+    "draco_primitives": 3960
+  },
+  "coordinate_frame": {
+    "declared_local": true,
+    "model_origin_m": [
+      504265.9855,
+      5142047.22375,
+      237.105
+    ],
+    "position_bounds_m": [
+      [
+        -22.560216903686523,
+        -102.46282196044922,
+        -2.0676987171173096
+      ],
+      [
+        35.859283447265625,
+        -19.534242630004883,
+        4.611999988555908
+      ]
+    ],
+    "max_absolute_local_coordinate_m": 102.46282196044922
+  },
+  "checks": {
+    "source_hash_matches_graph": true,
+    "source_hash_matches_bridge": true,
+    "gltf_identity_coverage": true,
+    "usd_parses": true,
+    "duplicate_global_ids": true,
+    "duplicate_geometry_ids": true,
+    "local_coordinate_frame": true,
+    "browser_draco_compression": true
+  },
+  "errors": [],
+  "warnings": [],
+  "status": "passed"
+}

@@ -1,9 +1,7 @@
-import * as THREE from "three";
-import { OrbitControls } from "three/addons/controls/OrbitControls.js";
-import { GLTFLoader } from "three/addons/loaders/GLTFLoader.js";
+/* global BABYLON */
 
 const DATA_URL = "./data/viewer_index.json";
-const DEFAULT_GEOMETRY_URL = "./data/MBF5-TEST-COORDINATION.glb";
+const DEFAULT_GEOMETRY_URL = "./data/MBF5-TEST-COORDINATION.scene.glb";
 
 const els = {
   schema: document.querySelector("#schema-badge"),
@@ -22,12 +20,17 @@ const els = {
   metricPorts: document.querySelector("#metric-ports"),
   metricEdges: document.querySelector("#metric-edges"),
   metricIntegrity: document.querySelector("#metric-integrity"),
+  frameworkBadge: document.querySelector("#framework-badge"),
+  stage2State: document.querySelector("#stage2-state"),
 };
 
 const state = {
   index: null,
+  bridge: null,
+  bridgeByStep: new Map(),
   viewer: null,
   selectedStep: null,
+  coordinateFrame: null,
   allNodes: [],
   nodeByStep: new Map(),
   edgeByIndex: [],
@@ -63,6 +66,10 @@ function nodeForStep(stepId) {
     name: `STEP #${stepId}`,
     global_id: null,
   };
+}
+
+function bridgeForStep(stepId) {
+  return state.bridgeByStep.get(Number(stepId)) || null;
 }
 
 function searchableText(node) {
@@ -123,12 +130,16 @@ function renderRelationships(stepId) {
 
 function renderDetail(stepId, source) {
   const node = nodeForStep(stepId);
-  const globalId = node.global_id || null;
+  const bridge = bridgeForStep(stepId);
+  const globalId = node.global_id || bridge?.ifc_global_id || null;
   const name = node.name || node.object_type || nodeLabel(node);
   const objectType = node.object_type || null;
   const tag = node.tag || null;
   const edges = edgeIndexesFor(stepId);
   const mesh = state.viewer?.meshByStep.get(Number(stepId));
+  const geometry = bridge?.geometry;
+  const origin = state.coordinateFrame?.model_origin_m;
+  const originLabel = Array.isArray(origin) ? origin.map((value) => Number(value).toFixed(4)).join(", ") : "not declared";
   els.detail.className = "selection-detail";
   els.detail.innerHTML = `
     <div class="detail-head">
@@ -143,8 +154,12 @@ function renderDetail(stepId, source) {
     </div>
     <div class="detail-section-label">Identity bridge</div>
     <div class="property-line"><span>IFC STEP id</span><strong>#${stepId}</strong></div>
-    <div class="property-line"><span>Display geometry</span><strong>${mesh ? "linked glTF mesh" : "no preview mesh"}</strong></div>
-    <div class="property-line"><span>Source graph</span><strong>Phase 1 index</strong></div>
+    <div class="property-line"><span>Display geometry</span><strong>${mesh ? "linked glTF node" : geometry?.represented ? "mapped, not loaded" : "no preview mesh"}</strong></div>
+    <div class="property-line"><span>OpenUSD prim</span><strong>${escapeHtml(geometry?.usd_prim_path || "none")}</strong></div>
+    <div class="property-line"><span>Scene geometry id</span><strong>${escapeHtml(geometry?.geometry_id || "none")}</strong></div>
+    <div class="property-line"><span>Scene coordinate frame</span><strong>local + [${escapeHtml(originLabel)}] m</strong></div>
+    <div class="property-line"><span>Property source</span><strong>Full IFC graph</strong></div>
+    <div class="property-line"><span>Stage 2 writeback</span><strong>IFC-native, dry-run prepared</strong></div>
     <div class="detail-section-label">Explicit graph interfaces · ${formatNumber(edges.length)}</div>
     ${renderRelationships(stepId)}
   `;
@@ -153,36 +168,18 @@ function renderDetail(stepId, source) {
   });
 }
 
-function materialList(object) {
-  return Array.isArray(object.material) ? object.material : [object.material];
-}
-
-function setObjectHighlight(object, selected) {
-  if (!object) return;
-  for (const material of materialList(object)) {
-    if (!material) continue;
-    if (!material.userData.phase1BaseColor && material.color) {
-      material.userData.phase1BaseColor = material.color.clone();
-      material.userData.phase1BaseEmissive = material.emissive?.clone?.() || null;
-      material.userData.phase1BaseEmissiveIntensity = material.emissiveIntensity;
-    }
-    if (selected) {
-      material.color?.set(0xf5b942);
-      material.emissive?.set(0x6a3e00);
-      if (material.emissiveIntensity !== undefined) material.emissiveIntensity = 0.8;
-    } else {
-      material.userData.phase1BaseColor && material.color?.copy(material.userData.phase1BaseColor);
-      material.userData.phase1BaseEmissive && material.emissive?.copy(material.userData.phase1BaseEmissive);
-      if (material.emissiveIntensity !== undefined) material.emissiveIntensity = material.userData.phase1BaseEmissiveIntensity || 0;
-    }
-    material.needsUpdate = true;
-  }
+function setMeshHighlight(mesh, selected) {
+  if (!mesh) return;
+  mesh.renderOutline = selected;
+  mesh.outlineColor = new BABYLON.Color3(0.96, 0.73, 0.25);
+  mesh.outlineWidth = 0.025;
+  mesh.showSubMeshesBoundingBox = false;
 }
 
 function clearHighlight() {
-  const previous = state.viewer?.selectedObject;
-  if (previous) setObjectHighlight(previous, false);
-  if (state.viewer) state.viewer.selectedObject = null;
+  const previous = state.viewer?.selectedMesh;
+  if (previous) setMeshHighlight(previous, false);
+  if (state.viewer) state.viewer.selectedMesh = null;
 }
 
 function parseStepId(name) {
@@ -190,10 +187,10 @@ function parseStepId(name) {
   return match ? Number(match[1]) : null;
 }
 
-function stepForObject(object) {
-  let current = object;
+function stepForNode(node) {
+  let current = node;
   while (current) {
-    if (Number.isInteger(current.userData?.stepId)) return current.userData.stepId;
+    if (Number.isInteger(current.metadata?.ifc_step_id)) return current.metadata.ifc_step_id;
     const parsed = parseStepId(current.name);
     if (parsed !== null) return parsed;
     current = current.parent;
@@ -201,132 +198,160 @@ function stepForObject(object) {
   return null;
 }
 
-function createThreeViewer() {
-  const width = Math.max(1, els.viewer.clientWidth);
-  const height = Math.max(1, els.viewer.clientHeight);
-  const scene = new THREE.Scene();
-  scene.background = new THREE.Color(0x0e171e);
-  scene.add(new THREE.HemisphereLight(0xdde9ff, 0x1b3039, 2.1));
-  const keyLight = new THREE.DirectionalLight(0xffffff, 2.8);
-  keyLight.position.set(80, 120, 70);
-  scene.add(keyLight);
-  const fillLight = new THREE.DirectionalLight(0x70b9b2, 1.2);
-  fillLight.position.set(-80, 50, -90);
-  scene.add(fillLight);
+function splitAssetUrl(url) {
+  const clean = String(url || "").split("?")[0];
+  const slash = clean.lastIndexOf("/");
+  return { root: slash >= 0 ? `${clean.slice(0, slash + 1)}` : "./", file: clean.slice(slash + 1) };
+}
 
-  const renderer = new THREE.WebGLRenderer({ antialias: true, alpha: false });
-  renderer.setPixelRatio(Math.min(window.devicePixelRatio || 1, 2));
-  renderer.setSize(width, height);
-  renderer.outputColorSpace = THREE.SRGBColorSpace;
-  renderer.toneMapping = THREE.ACESFilmicToneMapping;
-  renderer.toneMappingExposure = 1.15;
-  renderer.domElement.className = "model-canvas";
-  renderer.domElement.setAttribute("aria-label", "Rendered IFC display geometry");
-  els.viewer.insertBefore(renderer.domElement, els.viewer.firstChild);
+function boundsForMeshes(meshes) {
+  const min = new BABYLON.Vector3(Number.POSITIVE_INFINITY, Number.POSITIVE_INFINITY, Number.POSITIVE_INFINITY);
+  const max = new BABYLON.Vector3(Number.NEGATIVE_INFINITY, Number.NEGATIVE_INFINITY, Number.NEGATIVE_INFINITY);
+  let count = 0;
+  for (const mesh of meshes) {
+    if (!mesh.getBoundingInfo || mesh.getTotalVertices?.() === 0) continue;
+    mesh.computeWorldMatrix(true);
+    const box = mesh.getBoundingInfo().boundingBox;
+    min.minimizeInPlace(box.minimumWorld);
+    max.maximizeInPlace(box.maximumWorld);
+    count += 1;
+  }
+  if (!count) throw new Error("Scene contains no renderable mapped meshes");
+  return { min, max, center: min.add(max).scale(0.5), size: max.subtract(min) };
+}
 
-  const camera = new THREE.PerspectiveCamera(45, width / height, 0.01, 10000);
-  camera.position.set(35, 25, 35);
-  const controls = new OrbitControls(camera, renderer.domElement);
-  controls.enableDamping = true;
-  controls.dampingFactor = 0.08;
-  controls.screenSpacePanning = true;
-  controls.minDistance = 0.05;
+function createBabylonViewer() {
+  const canvas = document.createElement("canvas");
+  canvas.className = "model-canvas";
+  canvas.setAttribute("aria-label", "OpenUSD-backed BIM scene rendered as glTF");
+  els.viewer.insertBefore(canvas, els.viewer.firstChild);
+  const engine = new BABYLON.Engine(canvas, true, { antialias: true, stencil: true, preserveDrawingBuffer: false });
+  engine.setHardwareScalingLevel(Math.min(1.35, 1 / Math.min(window.devicePixelRatio || 1, 2)));
+  const scene = new BABYLON.Scene(engine);
+  scene.clearColor = new BABYLON.Color4(0.028, 0.047, 0.06, 1);
+  scene.imageProcessingConfiguration.toneMappingEnabled = true;
+  scene.imageProcessingConfiguration.toneMappingType = BABYLON.ImageProcessingConfiguration.TONEMAPPING_ACES;
+  scene.imageProcessingConfiguration.exposure = 1.08;
+  scene.imageProcessingConfiguration.contrast = 1.12;
+
+  const camera = new BABYLON.ArcRotateCamera("bim-camera", -Math.PI / 2.35, Math.PI / 2.95, 50, BABYLON.Vector3.Zero(), scene);
+  camera.attachControl(canvas, true);
+  camera.panningSensibility = 65;
+  camera.wheelPrecision = 55;
+  camera.lowerRadiusLimit = 0.1;
+  camera.upperRadiusLimit = 100000;
+  camera.useBouncingBehavior = true;
+  camera.useAutoRotationBehavior = false;
+
+  const hemispheric = new BABYLON.HemisphericLight("bim-fill", new BABYLON.Vector3(0.15, 1, 0.25), scene);
+  hemispheric.intensity = 1.35;
+  hemispheric.diffuse = new BABYLON.Color3(0.82, 0.9, 1.0);
+  hemispheric.groundColor = new BABYLON.Color3(0.08, 0.14, 0.17);
+  const key = new BABYLON.DirectionalLight("bim-key", new BABYLON.Vector3(-0.45, -1, 0.55), scene);
+  key.position = new BABYLON.Vector3(160, 220, 100);
+  key.intensity = 2.1;
+  const rim = new BABYLON.DirectionalLight("bim-rim", new BABYLON.Vector3(0.55, -0.35, -0.75), scene);
+  rim.position = new BABYLON.Vector3(-120, 120, -180);
+  rim.diffuse = new BABYLON.Color3(0.24, 0.7, 0.68);
+  rim.intensity = 0.8;
+
+  const pipeline = new BABYLON.DefaultRenderingPipeline("bim-rendering", true, scene, [camera]);
+  pipeline.fxaaEnabled = true;
+  pipeline.samples = 4;
+  pipeline.sharpenEnabled = true;
+  pipeline.sharpen.edgeAmount = 0.18;
+  pipeline.bloomEnabled = true;
+  pipeline.bloomThreshold = 0.95;
+  pipeline.bloomWeight = 0.06;
+  pipeline.bloomKernel = 32;
 
   const viewer = {
+    canvas,
+    engine,
     scene,
-    renderer,
     camera,
-    controls,
-    raycaster: new THREE.Raycaster(),
-    pointer: new THREE.Vector2(),
-    root: null,
+    modelRoot: null,
     meshByStep: new Map(),
-    selectedObject: null,
+    selectedMesh: null,
+    shadowGenerator: null,
     resizeObserver: null,
   };
-
-  const resize = () => {
-    const nextWidth = Math.max(1, els.viewer.clientWidth);
-    const nextHeight = Math.max(1, els.viewer.clientHeight);
-    renderer.setSize(nextWidth, nextHeight, false);
-    camera.aspect = nextWidth / nextHeight;
-    camera.updateProjectionMatrix();
-  };
+  const resize = () => engine.resize();
   viewer.resizeObserver = new ResizeObserver(resize);
   viewer.resizeObserver.observe(els.viewer);
-
-  const animate = () => {
-    requestAnimationFrame(animate);
-    controls.update();
-    renderer.render(scene, camera);
-  };
-  animate();
+  engine.runRenderLoop(() => scene.render());
   return viewer;
 }
 
-function fitScene(root) {
-  const bounds = new THREE.Box3().setFromObject(root);
-  if (bounds.isEmpty()) throw new Error("Derived geometry contains no renderable bounds");
-  const center = bounds.getCenter(new THREE.Vector3());
-  root.position.sub(center);
-  const centeredBounds = new THREE.Box3().setFromObject(root);
-  const size = centeredBounds.getSize(new THREE.Vector3());
-  const maxDim = Math.max(size.x, size.y, size.z, 1);
+function registerSceneNodes(nodes) {
+  for (const node of nodes) {
+    const stepId = stepForNode(node);
+    if (!Number.isInteger(stepId)) continue;
+    node.metadata = { ...(node.metadata || {}), ifc_step_id: stepId };
+    if (!state.viewer.meshByStep.has(stepId) && node.getTotalVertices?.() > 0) {
+      state.viewer.meshByStep.set(stepId, node);
+    }
+    if (node.material && node.material.albedoColor) {
+      node.material.roughness = Math.min(Math.max(Number(node.material.roughness || 0.42), 0.28), 0.82);
+    }
+    node.receiveShadows = true;
+  }
+}
+
+function addPresentationContext(bounds) {
+  const maxDim = Math.max(bounds.size.x, bounds.size.y, bounds.size.z, 1);
   const gridSize = Math.max(maxDim * 1.55, 10);
-  const divisions = Math.min(40, Math.max(10, Math.round(gridSize / Math.max(maxDim / 10, 1))));
-  const grid = new THREE.GridHelper(gridSize, divisions, 0x36515a, 0x20333d);
-  grid.position.y = centeredBounds.min.y - maxDim * 0.018;
-  state.viewer.scene.add(grid);
-  const axes = new THREE.AxesHelper(Math.max(maxDim * 0.18, 1));
-  axes.position.set(centeredBounds.min.x, grid.position.y, centeredBounds.min.z);
-  state.viewer.scene.add(axes);
-
-  const distance = maxDim * 1.45;
-  state.viewer.camera.position.set(distance, distance * 0.78, distance);
-  state.viewer.camera.near = Math.max(maxDim / 100000, 0.01);
-  state.viewer.camera.far = Math.max(maxDim * 25, 1000);
-  state.viewer.camera.updateProjectionMatrix();
-  state.viewer.controls.target.set(0, 0, 0);
-  state.viewer.controls.update();
+  const ground = BABYLON.MeshBuilder.CreateGround("presentation-ground", { width: gridSize, height: gridSize, subdivisions: 2 }, state.viewer.scene);
+  ground.position.y = bounds.min.y - maxDim * 0.02;
+  const groundMaterial = new BABYLON.PBRMaterial("presentation-ground-material", state.viewer.scene);
+  groundMaterial.albedoColor = new BABYLON.Color3(0.045, 0.075, 0.085);
+  groundMaterial.roughness = 0.85;
+  groundMaterial.metallic = 0.02;
+  ground.material = groundMaterial;
+  ground.receiveShadows = true;
+  const axes = new BABYLON.AxesViewer(state.viewer.scene, Math.max(maxDim * 0.18, 1));
+  axes.xAxis.parent = state.viewer.modelRoot;
+  axes.yAxis.parent = state.viewer.modelRoot;
+  axes.zAxis.parent = state.viewer.modelRoot;
+  state.viewer.shadowGenerator = new BABYLON.ShadowGenerator(2048, state.viewer.scene.getLightByName("bim-key"));
+  state.viewer.shadowGenerator.usePercentageCloserFiltering = true;
+  state.viewer.shadowGenerator.filteringQuality = BABYLON.ShadowGenerator.QUALITY_HIGH;
+  for (const mesh of state.viewer.meshByStep.values()) {
+    state.viewer.shadowGenerator.addShadowCaster(mesh, true);
+  }
 }
 
-function registerMeshes(root) {
-  root.traverse((object) => {
-    if (!object.isMesh) return;
-    const stepId = stepForObject(object);
-    if (!Number.isInteger(stepId)) return;
-    object.userData.stepId = stepId;
-    object.material = Array.isArray(object.material)
-      ? object.material.map((material) => material.clone())
-      : object.material.clone();
-    state.viewer.meshByStep.set(stepId, object);
-  });
+function fitScene(bounds) {
+  const maxDim = Math.max(bounds.size.x, bounds.size.y, bounds.size.z, 1);
+  state.viewer.camera.target.copyFrom(bounds.center);
+  state.viewer.camera.radius = maxDim * 1.42;
+  state.viewer.camera.lowerRadiusLimit = Math.max(maxDim * 0.006, 0.05);
+  state.viewer.camera.upperRadiusLimit = maxDim * 30;
+  state.viewer.camera.minZ = Math.max(maxDim / 100000, 0.01);
+  state.viewer.camera.maxZ = Math.max(maxDim * 40, 1000);
 }
 
-function focusObject(object) {
-  if (!object) return;
-  const box = new THREE.Box3().setFromObject(object);
-  if (box.isEmpty()) return;
-  const center = box.getCenter(new THREE.Vector3());
-  const size = box.getSize(new THREE.Vector3());
-  const distance = Math.max(size.length() * 2.2, 3);
-  const direction = state.viewer.camera.position.clone().sub(state.viewer.controls.target).normalize();
-  state.viewer.camera.position.copy(center.clone().add(direction.multiplyScalar(distance)));
-  state.viewer.controls.target.copy(center);
-  state.viewer.controls.update();
+function focusMesh(mesh) {
+  if (!mesh) return;
+  mesh.computeWorldMatrix(true);
+  const box = mesh.getBoundingInfo().boundingBox;
+  const size = box.extendSizeWorld.scale(2);
+  const distance = Math.max(size.length() * 2.2, 1);
+  state.viewer.camera.target.copyFrom(box.centerWorld);
+  state.viewer.camera.radius = distance;
 }
 
 function highlightModel(stepId, focus = false) {
   if (!state.viewer) return;
   clearHighlight();
-  const object = state.viewer.meshByStep.get(Number(stepId));
-  if (!object) {
+  const mesh = state.viewer.meshByStep.get(Number(stepId));
+  if (!mesh) {
     setStatus(`Graph node selected · #${stepId}`, "");
     return;
   }
-  setObjectHighlight(object, true);
-  state.viewer.selectedObject = object;
-  if (focus) focusObject(object);
+  setMeshHighlight(mesh, true);
+  state.viewer.selectedMesh = mesh;
+  if (focus) focusMesh(mesh);
   setStatus(`Selected · #${stepId}`, "ready");
 }
 
@@ -338,54 +363,48 @@ async function selectStep(stepId, source = "graph") {
   els.detail.scrollTop = 0;
 }
 
-function pickModelItem(event) {
-  if (!state.viewer?.root) return;
-  const rect = els.viewer.getBoundingClientRect();
-  state.viewer.pointer.x = ((event.clientX - rect.left) / rect.width) * 2 - 1;
-  state.viewer.pointer.y = -((event.clientY - rect.top) / rect.height) * 2 + 1;
-  state.viewer.raycaster.setFromCamera(state.viewer.pointer, state.viewer.camera);
-  const hits = state.viewer.raycaster.intersectObject(state.viewer.root, true);
-  const hit = hits.find((candidate) => stepForObject(candidate.object) !== null);
-  const stepId = hit ? stepForObject(hit.object) : null;
+function pickModelItem() {
+  if (!state.viewer?.scene) return;
+  const pick = state.viewer.scene.pick(state.viewer.scene.pointerX, state.viewer.scene.pointerY, (mesh) => stepForNode(mesh) !== null);
+  const stepId = pick?.hit ? stepForNode(pick.pickedMesh) : null;
   if (Number.isInteger(stepId)) selectStep(stepId, "model");
 }
 
-function populateSummary(index) {
+function populateSummary(index, bridge) {
   const stats = index.stats || {};
-  els.schema.textContent = index.schema || "IFC";
+  els.schema.textContent = `${index.schema || "IFC"} · USD`;
   els.nodeCount.textContent = `${formatNumber(index.nodes.length)} indexed`;
   els.metricElements.textContent = formatNumber(stats.ifc_elements);
   els.metricPorts.textContent = formatNumber(stats.ifc_distribution_ports);
   els.metricEdges.textContent = formatNumber(stats.semantic_edges);
   els.metricIntegrity.textContent = stats.dangling_entity_references === 0 ? "0" : formatNumber(stats.dangling_entity_references);
   els.sourceHash.textContent = `SHA-256 ${String(index.source_sha256 || "").slice(0, 16)}…`;
+  els.frameworkBadge.textContent = `${bridge?.framework?.working_scene || "OpenUSD"} / ${bridge?.framework?.browser_runtime || "Babylon.js"}`;
+  els.stage2State.textContent = "Stage 2 prepared · dry-run only";
 }
 
-async function loadModel() {
-  state.viewer = createThreeViewer();
+async function loadScene() {
+  state.viewer = createBabylonViewer();
   els.viewer.addEventListener("dblclick", pickModelItem);
-  setStatus("Loading display geometry", "");
-  els.viewerMessage.textContent = "Loading derived IFC display geometry…";
+  setStatus("Loading premium scene payload", "");
+  els.viewerMessage.textContent = "Loading OpenUSD-backed scene geometry…";
   const geometryUrl = state.index.geometry_url || DEFAULT_GEOMETRY_URL;
-  const loader = new GLTFLoader();
-  await new Promise((resolve, reject) => {
-    loader.load(
-      geometryUrl,
-      (gltf) => {
-        state.viewer.root = gltf.scene;
-        state.viewer.scene.add(gltf.scene);
-        registerMeshes(gltf.scene);
-        fitScene(gltf.scene);
-        resolve();
-      },
-      (progress) => {
-        if (progress.total) setStatus(`Loading display geometry · ${Math.round((progress.loaded / progress.total) * 100)}%`, "");
-      },
-      reject,
-    );
-  });
+  const { root, file } = splitAssetUrl(geometryUrl);
+  const result = await BABYLON.SceneLoader.ImportMeshAsync(null, root, file, state.viewer.scene);
+  const importedMeshes = result.meshes.filter((mesh) => mesh.getTotalVertices?.() > 0);
+  state.viewer.modelRoot = new BABYLON.TransformNode("bim-model-root", state.viewer.scene);
+  for (const mesh of importedMeshes) {
+    if (!mesh.parent) mesh.parent = state.viewer.modelRoot;
+  }
+  const bounds = boundsForMeshes(importedMeshes);
+  state.viewer.modelRoot.position = bounds.center.scale(-1);
+  for (const mesh of importedMeshes) mesh.computeWorldMatrix(true);
+  const centeredBounds = boundsForMeshes(importedMeshes);
+  registerSceneNodes(importedMeshes);
+  addPresentationContext(centeredBounds);
+  fitScene(centeredBounds);
   els.viewerLoading.classList.add("ready");
-  setStatus(`Model ready · ${formatNumber(state.viewer.meshByStep.size)} meshes`, "ready");
+  setStatus(`Model ready · ${formatNumber(state.viewer.meshByStep.size)} mapped meshes · local frame`, "ready");
   els.viewerMessage.textContent = "Double click an element to select it in the graph.";
 }
 
@@ -394,10 +413,18 @@ async function init() {
     const response = await fetch(DATA_URL);
     if (!response.ok) throw new Error(`Knowledge graph index returned ${response.status}`);
     state.index = await response.json();
+    const bridgeUrl = state.index.scene_bridge_index_url || state.index.scene_bridge_url;
+    if (bridgeUrl) {
+      const bridgeResponse = await fetch(bridgeUrl);
+      if (!bridgeResponse.ok) throw new Error(`Scene bridge returned ${bridgeResponse.status}`);
+      state.bridge = await bridgeResponse.json();
+      state.coordinateFrame = state.bridge.coordinate_frame || null;
+      (state.bridge.products || []).forEach((product) => state.bridgeByStep.set(Number(product.ifc_step_id), product));
+    }
     state.allNodes = state.index.nodes;
     state.edgeByIndex = state.index.edges;
     state.allNodes.forEach((node) => state.nodeByStep.set(Number(node.step_id), node));
-    populateSummary(state.index);
+    populateSummary(state.index, state.bridge);
     renderNodeList();
     els.search.addEventListener("input", (event) => {
       state.searchTerm = event.target.value;
@@ -409,11 +436,11 @@ async function init() {
         els.search.focus();
       }
     });
-    await loadModel();
+    await loadScene();
   } catch (error) {
     console.error(error);
     setStatus("Model load failed", "error");
-    els.viewerMessage.textContent = "The derived IFC display geometry could not load.";
+    els.viewerMessage.textContent = "The OpenUSD-backed scene payload could not load.";
   }
 }
 

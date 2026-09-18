@@ -1,0 +1,119 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://local.invalid/bim/phase2-edit-1.schema.json",
+  "title": "BIM Stage 2 IFC round-trip edit instruction",
+  "type": "object",
+  "required": ["manifest_schema", "mode", "base", "operations"],
+  "additionalProperties": false,
+  "properties": {
+    "manifest_schema": { "const": "ifc-stage2-edit-1" },
+    "mode": { "enum": ["dry_run", "apply"] },
+    "base": {
+      "type": "object",
+      "required": ["source_model_sha256", "ifc_schema"],
+      "additionalProperties": false,
+      "properties": {
+        "source_model_sha256": { "type": "string", "pattern": "^[a-f0-9]{64}$" },
+        "source_graph_manifest_sha256": { "type": "string", "pattern": "^[a-f0-9]{64}$" },
+        "ifc_schema": { "type": "string" },
+        "scene_bridge_sha256": { "type": "string", "pattern": "^[a-f0-9]{64}$" }
+      }
+    },
+    "operations": {
+      "type": "array",
+      "items": { "$ref": "#/$defs/operation" }
+    },
+    "constraints": {
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "preserve_global_ids": { "type": "boolean", "default": true },
+        "preserve_unaffected_entities": { "type": "boolean", "default": true },
+        "reject_lossy_geometry_edits": { "type": "boolean", "default": true },
+        "require_zero_dangling_references": { "type": "boolean", "default": true },
+        "require_schema_parse": { "type": "boolean", "default": true }
+      }
+    },
+    "provenance": {
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "instruction_id": { "type": "string" },
+        "requested_by": { "type": "string" },
+        "reason": { "type": "string" }
+      }
+    }
+  },
+  "$defs": {
+    "selector": {
+      "type": "object",
+      "required": ["global_id"],
+      "additionalProperties": false,
+      "properties": {
+        "global_id": { "type": "string", "minLength": 1 },
+        "source_step_id": { "type": "integer", "minimum": 1 },
+        "entity_type": { "type": "string" }
+      }
+    },
+    "precondition": {
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "expected_entity_type": { "type": "string" },
+        "expected_global_id": { "type": "string" },
+        "source_step_id": { "type": "integer", "minimum": 1 },
+        "before_hash": { "type": "string", "pattern": "^[a-f0-9]{64}$" },
+        "expected_current_value": {}
+      }
+    },
+    "operation": {
+      "type": "object",
+      "required": ["op_id", "operation", "target", "preconditions"],
+      "additionalProperties": false,
+      "properties": {
+        "op_id": { "type": "string", "minLength": 1 },
+        "operation": {
+          "enum": ["set_attribute", "set_property", "update_placement", "replace_geometry", "update_relationship"]
+        },
+        "target": { "$ref": "#/$defs/selector" },
+        "preconditions": { "type": "array", "items": { "$ref": "#/$defs/precondition" } },
+        "attribute": { "type": "string" },
+        "property_set": { "type": "string" },
+        "property_name": { "type": "string" },
+        "value": {},
+        "express_type": { "type": "string" },
+        "unit": { "type": ["string", "null"] },
+        "placement": {
+          "type": "object",
+          "additionalProperties": false,
+          "properties": {
+            "translation_m": { "type": "array", "prefixItems": [{ "type": "number" }, { "type": "number" }, { "type": "number" }], "minItems": 3, "maxItems": 3 },
+            "rotation_quaternion": { "type": "array", "prefixItems": [{ "type": "number" }, { "type": "number" }, { "type": "number" }, { "type": "number" }], "minItems": 4, "maxItems": 4 },
+            "scale": { "type": "array", "prefixItems": [{ "type": "number" }, { "type": "number" }, { "type": "number" }], "minItems": 3, "maxItems": 3 }
+          }
+        },
+        "geometry": {
+          "type": "object",
+          "required": ["representation_strategy"],
+          "additionalProperties": false,
+          "properties": {
+            "representation_strategy": { "enum": ["ifc_native_representation", "ifc_parametric_rebuild", "ifc_brep_rebuild"] },
+            "parameters": { "type": "object" },
+            "source_asset": { "type": ["string", "null"] },
+            "unit": { "type": "string" }
+          }
+        },
+        "relationship": {
+          "type": "object",
+          "required": ["relationship_step_id", "role", "targets"],
+          "additionalProperties": false,
+          "properties": {
+            "relationship_step_id": { "type": "integer", "minimum": 1 },
+            "role": { "type": "string" },
+            "targets": { "type": "array", "items": { "$ref": "#/$defs/selector" } }
+          }
+        }
+      }
+    }
+  }
+}

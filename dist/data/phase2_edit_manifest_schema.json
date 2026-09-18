@@ -1,0 +1,162 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://local.invalid/bim/phase2-edit-manifest-1.schema.json",
+  "title": "BIM Stage 2 IFC round-trip edit manifest",
+  "type": "object",
+  "required": [
+    "manifest_schema",
+    "status",
+    "hash_algorithm",
+    "instruction",
+    "base",
+    "output",
+    "operations",
+    "preservation",
+    "losses",
+    "validation",
+    "recovery"
+  ],
+  "additionalProperties": false,
+  "properties": {
+    "manifest_schema": { "const": "ifc-stage2-edit-manifest-1" },
+    "status": { "enum": ["planned", "dry_run", "applied", "rejected", "failed"] },
+    "hash_algorithm": { "const": "SHA-256" },
+    "instruction": {
+      "type": "object",
+      "required": ["schema", "mode", "sha256"],
+      "additionalProperties": false,
+      "properties": {
+        "schema": { "const": "ifc-stage2-edit-1" },
+        "mode": { "enum": ["dry_run", "apply"] },
+        "instruction_id": { "type": ["string", "null"] },
+        "sha256": { "type": "string", "pattern": "^[a-f0-9]{64}$" }
+      }
+    },
+    "base": { "$ref": "#/$defs/modelSnapshot" },
+    "output": {
+      "allOf": [
+        { "$ref": "#/$defs/modelSnapshot" },
+        {
+          "type": "object",
+          "required": ["recoverable"],
+          "properties": {
+            "recoverable": { "const": true },
+            "parent_source_sha256": { "type": "string", "pattern": "^[a-f0-9]{64}$" }
+          }
+        }
+      ]
+    },
+    "operations": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": ["op_id", "status", "target", "before_hash", "after_hash", "mapping", "losses"],
+        "additionalProperties": false,
+        "properties": {
+          "op_id": { "type": "string", "minLength": 1 },
+          "status": { "enum": ["planned", "applied", "rejected", "failed", "unchanged"] },
+          "target": { "$ref": "#/$defs/selector" },
+          "before_hash": { "type": "string", "pattern": "^[a-f0-9]{64}$" },
+          "after_hash": { "type": "string", "pattern": "^[a-f0-9]{64}$" },
+          "mapping": {
+            "type": "object",
+            "required": ["ifc_global_id", "source_step_id"],
+            "additionalProperties": false,
+            "properties": {
+              "ifc_global_id": { "type": "string" },
+              "source_step_id": { "type": "integer", "minimum": 1 },
+              "geometry_id": { "type": ["string", "null"] },
+              "usd_prim_path": { "type": ["string", "null"] },
+              "gltf_node_name": { "type": ["string", "null"] },
+              "affected_step_ids": { "type": "array", "items": { "type": "integer", "minimum": 1 } }
+            }
+          },
+          "losses": { "type": "array", "items": { "$ref": "#/$defs/loss" } },
+          "validation": { "type": "object", "additionalProperties": true }
+        }
+      }
+    },
+    "preservation": {
+      "type": "object",
+      "required": ["unaffected_content_preserved", "global_ids_preserved", "relationship_references_valid"],
+      "additionalProperties": false,
+      "properties": {
+        "unaffected_content_preserved": { "type": "boolean" },
+        "global_ids_preserved": { "type": "boolean" },
+        "relationship_references_valid": { "type": "boolean" },
+        "unaffected_entity_count": { "type": "integer", "minimum": 0 },
+        "changed_step_ids": { "type": "array", "items": { "type": "integer", "minimum": 1 } },
+        "unchanged_hashes_verified": { "type": "boolean" }
+      }
+    },
+    "losses": {
+      "type": "object",
+      "required": ["detected", "items"],
+      "additionalProperties": false,
+      "properties": {
+        "detected": { "type": "boolean" },
+        "items": { "type": "array", "items": { "$ref": "#/$defs/loss" } }
+      }
+    },
+    "validation": {
+      "type": "object",
+      "required": ["status", "checks"],
+      "additionalProperties": false,
+      "properties": {
+        "status": { "enum": ["passed", "failed", "not_run"] },
+        "checks": { "type": "object", "additionalProperties": { "type": "boolean" } },
+        "result_files": { "type": "array", "items": { "type": "string" } },
+        "errors": { "type": "array", "items": { "type": "string" } },
+        "warnings": { "type": "array", "items": { "type": "string" } }
+      }
+    },
+    "recovery": {
+      "type": "object",
+      "required": ["source_copy", "output_copy", "manifest_path"],
+      "additionalProperties": false,
+      "properties": {
+        "source_copy": { "type": "string" },
+        "output_copy": { "type": "string" },
+        "manifest_path": { "type": "string" },
+        "rollback_instruction": { "type": ["string", "null"] }
+      }
+    }
+  },
+  "$defs": {
+    "selector": {
+      "type": "object",
+      "required": ["global_id", "source_step_id"],
+      "additionalProperties": false,
+      "properties": {
+        "global_id": { "type": "string", "minLength": 1 },
+        "source_step_id": { "type": "integer", "minimum": 1 },
+        "entity_type": { "type": "string" }
+      }
+    },
+    "modelSnapshot": {
+      "type": "object",
+      "required": ["ifc_path", "ifc_sha256", "ifc_schema"],
+      "additionalProperties": true,
+      "properties": {
+        "ifc_path": { "type": "string" },
+        "ifc_sha256": { "type": "string", "pattern": "^[a-f0-9]{64}$" },
+        "ifc_schema": { "type": "string" },
+        "graph_manifest_sha256": { "type": "string", "pattern": "^[a-f0-9]{64}$" },
+        "scene_bridge_sha256": { "type": "string", "pattern": "^[a-f0-9]{64}$" },
+        "scene_manifest_sha256": { "type": "string", "pattern": "^[a-f0-9]{64}$" },
+        "ifc_entity_count": { "type": "integer", "minimum": 0 }
+      }
+    },
+    "loss": {
+      "type": "object",
+      "required": ["code", "severity", "message"],
+      "additionalProperties": false,
+      "properties": {
+        "code": { "type": "string" },
+        "severity": { "enum": ["info", "warning", "error"] },
+        "message": { "type": "string" },
+        "affected_step_ids": { "type": "array", "items": { "type": "integer", "minimum": 1 } }
+      }
+    }
+  }
+}

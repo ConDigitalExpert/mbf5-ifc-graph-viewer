@@ -1,0 +1,49 @@
+{
+  "schema": "bim-scene-delivery-1",
+  "framework": {
+    "working_scene": "OpenUSD",
+    "browser_payload": "glTF 2.0",
+    "browser_runtime": "Babylon.js"
+  },
+  "source_sha256": "b50ea1aa9fefc232b8bf485388245111e6d6bf011eb7ebdaf180096ba162a1ea",
+  "ifc_schema": "IFC2X3",
+  "coordinate_frame": {
+    "coordinate_mode": "local model coordinates; world = local + model_origin_m",
+    "model_origin_m": [
+      504265.9855,
+      5142047.22375,
+      237.105
+    ],
+    "model_offset_m": [
+      -504265.9855,
+      -5142047.22375,
+      -237.105
+    ]
+  },
+  "raw_glb": "MBF5-TEST-COORDINATION.raw.glb",
+  "display_glb": "MBF5-TEST-COORDINATION.scene.glb",
+  "usd": "MBF5-TEST-COORDINATION.usdc",
+  "mesh_objects": 3648,
+  "mapped_mesh_objects": 3648,
+  "unmapped_mesh_objects": 0,
+  "unmapped_objects": [],
+  "smooth_by_angle_degrees": 30.0,
+  "browser_mesh_compression": {
+    "extension": "KHR_draco_mesh_compression",
+    "level": 6,
+    "position_quantization_bits": 14,
+    "normal_quantization_bits": 10
+  },
+  "custom_identity_properties": [
+    "ifc_step_id",
+    "ifc_global_id",
+    "ifc_entity_type",
+    "ifc_graph_node",
+    "ifc_source_sha256",
+    "bim_geometry_id",
+    "bim_usd_prim_path",
+    "bim_editable_geometry",
+    "bim_writeback_strategy"
+  ],
+  "edit_state": "phase1-prepared-stage2-dry-run-only"
+}

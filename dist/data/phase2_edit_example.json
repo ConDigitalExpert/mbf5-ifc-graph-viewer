@@ -1,0 +1,40 @@
+{
+  "manifest_schema": "ifc-stage2-edit-1",
+  "mode": "dry_run",
+  "base": {
+    "source_model_sha256": "b50ea1aa9fefc232b8bf485388245111e6d6bf011eb7ebdaf180096ba162a1ea",
+    "ifc_schema": "IFC2X3"
+  },
+  "operations": [
+    {
+      "op_id": "op-0001",
+      "operation": "set_property",
+      "target": {
+        "global_id": "1NPTehv9HiodQDQV4dSFHv",
+        "entity_type": "IfcWallStandardCase"
+      },
+      "preconditions": [
+        {
+          "expected_entity_type": "IfcWallStandardCase",
+          "expected_global_id": "1NPTehv9HiodQDQV4dSFHv"
+        }
+      ],
+      "property_set": "Pset_WallCommon",
+      "property_name": "FireRating",
+      "express_type": "IfcLabel",
+      "value": "60 min",
+      "unit": null
+    }
+  ],
+  "constraints": {
+    "preserve_global_ids": true,
+    "preserve_unaffected_entities": true,
+    "reject_lossy_geometry_edits": true,
+    "require_zero_dangling_references": true,
+    "require_schema_parse": true
+  },
+  "provenance": {
+    "instruction_id": "example-only",
+    "reason": "Illustrates a future parameter-driven property edit; no change is applied."
+  }
+}

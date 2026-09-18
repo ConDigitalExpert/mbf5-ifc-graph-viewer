@@ -6,19 +6,13 @@
     <meta name="theme-color" content="#101820" />
     <meta
       name="description"
-      content="Interactive IFC model viewer connected to the Phase 1 BIM knowledge graph."
+      content="OpenUSD-backed BIM scene viewer connected to the Phase 1 IFC knowledge graph."
     />
     <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='14' fill='%23101820'/%3E%3Cpath d='M17 44V20l15-8 15 8v24l-15 8-15-8Z' fill='none' stroke='%23f5b942' stroke-width='4'/%3E%3Cpath d='m17 20 15 8 15-8M32 28v24' fill='none' stroke='%2349d3c1' stroke-width='4'/%3E%3C/svg%3E" />
     <link rel="stylesheet" href="./styles.css" />
-    <script type="importmap">
-      {
-        "imports": {
-          "three": "https://cdn.jsdelivr.net/npm/three@0.160.0/build/three.module.js",
-          "three/addons/": "https://cdn.jsdelivr.net/npm/three@0.160.0/examples/jsm/"
-        }
-      }
-    </script>
-    <title>IFC Graph Viewer</title>
+    <script src="https://cdn.babylonjs.com/babylon.js"></script>
+    <script src="https://cdn.babylonjs.com/loaders/babylonjs.loaders.min.js"></script>
+    <title>OpenUSD BIM Scene Viewer</title>
   </head>
   <body>
     <main class="app-shell">
@@ -27,11 +21,12 @@
           <div class="brand-mark" aria-hidden="true"><span></span><span></span><span></span></div>
           <div>
             <p class="eyebrow">Phase 1 / coordination intelligence</p>
-            <h1>IFC Graph Viewer</h1>
+            <h1>OpenUSD BIM Scene Viewer</h1>
           </div>
         </div>
         <div class="topbar-meta">
-          <span id="schema-badge" class="badge">IFC2X3</span>
+          <span id="schema-badge" class="badge">IFC2X3 · USD</span>
+          <span id="framework-badge" class="badge badge-teal">OpenUSD / Babylon.js</span>
           <span id="load-status" class="status-line"><i class="status-dot"></i>Preparing model</span>
         </div>
       </header>
@@ -39,15 +34,16 @@
       <section class="intro-strip" aria-label="Viewer instructions">
         <div>
           <p class="section-kicker">One model, one identity layer</p>
-          <p class="intro-copy">Pick an object in 3D or choose a graph node. Both routes use the IFC STEP id and GlobalId to keep the model and knowledge graph in sync.</p>
+          <p class="intro-copy">Pick an object in 3D or choose a graph node. Both routes use the IFC STEP id and GlobalId to keep the OpenUSD scene, browser geometry, and knowledge graph in sync.</p>
         </div>
         <div class="interaction-legend" aria-label="Selection modes">
           <span><b class="legend-swatch model-swatch"></b>3D pick → graph</span>
           <span><b class="legend-swatch graph-swatch"></b>Graph pick → 3D</span>
+          <span id="stage2-state" class="stage2-state">Stage 2 prepared · dry-run only</span>
         </div>
       </section>
 
-      <section class="workspace" aria-label="IFC model and graph">
+      <section class="workspace" aria-label="BIM model and graph">
         <article class="viewer-card panel">
           <div class="panel-header">
             <div>
@@ -56,11 +52,11 @@
             </div>
             <div class="viewport-hint">Double click an element to inspect</div>
           </div>
-          <div id="viewer-container" class="viewer-container" aria-label="Interactive 3D IFC model">
+          <div id="viewer-container" class="viewer-container" aria-label="Interactive 3D OpenUSD-backed BIM scene">
             <div class="viewer-loading">
               <div class="loader-ring"></div>
-              <p id="viewer-message">Loading IFC geometry…</p>
-              <small>Large IFC files can take a moment to initialize in the browser.</small>
+              <p id="viewer-message">Loading OpenUSD-backed scene geometry…</p>
+              <small>The browser loads a high-fidelity glTF delivery payload and resolves identity through the scene bridge.</small>
             </div>
             <div class="viewport-keys" aria-hidden="true">
               <span>Orbit <b>drag</b></span>
@@ -101,10 +97,10 @@
       </section>
 
       <footer class="footer-line">
-        <span>Source identity is preserved through STEP id + IFC GlobalId.</span>
+        <span>IFC remains authoritative; OpenUSD and glTF are derived linked scene layers.</span>
         <span id="source-hash">Source hash pending</span>
       </footer>
     </main>
-    <script type="module" src="./viewer.js"></script>
+    <script src="./viewer.js" defer></script>
   </body>
 </html>
