@@ -20,6 +20,10 @@ Validated on 2026-09-18 against the local build at `http://127.0.0.1:4173/compar
 | Human-readable story | Passed | Six topic cards: ceiling, access, conduit, ducts, piping, fire protection |
 | Graph is nodes and edges | Passed | 23 SVG nodes and 26 SVG edges present |
 | Story selection | Passed | Ceiling card renders before/after, evidence, and validation |
+| Change lens | Passed | Full-viewport curtain opens from a story card, graph node, or model element; linked change set is outlined and context is ghosted |
+| Exact changed-element focus | Passed | Lens cycles through the linked change records, focuses the selected element, and shows a source/revised delta marker when browser geometry is available |
+| Source/revised reveal | Passed | Curtain slider and Source/Revised controls switch the visible model side without changing the source or graph |
+| Context isolation | Passed | Changed only / Show context toggles the surrounding model between ghosted and visible states |
 | Graph issue selection | Passed | Conduit issue node selects the conduit story and model context |
 | Graph element selection | Passed | `element:1328852` selects the conduit bay change and exposes technical provenance |
 | Model selection | Passed | Direct source-canvas click produces a linked model-element selection state |

@@ -1,4 +1,4 @@
-const DATA_URL = "./data/comparison_index.json?v=20260918-change2";
+const DATA_URL = "./data/comparison_index.json?v=20260918-change4";
 
 const els = {
   status: document.querySelector("#comparison-status"),
@@ -21,6 +21,21 @@ const els = {
   opacity: document.querySelector("#overlay-opacity"),
   opacityValue: document.querySelector("#overlay-opacity-value"),
   syncCameras: document.querySelector("#sync-cameras"),
+  changeLens: document.querySelector("#change-lens"),
+  lensModeReadout: document.querySelector("#lens-mode-readout"),
+  lensKicker: document.querySelector("#lens-kicker"),
+  lensTitle: document.querySelector("#lens-title"),
+  lensSummary: document.querySelector("#lens-summary"),
+  lensCount: document.querySelector("#lens-count"),
+  lensFocus: document.querySelector("#lens-focus"),
+  lensDelta: document.querySelector("#lens-delta"),
+  lensSurfaceLabel: document.querySelector("#lens-surface-label"),
+  lensChangeTitle: document.querySelector("#lens-change-title"),
+  lensChangeCopy: document.querySelector("#lens-change-copy"),
+  lensDeltaPill: document.querySelector("#lens-delta-pill"),
+  lensContextToggle: document.querySelector("#lens-context-toggle"),
+  lensReveal: document.querySelector("#lens-reveal"),
+  lensRevealLabel: document.querySelector("#lens-reveal-label"),
   toast: document.querySelector("#comparison-toast")
 };
 
@@ -31,10 +46,16 @@ const state = {
   changeById: new Map(),
   changesByStep: new Map(),
   graphNodeById: new Map(),
+  changedStepsByGroup: new Map(),
   selectedGroupId: null,
   selectedChangeId: null,
   selectedGraphNodeId: null,
+  lensActiveChangeId: null,
   mode: "split",
+  previousMode: "split",
+  lensOpen: false,
+  lensReveal: .5,
+  lensChangedOnly: true,
   beforeOpacity: .48,
   syncCameras: true,
   cameraDriver: "after",
@@ -176,7 +197,7 @@ function createSide(sideName, url, canvas, loading, color) {
   pipeline.sharpenEnabled = true;
   pipeline.sharpen.edgeAmount = .13;
   pipeline.bloomEnabled = false;
-  const side = { name: sideName, canvas, loading, engine, scene, camera, modelRoot: null, meshes: [], meshByStep: new Map(), modelBounds: null, highlight: BABYLON.HighlightLayer ? new BABYLON.HighlightLayer(`comparison-${sideName}-highlight`, scene) : null, color, transition: null, resizeObserver: null };
+  const side = { name: sideName, canvas, loading, engine, scene, camera, modelRoot: null, meshes: [], meshByStep: new Map(), modelBounds: null, highlight: BABYLON.HighlightLayer ? new BABYLON.HighlightLayer(`comparison-${sideName}-highlight`, scene) : null, selectionGuide: null, color, transition: null, resizeObserver: null };
   if (side.highlight) side.highlight.innerGlow = false;
   canvas.addEventListener("pointerdown", () => { state.cameraDriver = sideName; });
   const resize = () => engine.resize();
@@ -224,6 +245,15 @@ function buildChangeMaps() {
       state.changesByStep.get(step).push(change.id);
     }
   }
+  state.changedStepsByGroup = new Map();
+  for (const group of state.groups) {
+    const steps = new Set();
+    for (const changeId of group.change_ids || []) {
+      const change = state.changeById.get(changeId);
+      for (const step of changeStepIds(change)) steps.add(step);
+    }
+    state.changedStepsByGroup.set(group.id, steps);
+  }
   state.graphNodeById = new Map((state.index.graph?.nodes || []).map((node) => [node.id, node]));
 }
 
@@ -252,7 +282,8 @@ function renderGroupDetail(group) {
   if (!group) return;
   const changeCount = group.change_ids?.length || 0;
   const sampleIds = (group.change_ids || []).slice(0, 3);
-  els.storyDetail.innerHTML = `<div class="detail-kicker">${esc(group.kicker)}</div><h3>${esc(group.title)}</h3><span class="detail-status">${esc(group.status)}</span><p>${esc(group.why)}</p><div class="before-after"><div class="story-side before"><span>Before</span><strong>${esc(group.before)}</strong></div><div class="story-side after"><span>After</span><strong>${esc(group.after)}</strong></div></div><div class="detail-block"><div class="detail-block-label">Evidence in this view</div><div class="detail-chip-row"><span class="detail-chip accent">${esc(group.metric)}</span><span class="detail-chip">${formatNumber(changeCount)} linked records</span><span class="detail-chip">${esc(group.evidence_stage)}</span></div></div><div class="detail-block"><div class="detail-block-label">Validation</div><div class="detail-validation">${esc(group.validation)}</div></div><div class="detail-block"><div class="detail-block-label">Choose an element</div><div class="detail-chip-row">${sampleIds.map((id) => `<button type="button" class="detail-chip" data-change="${esc(id)}">Inspect linked element</button>`).join("")}</div></div>`;
+  const changedCount = renderableStepCount(groupChangedSet(group));
+  els.storyDetail.innerHTML = `<div class="detail-kicker">${esc(group.kicker)}</div><h3>${esc(group.title)}</h3><span class="detail-status">${esc(group.status)}</span><p>${esc(group.why)}</p><div class="before-after"><div class="story-side before"><span>Before</span><strong>${esc(group.before)}</strong></div><div class="story-side after"><span>After</span><strong>${esc(group.after)}</strong></div></div><div class="detail-block"><div class="detail-block-label">Evidence in this view</div><div class="detail-chip-row"><span class="detail-chip accent">${esc(group.metric)}</span><span class="detail-chip">${formatNumber(changeCount)} linked records</span><span class="detail-chip">${formatNumber(changedCount)} visible changes</span><span class="detail-chip">${esc(group.evidence_stage)}</span></div></div><div class="detail-block"><div class="detail-block-label">Validation</div><div class="detail-validation">${esc(group.validation)}</div></div><div class="detail-block"><button type="button" class="control-button" data-action="open-lens">Open change lens</button></div><div class="detail-block"><div class="detail-block-label">Choose an element</div><div class="detail-chip-row">${sampleIds.map((id) => `<button type="button" class="detail-chip" data-change="${esc(id)}">Inspect linked element</button>`).join("")}</div></div>`;
 }
 
 function renderChangeDetail(change) {
@@ -263,7 +294,7 @@ function renderChangeDetail(change) {
   const parameterChips = change.parameters ? Object.entries(change.parameters).filter(([, value]) => value !== null && value !== undefined).slice(0, 4).map(([key, value]) => `<span class="detail-chip">${esc(key.replaceAll("_", " "))}: ${esc(Array.isArray(value) ? value.map((item) => Number(item).toFixed(2)).join(" / ") : typeof value === "number" ? value.toFixed(3) : value)}</span>`).join("") : "";
   const before = change.before?.level_m !== undefined ? `Elevation ${formatMeters(change.before.level_m)}` : change.before?.state || "Source state";
   const after = change.after?.level_m !== undefined ? `Elevation ${formatMeters(change.after.level_m)}` : change.after?.name || change.after?.state || "Revised state";
-  els.storyDetail.innerHTML = `<div class="detail-kicker">${esc(group?.kicker || "Linked change")}</div><h3>${esc(change.label)}</h3><span class="detail-status">${esc(change.status)} · ${esc(change.discipline || "Coordination")}</span><p>${esc(detailTextForChange(change))}</p><div class="before-after"><div class="story-side before"><span>Original</span><strong>${esc(before)}</strong></div><div class="story-side after"><span>Revised</span><strong>${esc(after)}</strong></div></div><div class="detail-block"><div class="detail-block-label">What this connects</div><div class="detail-chip-row">${delta}${targetLabels}${parameterChips}<span class="detail-chip">${esc(change.trace?.entity_type || "Model element")}</span></div></div><div class="detail-block"><div class="detail-block-label">Why it matters</div><div class="detail-validation">${esc(group?.why || group?.validation || "This element remains linked to its source evidence.")}</div></div><div class="detail-block"><button type="button" class="control-button" data-action="toggle-technical">Show stable element identity</button></div>`;
+  els.storyDetail.innerHTML = `<div class="detail-kicker">${esc(group?.kicker || "Linked change")}</div><h3>${esc(change.label)}</h3><span class="detail-status">${esc(change.status)} · ${esc(change.discipline || "Coordination")}</span><p>${esc(detailTextForChange(change))}</p><div class="before-after"><div class="story-side before"><span>Original</span><strong>${esc(before)}</strong></div><div class="story-side after"><span>Revised</span><strong>${esc(after)}</strong></div></div><div class="detail-block"><div class="detail-block-label">What this connects</div><div class="detail-chip-row">${delta}${targetLabels}${parameterChips}<span class="detail-chip">${esc(change.trace?.entity_type || "Model element")}</span></div></div><div class="detail-block"><div class="detail-block-label">Why it matters</div><div class="detail-validation">${esc(group?.why || group?.validation || "This element remains linked to its source evidence.")}</div></div><div class="detail-block"><div class="detail-block-label">See the physical difference</div><button type="button" class="control-button" data-action="open-lens">Open change lens</button></div><div class="detail-block"><button type="button" class="control-button" data-action="toggle-technical">Show stable element identity</button></div>`;
 }
 
 function renderTechnical(change) {
@@ -284,6 +315,96 @@ function renderTechnical(change) {
   ].filter(([, value]) => value !== null && value !== undefined && value !== "");
   const sourcePaths = (change.provenance?.source_paths || []).map((source) => `<code>${esc(source)}</code>`).join("<br />");
   els.technicalContent.innerHTML = `<div class="technical-section"><div class="technical-label">Selected change</div>${rows.map(([label, value]) => `<div class="technical-row"><span>${esc(label)}</span><code>${esc(value)}</code></div>`).join("")}</div><div class="technical-section"><div class="technical-label">Comparison data</div><div class="technical-row"><span>Stage</span><code>${esc(change.provenance?.stage_id || "—")}</code></div><div class="technical-row"><span>Status</span><code>${esc(change.status)}</code></div><div class="technical-row"><span>Group</span><code>${esc(change.group_id)}</code></div></div><div class="technical-section"><div class="technical-label">Source provenance</div><div class="technical-source">${sourcePaths || "Embedded in the comparison manifest."}</div></div>`;
+}
+
+function setLensReveal(value) {
+  const numeric = Math.min(1, Math.max(0, Number(value)));
+  state.lensReveal = numeric;
+  const sourcePercent = Math.round(numeric * 100);
+  const revisedPercent = 100 - sourcePercent;
+  els.workspace.style.setProperty("--lens-reveal-percent", `${sourcePercent}%`);
+  if (els.lensReveal) els.lensReveal.value = String(numeric);
+  if (els.lensRevealLabel) els.lensRevealLabel.textContent = `Source ${sourcePercent}% · Revised ${revisedPercent}%`;
+  if (els.lensModeReadout) els.lensModeReadout.textContent = sourcePercent === 0 ? "Revised only" : sourcePercent === 100 ? "Original only" : `Original ${sourcePercent}% · Revised ${revisedPercent}%`;
+}
+
+function renderLens() {
+  const group = state.groupById.get(state.selectedGroupId);
+  const activeId = state.lensActiveChangeId || state.selectedChangeId || group?.change_ids?.[0];
+  const change = state.changeById.get(activeId);
+  if (!group) {
+    els.lensKicker.textContent = "Select a change";
+    els.lensTitle.textContent = "Choose a story or graph node";
+    els.lensSummary.textContent = "The curtain will reveal the exact elements that moved, were added, or were rerouted.";
+    els.lensCount.textContent = "—";
+    els.lensFocus.textContent = "—";
+    els.lensDelta.textContent = "—";
+    els.lensChangeTitle.textContent = "No element selected";
+    els.lensChangeCopy.textContent = "Open the lens from a story card, graph node, or model element.";
+    els.lensDeltaPill.textContent = "—";
+    return;
+  }
+  const changed = groupChangedSet(group);
+  const renderable = renderableStepCount(changed);
+  const linkedCount = group.change_ids?.length || 0;
+  const delta = describeChangeDelta(change);
+  els.lensKicker.textContent = group.kicker || "Coordination change";
+  els.lensTitle.textContent = group.title;
+  els.lensSummary.textContent = group.after || group.why || "The revised model carries the coordinated result.";
+  els.lensCount.textContent = formatNumber(linkedCount);
+  els.lensFocus.textContent = change?.label || "Change set";
+  els.lensDelta.textContent = delta;
+  els.lensChangeTitle.textContent = change?.label || "Change set selected";
+  els.lensChangeCopy.textContent = change ? `${detailTextForChange(change)} ${group.validation ? `· ${group.validation}` : ""}` : group.why || "The linked change set is selected.";
+  els.lensDeltaPill.textContent = delta;
+  els.lensSurfaceLabel.textContent = `${formatNumber(renderable)} model ${renderable === 1 ? "element" : "elements"} outlined · ${state.lensChangedOnly ? "context ghosted" : "context visible"}`;
+  els.lensContextToggle.textContent = state.lensChangedOnly ? "Show context" : "Changed only";
+}
+
+function toggleLensContext() {
+  state.lensChangedOnly = !state.lensChangedOnly;
+  applyVisualState();
+  renderLens();
+  showToast(state.lensChangedOnly ? "Changed elements isolated" : "Context restored");
+}
+
+function cycleLensChange() {
+  const group = state.groupById.get(state.selectedGroupId);
+  const ids = group?.change_ids || [];
+  if (!ids.length) return;
+  const currentIndex = Math.max(0, ids.indexOf(state.lensActiveChangeId));
+  const nextId = ids[(currentIndex + 1) % ids.length];
+  state.lensActiveChangeId = nextId;
+  selectChange(nextId);
+}
+
+function openChangeLens() {
+  if (!state.selectedGroupId) {
+    const firstGroup = state.groups[0];
+    if (firstGroup) selectGroup(firstGroup.id);
+  }
+  const group = state.groupById.get(state.selectedGroupId);
+  if (!group) { showToast("Select a change before opening the lens"); return; }
+  state.previousMode = state.mode === "lens" ? "split" : state.mode;
+  state.lensOpen = true;
+  state.lensActiveChangeId = state.selectedChangeId || group.change_ids?.[0] || null;
+  els.changeLens.dataset.open = "true";
+  setMode("lens");
+  setLensReveal(state.lensReveal);
+  renderLens();
+  applyVisualState();
+  const change = state.changeById.get(state.lensActiveChangeId);
+  if (state.selectedChangeId && change) focusChange(change);
+  else focusGroup(group);
+  showToast("Change lens · drag the curtain to reveal the difference");
+}
+
+function closeChangeLens() {
+  state.lensOpen = false;
+  els.changeLens.dataset.open = "false";
+  setMode(state.previousMode || "split");
+  applyVisualState();
+  showToast("Back to comparison");
 }
 
 function graphLayout() {
@@ -338,26 +459,132 @@ function selectGraphNode(nodeId) {
   renderGraph();
 }
 
-function groupFocusSet(group) { return new Set((group?.focus_step_ids || []).map(Number).filter(Number.isInteger)); }
-function changeFocusSet(change) { return new Set([change?.trace?.step_id, change?.trace?.replacement_step_id, ...(change?.target_step_ids || [])].map(Number).filter(Number.isInteger)); }
+function changeStepIds(change) {
+  return [change?.trace?.step_id, change?.trace?.replacement_step_id, ...(change?.target_step_ids || [])]
+    .map(Number)
+    .filter((step) => Number.isInteger(step) && step > 0);
+}
+
+function groupFocusSet(group) {
+  return new Set((group?.focus_step_ids || []).map(Number).filter((step) => Number.isInteger(step) && step > 0));
+}
+
+function groupChangedSet(group) {
+  return state.changedStepsByGroup.get(group?.id) || new Set();
+}
+
+function changeFocusSet(change) { return new Set(changeStepIds(change)); }
+
+function renderableStepCount(steps) {
+  return [...steps].filter((step) => state.sides.before?.meshByStep.has(step) || state.sides.after?.meshByStep.has(step)).length;
+}
+
+function describeChangeDelta(change) {
+  if (!change) return "—";
+  if (change.delta_mm) return formatDelta(change.delta_mm);
+  if (change.artifact === "panel") return "600 × 600 mm";
+  if (change.artifact) return String(change.artifact).replaceAll("_", " ");
+  if (change.status === "created") return "Added";
+  return "Rerouted";
+}
+
+function clearSelectionGuide(side) {
+  if (side?.selectionGuide) {
+    side.selectionGuide.dispose(false, true);
+    side.selectionGuide = null;
+  }
+}
+
+function addBoxEdges(lines, min, max) {
+  const a = new BABYLON.Vector3(min.x, min.y, min.z);
+  const b = new BABYLON.Vector3(max.x, min.y, min.z);
+  const c = new BABYLON.Vector3(max.x, max.y, min.z);
+  const d = new BABYLON.Vector3(min.x, max.y, min.z);
+  const e = new BABYLON.Vector3(min.x, min.y, max.z);
+  const f = new BABYLON.Vector3(max.x, min.y, max.z);
+  const g = new BABYLON.Vector3(max.x, max.y, max.z);
+  const h = new BABYLON.Vector3(min.x, max.y, max.z);
+  lines.push([a, b, c, d, a], [e, f, g, h, e], [a, e], [b, f], [c, g], [d, h]);
+}
+
+function showSelectionGuide(side, change) {
+  clearSelectionGuide(side);
+  if (!state.lensOpen || !change || !side) return;
+  const primaryStep = Number(change.trace?.step_id);
+  const meshes = Number.isInteger(primaryStep) ? (side.meshByStep.get(primaryStep) || []) : [];
+  if (!meshes.length) return;
+  const bounds = boundsForMeshes(meshes);
+  const box = bounds;
+  const lines = [];
+  addBoxEdges(lines, box.min, box.max);
+  const center = box.center.clone();
+  const delta = Array.isArray(change.delta_mm) ? new BABYLON.Vector3(...change.delta_mm.map((value) => Number(value || 0) / 1000)) : null;
+  if (delta && delta.length() > .0001) {
+    const from = side.name === "before" ? center : center.subtract(delta);
+    lines.push([from, center]);
+    const direction = center.subtract(from).normalize();
+    const cap = .16;
+    const sideVector = BABYLON.Vector3.Cross(direction, BABYLON.Axis.Y);
+    if (sideVector.length() < .01) sideVector.copyFrom(BABYLON.Axis.X);
+    sideVector.normalize().scaleInPlace(cap);
+    lines.push([center.subtract(direction.scale(cap)).add(sideVector), center, center.subtract(direction.scale(cap)).subtract(sideVector)]);
+  }
+  const guideColor = side.name === "before" ? new BABYLON.Color3(1, .68, .16) : new BABYLON.Color3(.16, 1, .8);
+  const root = new BABYLON.TransformNode(`comparison-${side.name}-selection-guide-root`, side.scene);
+  const guide = BABYLON.MeshBuilder.CreateLineSystem(`comparison-${side.name}-selection-guide`, { lines, updatable: false }, side.scene);
+  guide.color = guideColor;
+  guide.alpha = .98;
+  guide.isPickable = false;
+  guide.renderingGroupId = 2;
+  guide.parent = root;
+  const markerSize = Math.max(Math.max(box.size.x, box.size.y, box.size.z) * .9, side.modelBounds.size.length() * .0015);
+  const marker = BABYLON.MeshBuilder.CreateSphere(`comparison-${side.name}-selection-marker`, { diameter: markerSize, segments: 12 }, side.scene);
+  const markerMaterial = new BABYLON.StandardMaterial(`comparison-${side.name}-selection-marker-material`, side.scene);
+  markerMaterial.disableLighting = true;
+  markerMaterial.disableDepthWrite = true;
+  markerMaterial.emissiveColor = guideColor;
+  markerMaterial.diffuseColor = guideColor;
+  markerMaterial.alpha = .48;
+  marker.material = markerMaterial;
+  marker.position.copyFrom(center);
+  marker.isPickable = false;
+  marker.renderingGroupId = 3;
+  marker.parent = root;
+  side.selectionGuide = root;
+}
 
 function applyVisualState() {
   const group = state.groupById.get(state.selectedGroupId);
   const change = state.changeById.get(state.selectedChangeId);
+  const guideChange = state.changeById.get(state.lensOpen ? state.lensActiveChangeId : state.selectedChangeId);
   const focus = groupFocusSet(group);
+  const changed = groupChangedSet(group);
   const selected = changeFocusSet(change);
   for (const sideName of ["before", "after"]) {
     const side = state.sides[sideName]; if (!side) continue;
     side.highlight?.removeAllMeshes();
+    clearSelectionGuide(side);
     for (const [stepId, meshes] of side.meshByStep.entries()) {
-      const inGroup = !group || focus.has(Number(stepId));
-      const opacity = group ? (inGroup ? 1 : .12) : 1;
+      const numericStep = Number(stepId);
+      const isChanged = changed.has(numericStep);
+      const inGroup = !group || focus.has(numericStep);
+      let opacity = 1;
+      if (group) {
+        if (state.lensOpen && state.lensChangedOnly) opacity = isChanged ? .98 : .055;
+        else opacity = isChanged ? 1 : (inGroup ? .24 : .08);
+      }
       for (const mesh of meshes) {
         mesh.visibility = opacity;
         mesh.isPickable = opacity > .01;
-        if (selected.has(Number(stepId))) side.highlight?.addMesh(mesh, sideName === "before" ? new BABYLON.Color3(.98, .65, .18) : new BABYLON.Color3(.2, .95, .78));
+        mesh.renderOutline = Boolean(group && isChanged);
+        if (mesh.renderOutline) {
+          mesh.outlineColor = sideName === "before" ? new BABYLON.Color3(.98, .65, .18) : new BABYLON.Color3(.2, .95, .78);
+          mesh.outlineWidth = state.lensOpen ? .035 : .02;
+        }
+        if (selected.has(numericStep)) side.highlight?.addMesh(mesh, sideName === "before" ? new BABYLON.Color3(.98, .65, .18) : new BABYLON.Color3(.2, .95, .78));
       }
     }
+    showSelectionGuide(side, guideChange);
   }
 }
 
@@ -365,13 +592,15 @@ function selectGroup(groupId, graphNodeId = `issue:${groupId}`) {
   const group = state.groupById.get(groupId); if (!group) return;
   state.selectedGroupId = groupId;
   state.selectedChangeId = null;
+  state.lensActiveChangeId = group.change_ids?.[0] || null;
   state.selectedGraphNodeId = graphNodeId;
   renderStoryList();
   renderGroupDetail(group);
   renderTechnical(null);
   applyVisualState();
   renderGraph();
-  const firstStep = Number(group.focus_step_ids?.find((step) => state.sides.after?.meshByStep.has(Number(step)) || state.sides.before?.meshByStep.has(Number(step))));
+  if (state.lensOpen) renderLens();
+  const firstStep = Number([...groupChangedSet(group)].find((step) => state.sides.after?.meshByStep.has(Number(step)) || state.sides.before?.meshByStep.has(Number(step))) || group.focus_step_ids?.find((step) => state.sides.after?.meshByStep.has(Number(step)) || state.sides.before?.meshByStep.has(Number(step))));
   if (Number.isInteger(firstStep)) updatePickedLabels(firstStep, group.title);
   showToast(`${group.title} · ${group.status}`);
 }
@@ -380,6 +609,7 @@ function selectChange(changeId, graphNodeId = null) {
   const change = state.changeById.get(changeId); if (!change) return;
   state.selectedGroupId = change.group_id;
   state.selectedChangeId = changeId;
+  state.lensActiveChangeId = changeId;
   state.selectedGraphNodeId = graphNodeId || (Number.isInteger(Number(change.trace?.step_id)) ? `element:${change.trace.step_id}` : `issue:${change.group_id}`);
   renderStoryList();
   renderChangeDetail(change);
@@ -388,6 +618,7 @@ function selectChange(changeId, graphNodeId = null) {
   renderGraph();
   focusChange(change);
   updatePickedLabels(change.trace?.step_id, change.label);
+  if (state.lensOpen) renderLens();
 }
 
 function selectStep(stepId, source = "model") {
@@ -403,6 +634,7 @@ function selectStep(stepId, source = "model") {
   }
   updatePickedLabels(numeric, node?.label || "Linked model element");
   renderGraph();
+  if (state.lensOpen) renderLens();
 }
 
 function updatePickedLabels(stepId, label) {
@@ -421,14 +653,28 @@ function focusChange(change) {
     const meshes = steps.flatMap((step) => side.meshByStep.get(step) || []);
     if (!meshes.length) continue;
     const bounds = boundsForMeshes(meshes);
-    animateCamera(side, { alpha: side.camera.alpha, beta: side.camera.beta, radius: Math.max(bounds.size.length() * 2.9, .75), target: bounds.center.clone() }, 440);
+    const contextRadius = Math.max(side.modelBounds.size.length() * .035, 1.5);
+    animateCamera(side, { alpha: side.camera.alpha, beta: side.camera.beta, radius: Math.max(bounds.size.length() * 4.2, contextRadius), target: bounds.center.clone() }, 440);
+  }
+}
+
+function focusGroup(group) {
+  const steps = [...groupChangedSet(group)].filter((step) => Number.isInteger(step) && step > 0);
+  for (const sideName of ["before", "after"]) {
+    const side = state.sides[sideName]; if (!side) continue;
+    const meshes = steps.flatMap((step) => side.meshByStep.get(step) || []);
+    if (!meshes.length) continue;
+    const bounds = boundsForMeshes(meshes);
+    animateCamera(side, { alpha: side.camera.alpha, beta: side.camera.beta, radius: Math.max(bounds.size.length() * 1.75, .75), target: bounds.center.clone() }, 520);
   }
 }
 
 function fitBoth(mode = "perspective") { for (const side of [state.sides.before, state.sides.after]) if (side) animateCamera(side, cameraPlan(side, mode), 520); }
 
 function clearSelection() {
+  if (state.lensOpen) closeChangeLens();
   state.selectedGroupId = null; state.selectedChangeId = null; state.selectedGraphNodeId = null;
+  state.lensActiveChangeId = null;
   renderStoryList();
   els.storyDetail.innerHTML = `<div class="empty-story"><span>✦</span><strong>Select a change</strong><small>Choose a story card, graph node, or model element.</small></div>`;
   renderTechnical(null); updateGraphSelection(null); applyVisualState(); renderGraph();
@@ -456,7 +702,7 @@ function bindSceneInput(side) {
 }
 
 function setMode(mode) {
-  state.mode = mode === "overlay" ? "overlay" : "split";
+  state.mode = ["overlay", "lens"].includes(mode) ? mode : "split";
   els.workspace.dataset.mode = state.mode;
   document.querySelectorAll("[data-mode]").forEach((button) => { if (button.matches("button")) button.classList.toggle("active", button.dataset.mode === state.mode); });
 }
@@ -493,7 +739,16 @@ function bindInterface() {
     const target = event.target.closest("button"); if (!target) return;
     if (target.dataset.group) { selectGroup(target.dataset.group); return; }
     if (target.dataset.change) { selectChange(target.dataset.change); return; }
+    if (target.dataset.lens) {
+      if (target.dataset.lens === "source") setLensReveal(1);
+      if (target.dataset.lens === "revised") setLensReveal(0);
+      if (target.dataset.lens === "toggle-context") toggleLensContext();
+      if (target.dataset.lens === "next") cycleLensChange();
+      return;
+    }
     const action = target.dataset.action;
+    if (action === "open-lens") { openChangeLens(); return; }
+    if (action === "close-lens") { closeChangeLens(); return; }
     if (action === "toggle-story") { togglePanel(els.storyDock); return; }
     if (action === "toggle-graph") { togglePanel(els.graphDock); return; }
     if (action === "toggle-technical") { togglePanel(els.technicalDrawer); return; }
@@ -509,14 +764,16 @@ function bindInterface() {
     if (target.dataset.mode) { setMode(target.dataset.mode); return; }
   });
   els.opacity.addEventListener("input", () => setOverlayOpacity(els.opacity.value));
+  els.lensReveal.addEventListener("input", () => setLensReveal(els.lensReveal.value));
   els.syncCameras.addEventListener("change", () => { state.syncCameras = els.syncCameras.checked; showToast(state.syncCameras ? "Camera sync enabled" : "Camera sync paused"); });
   document.addEventListener("keydown", (event) => {
     if (["INPUT", "TEXTAREA"].includes(document.activeElement?.tagName)) return;
-    if (event.key === "Escape") { if (state.playTimer) togglePlay(); else clearSelection(); }
+    if (event.key === "Escape") { if (state.lensOpen) closeChangeLens(); else if (state.playTimer) togglePlay(); else clearSelection(); }
     if (event.key === " ") { event.preventDefault(); togglePlay(); }
     if (event.key.toLowerCase() === "f") fitBoth();
     if (event.key.toLowerCase() === "g") togglePanel(els.graphDock);
     if (event.key.toLowerCase() === "s") togglePanel(els.storyDock);
+    if (event.key.toLowerCase() === "l") openChangeLens();
   });
 }
 
@@ -534,7 +791,7 @@ async function init() {
     if (!response.ok) throw new Error(`Comparison index returned ${response.status}`);
     state.index = await response.json();
     buildChangeMaps();
-    renderSummary(); renderStoryList(); renderGraph(); setOverlayOpacity(.48);
+    renderSummary(); renderStoryList(); renderGraph(); setOverlayOpacity(.48); setLensReveal(.5); renderLens();
     state.sides.before = createSide("before", state.index.authoritative_source.browser_geometry.url, $("#before-canvas"), els.beforeLoading, new BABYLON.Color3(.95, .66, .25));
     state.sides.after = createSide("after", state.index.revised_model.browser_geometry.url, $("#after-canvas"), els.afterLoading, new BABYLON.Color3(.24, .82, .72));
     bindSceneInput(state.sides.before); bindSceneInput(state.sides.after);

@@ -6,7 +6,7 @@
     <meta name="theme-color" content="#061014" />
     <meta name="description" content="Human-readable before and after BIM coordination comparison with linked 3D models and knowledge graph." />
     <title>MBF5 · Hallway Change Studio</title>
-    <link rel="stylesheet" href="./comparison.css?v=20260918-change1" />
+    <link rel="stylesheet" href="./comparison.css?v=20260918-change3" />
     <script src="https://cdn.babylonjs.com/babylon.js"></script>
     <script src="https://cdn.babylonjs.com/loaders/babylonjs.loaders.min.js"></script>
   </head>
@@ -23,6 +23,7 @@
         </div>
         <div class="comparison-header-actions">
           <span id="comparison-status" class="load-status"><i></i>Preparing comparison</span>
+          <button class="header-button lens-button" type="button" data-action="open-lens">Change lens</button>
           <button class="header-button" type="button" data-action="toggle-story">Story</button>
           <button class="header-button" type="button" data-action="toggle-graph">Graph</button>
           <button class="header-button accent" type="button" data-action="play">Play changes</button>
@@ -56,6 +57,40 @@
           <div class="viewport-hud glass-card"><span class="hud-label">Interaction</span><strong>Drag to orbit · Shift + drag to pan · Scroll to zoom</strong><small>Click any element to trace the same change in the graph and story.</small></div>
         </div>
 
+        <section id="change-lens" class="change-lens" data-open="false" aria-label="Change lens">
+          <div class="lens-topbar">
+            <div class="lens-brand"><span class="lens-mark" aria-hidden="true">↔</span><div><p class="eyebrow">Change lens</p><strong>See the move, not just the models</strong></div></div>
+            <div class="lens-topbar-actions"><span class="lens-readout" id="lens-mode-readout">Source + revised</span><button class="header-button" type="button" data-action="close-lens">Back to comparison</button></div>
+          </div>
+
+          <div class="lens-card lens-card-intro glass-card">
+            <span class="lens-kicker" id="lens-kicker">Select a change</span>
+            <h2 id="lens-title">Choose a story or graph node</h2>
+            <p id="lens-summary">The curtain will reveal the exact elements that moved, were added, or were rerouted.</p>
+            <div class="lens-metrics">
+              <div><span>CHANGED</span><strong id="lens-count">—</strong><small>linked elements</small></div>
+              <div><span>FOCUS</span><strong id="lens-focus">—</strong><small>selected element</small></div>
+              <div><span>DELTA</span><strong id="lens-delta">—</strong><small>model movement</small></div>
+            </div>
+          </div>
+
+          <div class="lens-legend glass-card"><span><i class="legend-swatch source-swatch"></i>Original</span><span><i class="legend-swatch revised-swatch"></i>Revised</span><span class="lens-legend-note" id="lens-surface-label">Changed set outlined</span></div>
+
+          <div class="lens-rail glass-card" aria-label="Before and after reveal control">
+            <button type="button" data-lens="source">Source</button>
+            <label for="lens-reveal"><span class="lens-rail-label" id="lens-reveal-label">Reveal 50%</span><input id="lens-reveal" type="range" min="0" max="1" step="0.01" value="0.5" /></label>
+            <button type="button" data-lens="revised">Revised</button>
+          </div>
+
+          <div class="lens-detail glass-card">
+            <div class="lens-detail-head"><div><p class="eyebrow">Selected change</p><strong id="lens-change-title">No element selected</strong></div><span class="lens-delta-pill" id="lens-delta-pill">—</span></div>
+            <p id="lens-change-copy">Open the lens from a story card, graph node, or model element.</p>
+            <div class="lens-actions"><button type="button" class="control-button" data-lens="toggle-context" id="lens-context-toggle">Show context</button><button type="button" class="control-button" data-lens="next">Next changed element</button><button type="button" class="control-button" data-action="toggle-technical">Inspect identity</button></div>
+          </div>
+
+          <div class="lens-hint"><span class="lens-hint-key">DRAG THE CURTAIN</span><span>Reveal the source on the left and the coordinated result on the right.</span></div>
+        </section>
+
         <aside id="story-dock" class="story-dock glass-card" aria-label="Human-readable change story" data-open="true">
           <div class="dock-header"><div><p class="eyebrow">Change story</p><h2>What changed and why</h2></div><button class="dock-close" type="button" data-action="toggle-story" aria-label="Hide change story">×</button></div>
           <div class="story-summary" id="story-summary"></div>
@@ -86,6 +121,6 @@
 
     <aside id="technical-drawer" class="technical-drawer" data-open="false" aria-label="Technical provenance"><div class="technical-header"><div><p class="eyebrow">Secondary reference</p><h2>Technical provenance</h2></div><button class="dock-close" type="button" data-action="toggle-technical" aria-label="Close technical provenance">×</button></div><div id="technical-content" class="technical-content"><p>Select a change to inspect its stable IFC identity, hashes, scene identity, and source evidence.</p></div></aside>
     <div id="comparison-toast" class="comparison-toast" role="status" aria-live="polite"></div>
-    <script src="./comparison.js?v=20260918-change2" defer></script>
+    <script src="./comparison.js?v=20260918-change4" defer></script>
   </body>
 </html>
