@@ -1,12 +1,12 @@
 {
   "schema": "bim-scene-validation-1",
   "source": {
-    "path": "/Users/mohamedadel/Downloads/MBF5-TEST-COORDINATION.ifc",
-    "sha256": "b50ea1aa9fefc232b8bf485388245111e6d6bf011eb7ebdaf180096ba162a1ea",
+    "path": "/Users/mohamedadel/Documents/ChatGPT/BIM Modeling Studio/stage2_ceiling_down_150mm/MBF5-TEST-COORDINATION.ceiling-down-150mm.ifc",
+    "sha256": "5a6e38fac83139580949c30ae988cbff532aeaedb8d37aeea5705e9d78035807",
     "ifc_schema": "IFC2X3"
   },
   "working_scene": {
-    "path": "bim_scene_delivery/MBF5-TEST-COORDINATION.usdc",
+    "path": "MBF5-TEST-COORDINATION.ceiling-down-150mm.usdc",
     "exists": true
   },
   "framework": {

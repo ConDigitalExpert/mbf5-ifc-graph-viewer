@@ -1,0 +1,551 @@
+{
+  "manifest_schema": "ifc-stage2-edit-1",
+  "mode": "apply",
+  "base": {
+    "source_model_sha256": "b50ea1aa9fefc232b8bf485388245111e6d6bf011eb7ebdaf180096ba162a1ea",
+    "ifc_schema": "IFC2X3"
+  },
+  "operations": [
+    {
+      "op_id": "ceiling-translation-001",
+      "operation": "update_placement",
+      "target": {
+        "global_id": "2B0HM50HKnsteHeL7LrcNv",
+        "source_step_id": 1109713,
+        "entity_type": "IfcCovering"
+      },
+      "preconditions": [
+        {
+          "expected_entity_type": "IfcCovering",
+          "expected_global_id": "2B0HM50HKnsteHeL7LrcNv",
+          "source_step_id": 1109713
+        }
+      ],
+      "placement": {
+        "translation_m": [
+          0.0,
+          0.0,
+          -0.15
+        ]
+      }
+    },
+    {
+      "op_id": "ceiling-translation-002",
+      "operation": "update_placement",
+      "target": {
+        "global_id": "1d1uy5O3SaouyJP_8cB2d0",
+        "source_step_id": 1109775,
+        "entity_type": "IfcCovering"
+      },
+      "preconditions": [
+        {
+          "expected_entity_type": "IfcCovering",
+          "expected_global_id": "1d1uy5O3SaouyJP_8cB2d0",
+          "source_step_id": 1109775
+        }
+      ],
+      "placement": {
+        "translation_m": [
+          0.0,
+          0.0,
+          -0.15
+        ]
+      }
+    },
+    {
+      "op_id": "ceiling-translation-003",
+      "operation": "update_placement",
+      "target": {
+        "global_id": "3Lenc84YKjvShM_0qyUTPd",
+        "source_step_id": 1297688,
+        "entity_type": "IfcCovering"
+      },
+      "preconditions": [
+        {
+          "expected_entity_type": "IfcCovering",
+          "expected_global_id": "3Lenc84YKjvShM_0qyUTPd",
+          "source_step_id": 1297688
+        }
+      ],
+      "placement": {
+        "translation_m": [
+          0.0,
+          0.0,
+          -0.15
+        ]
+      }
+    },
+    {
+      "op_id": "ceiling-translation-004",
+      "operation": "update_placement",
+      "target": {
+        "global_id": "2LRh4LrERTBtJzFJZyteEA",
+        "source_step_id": 1297715,
+        "entity_type": "IfcCovering"
+      },
+      "preconditions": [
+        {
+          "expected_entity_type": "IfcCovering",
+          "expected_global_id": "2LRh4LrERTBtJzFJZyteEA",
+          "source_step_id": 1297715
+        }
+      ],
+      "placement": {
+        "translation_m": [
+          0.0,
+          0.0,
+          -0.15
+        ]
+      }
+    },
+    {
+      "op_id": "ceiling-translation-005",
+      "operation": "update_placement",
+      "target": {
+        "global_id": "05Iva7IZaeIhmBVZ2wZPOb",
+        "source_step_id": 1297742,
+        "entity_type": "IfcCovering"
+      },
+      "preconditions": [
+        {
+          "expected_entity_type": "IfcCovering",
+          "expected_global_id": "05Iva7IZaeIhmBVZ2wZPOb",
+          "source_step_id": 1297742
+        }
+      ],
+      "placement": {
+        "translation_m": [
+          0.0,
+          0.0,
+          -0.15
+        ]
+      }
+    },
+    {
+      "op_id": "ceiling-translation-006",
+      "operation": "update_placement",
+      "target": {
+        "global_id": "2K_R2Wt2rnaXzVuEF1l_lP",
+        "source_step_id": 1297769,
+        "entity_type": "IfcCovering"
+      },
+      "preconditions": [
+        {
+          "expected_entity_type": "IfcCovering",
+          "expected_global_id": "2K_R2Wt2rnaXzVuEF1l_lP",
+          "source_step_id": 1297769
+        }
+      ],
+      "placement": {
+        "translation_m": [
+          0.0,
+          0.0,
+          -0.15
+        ]
+      }
+    },
+    {
+      "op_id": "ceiling-translation-007",
+      "operation": "update_placement",
+      "target": {
+        "global_id": "2CeT9aIgdHxBXOFaUshYa9",
+        "source_step_id": 1297796,
+        "entity_type": "IfcCovering"
+      },
+      "preconditions": [
+        {
+          "expected_entity_type": "IfcCovering",
+          "expected_global_id": "2CeT9aIgdHxBXOFaUshYa9",
+          "source_step_id": 1297796
+        }
+      ],
+      "placement": {
+        "translation_m": [
+          0.0,
+          0.0,
+          -0.15
+        ]
+      }
+    },
+    {
+      "op_id": "ceiling-translation-008",
+      "operation": "update_placement",
+      "target": {
+        "global_id": "1ZLAEXBKK0lEt7EKVWKket",
+        "source_step_id": 1297823,
+        "entity_type": "IfcCovering"
+      },
+      "preconditions": [
+        {
+          "expected_entity_type": "IfcCovering",
+          "expected_global_id": "1ZLAEXBKK0lEt7EKVWKket",
+          "source_step_id": 1297823
+        }
+      ],
+      "placement": {
+        "translation_m": [
+          0.0,
+          0.0,
+          -0.15
+        ]
+      }
+    },
+    {
+      "op_id": "ceiling-translation-009",
+      "operation": "update_placement",
+      "target": {
+        "global_id": "0bI6AFeEIBxqQMPBptbuFx",
+        "source_step_id": 1297860,
+        "entity_type": "IfcCovering"
+      },
+      "preconditions": [
+        {
+          "expected_entity_type": "IfcCovering",
+          "expected_global_id": "0bI6AFeEIBxqQMPBptbuFx",
+          "source_step_id": 1297860
+        }
+      ],
+      "placement": {
+        "translation_m": [
+          0.0,
+          0.0,
+          -0.15
+        ]
+      }
+    },
+    {
+      "op_id": "ceiling-translation-010",
+      "operation": "update_placement",
+      "target": {
+        "global_id": "1M3OpxCuopJT9ohGvVBDum",
+        "source_step_id": 1297928,
+        "entity_type": "IfcCovering"
+      },
+      "preconditions": [
+        {
+          "expected_entity_type": "IfcCovering",
+          "expected_global_id": "1M3OpxCuopJT9ohGvVBDum",
+          "source_step_id": 1297928
+        }
+      ],
+      "placement": {
+        "translation_m": [
+          0.0,
+          0.0,
+          -0.15
+        ]
+      }
+    },
+    {
+      "op_id": "ceiling-translation-011",
+      "operation": "update_placement",
+      "target": {
+        "global_id": "1dULTNYo1KUvvrKMJdPtb8",
+        "source_step_id": 1297960,
+        "entity_type": "IfcCovering"
+      },
+      "preconditions": [
+        {
+          "expected_entity_type": "IfcCovering",
+          "expected_global_id": "1dULTNYo1KUvvrKMJdPtb8",
+          "source_step_id": 1297960
+        }
+      ],
+      "placement": {
+        "translation_m": [
+          0.0,
+          0.0,
+          -0.15
+        ]
+      }
+    },
+    {
+      "op_id": "ceiling-translation-012",
+      "operation": "update_placement",
+      "target": {
+        "global_id": "3pfFV6U9rhezr2v1L0SHFQ",
+        "source_step_id": 1297993,
+        "entity_type": "IfcCovering"
+      },
+      "preconditions": [
+        {
+          "expected_entity_type": "IfcCovering",
+          "expected_global_id": "3pfFV6U9rhezr2v1L0SHFQ",
+          "source_step_id": 1297993
+        }
+      ],
+      "placement": {
+        "translation_m": [
+          0.0,
+          0.0,
+          -0.15
+        ]
+      }
+    },
+    {
+      "op_id": "ceiling-translation-013",
+      "operation": "update_placement",
+      "target": {
+        "global_id": "2KGAbkXaJEPPWfbHKG94qv",
+        "source_step_id": 1298020,
+        "entity_type": "IfcCovering"
+      },
+      "preconditions": [
+        {
+          "expected_entity_type": "IfcCovering",
+          "expected_global_id": "2KGAbkXaJEPPWfbHKG94qv",
+          "source_step_id": 1298020
+        }
+      ],
+      "placement": {
+        "translation_m": [
+          0.0,
+          0.0,
+          -0.15
+        ]
+      }
+    },
+    {
+      "op_id": "ceiling-translation-014",
+      "operation": "update_placement",
+      "target": {
+        "global_id": "0WRFMp0456PSGpnmN199ea",
+        "source_step_id": 1298047,
+        "entity_type": "IfcCovering"
+      },
+      "preconditions": [
+        {
+          "expected_entity_type": "IfcCovering",
+          "expected_global_id": "0WRFMp0456PSGpnmN199ea",
+          "source_step_id": 1298047
+        }
+      ],
+      "placement": {
+        "translation_m": [
+          0.0,
+          0.0,
+          -0.15
+        ]
+      }
+    },
+    {
+      "op_id": "ceiling-translation-015",
+      "operation": "update_placement",
+      "target": {
+        "global_id": "2BkzT8_U8p7Uvr20yJhFSo",
+        "source_step_id": 1298074,
+        "entity_type": "IfcCovering"
+      },
+      "preconditions": [
+        {
+          "expected_entity_type": "IfcCovering",
+          "expected_global_id": "2BkzT8_U8p7Uvr20yJhFSo",
+          "source_step_id": 1298074
+        }
+      ],
+      "placement": {
+        "translation_m": [
+          0.0,
+          0.0,
+          -0.15
+        ]
+      }
+    },
+    {
+      "op_id": "ceiling-translation-016",
+      "operation": "update_placement",
+      "target": {
+        "global_id": "0l1oZPcGnyvhTvMZjoJ7XO",
+        "source_step_id": 1298106,
+        "entity_type": "IfcCovering"
+      },
+      "preconditions": [
+        {
+          "expected_entity_type": "IfcCovering",
+          "expected_global_id": "0l1oZPcGnyvhTvMZjoJ7XO",
+          "source_step_id": 1298106
+        }
+      ],
+      "placement": {
+        "translation_m": [
+          0.0,
+          0.0,
+          -0.15
+        ]
+      }
+    },
+    {
+      "op_id": "ceiling-translation-017",
+      "operation": "update_placement",
+      "target": {
+        "global_id": "0iI0Q2d_BmrrPOHXWgrSCM",
+        "source_step_id": 1298133,
+        "entity_type": "IfcCovering"
+      },
+      "preconditions": [
+        {
+          "expected_entity_type": "IfcCovering",
+          "expected_global_id": "0iI0Q2d_BmrrPOHXWgrSCM",
+          "source_step_id": 1298133
+        }
+      ],
+      "placement": {
+        "translation_m": [
+          0.0,
+          0.0,
+          -0.15
+        ]
+      }
+    },
+    {
+      "op_id": "ceiling-translation-018",
+      "operation": "update_placement",
+      "target": {
+        "global_id": "3Fj3VeOfs1uCtyMsqw0QBn",
+        "source_step_id": 1298167,
+        "entity_type": "IfcCovering"
+      },
+      "preconditions": [
+        {
+          "expected_entity_type": "IfcCovering",
+          "expected_global_id": "3Fj3VeOfs1uCtyMsqw0QBn",
+          "source_step_id": 1298167
+        }
+      ],
+      "placement": {
+        "translation_m": [
+          0.0,
+          0.0,
+          -0.15
+        ]
+      }
+    },
+    {
+      "op_id": "ceiling-translation-019",
+      "operation": "update_placement",
+      "target": {
+        "global_id": "2lY7vMeoxmjlGI41A95PPZ",
+        "source_step_id": 1298201,
+        "entity_type": "IfcCovering"
+      },
+      "preconditions": [
+        {
+          "expected_entity_type": "IfcCovering",
+          "expected_global_id": "2lY7vMeoxmjlGI41A95PPZ",
+          "source_step_id": 1298201
+        }
+      ],
+      "placement": {
+        "translation_m": [
+          0.0,
+          0.0,
+          -0.15
+        ]
+      }
+    },
+    {
+      "op_id": "ceiling-translation-020",
+      "operation": "update_placement",
+      "target": {
+        "global_id": "0fgHmYNTwSg_QLlFlU2KL2",
+        "source_step_id": 1298228,
+        "entity_type": "IfcCovering"
+      },
+      "preconditions": [
+        {
+          "expected_entity_type": "IfcCovering",
+          "expected_global_id": "0fgHmYNTwSg_QLlFlU2KL2",
+          "source_step_id": 1298228
+        }
+      ],
+      "placement": {
+        "translation_m": [
+          0.0,
+          0.0,
+          -0.15
+        ]
+      }
+    },
+    {
+      "op_id": "ceiling-translation-021",
+      "operation": "update_placement",
+      "target": {
+        "global_id": "3eOdX5HchTJWBNBRO_qRQv",
+        "source_step_id": 1298262,
+        "entity_type": "IfcCovering"
+      },
+      "preconditions": [
+        {
+          "expected_entity_type": "IfcCovering",
+          "expected_global_id": "3eOdX5HchTJWBNBRO_qRQv",
+          "source_step_id": 1298262
+        }
+      ],
+      "placement": {
+        "translation_m": [
+          0.0,
+          0.0,
+          -0.15
+        ]
+      }
+    },
+    {
+      "op_id": "ceiling-translation-022",
+      "operation": "update_placement",
+      "target": {
+        "global_id": "3b5ADX2pgIcCSgf0pB3cNX",
+        "source_step_id": 1298301,
+        "entity_type": "IfcCovering"
+      },
+      "preconditions": [
+        {
+          "expected_entity_type": "IfcCovering",
+          "expected_global_id": "3b5ADX2pgIcCSgf0pB3cNX",
+          "source_step_id": 1298301
+        }
+      ],
+      "placement": {
+        "translation_m": [
+          0.0,
+          0.0,
+          -0.15
+        ]
+      }
+    },
+    {
+      "op_id": "ceiling-translation-023",
+      "operation": "update_placement",
+      "target": {
+        "global_id": "1s0hj3u3T2FWEBJ8TyW9vP",
+        "source_step_id": 1319954,
+        "entity_type": "IfcCovering"
+      },
+      "preconditions": [
+        {
+          "expected_entity_type": "IfcCovering",
+          "expected_global_id": "1s0hj3u3T2FWEBJ8TyW9vP",
+          "source_step_id": 1319954
+        }
+      ],
+      "placement": {
+        "translation_m": [
+          0.0,
+          0.0,
+          -0.15
+        ]
+      }
+    }
+  ],
+  "constraints": {
+    "preserve_global_ids": true,
+    "preserve_unaffected_entities": true,
+    "reject_lossy_geometry_edits": true,
+    "require_zero_dangling_references": true,
+    "require_schema_parse": true
+  },
+  "provenance": {
+    "instruction_id": "stage2-ceiling-down-150mm",
+    "requested_by": "user",
+    "reason": "Move all model ceiling coverings down 150 mm with their inferred hosted fixtures and attached distribution ports."
+  }
+}

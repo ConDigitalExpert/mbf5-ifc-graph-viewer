@@ -5,7 +5,7 @@
     "browser_payload": "glTF 2.0",
     "browser_runtime": "Babylon.js"
   },
-  "source_sha256": "b50ea1aa9fefc232b8bf485388245111e6d6bf011eb7ebdaf180096ba162a1ea",
+  "source_sha256": "5a6e38fac83139580949c30ae988cbff532aeaedb8d37aeea5705e9d78035807",
   "ifc_schema": "IFC2X3",
   "coordinate_frame": {
     "coordinate_mode": "local model coordinates; world = local + model_origin_m",
@@ -20,9 +20,9 @@
       -237.105
     ]
   },
-  "raw_glb": "MBF5-TEST-COORDINATION.raw.glb",
-  "display_glb": "MBF5-TEST-COORDINATION.scene.glb",
-  "usd": "MBF5-TEST-COORDINATION.usdc",
+  "raw_glb": "MBF5-TEST-COORDINATION.ceiling-down-150mm.raw.glb",
+  "display_glb": "MBF5-TEST-COORDINATION.ceiling-down-150mm.scene.glb",
+  "usd": "MBF5-TEST-COORDINATION.ceiling-down-150mm.usdc",
   "mesh_objects": 3648,
   "mapped_mesh_objects": 3648,
   "unmapped_mesh_objects": 0,

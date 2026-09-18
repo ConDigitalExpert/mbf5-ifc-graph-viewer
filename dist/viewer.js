@@ -140,6 +140,14 @@ function renderDetail(stepId, source) {
   const geometry = bridge?.geometry;
   const origin = state.coordinateFrame?.model_origin_m;
   const originLabel = Array.isArray(origin) ? origin.map((value) => Number(value).toFixed(4)).join(", ") : "not declared";
+  const stage2 = state.index?.stage2 || {};
+  const stage2State = state.index?.stage2_state || stage2.state || "prepared-dry-run-only";
+  const stage2Evidence = stage2.edit_manifest_url
+    ? `<div class="detail-section-label">Stage 2 edit evidence</div>
+       <div class="property-line"><span>Edit manifest</span><strong><a href="${escapeHtml(stage2.edit_manifest_url)}" target="_blank" rel="noreferrer">open JSON</a></strong></div>
+       ${stage2.impact_report_url ? `<div class="property-line"><span>Impact report</span><strong><a href="${escapeHtml(stage2.impact_report_url)}" target="_blank" rel="noreferrer">open JSON</a></strong></div>` : ""}
+       ${stage2.validation_url ? `<div class="property-line"><span>Scene validation</span><strong><a href="${escapeHtml(stage2.validation_url)}" target="_blank" rel="noreferrer">open JSON</a></strong></div>` : ""}`
+    : "";
   els.detail.className = "selection-detail";
   els.detail.innerHTML = `
     <div class="detail-head">
@@ -159,7 +167,9 @@ function renderDetail(stepId, source) {
     <div class="property-line"><span>Scene geometry id</span><strong>${escapeHtml(geometry?.geometry_id || "none")}</strong></div>
     <div class="property-line"><span>Scene coordinate frame</span><strong>local + [${escapeHtml(originLabel)}] m</strong></div>
     <div class="property-line"><span>Property source</span><strong>Full IFC graph</strong></div>
-    <div class="property-line"><span>Stage 2 writeback</span><strong>IFC-native, dry-run prepared</strong></div>
+    <div class="property-line"><span>Stage 2 writeback</span><strong>${escapeHtml(stage2State)}</strong></div>
+    ${stage2.edit_delta_mm ? `<div class="property-line"><span>Applied delta</span><strong>${stage2.edit_delta_mm.map((value) => Number(value).toFixed(0)).join(", ")} mm</strong></div>` : ""}
+    ${stage2Evidence}
     <div class="detail-section-label">Explicit graph interfaces · ${formatNumber(edges.length)}</div>
     ${renderRelationships(stepId)}
   `;
@@ -380,7 +390,8 @@ function populateSummary(index, bridge) {
   els.metricIntegrity.textContent = stats.dangling_entity_references === 0 ? "0" : formatNumber(stats.dangling_entity_references);
   els.sourceHash.textContent = `SHA-256 ${String(index.source_sha256 || "").slice(0, 16)}…`;
   els.frameworkBadge.textContent = `${bridge?.framework?.working_scene || "OpenUSD"} / ${bridge?.framework?.browser_runtime || "Babylon.js"}`;
-  els.stage2State.textContent = "Stage 2 prepared · dry-run only";
+  const stage2State = index.stage2_state || index.stage2?.state || "prepared-dry-run-only";
+  els.stage2State.textContent = stage2State.replaceAll("-", " ");
 }
 
 async function loadScene() {

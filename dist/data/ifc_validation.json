@@ -1,0 +1,18 @@
+{
+  "status": "passed",
+  "checks": {
+    "source_hash_captured": true,
+    "derived_ifc_parse_succeeded": true,
+    "entity_count_preserved_or_expected_placement_clones": true,
+    "existing_step_ids_preserved": true,
+    "only_expected_placement_entities_added": true,
+    "global_ids_preserved": true,
+    "relationship_counts_preserved": true,
+    "zero_dangling_references": true,
+    "unaffected_product_identity_preserved": true,
+    "all_affected_world_deltas_match_request": true
+  },
+  "errors": [],
+  "warnings": [],
+  "dangling_reference_count": 0
+}
