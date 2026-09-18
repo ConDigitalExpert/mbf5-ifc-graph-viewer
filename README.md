@@ -55,3 +55,32 @@ attribute changes must be applied to a cloned IFC by the Stage 2 executor, then
 the USD/glTF scene bundle must be regenerated and validated. The edit manifest,
 before/after hashes, preservation checks, and scene validation artifacts remain
 the source of truth for each writeback.
+
+## Jev decision layer
+
+The repository includes a project-local TypeSafe skill for Codex and Claude
+Code, the TypeSafe JavaScript SDK, and a shared Jev decision layer under
+`src/intelligence/jev/`. The canonical operating policy is
+`docs/jev-policy.md`; the candidate audit is in `docs/jev-audit.md`.
+
+Install or refresh dependencies with:
+
+```bash
+npm install
+```
+
+Run the bounded decision contract in fail-closed shadow mode:
+
+```bash
+npm run jev:shadow:example
+npm run jev:shadow -- --input ./path/to/request.json --telemetry ./artifacts/jev/decisions.jsonl
+```
+
+Live TypeSafe calls are enabled only when `TYPESAFE_API_KEY` is supplied to a
+server-side or CLI process. The key must never be placed in the static viewer
+or `dist/`. The default policy keeps geometry, attribute, create, and delete
+routes behind deterministic validation and explicit human approval.
+
+Use `$typesafe-ai` in Codex or `/typesafe:typesafe-ai` in Claude Code when
+designing or changing Jev workflows. Both agents read the same policy and
+share the same application contract.
