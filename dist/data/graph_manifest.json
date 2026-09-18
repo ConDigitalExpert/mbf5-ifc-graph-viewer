@@ -1,12 +1,12 @@
 {
   "graph_name": "IFC Phase 1 end-to-end knowledge graph",
-  "generated_at_utc": "2026-09-18T03:36:37.938885+00:00",
+  "generated_at_utc": "2026-09-18T08:49:17.491475+00:00",
   "source": {
-    "path": "/Users/mohamedadel/Documents/ChatGPT/BIM Modeling Studio/stage2_ceiling_down_150mm/MBF5-TEST-COORDINATION.ceiling-down-150mm.ifc",
-    "file_name": "MBF5-TEST-COORDINATION.ceiling-down-150mm.ifc",
-    "bytes": 74276246,
-    "sha256": "5a6e38fac83139580949c30ae988cbff532aeaedb8d37aeea5705e9d78035807",
-    "modified_at": "2026-09-18T03:33:49.442536+00:00"
+    "path": "/Users/mohamedadel/Documents/ChatGPT/BIM Modeling Studio/stage2_ceiling_access_panels_20260918/MBF5-TEST-COORDINATION.ceiling-access-panels.ifc",
+    "file_name": "MBF5-TEST-COORDINATION.ceiling-access-panels.ifc",
+    "bytes": 74363156,
+    "sha256": "faa5522210bdec70ac68b00287edbad1f509e18444124468e345b24154992089",
+    "modified_at": "2026-09-18T08:45:51.195350+00:00"
   },
   "parser": {
     "library": "ifcopenshell",
@@ -44,14 +44,14 @@
     "report": "report.md"
   },
   "counts": {
-    "entities": 1325990,
+    "entities": 1326846,
     "entity_types": 137,
-    "root_entities": 95104,
-    "products": 7542,
-    "elements": 3654,
-    "attribute_reference_edges": 2320964,
-    "semantic_edges": 60873,
-    "property_relation_links": 38832
+    "root_entities": 95328,
+    "products": 7606,
+    "elements": 3718,
+    "attribute_reference_edges": 2322084,
+    "semantic_edges": 61033,
+    "property_relation_links": 38864
   },
   "validation_summary": {
     "parse_succeeded": true,
@@ -60,5 +60,5 @@
     "duplicate_global_id_values": 0,
     "semantic_duplicate_pairs": 0
   },
-  "generation_seconds": 85.792
+  "generation_seconds": 95.298
 }

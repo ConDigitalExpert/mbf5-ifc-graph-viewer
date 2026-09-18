@@ -1,7 +1,7 @@
 /* global BABYLON */
 
 const DATA_URL = "./data/viewer_index.json";
-const DEFAULT_GEOMETRY_URL = "./data/MBF5-TEST-COORDINATION.scene.glb";
+const DEFAULT_GEOMETRY_URL = "./data/MBF5-TEST-COORDINATION.ceiling-access-panels.scene.glb";
 
 const els = {
   schema: document.querySelector("#schema-badge"),
