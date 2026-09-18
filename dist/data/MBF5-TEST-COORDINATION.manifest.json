@@ -1,0 +1,15 @@
+{
+  "schema": "phase1-viewer-geometry-1",
+  "source_file": "MBF5-TEST-COORDINATION.ifc",
+  "source_sha256": "b50ea1aa9fefc232b8bf485388245111e6d6bf011eb7ebdaf180096ba162a1ea",
+  "source_ifc_schema": "IFC2X3",
+  "mesh_elements_requested": 3648,
+  "mesh_elements_written": 3648,
+  "failed_elements": [],
+  "linear_deflection_m": 0.005,
+  "coordinate_mode": "IFC world coordinates; viewer recenters the scene",
+  "element_identity": "glTF node name id-<IFC STEP id>",
+  "output_file": "MBF5-TEST-COORDINATION.glb",
+  "output_bytes": 17772544,
+  "elapsed_seconds": 139.79
+}

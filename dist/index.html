@@ -1,0 +1,110 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="theme-color" content="#101820" />
+    <meta
+      name="description"
+      content="Interactive IFC model viewer connected to the Phase 1 BIM knowledge graph."
+    />
+    <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='14' fill='%23101820'/%3E%3Cpath d='M17 44V20l15-8 15 8v24l-15 8-15-8Z' fill='none' stroke='%23f5b942' stroke-width='4'/%3E%3Cpath d='m17 20 15 8 15-8M32 28v24' fill='none' stroke='%2349d3c1' stroke-width='4'/%3E%3C/svg%3E" />
+    <link rel="stylesheet" href="./styles.css" />
+    <script type="importmap">
+      {
+        "imports": {
+          "three": "https://cdn.jsdelivr.net/npm/three@0.160.0/build/three.module.js",
+          "three/addons/": "https://cdn.jsdelivr.net/npm/three@0.160.0/examples/jsm/"
+        }
+      }
+    </script>
+    <title>IFC Graph Viewer</title>
+  </head>
+  <body>
+    <main class="app-shell">
+      <header class="topbar">
+        <div class="brand-lockup">
+          <div class="brand-mark" aria-hidden="true"><span></span><span></span><span></span></div>
+          <div>
+            <p class="eyebrow">Phase 1 / coordination intelligence</p>
+            <h1>IFC Graph Viewer</h1>
+          </div>
+        </div>
+        <div class="topbar-meta">
+          <span id="schema-badge" class="badge">IFC2X3</span>
+          <span id="load-status" class="status-line"><i class="status-dot"></i>Preparing model</span>
+        </div>
+      </header>
+
+      <section class="intro-strip" aria-label="Viewer instructions">
+        <div>
+          <p class="section-kicker">One model, one identity layer</p>
+          <p class="intro-copy">Pick an object in 3D or choose a graph node. Both routes use the IFC STEP id and GlobalId to keep the model and knowledge graph in sync.</p>
+        </div>
+        <div class="interaction-legend" aria-label="Selection modes">
+          <span><b class="legend-swatch model-swatch"></b>3D pick → graph</span>
+          <span><b class="legend-swatch graph-swatch"></b>Graph pick → 3D</span>
+        </div>
+      </section>
+
+      <section class="workspace" aria-label="IFC model and graph">
+        <article class="viewer-card panel">
+          <div class="panel-header">
+            <div>
+              <p class="section-kicker">Model viewport</p>
+              <h2>MBF5 test coordination</h2>
+            </div>
+            <div class="viewport-hint">Double click an element to inspect</div>
+          </div>
+          <div id="viewer-container" class="viewer-container" aria-label="Interactive 3D IFC model">
+            <div class="viewer-loading">
+              <div class="loader-ring"></div>
+              <p id="viewer-message">Loading IFC geometry…</p>
+              <small>Large IFC files can take a moment to initialize in the browser.</small>
+            </div>
+            <div class="viewport-keys" aria-hidden="true">
+              <span>Orbit <b>drag</b></span>
+              <span>Zoom <b>scroll</b></span>
+              <span>Pan <b>shift + drag</b></span>
+            </div>
+          </div>
+        </article>
+
+        <aside class="graph-card panel" aria-label="Knowledge graph browser">
+          <div class="panel-header graph-header">
+            <div>
+              <p class="section-kicker">Knowledge graph</p>
+              <h2>Selectable nodes</h2>
+            </div>
+            <span id="node-count" class="count-label">—</span>
+          </div>
+          <label class="search-box" for="node-search">
+            <span aria-hidden="true">⌕</span>
+            <input id="node-search" type="search" placeholder="Search name, GlobalId, type…" autocomplete="off" />
+            <kbd>/</kbd>
+          </label>
+          <div class="list-caption"><span id="list-caption">Choose a node to focus both views</span><span id="list-count"></span></div>
+          <div id="node-list" class="node-list" role="listbox" aria-label="Graph nodes"></div>
+          <div id="selection-detail" class="selection-detail empty-detail">
+            <div class="empty-icon" aria-hidden="true">◎</div>
+            <p>Select a 3D element or graph node</p>
+            <small>The selected node and its explicit IFC relationships will appear here.</small>
+          </div>
+        </aside>
+      </section>
+
+      <section class="summary-grid" aria-label="Model summary">
+        <div class="metric-card"><span>Elements</span><strong id="metric-elements">—</strong><small>IfcElement occurrences</small></div>
+        <div class="metric-card"><span>Distribution ports</span><strong id="metric-ports">—</strong><small>Explicit port nodes</small></div>
+        <div class="metric-card"><span>Semantic edges</span><strong id="metric-edges">—</strong><small>Explicit IfcRel* projections</small></div>
+        <div class="metric-card"><span>Data integrity</span><strong id="metric-integrity">—</strong><small>Dangling references</small></div>
+      </section>
+
+      <footer class="footer-line">
+        <span>Source identity is preserved through STEP id + IFC GlobalId.</span>
+        <span id="source-hash">Source hash pending</span>
+      </footer>
+    </main>
+    <script type="module" src="./viewer.js"></script>
+  </body>
+</html>
