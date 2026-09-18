@@ -10,6 +10,7 @@ const els = {
   viewerLoading: document.querySelector(".viewer-loading"),
   viewerMessage: document.querySelector("#viewer-message"),
   search: document.querySelector("#node-search"),
+  searchClear: document.querySelector("#search-clear"),
   nodeList: document.querySelector("#node-list"),
   nodeCount: document.querySelector("#node-count"),
   listCaption: document.querySelector("#list-caption"),
@@ -22,6 +23,8 @@ const els = {
   metricIntegrity: document.querySelector("#metric-integrity"),
   frameworkBadge: document.querySelector("#framework-badge"),
   stage2State: document.querySelector("#stage2-state"),
+  cameraHelp: document.querySelector("#camera-help"),
+  cameraReadout: document.querySelector("#camera-readout"),
 };
 
 const state = {
@@ -35,6 +38,8 @@ const state = {
   nodeByStep: new Map(),
   edgeByIndex: [],
   searchTerm: "",
+  viewerBounds: null,
+  viewMode: "perspective",
 };
 
 function formatNumber(value) {
@@ -152,7 +157,10 @@ function renderDetail(stepId, source) {
   els.detail.innerHTML = `
     <div class="detail-head">
       <div><h3 class="detail-title">${escapeHtml(name)}</h3><div class="detail-type">${escapeHtml(node.entity_type)}</div></div>
-      <span class="detail-step">#${stepId}</span>
+      <div class="detail-head-actions">
+        <button class="detail-focus" type="button" data-camera-action="focus-selected" ${mesh ? "" : "disabled"}>Focus</button>
+        <span class="detail-step">#${stepId}</span>
+      </div>
     </div>
     <div class="detail-id"><span>GlobalId</span><code>${escapeHtml(globalId || "not assigned")}</code></div>
     <div class="detail-tags">
@@ -178,18 +186,23 @@ function renderDetail(stepId, source) {
   });
 }
 
-function setMeshHighlight(mesh, selected) {
+function setMeshHighlight(mesh, selected, hovered = false) {
   if (!mesh) return;
-  mesh.renderOutline = selected;
-  mesh.outlineColor = new BABYLON.Color3(0.96, 0.73, 0.25);
-  mesh.outlineWidth = 0.025;
+  mesh.renderOutline = selected || hovered;
+  mesh.outlineColor = selected
+    ? new BABYLON.Color3(0.96, 0.73, 0.25)
+    : new BABYLON.Color3(0.29, 0.83, 0.76);
+  mesh.outlineWidth = selected ? 0.03 : 0.018;
   mesh.showSubMeshesBoundingBox = false;
 }
 
 function clearHighlight() {
   const previous = state.viewer?.selectedMesh;
   if (previous) setMeshHighlight(previous, false);
+  const hovered = state.viewer?.hoveredMesh;
+  if (hovered && hovered !== previous) setMeshHighlight(hovered, false);
   if (state.viewer) state.viewer.selectedMesh = null;
+  if (state.viewer) state.viewer.hoveredMesh = null;
 }
 
 function parseStepId(name) {
@@ -246,12 +259,19 @@ function createBabylonViewer() {
 
   const camera = new BABYLON.ArcRotateCamera("bim-camera", -Math.PI / 2.35, Math.PI / 2.95, 50, BABYLON.Vector3.Zero(), scene);
   camera.attachControl(canvas, true);
-  camera.panningSensibility = 65;
-  camera.wheelPrecision = 55;
+  camera.panningSensibility = 75;
+  camera.panningInertia = 0.84;
+  camera.inertia = 0.82;
+  camera.wheelDeltaPercentage = 0.012;
+  camera.wheelPrecision = 28;
   camera.lowerRadiusLimit = 0.1;
   camera.upperRadiusLimit = 100000;
   camera.useBouncingBehavior = true;
   camera.useAutoRotationBehavior = false;
+  camera.lowerBetaLimit = 0.04;
+  camera.upperBetaLimit = Math.PI - 0.04;
+  camera.useCtrlForPanning = false;
+  canvas.addEventListener("contextmenu", (event) => event.preventDefault());
 
   const hemispheric = new BABYLON.HemisphericLight("bim-fill", new BABYLON.Vector3(0.15, 1, 0.25), scene);
   hemispheric.intensity = 1.35;
@@ -283,6 +303,9 @@ function createBabylonViewer() {
     modelRoot: null,
     meshByStep: new Map(),
     selectedMesh: null,
+    hoveredMesh: null,
+    cameraTransition: null,
+    pointerDown: null,
     shadowGenerator: null,
     resizeObserver: null,
   };
@@ -332,23 +355,109 @@ function addPresentationContext(bounds) {
 }
 
 function fitScene(bounds) {
+  state.viewer.viewerBounds = bounds;
   const maxDim = Math.max(bounds.size.x, bounds.size.y, bounds.size.z, 1);
-  state.viewer.camera.target.copyFrom(bounds.center);
-  state.viewer.camera.radius = maxDim * 1.42;
   state.viewer.camera.lowerRadiusLimit = Math.max(maxDim * 0.006, 0.05);
   state.viewer.camera.upperRadiusLimit = maxDim * 30;
   state.viewer.camera.minZ = Math.max(maxDim / 100000, 0.01);
   state.viewer.camera.maxZ = Math.max(maxDim * 40, 1000);
+  frameBounds(bounds, "perspective", false);
 }
 
-function focusMesh(mesh) {
+function shortestAngleDelta(from, to) {
+  return ((to - from + Math.PI) % (Math.PI * 2)) - Math.PI;
+}
+
+function cameraPlan(bounds, mode = "perspective") {
+  const maxDim = Math.max(bounds.size.x, bounds.size.y, bounds.size.z, 1);
+  const plan = {
+    alpha: -Math.PI / 2.35,
+    beta: Math.PI / 2.95,
+    radius: maxDim * 1.42,
+    target: bounds.center.clone(),
+  };
+  if (mode === "top") {
+    plan.alpha = -Math.PI / 2;
+    plan.beta = 0.16;
+    plan.radius = maxDim * 1.55;
+  } else if (mode === "front") {
+    plan.alpha = -Math.PI / 2;
+    plan.beta = Math.PI / 2;
+    plan.radius = maxDim * 1.48;
+  } else if (mode === "right") {
+    plan.alpha = 0;
+    plan.beta = Math.PI / 2;
+    plan.radius = maxDim * 1.48;
+  }
+  return plan;
+}
+
+function updateViewMode(mode) {
+  state.viewMode = mode;
+  document.querySelectorAll("[data-view]").forEach((button) => {
+    button.classList.toggle("active", button.dataset.view === mode);
+  });
+  if (els.cameraReadout) {
+    els.cameraReadout.textContent = mode === "perspective" ? "3D" : mode.toUpperCase();
+  }
+}
+
+function animateCameraTo(plan, duration = 520) {
+  if (!state.viewer) return;
+  const camera = state.viewer.camera;
+  if (state.viewer.cameraTransition?.observer) {
+    state.viewer.scene.onBeforeRenderObservable.remove(state.viewer.cameraTransition.observer);
+  }
+  const target = plan.target.clone();
+  const start = {
+    alpha: camera.alpha,
+    beta: camera.beta,
+    radius: camera.radius,
+    target: camera.target.clone(),
+  };
+  const alphaDelta = shortestAngleDelta(start.alpha, plan.alpha);
+  if (!duration) {
+    camera.alpha = plan.alpha;
+    camera.beta = plan.beta;
+    camera.radius = plan.radius;
+    camera.target.copyFrom(target);
+    state.viewer.cameraTransition = null;
+    return;
+  }
+  const started = performance.now();
+  const observer = state.viewer.scene.onBeforeRenderObservable.add(() => {
+    const raw = Math.min(1, (performance.now() - started) / duration);
+    const eased = 1 - Math.pow(1 - raw, 3);
+    camera.alpha = start.alpha + alphaDelta * eased;
+    camera.beta = start.beta + (plan.beta - start.beta) * eased;
+    camera.radius = start.radius + (plan.radius - start.radius) * eased;
+    camera.target.copyFrom(BABYLON.Vector3.Lerp(start.target, target, eased));
+    if (raw >= 1) {
+      state.viewer.scene.onBeforeRenderObservable.remove(observer);
+      state.viewer.cameraTransition = null;
+    }
+  });
+  state.viewer.cameraTransition = { observer };
+}
+
+function frameBounds(bounds, mode = "perspective", animate = true) {
+  if (!state.viewer || !bounds) return;
+  updateViewMode(mode);
+  animateCameraTo(cameraPlan(bounds, mode), animate ? 560 : 0);
+}
+
+function focusMesh(mesh, animate = true) {
   if (!mesh) return;
   mesh.computeWorldMatrix(true);
   const box = mesh.getBoundingInfo().boundingBox;
   const size = box.extendSizeWorld.scale(2);
   const distance = Math.max(size.length() * 2.2, 1);
-  state.viewer.camera.target.copyFrom(box.centerWorld);
-  state.viewer.camera.radius = distance;
+  animateCameraTo({
+    alpha: state.viewer.camera.alpha,
+    beta: state.viewer.camera.beta,
+    radius: distance,
+    target: box.centerWorld.clone(),
+  }, animate ? 460 : 0);
 }
 
 function highlightModel(stepId, focus = false) {
@@ -363,6 +472,87 @@ function highlightModel(stepId, focus = false) {
   state.viewer.selectedMesh = mesh;
   if (focus) focusMesh(mesh);
   setStatus(`Selected · #${stepId}`, "ready");
+}
+
+function emptySelectionDetail() {
+  els.detail.className = "selection-detail empty-detail";
+  els.detail.innerHTML = `
+    <div class="empty-icon" aria-hidden="true">◎</div>
+    <p>Select a 3D element or graph node</p>
+    <small>The selected node and its explicit IFC relationships will appear here.</small>
+  `;
+}
+
+function clearSelection() {
+  state.selectedStep = null;
+  clearHighlight();
+  renderNodeList();
+  emptySelectionDetail();
+  if (state.viewer) setStatus(`Model ready · ${formatNumber(state.viewer.meshByStep.size)} mapped meshes · local frame`, "ready");
+}
+
+function handleCameraAction(action) {
+  if (!state.viewer) return;
+  if (action === "frame-all" || action === "reset") {
+    frameBounds(state.viewer.viewerBounds, "perspective", true);
+    setStatus("Camera framed to full model", "ready");
+    return;
+  }
+  if (action === "focus-selected") {
+    const mesh = state.viewer.meshByStep.get(Number(state.selectedStep));
+    if (!mesh) {
+      setStatus("Select a mapped element to focus it", "");
+      return;
+    }
+    focusMesh(mesh, true);
+    setStatus(`Focused · #${state.selectedStep}`, "ready");
+    return;
+  }
+  if (action === "help") {
+    els.cameraHelp.hidden = !els.cameraHelp.hidden;
+  }
+}
+
+function pickMappedMesh() {
+  if (!state.viewer?.scene) return null;
+  const pick = state.viewer.scene.pick(
+    state.viewer.scene.pointerX,
+    state.viewer.scene.pointerY,
+    (mesh) => stepForNode(mesh) !== null,
+  );
+  return pick?.hit ? pick.pickedMesh : null;
+}
+
+function bindSceneInput() {
+  const { scene, canvas } = state.viewer;
+  scene.onPointerObservable.add((pointerInfo) => {
+    const event = pointerInfo.event;
+    if (pointerInfo.type === BABYLON.PointerEventTypes.POINTERDOWN && event.button === 0) {
+      if (state.viewer.cameraTransition?.observer) {
+        scene.onBeforeRenderObservable.remove(state.viewer.cameraTransition.observer);
+        state.viewer.cameraTransition = null;
+      }
+      state.viewer.pointerDown = { x: event.clientX, y: event.clientY, shift: event.shiftKey };
+    }
+    if (pointerInfo.type === BABYLON.PointerEventTypes.POINTERMOVE) {
+      const next = pickMappedMesh();
+      const previous = state.viewer.hoveredMesh;
+      if (previous && previous !== state.viewer.selectedMesh && previous !== next) setMeshHighlight(previous, false);
+      state.viewer.hoveredMesh = next;
+      if (next && next !== state.viewer.selectedMesh) setMeshHighlight(next, false, true);
+      canvas.style.cursor = next ? "pointer" : "grab";
+    }
+    if (pointerInfo.type === BABYLON.PointerEventTypes.POINTERUP && event.button === 0) {
+      const start = state.viewer.pointerDown;
+      state.viewer.pointerDown = null;
+      if (!start || start.shift || event.shiftKey) return;
+      const moved = Math.hypot(event.clientX - start.x, event.clientY - start.y);
+      if (moved > 6) return;
+      const mesh = pickMappedMesh();
+      const stepId = mesh ? stepForNode(mesh) : null;
+      if (Number.isInteger(stepId)) selectStep(stepId, "model");
+    }
+  });
 }
 
 async function selectStep(stepId, source = "graph") {
@@ -394,14 +584,83 @@ function populateSummary(index, bridge) {
   els.stage2State.textContent = stage2State.replaceAll("-", " ");
 }
 
+function bindInterfaceControls() {
+  els.search.addEventListener("input", (event) => {
+    state.searchTerm = event.target.value;
+    els.searchClear.hidden = !state.searchTerm;
+    renderNodeList();
+  });
+  els.searchClear.addEventListener("click", () => {
+    state.searchTerm = "";
+    els.search.value = "";
+    els.searchClear.hidden = true;
+    renderNodeList();
+    els.search.focus();
+  });
+  document.addEventListener("click", (event) => {
+    const cameraButton = event.target.closest("[data-camera-action]");
+    if (cameraButton) {
+      event.preventDefault();
+      handleCameraAction(cameraButton.dataset.cameraAction);
+      return;
+    }
+    const viewButton = event.target.closest("[data-view]");
+    if (viewButton && state.viewer?.viewerBounds) {
+      event.preventDefault();
+      frameBounds(state.viewer.viewerBounds, viewButton.dataset.view, true);
+      setStatus(`${viewButton.dataset.view[0].toUpperCase()}${viewButton.dataset.view.slice(1)} view`, "ready");
+    }
+  });
+  document.addEventListener("keydown", (event) => {
+    const editing = ["INPUT", "TEXTAREA", "SELECT"].includes(document.activeElement?.tagName);
+    if (event.key === "/" && !editing) {
+      event.preventDefault();
+      els.search.focus();
+      return;
+    }
+    if (event.key === "Escape") {
+      els.cameraHelp.hidden = true;
+      if (editing && state.searchTerm) {
+        state.searchTerm = "";
+        els.search.value = "";
+        els.searchClear.hidden = true;
+        renderNodeList();
+        return;
+      }
+      clearSelection();
+      return;
+    }
+    if (editing) return;
+    const shortcut = event.key.toLowerCase();
+    if (shortcut === "f") handleCameraAction("frame-all");
+    if (shortcut === "h") handleCameraAction("focus-selected");
+    if (shortcut === "r") handleCameraAction("reset");
+    if (shortcut === "1" && state.viewer?.viewerBounds) frameBounds(state.viewer.viewerBounds, "top", true);
+    if (shortcut === "2" && state.viewer?.viewerBounds) frameBounds(state.viewer.viewerBounds, "front", true);
+    if (shortcut === "3" && state.viewer?.viewerBounds) frameBounds(state.viewer.viewerBounds, "right", true);
+    if (event.key === "?") handleCameraAction("help");
+  });
+}
+
 async function loadScene() {
   state.viewer = createBabylonViewer();
-  els.viewer.addEventListener("dblclick", pickModelItem);
+  bindSceneInput();
   setStatus("Loading premium scene payload", "");
   els.viewerMessage.textContent = "Loading OpenUSD-backed scene geometry…";
   const geometryUrl = state.index.geometry_url || DEFAULT_GEOMETRY_URL;
   const { root, file } = splitAssetUrl(geometryUrl);
-  const result = await BABYLON.SceneLoader.ImportMeshAsync(null, root, file, state.viewer.scene);
+  const result = await BABYLON.SceneLoader.ImportMeshAsync(
+    null,
+    root,
+    file,
+    state.viewer.scene,
+    (progress) => {
+      if (progress?.lengthComputable) {
+        const percent = Math.round((progress.loaded / progress.total) * 100);
+        setStatus(`Loading scene · ${percent}%`, "");
+      }
+    },
+  );
   const importedMeshes = result.meshes.filter((mesh) => mesh.getTotalVertices?.() > 0);
   state.viewer.modelRoot = new BABYLON.TransformNode("bim-model-root", state.viewer.scene);
   for (const mesh of importedMeshes) {
@@ -416,7 +675,7 @@ async function loadScene() {
   fitScene(centeredBounds);
   els.viewerLoading.classList.add("ready");
   setStatus(`Model ready · ${formatNumber(state.viewer.meshByStep.size)} mapped meshes · local frame`, "ready");
-  els.viewerMessage.textContent = "Double click an element to select it in the graph.";
+    els.viewerMessage.textContent = "Click an element to select it in the graph.";
 }
 
 async function init() {
@@ -437,16 +696,7 @@ async function init() {
     state.allNodes.forEach((node) => state.nodeByStep.set(Number(node.step_id), node));
     populateSummary(state.index, state.bridge);
     renderNodeList();
-    els.search.addEventListener("input", (event) => {
-      state.searchTerm = event.target.value;
-      renderNodeList();
-    });
-    document.addEventListener("keydown", (event) => {
-      if (event.key === "/" && document.activeElement !== els.search) {
-        event.preventDefault();
-        els.search.focus();
-      }
-    });
+    bindInterfaceControls();
     await loadScene();
   } catch (error) {
     console.error(error);

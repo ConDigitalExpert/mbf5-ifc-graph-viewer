@@ -9,7 +9,7 @@
       content="OpenUSD-backed BIM scene viewer connected to the Phase 1 IFC knowledge graph."
     />
     <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='14' fill='%23101820'/%3E%3Cpath d='M17 44V20l15-8 15 8v24l-15 8-15-8Z' fill='none' stroke='%23f5b942' stroke-width='4'/%3E%3Cpath d='m17 20 15 8 15-8M32 28v24' fill='none' stroke='%2349d3c1' stroke-width='4'/%3E%3C/svg%3E" />
-    <link rel="stylesheet" href="./styles.css" />
+    <link rel="stylesheet" href="./styles.css?v=20260918-premium2" />
     <script src="https://cdn.babylonjs.com/babylon.js"></script>
     <script src="https://cdn.babylonjs.com/loaders/babylonjs.loaders.min.js"></script>
     <title>OpenUSD BIM Scene Viewer</title>
@@ -50,18 +50,51 @@
               <p class="section-kicker">Model viewport</p>
               <h2>MBF5 test coordination</h2>
             </div>
-            <div class="viewport-hint">Double click an element to inspect</div>
+            <div class="viewport-hint" id="viewport-hint">Click an element to inspect · F to frame · ? for help</div>
           </div>
           <div id="viewer-container" class="viewer-container" aria-label="Interactive 3D OpenUSD-backed BIM scene">
             <div class="viewer-loading">
               <div class="loader-ring"></div>
               <p id="viewer-message">Loading OpenUSD-backed scene geometry…</p>
-              <small>The browser loads a high-fidelity glTF delivery payload and resolves identity through the scene bridge.</small>
+              <small>Preparing the linked scene and IFC identity layer.</small>
             </div>
-            <div class="viewport-keys" aria-hidden="true">
-              <span>Orbit <b>drag</b></span>
-              <span>Zoom <b>scroll</b></span>
-              <span>Pan <b>shift + drag</b></span>
+            <div class="viewport-chrome">
+              <div class="viewport-toolbar" aria-label="Viewport controls">
+                <span class="toolbar-label">Navigate</span>
+                <span id="camera-readout" class="camera-readout">3D</span>
+                <button class="icon-button" type="button" data-camera-action="frame-all" title="Frame all (F)" aria-label="Frame all">
+                  <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 9V5h4M15 5h4v4M19 15v4h-4M9 19H5v-4"/><path d="M8 8h8v8H8z"/></svg>
+                </button>
+                <button class="icon-button" type="button" data-camera-action="focus-selected" title="Focus selected (H)" aria-label="Focus selected">
+                  <svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="5"/><path d="M12 3v3M12 18v3M3 12h3M18 12h3"/></svg>
+                </button>
+                <button class="icon-button" type="button" data-camera-action="reset" title="Reset camera (R)" aria-label="Reset camera">
+                  <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 8V4m0 0h4M5 4a8 8 0 1 1-1.2 9.5"/><path d="M12 8v4l3 2"/></svg>
+                </button>
+                <span class="toolbar-divider" aria-hidden="true"></span>
+                <button class="view-button active" type="button" data-view="perspective" title="Perspective view">3D</button>
+                <button class="view-button" type="button" data-view="top" title="Top view">TOP</button>
+                <button class="view-button" type="button" data-view="front" title="Front view">FRONT</button>
+                <button class="view-button" type="button" data-view="right" title="Right view">RIGHT</button>
+              </div>
+              <div class="viewport-float-actions">
+                <button class="icon-button glass-button" type="button" data-camera-action="help" title="Navigation shortcuts (?)" aria-label="Navigation shortcuts">?</button>
+              </div>
+              <div id="camera-help" class="camera-help" hidden>
+                <div class="camera-help-title">Navigation shortcuts</div>
+                <div><kbd>drag</kbd> orbit <kbd>shift</kbd> + drag pan</div>
+                <div><kbd>scroll</kbd> zoom <kbd>F</kbd> frame all <kbd>H</kbd> focus</div>
+                <div><kbd>1</kbd> top <kbd>2</kbd> front <kbd>3</kbd> right <kbd>R</kbd> reset</div>
+              </div>
+              <div class="axis-gizmo" aria-label="Local coordinate frame">
+                <span class="axis-z">Z</span><span class="axis-y">Y</span><span class="axis-x">X</span>
+                <small>LOCAL FRAME</small>
+              </div>
+              <div class="viewport-keys" aria-hidden="true">
+                <span>Orbit <b>drag</b></span>
+                <span>Zoom <b>scroll</b></span>
+                <span>Pan <b>shift + drag</b></span>
+              </div>
             </div>
           </div>
         </article>
@@ -76,10 +109,11 @@
           </div>
           <label class="search-box" for="node-search">
             <span aria-hidden="true">⌕</span>
-            <input id="node-search" type="search" placeholder="Search name, GlobalId, type…" autocomplete="off" />
+            <input id="node-search" type="search" placeholder="Search elements, GlobalId, STEP…" autocomplete="off" aria-label="Search knowledge graph" />
+            <button id="search-clear" class="search-clear" type="button" aria-label="Clear search" title="Clear search" hidden>×</button>
             <kbd>/</kbd>
           </label>
-          <div class="list-caption"><span id="list-caption">Choose a node to focus both views</span><span id="list-count"></span></div>
+          <div class="list-caption"><span id="list-caption">Choose a node to focus both views</span><span id="list-count" aria-live="polite"></span></div>
           <div id="node-list" class="node-list" role="listbox" aria-label="Graph nodes"></div>
           <div id="selection-detail" class="selection-detail empty-detail">
             <div class="empty-icon" aria-hidden="true">◎</div>
@@ -101,6 +135,6 @@
         <span id="source-hash">Source hash pending</span>
       </footer>
     </main>
-    <script src="./viewer.js" defer></script>
+    <script src="./viewer.js?v=20260918-premium2" defer></script>
   </body>
 </html>
