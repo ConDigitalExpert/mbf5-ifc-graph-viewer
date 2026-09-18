@@ -1,0 +1,59 @@
+{
+  "schema": "bim-scene-validation-1",
+  "source": {
+    "path": "/Users/mohamedadel/Documents/ChatGPT/BIM Modeling Studio/stage2_hallway_coordination_20260918/MBF5-TEST-COORDINATION.hallway-coordination.ifc",
+    "sha256": "74a5d741b3092ed531b6538ce4935f7251321b0ba8a64782f0142c75d509df2d",
+    "ifc_schema": "IFC2X3"
+  },
+  "working_scene": {
+    "path": "MBF5-TEST-COORDINATION.hallway-coordination.usdc",
+    "exists": true
+  },
+  "framework": {
+    "working_scene": "OpenUSD",
+    "browser_payload": "glTF 2.0",
+    "browser_runtime": "Babylon.js",
+    "semantic_data_layer": "IFC Phase 1 knowledge graph"
+  },
+  "counts": {
+    "ifc_products": 7608,
+    "represented_products": 3712,
+    "gltf_identity_nodes": 3712,
+    "usd_identity_records": 3712,
+    "draco_primitives": 4024
+  },
+  "coordinate_frame": {
+    "declared_local": true,
+    "model_origin_m": [
+      504265.9855,
+      5142047.22375,
+      237.105
+    ],
+    "position_bounds_m": [
+      [
+        -22.560216903686523,
+        -102.46282196044922,
+        -2.0676987171173096
+      ],
+      [
+        35.859283447265625,
+        -19.534242630004883,
+        4.611999988555908
+      ]
+    ],
+    "max_absolute_local_coordinate_m": 102.46282196044922
+  },
+  "checks": {
+    "source_hash_matches_graph": true,
+    "source_hash_matches_bridge": true,
+    "gltf_identity_coverage": true,
+    "usd_parses": true,
+    "duplicate_global_ids": true,
+    "duplicate_geometry_ids": true,
+    "local_coordinate_frame": true,
+    "browser_draco_compression": true
+  },
+  "errors": [],
+  "warnings": [],
+  "status": "passed"
+}

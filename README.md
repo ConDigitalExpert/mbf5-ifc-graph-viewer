@@ -4,10 +4,17 @@ This static site is the linked viewer for `MBF5-TEST-COORDINATION.ifc`.
 IFC remains authoritative. OpenUSD is the working scene layer, glTF is the
 browser delivery layer, and Babylon.js is the browser runtime.
 
-The current snapshot includes the validated Stage 2 ceiling access-panel
-evidence: 32 IFC-native 600 x 600 mm access panels are linked to 60 named
-valves and 2 mechanical equipment instances in the derived IFC clone and
-scene bundle. The original IFC is unchanged.
+The current snapshot includes the validated Stage 2 hallway coordination
+branch built on top of the ceiling access-panel branch. It contains a
+4 ft x 6 in conduit bay with 2 in Unistrut, preserved-size duct reroutes,
+north-wall mechanical and domestic piping coordination, and fire-protection
+branch separation from lighting. The earlier ceiling access-panel evidence
+remains available beside it. The original IFC is unchanged.
+
+- `dist/data/MBF5-TEST-COORDINATION.hallway-coordination.ifc.gz` is the current compressed derived IFC archive used for traceability.
+- `dist/data/MBF5-TEST-COORDINATION.hallway-coordination.scene.glb` is the current Draco-compressed browser scene; its nodes remain named `id-<IFC STEP id>`.
+- `dist/data/MBF5-TEST-COORDINATION.hallway-coordination.scene_bridge.json` links each represented product to its IFC STEP ID, GlobalId, graph node, USD prim, and glTF node.
+- `dist/data/hallway_coordination_implementation_report.md` records the applied operations, validation, residual screening candidates, and Stage 2 edit foundation.
 
 - `dist/data/MBF5-TEST-COORDINATION.ceiling-access-panels.ifc.gz` is the compressed derived IFC archive used for traceability; the original IFC remains unchanged in the analysis workspace.
 - `bim_scene_delivery/MBF5-TEST-COORDINATION.usdc` is the local OpenUSD working scene. Each USD prim carries IFC identity and provenance custom properties; the browser host does not need to download this binary.

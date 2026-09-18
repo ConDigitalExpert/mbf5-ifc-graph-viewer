@@ -1,551 +1,711 @@
 {
-  "manifest_schema": "ifc-stage2-edit-1",
+  "schema": "ifc-stage2-edit-1",
   "mode": "apply",
+  "instruction_id": "stage2-hallway-coordination-20260918",
   "base": {
-    "source_model_sha256": "b50ea1aa9fefc232b8bf485388245111e6d6bf011eb7ebdaf180096ba162a1ea",
-    "ifc_schema": "IFC2X3"
+    "source_model_sha256": "faa5522210bdec70ac68b00287edbad1f509e18444124468e345b24154992089",
+    "ifc_schema": "IFC2X3",
+    "authoritative_original_sha256": "b50ea1aa9fefc232b8bf485388245111e6d6bf011eb7ebdaf180096ba162a1ea"
+  },
+  "constraints": {
+    "preserve_global_ids": true,
+    "preserve_duct_sizes": true,
+    "standard_duct_fittings": true,
+    "north_wall_piping": true,
+    "top_tapped_branches": true,
+    "sprinkler_main_adjacent_to_mechanical": true,
+    "fire_branch_no_lighting_crossing": true,
+    "conduit_bay_m": [
+      1.2192,
+      0.1524
+    ],
+    "unistrut_depth_m": 0.0508,
+    "service_tolerance_m": 0.0254
   },
   "operations": [
     {
-      "op_id": "ceiling-translation-001",
-      "operation": "update_placement",
+      "operation": "create_conduit_bay",
       "target": {
-        "global_id": "2B0HM50HKnsteHeL7LrcNv",
-        "source_step_id": 1109713,
-        "entity_type": "IfcCovering"
+        "global_id": "03R7aB9w58u8CnNYpUuTfB",
+        "source_step_id": 1328852,
+        "entity_type": "IfcBuildingElementProxy"
       },
-      "preconditions": [
-        {
-          "expected_entity_type": "IfcCovering",
-          "expected_global_id": "2B0HM50HKnsteHeL7LrcNv",
-          "source_step_id": 1109713
-        }
-      ],
-      "placement": {
-        "translation_m": [
-          0.0,
-          0.0,
-          -0.15
+      "geometry": {
+        "width_m": 1.2192,
+        "depth_m": 0.1524,
+        "bottom_z_m": 240.2672,
+        "top_z_m": 240.4196,
+        "s_m": [
+          5158057.410680801,
+          5158085.06418079
+        ],
+        "q_m": [
+          -297694.76776483044,
+          -297693.54856483045
         ]
-      }
+      },
+      "status": "applied"
     },
     {
-      "op_id": "ceiling-translation-002",
-      "operation": "update_placement",
+      "operation": "create_unistrut",
       "target": {
-        "global_id": "1d1uy5O3SaouyJP_8cB2d0",
-        "source_step_id": 1109775,
-        "entity_type": "IfcCovering"
+        "global_id": "1zE7H6bVb0XfLn_Tq7M3pH",
+        "source_step_id": 1328867,
+        "entity_type": "IfcMember"
       },
-      "preconditions": [
-        {
-          "expected_entity_type": "IfcCovering",
-          "expected_global_id": "1d1uy5O3SaouyJP_8cB2d0",
-          "source_step_id": 1109775
-        }
-      ],
-      "placement": {
-        "translation_m": [
-          0.0,
-          0.0,
-          -0.15
-        ]
-      }
+      "geometry": {
+        "depth_m": 0.0508,
+        "bottom_z_m": 240.2164
+      },
+      "status": "applied"
     },
     {
-      "op_id": "ceiling-translation-003",
-      "operation": "update_placement",
+      "operation": "supersede_electrical_space_holder",
       "target": {
-        "global_id": "3Lenc84YKjvShM_0qyUTPd",
-        "source_step_id": 1297688,
-        "entity_type": "IfcCovering"
+        "global_id": "2So3vAOC5n4Ei3_P_AO35X",
+        "source_step_id": 1050030,
+        "entity_type": "IfcFlowSegment"
       },
-      "preconditions": [
-        {
-          "expected_entity_type": "IfcCovering",
-          "expected_global_id": "3Lenc84YKjvShM_0qyUTPd",
-          "source_step_id": 1297688
-        }
-      ],
-      "placement": {
-        "translation_m": [
-          0.0,
-          0.0,
-          -0.15
-        ]
-      }
+      "replacement": {
+        "global_id": "03R7aB9w58u8CnNYpUuTfB",
+        "source_step_id": 1328852,
+        "entity_type": "IfcBuildingElementProxy"
+      },
+      "status": "applied"
     },
     {
-      "op_id": "ceiling-translation-004",
-      "operation": "update_placement",
+      "operation": "supersede_electrical_space_holder",
       "target": {
-        "global_id": "2LRh4LrERTBtJzFJZyteEA",
-        "source_step_id": 1297715,
-        "entity_type": "IfcCovering"
+        "global_id": "2qt35nCrppJJnfRA3BLHqZ",
+        "source_step_id": 1049965,
+        "entity_type": "IfcFlowSegment"
       },
-      "preconditions": [
-        {
-          "expected_entity_type": "IfcCovering",
-          "expected_global_id": "2LRh4LrERTBtJzFJZyteEA",
-          "source_step_id": 1297715
-        }
-      ],
-      "placement": {
-        "translation_m": [
-          0.0,
-          0.0,
-          -0.15
-        ]
-      }
+      "replacement": {
+        "global_id": "03R7aB9w58u8CnNYpUuTfB",
+        "source_step_id": 1328852,
+        "entity_type": "IfcBuildingElementProxy"
+      },
+      "status": "applied"
     },
     {
-      "op_id": "ceiling-translation-005",
-      "operation": "update_placement",
+      "operation": "reroute_duct_cell",
       "target": {
-        "global_id": "05Iva7IZaeIhmBVZ2wZPOb",
-        "source_step_id": 1297742,
-        "entity_type": "IfcCovering"
+        "global_id": "1LRMvJkhE$BMMHPDG_ostX",
+        "source_step_id": 100414,
+        "entity_type": "IfcFlowSegment"
       },
-      "preconditions": [
-        {
-          "expected_entity_type": "IfcCovering",
-          "expected_global_id": "05Iva7IZaeIhmBVZ2wZPOb",
-          "source_step_id": 1297742
-        }
+      "delta_m": [
+        -0.5927688084,
+        0.0928716294,
+        0.0
       ],
-      "placement": {
-        "translation_m": [
-          0.0,
-          0.0,
-          -0.15
-        ]
-      }
+      "reason": "S/A 102 mitered elbow moved away from conduit bay",
+      "status": "applied"
     },
     {
-      "op_id": "ceiling-translation-006",
-      "operation": "update_placement",
+      "operation": "reroute_duct_cell",
       "target": {
-        "global_id": "2K_R2Wt2rnaXzVuEF1l_lP",
-        "source_step_id": 1297769,
-        "entity_type": "IfcCovering"
+        "global_id": "1jHS7UxC0esyyXb_J209bR",
+        "source_step_id": 100483,
+        "entity_type": "IfcFlowFitting"
       },
-      "preconditions": [
-        {
-          "expected_entity_type": "IfcCovering",
-          "expected_global_id": "2K_R2Wt2rnaXzVuEF1l_lP",
-          "source_step_id": 1297769
-        }
+      "delta_m": [
+        -0.5927688084,
+        0.0928716294,
+        0.0
       ],
-      "placement": {
-        "translation_m": [
-          0.0,
-          0.0,
-          -0.15
-        ]
-      }
+      "reason": "S/A 102 radius elbow moved with connected duct cell",
+      "status": "applied"
     },
     {
-      "op_id": "ceiling-translation-007",
-      "operation": "update_placement",
+      "operation": "reroute_duct_cell",
       "target": {
-        "global_id": "2CeT9aIgdHxBXOFaUshYa9",
-        "source_step_id": 1297796,
-        "entity_type": "IfcCovering"
+        "global_id": "0Ut5FESmrgtyK1kbwYHCyV",
+        "source_step_id": 24707,
+        "entity_type": "IfcFlowSegment"
       },
-      "preconditions": [
-        {
-          "expected_entity_type": "IfcCovering",
-          "expected_global_id": "2CeT9aIgdHxBXOFaUshYa9",
-          "source_step_id": 1297796
-        }
+      "delta_m": [
+        1.1855376168,
+        -0.1857432588,
+        0.0
       ],
-      "placement": {
-        "translation_m": [
-          0.0,
-          0.0,
-          -0.15
-        ]
-      }
+      "reason": "S/A 5 large duct moved into the central duct lane",
+      "status": "applied"
     },
     {
-      "op_id": "ceiling-translation-008",
-      "operation": "update_placement",
+      "operation": "reroute_duct_cell",
       "target": {
-        "global_id": "1ZLAEXBKK0lEt7EKVWKket",
-        "source_step_id": 1297823,
-        "entity_type": "IfcCovering"
+        "global_id": "2fdGCmQvqVF37zCXeMizUm",
+        "source_step_id": 60996,
+        "entity_type": "IfcFlowFitting"
       },
-      "preconditions": [
-        {
-          "expected_entity_type": "IfcCovering",
-          "expected_global_id": "1ZLAEXBKK0lEt7EKVWKket",
-          "source_step_id": 1297823
-        }
+      "delta_m": [
+        1.1855376168,
+        -0.1857432588,
+        0.0
       ],
-      "placement": {
-        "translation_m": [
-          0.0,
-          0.0,
-          -0.15
-        ]
-      }
+      "reason": "S/A 5 standard transition moved with the large duct",
+      "status": "applied"
     },
     {
-      "op_id": "ceiling-translation-009",
-      "operation": "update_placement",
+      "operation": "reroute_duct_cell",
       "target": {
-        "global_id": "0bI6AFeEIBxqQMPBptbuFx",
-        "source_step_id": 1297860,
-        "entity_type": "IfcCovering"
+        "global_id": "3G4M30Eh0EDXqhMot74yo3",
+        "source_step_id": 44888,
+        "entity_type": "IfcBuildingElementProxy"
       },
-      "preconditions": [
-        {
-          "expected_entity_type": "IfcCovering",
-          "expected_global_id": "0bI6AFeEIBxqQMPBptbuFx",
-          "source_step_id": 1297860
-        }
+      "delta_m": [
+        1.1855376168,
+        -0.1857432588,
+        0.0
       ],
-      "placement": {
-        "translation_m": [
-          0.0,
-          0.0,
-          -0.15
-        ]
-      }
+      "reason": "S/A 5 silencer moved with the large duct cell",
+      "status": "applied"
     },
     {
-      "op_id": "ceiling-translation-010",
-      "operation": "update_placement",
+      "operation": "reroute_duct_cell",
       "target": {
-        "global_id": "1M3OpxCuopJT9ohGvVBDum",
-        "source_step_id": 1297928,
-        "entity_type": "IfcCovering"
+        "global_id": "161fsNxoqNG4UG6uL260zV",
+        "source_step_id": 74563,
+        "entity_type": "IfcFlowFitting"
       },
-      "preconditions": [
-        {
-          "expected_entity_type": "IfcCovering",
-          "expected_global_id": "1M3OpxCuopJT9ohGvVBDum",
-          "source_step_id": 1297928
-        }
+      "delta_m": [
+        1.1855376168,
+        -0.1857432588,
+        0.0
       ],
-      "placement": {
-        "translation_m": [
-          0.0,
-          0.0,
-          -0.15
-        ]
-      }
+      "reason": "S/A 5 standard rectangular tap moved with the large duct cell",
+      "status": "applied"
     },
     {
-      "op_id": "ceiling-translation-011",
-      "operation": "update_placement",
+      "operation": "reroute_duct_cell",
       "target": {
-        "global_id": "1dULTNYo1KUvvrKMJdPtb8",
-        "source_step_id": 1297960,
-        "entity_type": "IfcCovering"
+        "global_id": "2UrsLVPwEfEzmf01cozchA",
+        "source_step_id": 91955,
+        "entity_type": "IfcFlowFitting"
       },
-      "preconditions": [
-        {
-          "expected_entity_type": "IfcCovering",
-          "expected_global_id": "1dULTNYo1KUvvrKMJdPtb8",
-          "source_step_id": 1297960
-        }
+      "delta_m": [
+        1.1855376168,
+        -0.1857432588,
+        0.0
       ],
-      "placement": {
-        "translation_m": [
-          0.0,
-          0.0,
-          -0.15
-        ]
-      }
+      "reason": "S/A 5 standard rectangular tap moved with the large duct cell",
+      "status": "applied"
     },
     {
-      "op_id": "ceiling-translation-012",
-      "operation": "update_placement",
+      "operation": "reroute_duct_cell",
       "target": {
-        "global_id": "3pfFV6U9rhezr2v1L0SHFQ",
-        "source_step_id": 1297993,
-        "entity_type": "IfcCovering"
+        "global_id": "31LZ6ZW7Z9hm7B25blRYdD",
+        "source_step_id": 65358,
+        "entity_type": "IfcFlowFitting"
       },
-      "preconditions": [
-        {
-          "expected_entity_type": "IfcCovering",
-          "expected_global_id": "3pfFV6U9rhezr2v1L0SHFQ",
-          "source_step_id": 1297993
-        }
+      "delta_m": [
+        1.1855376168,
+        -0.1857432588,
+        0.0
       ],
-      "placement": {
-        "translation_m": [
-          0.0,
-          0.0,
-          -0.15
-        ]
-      }
+      "reason": "S/A 5 standard round tap moved with the large duct cell",
+      "status": "applied"
     },
     {
-      "op_id": "ceiling-translation-013",
-      "operation": "update_placement",
+      "operation": "lower_top_tap_window",
       "target": {
-        "global_id": "2KGAbkXaJEPPWfbHKG94qv",
-        "source_step_id": 1298020,
-        "entity_type": "IfcCovering"
+        "global_id": "2H9vPtA8oD5qd81xdrVpK5",
+        "source_step_id": 809577,
+        "entity_type": "IfcFlowSegment"
       },
-      "preconditions": [
-        {
-          "expected_entity_type": "IfcCovering",
-          "expected_global_id": "2KGAbkXaJEPPWfbHKG94qv",
-          "source_step_id": 1298020
-        }
+      "delta_m": [
+        0.0,
+        0.0,
+        -0.22
       ],
-      "placement": {
-        "translation_m": [
-          0.0,
-          0.0,
-          -0.15
-        ]
-      }
+      "reason": "Lowered cross-hall tap window; branch orientation remains top-tapped and the conduit bay stays above it.",
+      "status": "applied"
     },
     {
-      "op_id": "ceiling-translation-014",
-      "operation": "update_placement",
+      "operation": "lower_top_tap_window",
       "target": {
-        "global_id": "0WRFMp0456PSGpnmN199ea",
-        "source_step_id": 1298047,
-        "entity_type": "IfcCovering"
+        "global_id": "3l4PJRHlEbUAUJ562Ikdl6",
+        "source_step_id": 809725,
+        "entity_type": "IfcFlowSegment"
       },
-      "preconditions": [
-        {
-          "expected_entity_type": "IfcCovering",
-          "expected_global_id": "0WRFMp0456PSGpnmN199ea",
-          "source_step_id": 1298047
-        }
+      "delta_m": [
+        0.0,
+        0.0,
+        -0.22
       ],
-      "placement": {
-        "translation_m": [
-          0.0,
-          0.0,
-          -0.15
-        ]
-      }
+      "reason": "Lowered cross-hall tap window; branch orientation remains top-tapped and the conduit bay stays above it.",
+      "status": "applied"
     },
     {
-      "op_id": "ceiling-translation-015",
-      "operation": "update_placement",
+      "operation": "lower_top_tap_window",
       "target": {
-        "global_id": "2BkzT8_U8p7Uvr20yJhFSo",
-        "source_step_id": 1298074,
-        "entity_type": "IfcCovering"
+        "global_id": "0jbEbVmuQ3zxUshRCwck_d",
+        "source_step_id": 809651,
+        "entity_type": "IfcFlowSegment"
       },
-      "preconditions": [
-        {
-          "expected_entity_type": "IfcCovering",
-          "expected_global_id": "2BkzT8_U8p7Uvr20yJhFSo",
-          "source_step_id": 1298074
-        }
+      "delta_m": [
+        0.0,
+        0.0,
+        -0.22
       ],
-      "placement": {
-        "translation_m": [
-          0.0,
-          0.0,
-          -0.15
-        ]
-      }
+      "reason": "Lowered cross-hall tap window; branch orientation remains top-tapped and the conduit bay stays above it.",
+      "status": "applied"
     },
     {
-      "op_id": "ceiling-translation-016",
-      "operation": "update_placement",
+      "operation": "move_mechanical_main_to_north_rack",
       "target": {
-        "global_id": "0l1oZPcGnyvhTvMZjoJ7XO",
-        "source_step_id": 1298106,
-        "entity_type": "IfcCovering"
+        "global_id": "3TZBvOCi_6NzcZhTuilZWy",
+        "source_step_id": 73640,
+        "entity_type": "IfcFlowSegment"
       },
-      "preconditions": [
-        {
-          "expected_entity_type": "IfcCovering",
-          "expected_global_id": "0l1oZPcGnyvhTvMZjoJ7XO",
-          "source_step_id": 1298106
-        }
+      "delta_m": [
+        -2.8628889241982574,
+        0.4485410760717504,
+        0.0
       ],
-      "placement": {
-        "translation_m": [
-          0.0,
-          0.0,
-          -0.15
-        ]
-      }
+      "reason": "Move ['GSH 3'] main segment into the low north-wall mechanical rack.",
+      "status": "applied"
     },
     {
-      "op_id": "ceiling-translation-017",
-      "operation": "update_placement",
+      "operation": "move_mechanical_main_to_north_rack",
       "target": {
-        "global_id": "0iI0Q2d_BmrrPOHXWgrSCM",
-        "source_step_id": 1298133,
-        "entity_type": "IfcCovering"
+        "global_id": "3rcMz8Z3vlmEJD9Un_Gb2O",
+        "source_step_id": 29610,
+        "entity_type": "IfcFlowSegment"
       },
-      "preconditions": [
-        {
-          "expected_entity_type": "IfcCovering",
-          "expected_global_id": "0iI0Q2d_BmrrPOHXWgrSCM",
-          "source_step_id": 1298133
-        }
+      "delta_m": [
+        -2.862888923795714,
+        0.44854107600868226,
+        0.0
       ],
-      "placement": {
-        "translation_m": [
-          0.0,
-          0.0,
-          -0.15
-        ]
-      }
+      "reason": "Move ['GSH 3'] main segment into the low north-wall mechanical rack.",
+      "status": "applied"
     },
     {
-      "op_id": "ceiling-translation-018",
-      "operation": "update_placement",
+      "operation": "move_mechanical_main_to_north_rack",
       "target": {
-        "global_id": "3Fj3VeOfs1uCtyMsqw0QBn",
-        "source_step_id": 1298167,
-        "entity_type": "IfcCovering"
+        "global_id": "1IHpEM2YdQGMKLgA9issNF",
+        "source_step_id": 319608,
+        "entity_type": "IfcFlowSegment"
       },
-      "preconditions": [
-        {
-          "expected_entity_type": "IfcCovering",
-          "expected_global_id": "3Fj3VeOfs1uCtyMsqw0QBn",
-          "source_step_id": 1298167
-        }
+      "delta_m": [
+        -2.5964904128033863,
+        0.40680327969586383,
+        0.0
       ],
-      "placement": {
-        "translation_m": [
-          0.0,
-          0.0,
-          -0.15
-        ]
-      }
+      "reason": "Move ['GSH 3'] main segment into the low north-wall mechanical rack.",
+      "status": "applied"
     },
     {
-      "op_id": "ceiling-translation-019",
-      "operation": "update_placement",
+      "operation": "move_mechanical_main_to_north_rack",
       "target": {
-        "global_id": "2lY7vMeoxmjlGI41A95PPZ",
-        "source_step_id": 1298201,
-        "entity_type": "IfcCovering"
+        "global_id": "3Ycnfgiw2L63pIdE9gg7Sq",
+        "source_step_id": 110862,
+        "entity_type": "IfcFlowSegment"
       },
-      "preconditions": [
-        {
-          "expected_entity_type": "IfcCovering",
-          "expected_global_id": "2lY7vMeoxmjlGI41A95PPZ",
-          "source_step_id": 1298201
-        }
+      "delta_m": [
+        -2.5114528873297366,
+        0.3934800861692021,
+        0.0
       ],
-      "placement": {
-        "translation_m": [
-          0.0,
-          0.0,
-          -0.15
-        ]
-      }
+      "reason": "Move ['GRH 2'] main segment into the low north-wall mechanical rack.",
+      "status": "applied"
     },
     {
-      "op_id": "ceiling-translation-020",
-      "operation": "update_placement",
+      "operation": "move_mechanical_main_to_north_rack",
       "target": {
-        "global_id": "0fgHmYNTwSg_QLlFlU2KL2",
-        "source_step_id": 1298228,
-        "entity_type": "IfcCovering"
+        "global_id": "3USUVEKysCaehDxaIaeZ2Q",
+        "source_step_id": 321617,
+        "entity_type": "IfcFlowSegment"
       },
-      "preconditions": [
-        {
-          "expected_entity_type": "IfcCovering",
-          "expected_global_id": "0fgHmYNTwSg_QLlFlU2KL2",
-          "source_step_id": 1298228
-        }
+      "delta_m": [
+        -1.9694784208221794,
+        0.3085666239821243,
+        0.0
       ],
-      "placement": {
-        "translation_m": [
-          0.0,
-          0.0,
-          -0.15
-        ]
-      }
+      "reason": "Move ['GRH 2'] main segment into the low north-wall mechanical rack.",
+      "status": "applied"
     },
     {
-      "op_id": "ceiling-translation-021",
-      "operation": "update_placement",
+      "operation": "lift_fire_branch_clear_of_lighting",
       "target": {
-        "global_id": "3eOdX5HchTJWBNBRO_qRQv",
-        "source_step_id": 1298262,
-        "entity_type": "IfcCovering"
+        "global_id": "3N5YVwXZ0FJjnWZa0OLqrH",
+        "source_step_id": 1082178,
+        "entity_type": "IfcFlowFitting"
       },
-      "preconditions": [
-        {
-          "expected_entity_type": "IfcCovering",
-          "expected_global_id": "3eOdX5HchTJWBNBRO_qRQv",
-          "source_step_id": 1298262
-        }
+      "delta_m": [
+        0.0,
+        0.0,
+        0.12
       ],
-      "placement": {
-        "translation_m": [
-          0.0,
-          0.0,
-          -0.15
-        ]
-      }
+      "reason": "Lifted fire-protection branch/fitting above the lighting envelope while staying below the beam clearance plane.",
+      "status": "applied"
     },
     {
-      "op_id": "ceiling-translation-022",
-      "operation": "update_placement",
+      "operation": "lift_fire_branch_clear_of_lighting",
       "target": {
-        "global_id": "3b5ADX2pgIcCSgf0pB3cNX",
-        "source_step_id": 1298301,
-        "entity_type": "IfcCovering"
+        "global_id": "2mdXNDtLa_0y2POy_V5$tY",
+        "source_step_id": 1082248,
+        "entity_type": "IfcFlowFitting"
       },
-      "preconditions": [
-        {
-          "expected_entity_type": "IfcCovering",
-          "expected_global_id": "3b5ADX2pgIcCSgf0pB3cNX",
-          "source_step_id": 1298301
-        }
+      "delta_m": [
+        0.0,
+        0.0,
+        0.12
       ],
-      "placement": {
-        "translation_m": [
-          0.0,
-          0.0,
-          -0.15
-        ]
-      }
+      "reason": "Lifted fire-protection branch/fitting above the lighting envelope while staying below the beam clearance plane.",
+      "status": "applied"
     },
     {
-      "op_id": "ceiling-translation-023",
-      "operation": "update_placement",
+      "operation": "lift_fire_branch_clear_of_lighting",
       "target": {
-        "global_id": "1s0hj3u3T2FWEBJ8TyW9vP",
-        "source_step_id": 1319954,
-        "entity_type": "IfcCovering"
+        "global_id": "1kmQLtM6IoNgaI390VQ8xn",
+        "source_step_id": 1082900,
+        "entity_type": "IfcFlowFitting"
       },
-      "preconditions": [
-        {
-          "expected_entity_type": "IfcCovering",
-          "expected_global_id": "1s0hj3u3T2FWEBJ8TyW9vP",
-          "source_step_id": 1319954
-        }
+      "delta_m": [
+        0.0,
+        0.0,
+        0.12
       ],
-      "placement": {
-        "translation_m": [
-          0.0,
-          0.0,
-          -0.15
-        ]
-      }
+      "reason": "Lifted fire-protection branch/fitting above the lighting envelope while staying below the beam clearance plane.",
+      "status": "applied"
+    },
+    {
+      "operation": "lift_fire_branch_clear_of_lighting",
+      "target": {
+        "global_id": "17AJfUDsbGKa1qrmlPQekm",
+        "source_step_id": 1086859,
+        "entity_type": "IfcFlowFitting"
+      },
+      "delta_m": [
+        0.0,
+        0.0,
+        0.12
+      ],
+      "reason": "Lifted fire-protection branch/fitting above the lighting envelope while staying below the beam clearance plane.",
+      "status": "applied"
+    },
+    {
+      "operation": "lift_fire_branch_clear_of_lighting",
+      "target": {
+        "global_id": "3Am1c6El3h2QVDo1NKp5Hn",
+        "source_step_id": 1086928,
+        "entity_type": "IfcFlowFitting"
+      },
+      "delta_m": [
+        0.0,
+        0.0,
+        0.12
+      ],
+      "reason": "Lifted fire-protection branch/fitting above the lighting envelope while staying below the beam clearance plane.",
+      "status": "applied"
+    },
+    {
+      "operation": "lift_fire_branch_clear_of_lighting",
+      "target": {
+        "global_id": "2ugK1Q0rwFXj4E0JkYO$OE",
+        "source_step_id": 1063912,
+        "entity_type": "IfcFlowSegment"
+      },
+      "delta_m": [
+        0.0,
+        0.0,
+        0.12
+      ],
+      "reason": "Lifted fire-protection branch/fitting above the lighting envelope while staying below the beam clearance plane.",
+      "status": "applied"
+    },
+    {
+      "operation": "lift_fire_branch_clear_of_lighting",
+      "target": {
+        "global_id": "3Wr$P3JGO4MKa6VF_EPzHW",
+        "source_step_id": 1063994,
+        "entity_type": "IfcFlowSegment"
+      },
+      "delta_m": [
+        0.0,
+        0.0,
+        0.12
+      ],
+      "reason": "Lifted fire-protection branch/fitting above the lighting envelope while staying below the beam clearance plane.",
+      "status": "applied"
+    },
+    {
+      "operation": "lift_fire_branch_clear_of_lighting",
+      "target": {
+        "global_id": "2L_PxERBjAsB1I4$8oQ8Iz",
+        "source_step_id": 1064158,
+        "entity_type": "IfcFlowSegment"
+      },
+      "delta_m": [
+        0.0,
+        0.0,
+        0.12
+      ],
+      "reason": "Lifted fire-protection branch/fitting above the lighting envelope while staying below the beam clearance plane.",
+      "status": "applied"
+    },
+    {
+      "operation": "lift_fire_branch_clear_of_lighting",
+      "target": {
+        "global_id": "2hQTYaTH199PMawvSCP44p",
+        "source_step_id": 1064240,
+        "entity_type": "IfcFlowSegment"
+      },
+      "delta_m": [
+        0.0,
+        0.0,
+        0.12
+      ],
+      "reason": "Lifted fire-protection branch/fitting above the lighting envelope while staying below the beam clearance plane.",
+      "status": "applied"
+    },
+    {
+      "operation": "lift_fire_branch_clear_of_lighting",
+      "target": {
+        "global_id": "2DTU2NzATEwgwk$veWIck4",
+        "source_step_id": 1064404,
+        "entity_type": "IfcFlowSegment"
+      },
+      "delta_m": [
+        0.0,
+        0.0,
+        0.12
+      ],
+      "reason": "Lifted fire-protection branch/fitting above the lighting envelope while staying below the beam clearance plane.",
+      "status": "applied"
+    },
+    {
+      "operation": "lift_fire_branch_clear_of_lighting_below_conduit_bay",
+      "target": {
+        "global_id": "3tHAwH$bBqYHtJQv9zGaEL",
+        "source_step_id": 1074123,
+        "entity_type": "IfcFlowSegment"
+      },
+      "delta_m": [
+        0.0,
+        0.0,
+        0.03
+      ],
+      "reason": "Lifted the transverse fire-protection branch just above the lighting envelope while retaining the conduit-bay clearance zone.",
+      "status": "applied"
+    },
+    {
+      "operation": "lift_fire_branch_clear_of_lighting",
+      "target": {
+        "global_id": "21BS8Ht_r8RPVHJvG8OlML",
+        "source_step_id": 1081497,
+        "entity_type": "IfcFlowSegment"
+      },
+      "delta_m": [
+        0.0,
+        0.0,
+        0.12
+      ],
+      "reason": "Lifted fire-protection branch/fitting above the lighting envelope while staying below the beam clearance plane.",
+      "status": "applied"
+    },
+    {
+      "operation": "lift_fire_branch_clear_of_lighting",
+      "target": {
+        "global_id": "2l_AkzlwvWiE4pZguuryYM",
+        "source_step_id": 1082101,
+        "entity_type": "IfcFlowSegment"
+      },
+      "delta_m": [
+        0.0,
+        0.0,
+        0.12
+      ],
+      "reason": "Lifted fire-protection branch/fitting above the lighting envelope while staying below the beam clearance plane.",
+      "status": "applied"
+    },
+    {
+      "operation": "lift_fire_branch_clear_of_lighting",
+      "target": {
+        "global_id": "2hHXzIdrL1pvAFkDIcLF2m",
+        "source_step_id": 1082322,
+        "entity_type": "IfcFlowSegment"
+      },
+      "delta_m": [
+        0.0,
+        0.0,
+        0.12
+      ],
+      "reason": "Lifted fire-protection branch/fitting above the lighting envelope while staying below the beam clearance plane.",
+      "status": "applied"
+    },
+    {
+      "operation": "lift_fire_branch_clear_of_lighting",
+      "target": {
+        "global_id": "09caZIkm1$F981j2ZcrQF3",
+        "source_step_id": 1082405,
+        "entity_type": "IfcFlowSegment"
+      },
+      "delta_m": [
+        0.0,
+        0.0,
+        0.12
+      ],
+      "reason": "Lifted fire-protection branch/fitting above the lighting envelope while staying below the beam clearance plane.",
+      "status": "applied"
+    },
+    {
+      "operation": "lift_fire_branch_clear_of_lighting",
+      "target": {
+        "global_id": "31jv3$K6L3HuQHt7b8QH1U",
+        "source_step_id": 1082963,
+        "entity_type": "IfcFlowSegment"
+      },
+      "delta_m": [
+        0.0,
+        0.0,
+        0.12
+      ],
+      "reason": "Lifted fire-protection branch/fitting above the lighting envelope while staying below the beam clearance plane.",
+      "status": "applied"
+    },
+    {
+      "operation": "lift_fire_branch_clear_of_lighting",
+      "target": {
+        "global_id": "1LU_8eVJLFuv2JYUzF$_Gv",
+        "source_step_id": 1083998,
+        "entity_type": "IfcFlowSegment"
+      },
+      "delta_m": [
+        0.0,
+        0.0,
+        0.12
+      ],
+      "reason": "Lifted fire-protection branch/fitting above the lighting envelope while staying below the beam clearance plane.",
+      "status": "applied"
+    },
+    {
+      "operation": "lift_fire_branch_clear_of_lighting",
+      "target": {
+        "global_id": "17hkEkb2n8rOBlQoOL2Y4L",
+        "source_step_id": 1086027,
+        "entity_type": "IfcFlowSegment"
+      },
+      "delta_m": [
+        0.0,
+        0.0,
+        0.12
+      ],
+      "reason": "Lifted fire-protection branch/fitting above the lighting envelope while staying below the beam clearance plane.",
+      "status": "applied"
+    },
+    {
+      "operation": "lift_fire_branch_clear_of_lighting",
+      "target": {
+        "global_id": "2GxY9cEEj0$uAcwDnCs_wu",
+        "source_step_id": 1086398,
+        "entity_type": "IfcFlowSegment"
+      },
+      "delta_m": [
+        0.0,
+        0.0,
+        0.12
+      ],
+      "reason": "Lifted fire-protection branch/fitting above the lighting envelope while staying below the beam clearance plane.",
+      "status": "applied"
+    },
+    {
+      "operation": "lift_fire_branch_clear_of_lighting",
+      "target": {
+        "global_id": "1d4BfEkxf8rhZW$WCuq2OY",
+        "source_step_id": 1086549,
+        "entity_type": "IfcFlowSegment"
+      },
+      "delta_m": [
+        0.0,
+        0.0,
+        0.12
+      ],
+      "reason": "Lifted fire-protection branch/fitting above the lighting envelope while staying below the beam clearance plane.",
+      "status": "applied"
+    },
+    {
+      "operation": "lift_fire_branch_clear_of_lighting",
+      "target": {
+        "global_id": "3EsHYKflj6Reoq3Yompirp",
+        "source_step_id": 1086700,
+        "entity_type": "IfcFlowSegment"
+      },
+      "delta_m": [
+        0.0,
+        0.0,
+        0.12
+      ],
+      "reason": "Lifted fire-protection branch/fitting above the lighting envelope while staying below the beam clearance plane.",
+      "status": "applied"
+    },
+    {
+      "operation": "lift_fire_branch_clear_of_lighting",
+      "target": {
+        "global_id": "2oPzqxDMr8zBCgWwxYOZZX",
+        "source_step_id": 1086782,
+        "entity_type": "IfcFlowSegment"
+      },
+      "delta_m": [
+        0.0,
+        0.0,
+        0.12
+      ],
+      "reason": "Lifted fire-protection branch/fitting above the lighting envelope while staying below the beam clearance plane.",
+      "status": "applied"
+    },
+    {
+      "operation": "lift_fire_branch_clear_of_lighting",
+      "target": {
+        "global_id": "3ha_t2CAz1dPnY8mQWgpoU",
+        "source_step_id": 1087002,
+        "entity_type": "IfcFlowSegment"
+      },
+      "delta_m": [
+        0.0,
+        0.0,
+        0.12
+      ],
+      "reason": "Lifted fire-protection branch/fitting above the lighting envelope while staying below the beam clearance plane.",
+      "status": "applied"
+    },
+    {
+      "operation": "lift_fire_branch_clear_of_lighting",
+      "target": {
+        "global_id": "3XGaXv08DDV8RdRTyrQnFX",
+        "source_step_id": 1087084,
+        "entity_type": "IfcFlowSegment"
+      },
+      "delta_m": [
+        0.0,
+        0.0,
+        0.12
+      ],
+      "reason": "Lifted fire-protection branch/fitting above the lighting envelope while staying below the beam clearance plane.",
+      "status": "applied"
+    },
+    {
+      "operation": "lift_fire_branch_clear_of_lighting",
+      "target": {
+        "global_id": "2LJVo1G7v4XPhuOTaKY1Rn",
+        "source_step_id": 1092621,
+        "entity_type": "IfcFlowSegment"
+      },
+      "delta_m": [
+        0.0,
+        0.0,
+        0.12
+      ],
+      "reason": "Lifted fire-protection branch/fitting above the lighting envelope while staying below the beam clearance plane.",
+      "status": "applied"
     }
   ],
-  "constraints": {
-    "preserve_global_ids": true,
-    "preserve_unaffected_entities": true,
-    "reject_lossy_geometry_edits": true,
-    "require_zero_dangling_references": true,
-    "require_schema_parse": true
-  },
   "provenance": {
-    "instruction_id": "stage2-ceiling-down-150mm",
     "requested_by": "user",
-    "reason": "Move all model ceiling coverings down 150 mm with their inferred hosted fixtures and attached distribution ports."
+    "analysis_basis": "IFC identity graph plus IFC-native tessellation and local hallway axis derived from the electrical space-holder placement",
+    "original_ifc_immutable": true
   }
 }

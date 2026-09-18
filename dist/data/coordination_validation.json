@@ -1,0 +1,2433 @@
+{
+  "schema": "ifc-stage2-hallway-coordination-validation-1",
+  "status": "passed",
+  "source": {
+    "input_ifc": "/Users/mohamedadel/Documents/ChatGPT/BIM Modeling Studio/stage2_ceiling_access_panels_20260918/MBF5-TEST-COORDINATION.ceiling-access-panels.ifc",
+    "input_sha256": "faa5522210bdec70ac68b00287edbad1f509e18444124468e345b24154992089",
+    "authoritative_original_ifc": "/Users/mohamedadel/Downloads/MBF5-TEST-COORDINATION.ifc",
+    "authoritative_original_sha256": "b50ea1aa9fefc232b8bf485388245111e6d6bf011eb7ebdaf180096ba162a1ea",
+    "output_ifc": "/Users/mohamedadel/Documents/ChatGPT/BIM Modeling Studio/stage2_hallway_coordination_20260918/MBF5-TEST-COORDINATION.hallway-coordination.ifc",
+    "output_sha256": "74a5d741b3092ed531b6538ce4935f7251321b0ba8a64782f0142c75d509df2d"
+  },
+  "coordinate_frame": {
+    "axis_d": [
+      0.154786049,
+      0.987948014
+    ],
+    "axis_c": [
+      0.987948014,
+      -0.154786049
+    ],
+    "hallway_projection": {
+      "s": [
+        5158057.2606808,
+        5158085.214180791
+      ],
+      "q": [
+        -297700.0275648299,
+        -297693.49856483046
+      ],
+      "z": [
+        239.85500000000002,
+        239.96750000000003
+      ]
+    },
+    "model_units_to_m": 0.001
+  },
+  "constraints": {
+    "conduit_bay_width_m": 1.2192,
+    "conduit_bay_depth_m": 0.1524,
+    "unistrut_depth_m": 0.0508,
+    "service_tolerance_m": 0.0254,
+    "beam_clearance_m": 0.0254,
+    "bay_envelope": {
+      "s": [
+        5158057.410680801,
+        5158085.06418079
+      ],
+      "q": [
+        -297694.76776483044,
+        -297693.54856483045
+      ],
+      "z": [
+        240.2164,
+        240.4196
+      ]
+    }
+  },
+  "checks": {
+    "derived_ifc_parses": true,
+    "zero_dangling_references": true,
+    "original_step_ids_preserved": true,
+    "original_global_ids_preserved": true,
+    "conduit_bay_geometry_created": true,
+    "conduit_bay_clear_with_tolerance": true,
+    "conduit_bay_clear_of_beams": true,
+    "duct_sizes_unchanged": true,
+    "fire_branches_clear_of_lighting": true,
+    "north_wall_main_checks": true,
+    "route_system_exists": true
+  },
+  "counts": {
+    "before_entities": 1326846,
+    "after_entities": 1327294,
+    "new_entities": 448,
+    "before_products": 95328,
+    "after_products": 95426,
+    "bay_service_hits": 0,
+    "beam_hits": 0,
+    "fire_light_hits": 0,
+    "residual_cross_domain_aabb_pairs": 468
+  },
+  "affected": {
+    "duct_steps": [
+      100414,
+      100483,
+      24707,
+      60996,
+      44888,
+      74563,
+      91955,
+      65358
+    ],
+    "fire_protection_steps_lifted": [
+      1082178,
+      1082248,
+      1082900,
+      1086859,
+      1086928,
+      1063912,
+      1063994,
+      1064158,
+      1064240,
+      1064404,
+      1074123,
+      1081497,
+      1082101,
+      1082322,
+      1082405,
+      1082963,
+      1083998,
+      1086027,
+      1086398,
+      1086549,
+      1086700,
+      1086782,
+      1087002,
+      1087084,
+      1092621
+    ],
+    "main_pipe_steps": [
+      73640,
+      29610,
+      319608,
+      110862,
+      321617
+    ],
+    "lowered_top_tap_steps": [
+      809577,
+      809725,
+      809651
+    ],
+    "retired_space_holder_steps": [
+      1050030,
+      1049965
+    ],
+    "new_route_steps": [
+      1328852,
+      1328867
+    ]
+  },
+  "duct_size_checks": [
+    {
+      "step_id": 100414,
+      "global_id": "1LRMvJkhE$BMMHPDG_ostX",
+      "before": {
+        "size": "200x250",
+        "width": 200.0,
+        "height": 250.0,
+        "diameter": null,
+        "inside_diameter": null,
+        "outside_diameter": null,
+        "insulation_thickness": 0.0,
+        "insulation_overall_size": "200 mmx250 mm"
+      },
+      "after": {
+        "size": "200x250",
+        "width": 200.0,
+        "height": 250.0,
+        "diameter": null,
+        "inside_diameter": null,
+        "outside_diameter": null,
+        "insulation_thickness": 0.0,
+        "insulation_overall_size": "200 mmx250 mm"
+      },
+      "passed": true
+    },
+    {
+      "step_id": 100483,
+      "global_id": "1jHS7UxC0esyyXb_J209bR",
+      "before": {
+        "size": "250x200-250x200",
+        "width": null,
+        "height": null,
+        "diameter": null,
+        "inside_diameter": null,
+        "outside_diameter": null,
+        "insulation_thickness": 0.0,
+        "insulation_overall_size": "250 mmx200 mm-250 mmx200 mm"
+      },
+      "after": {
+        "size": "250x200-250x200",
+        "width": null,
+        "height": null,
+        "diameter": null,
+        "inside_diameter": null,
+        "outside_diameter": null,
+        "insulation_thickness": 0.0,
+        "insulation_overall_size": "250 mmx200 mm-250 mmx200 mm"
+      },
+      "passed": true
+    },
+    {
+      "step_id": 24707,
+      "global_id": "0Ut5FESmrgtyK1kbwYHCyV",
+      "before": {
+        "size": "850x450",
+        "width": 850.0,
+        "height": 450.0,
+        "diameter": null,
+        "inside_diameter": null,
+        "outside_diameter": null,
+        "insulation_thickness": 25.0,
+        "insulation_overall_size": "900 mmx500 mm"
+      },
+      "after": {
+        "size": "850x450",
+        "width": 850.0,
+        "height": 450.0,
+        "diameter": null,
+        "inside_diameter": null,
+        "outside_diameter": null,
+        "insulation_thickness": 25.0,
+        "insulation_overall_size": "900 mmx500 mm"
+      },
+      "passed": true
+    },
+    {
+      "step_id": 60996,
+      "global_id": "2fdGCmQvqVF37zCXeMizUm",
+      "before": {
+        "size": "850x450-625x250",
+        "width": null,
+        "height": null,
+        "diameter": null,
+        "inside_diameter": null,
+        "outside_diameter": null,
+        "insulation_thickness": 25.0,
+        "insulation_overall_size": "900 mmx500 mm-675 mmx300 mm"
+      },
+      "after": {
+        "size": "850x450-625x250",
+        "width": null,
+        "height": null,
+        "diameter": null,
+        "inside_diameter": null,
+        "outside_diameter": null,
+        "insulation_thickness": 25.0,
+        "insulation_overall_size": "900 mmx500 mm-675 mmx300 mm"
+      },
+      "passed": true
+    },
+    {
+      "step_id": 44888,
+      "global_id": "3G4M30Eh0EDXqhMot74yo3",
+      "before": {
+        "size": null,
+        "width": null,
+        "height": null,
+        "diameter": null,
+        "inside_diameter": null,
+        "outside_diameter": null,
+        "insulation_thickness": null,
+        "insulation_overall_size": null
+      },
+      "after": {
+        "size": null,
+        "width": null,
+        "height": null,
+        "diameter": null,
+        "inside_diameter": null,
+        "outside_diameter": null,
+        "insulation_thickness": null,
+        "insulation_overall_size": null
+      },
+      "passed": true
+    },
+    {
+      "step_id": 74563,
+      "global_id": "161fsNxoqNG4UG6uL260zV",
+      "before": {
+        "size": "800x250-800x250",
+        "width": null,
+        "height": null,
+        "diameter": null,
+        "inside_diameter": null,
+        "outside_diameter": null,
+        "insulation_thickness": 0.0,
+        "insulation_overall_size": "800 mmx250 mm-800 mmx250 mm"
+      },
+      "after": {
+        "size": "800x250-800x250",
+        "width": null,
+        "height": null,
+        "diameter": null,
+        "inside_diameter": null,
+        "outside_diameter": null,
+        "insulation_thickness": 0.0,
+        "insulation_overall_size": "800 mmx250 mm-800 mmx250 mm"
+      },
+      "passed": true
+    },
+    {
+      "step_id": 91955,
+      "global_id": "2UrsLVPwEfEzmf01cozchA",
+      "before": {
+        "size": "300x250-300x250",
+        "width": null,
+        "height": null,
+        "diameter": null,
+        "inside_diameter": null,
+        "outside_diameter": null,
+        "insulation_thickness": 25.0,
+        "insulation_overall_size": "350 mmx300 mm-350 mmx300 mm"
+      },
+      "after": {
+        "size": "300x250-300x250",
+        "width": null,
+        "height": null,
+        "diameter": null,
+        "inside_diameter": null,
+        "outside_diameter": null,
+        "insulation_thickness": 25.0,
+        "insulation_overall_size": "350 mmx300 mm-350 mmx300 mm"
+      },
+      "passed": true
+    },
+    {
+      "step_id": 65358,
+      "global_id": "31LZ6ZW7Z9hm7B25blRYdD",
+      "before": {
+        "size": "100ø-100ø",
+        "width": null,
+        "height": null,
+        "diameter": null,
+        "inside_diameter": null,
+        "outside_diameter": null,
+        "insulation_thickness": 0.0,
+        "insulation_overall_size": "100 mmø-100 mmø"
+      },
+      "after": {
+        "size": "100ø-100ø",
+        "width": null,
+        "height": null,
+        "diameter": null,
+        "inside_diameter": null,
+        "outside_diameter": null,
+        "insulation_thickness": 0.0,
+        "insulation_overall_size": "100 mmø-100 mmø"
+      },
+      "passed": true
+    }
+  ],
+  "north_wall_checks": [
+    {
+      "step_id": 73640,
+      "global_id": "3TZBvOCi_6NzcZhTuilZWy",
+      "q": [
+        -297699.27103449835,
+        -297699.22896549775
+      ],
+      "z": [
+        240.1764188651878,
+        240.21818113481223
+      ],
+      "passed": true
+    },
+    {
+      "step_id": 29610,
+      "global_id": "3rcMz8Z3vlmEJD9Un_Gb2O",
+      "q": [
+        -297699.27103449823,
+        -297699.22896549787
+      ],
+      "z": [
+        240.1764188651878,
+        240.21818113481223
+      ],
+      "passed": true
+    },
+    {
+      "step_id": 319608,
+      "global_id": "1IHpEM2YdQGMKLgA9issNF",
+      "q": [
+        -297699.27103449847,
+        -297699.2289654981
+      ],
+      "z": [
+        240.320518865188,
+        240.36228113481243
+      ],
+      "passed": true
+    },
+    {
+      "step_id": 110862,
+      "global_id": "3Ycnfgiw2L63pIdE9gg7Sq",
+      "q": [
+        -297698.7710344985,
+        -297698.728965498
+      ],
+      "z": [
+        240.1764188651878,
+        240.21818113481223
+      ],
+      "passed": true
+    },
+    {
+      "step_id": 321617,
+      "global_id": "3USUVEKysCaehDxaIaeZ2Q",
+      "q": [
+        -297698.7710344989,
+        -297698.72896549857
+      ],
+      "z": [
+        240.320518865188,
+        240.36228113481243
+      ],
+      "passed": true
+    }
+  ],
+  "bay_hits": [],
+  "fire_light_hits": [],
+  "residual_cross_domain_counts": {
+    "duct_air vs glycol_mechanical_piping": 146,
+    "duct_air vs fire_protection": 105,
+    "duct_air vs lighting": 41,
+    "duct_air vs other_flow": 29,
+    "domestic_plumbing vs duct_air": 26,
+    "domestic_plumbing vs glycol_mechanical_piping": 52,
+    "fire_protection vs other_flow": 4,
+    "glycol_mechanical_piping vs other_flow": 6,
+    "lighting vs other_flow": 3,
+    "glycol_mechanical_piping vs lighting": 19,
+    "fire_protection vs glycol_mechanical_piping": 29,
+    "domestic_plumbing vs fire_protection": 7,
+    "domestic_plumbing vs lighting": 1
+  },
+  "residual_pairs_sample": [
+    {
+      "left_step_id": 11470,
+      "left_global_id": "0Zd_nzZKur2EBUttyvnePy",
+      "left_domain": "duct_air",
+      "right_step_id": 547066,
+      "right_global_id": "2YoOVGSF7yzqWxa3E2mv0Z",
+      "right_domain": "glycol_mechanical_piping",
+      "overlap_s": [
+        5158059.472714839,
+        5158059.783918
+      ],
+      "overlap_q": [
+        -297699.1354697511,
+        -297699.03746975114
+      ],
+      "overlap_z": [
+        240.1907,
+        240.31528199999983
+      ]
+    },
+    {
+      "left_step_id": 11470,
+      "left_global_id": "0Zd_nzZKur2EBUttyvnePy",
+      "left_domain": "duct_air",
+      "right_step_id": 547121,
+      "right_global_id": "0$UmILSZLK$sS3sfiX5OWv",
+      "right_domain": "glycol_mechanical_piping",
+      "overlap_s": [
+        5158059.406875848,
+        5158059.688918
+      ],
+      "overlap_q": [
+        -297699.1297710212,
+        -297699.0431684809
+      ],
+      "overlap_z": [
+        240.3687448091757,
+        240.4193
+      ]
+    },
+    {
+      "left_step_id": 11470,
+      "left_global_id": "0Zd_nzZKur2EBUttyvnePy",
+      "left_domain": "duct_air",
+      "right_step_id": 569220,
+      "right_global_id": "2U4BoIMhmOpniN9j40W9o$",
+      "right_domain": "glycol_mechanical_piping",
+      "overlap_s": [
+        5158059.283367999,
+        5158059.336467999
+      ],
+      "overlap_q": [
+        -297699.10653704347,
+        -297699.06640245835
+      ],
+      "overlap_z": [
+        240.1907,
+        240.2402999999998
+      ]
+    },
+    {
+      "left_step_id": 11470,
+      "left_global_id": "0Zd_nzZKur2EBUttyvnePy",
+      "left_domain": "duct_air",
+      "right_step_id": 574021,
+      "right_global_id": "0Ehn8AU1q_T8KFEjp1sJhv",
+      "right_domain": "glycol_mechanical_piping",
+      "overlap_s": [
+        5158059.168368001,
+        5158059.221468
+      ],
+      "overlap_q": [
+        -297699.1065370436,
+        -297699.06640245847
+      ],
+      "overlap_z": [
+        240.3587999999999,
+        240.4118999999999
+      ]
+    },
+    {
+      "left_step_id": 11470,
+      "left_global_id": "0Zd_nzZKur2EBUttyvnePy",
+      "left_domain": "duct_air",
+      "right_step_id": 1082900,
+      "right_global_id": "1kmQLtM6IoNgaI390VQ8xn",
+      "right_domain": "fire_protection",
+      "overlap_s": [
+        5158059.7116468325,
+        5158059.770529672
+      ],
+      "overlap_q": [
+        -297699.27899548435,
+        -297699.20279548416
+      ],
+      "overlap_z": [
+        240.1907,
+        240.22278014334228
+      ]
+    },
+    {
+      "left_step_id": 11470,
+      "left_global_id": "0Zd_nzZKur2EBUttyvnePy",
+      "left_domain": "duct_air",
+      "right_step_id": 1083040,
+      "right_global_id": "3rKIu7P$t$EY6XVqVcngu2",
+      "right_domain": "fire_protection",
+      "overlap_s": [
+        5158059.482860901,
+        5158059.539185402
+      ],
+      "overlap_q": [
+        -297699.26316055754,
+        -297699.21863041096
+      ],
+      "overlap_z": [
+        240.1907,
+        240.2252005
+      ]
+    },
+    {
+      "left_step_id": 11470,
+      "left_global_id": "0Zd_nzZKur2EBUttyvnePy",
+      "left_domain": "duct_air",
+      "right_step_id": 1083101,
+      "right_global_id": "3eiu3IGHQDegpSoXYTJ5$4",
+      "right_domain": "fire_protection",
+      "overlap_s": [
+        5158059.707814251,
+        5158059.764138752
+      ],
+      "overlap_q": [
+        -297699.26316055754,
+        -297699.2186304109
+      ],
+      "overlap_z": [
+        240.1907,
+        240.2252005
+      ]
+    },
+    {
+      "left_step_id": 11470,
+      "left_global_id": "0Zd_nzZKur2EBUttyvnePy",
+      "left_domain": "duct_air",
+      "right_step_id": 1086859,
+      "right_global_id": "17AJfUDsbGKa1qrmlPQekm",
+      "right_domain": "fire_protection",
+      "overlap_s": [
+        5158059.678453736,
+        5158059.803722768
+      ],
+      "overlap_q": [
+        -297699.4817707259,
+        -297699.2658707259
+      ],
+      "overlap_z": [
+        240.1907,
+        240.23353280431468
+      ]
+    },
+    {
+      "left_step_id": 11470,
+      "left_global_id": "0Zd_nzZKur2EBUttyvnePy",
+      "left_domain": "duct_air",
+      "right_step_id": 546915,
+      "right_global_id": "3bccq_NHhEHmn7UaWzsW2n",
+      "right_domain": "glycol_mechanical_piping",
+      "overlap_s": [
+        5158059.783917998,
+        5158060.067338301
+      ],
+      "overlap_q": [
+        -297699.1075042511,
+        -297699.06543525116
+      ],
+      "overlap_z": [
+        240.19831886518762,
+        240.24008113481204
+      ]
+    },
+    {
+      "left_step_id": 11470,
+      "left_global_id": "0Zd_nzZKur2EBUttyvnePy",
+      "left_domain": "duct_air",
+      "right_step_id": 546993,
+      "right_global_id": "3i6oYSegTmYk8u2lo5cHCc",
+      "right_domain": "glycol_mechanical_piping",
+      "overlap_s": [
+        5158059.688917998,
+        5158060.067338301
+      ],
+      "overlap_q": [
+        -297699.1075042511,
+        -297699.0654352511
+      ],
+      "overlap_z": [
+        240.36991886518769,
+        240.4116811348121
+      ]
+    },
+    {
+      "left_step_id": 11470,
+      "left_global_id": "0Zd_nzZKur2EBUttyvnePy",
+      "left_domain": "duct_air",
+      "right_step_id": 549237,
+      "right_global_id": "2hjLtTQAAAO8iFZ9LAaq97",
+      "right_domain": "glycol_mechanical_piping",
+      "overlap_s": [
+        5158059.221467999,
+        5158059.408918
+      ],
+      "overlap_q": [
+        -297699.10750425106,
+        -297699.06543525105
+      ],
+      "overlap_z": [
+        240.36991886518769,
+        240.4116811348121
+      ]
+    },
+    {
+      "left_step_id": 11470,
+      "left_global_id": "0Zd_nzZKur2EBUttyvnePy",
+      "left_domain": "duct_air",
+      "right_step_id": 549315,
+      "right_global_id": "2hS2WCZlnaR5raB69SDT5K",
+      "right_domain": "glycol_mechanical_piping",
+      "overlap_s": [
+        5158059.336467999,
+        5158059.5039180005
+      ],
+      "overlap_q": [
+        -297699.10750425106,
+        -297699.0654352511
+      ],
+      "overlap_z": [
+        240.19831886518762,
+        240.24008113481204
+      ]
+    },
+    {
+      "left_step_id": 11470,
+      "left_global_id": "0Zd_nzZKur2EBUttyvnePy",
+      "left_domain": "duct_air",
+      "right_step_id": 573950,
+      "right_global_id": "3diP8ZCSJMO7UsAU0DK5gb",
+      "right_domain": "glycol_mechanical_piping",
+      "overlap_s": [
+        5158059.1684334995,
+        5158059.2105025
+      ],
+      "overlap_q": [
+        -297699.10735088587,
+        -297699.0655886162
+      ],
+      "overlap_z": [
+        240.1907,
+        240.3587999999999
+      ]
+    },
+    {
+      "left_step_id": 11470,
+      "left_global_id": "0Zd_nzZKur2EBUttyvnePy",
+      "left_domain": "duct_air",
+      "right_step_id": 1069112,
+      "right_global_id": "1aIDavsJuBYFezBnu9PNbs",
+      "right_domain": "fire_protection",
+      "overlap_s": [
+        5158059.5264854,
+        5158059.720514252
+      ],
+      "overlap_q": [
+        -297699.25759598427,
+        -297699.2241949841
+      ],
+      "overlap_z": [
+        240.1907,
+        240.21872873455183
+      ]
+    },
+    {
+      "left_step_id": 11470,
+      "left_global_id": "0Zd_nzZKur2EBUttyvnePy",
+      "left_domain": "duct_air",
+      "right_step_id": 1082963,
+      "right_global_id": "31jv3$K6L3HuQHt7b8QH1U",
+      "right_domain": "fire_protection",
+      "overlap_s": [
+        5158059.716882051,
+        5158059.765294451
+      ],
+      "overlap_q": [
+        -297699.2912707259,
+        -297699.2662954841
+      ],
+      "overlap_z": [
+        240.1907,
+        240.20235985289048
+      ]
+    },
+    {
+      "left_step_id": 11470,
+      "left_global_id": "0Zd_nzZKur2EBUttyvnePy",
+      "left_domain": "duct_air",
+      "right_step_id": 1086782,
+      "right_global_id": "2oPzqxDMr8zBCgWwxYOZZX",
+      "right_domain": "fire_protection",
+      "overlap_s": [
+        5158059.106938301,
+        5158059.740580252
+      ],
+      "overlap_q": [
+        -297699.4817707258,
+        -297699.36747072457
+      ],
+      "overlap_z": [
+        240.1907,
+        240.23506345549697
+      ]
+    },
+    {
+      "left_step_id": 11470,
+      "left_global_id": "0Zd_nzZKur2EBUttyvnePy",
+      "left_domain": "duct_air",
+      "right_step_id": 1087002,
+      "right_global_id": "3ha_t2CAz1dPnY8mQWgpoU",
+      "right_domain": "fire_protection",
+      "overlap_s": [
+        5158059.741596251,
+        5158060.839538301
+      ],
+      "overlap_q": [
+        -297699.48177072644,
+        -297699.36747072585
+      ],
+      "overlap_z": [
+        240.1907,
+        240.235063455497
+      ]
+    },
+    {
+      "left_step_id": 11470,
+      "left_global_id": "0Zd_nzZKur2EBUttyvnePy",
+      "left_domain": "duct_air",
+      "right_step_id": 1087084,
+      "right_global_id": "3XGaXv08DDV8RdRTyrQnFX",
+      "right_domain": "fire_protection",
+      "overlap_s": [
+        5158059.716882052,
+        5158059.765294452
+      ],
+      "overlap_q": [
+        -297699.21549548436,
+        -297698.83090497163
+      ],
+      "overlap_z": [
+        240.1907,
+        240.20235985289045
+      ]
+    },
+    {
+      "left_step_id": 11632,
+      "left_global_id": "30DQkZ9ht8zp7yoKoHaJJf",
+      "left_domain": "duct_air",
+      "right_step_id": 325771,
+      "right_global_id": "3wGFZNWqPiNG71qaW05slz",
+      "right_domain": "glycol_mechanical_piping",
+      "overlap_s": [
+        5158077.537121003,
+        5158077.577255588
+      ],
+      "overlap_q": [
+        -297696.6538349787,
+        -297696.60073497874
+      ],
+      "overlap_z": [
+        240.04532753594015,
+        240.09842753594017
+      ]
+    },
+    {
+      "left_step_id": 11632,
+      "left_global_id": "30DQkZ9ht8zp7yoKoHaJJf",
+      "left_domain": "duct_air",
+      "right_step_id": 327500,
+      "right_global_id": "1HAEYNKjTCkcIsjJQWNMK5",
+      "right_domain": "glycol_mechanical_piping",
+      "overlap_s": [
+        5158077.536088295,
+        5158077.589188296
+      ],
+      "overlap_q": [
+        -297697.0525011722,
+        -297696.999401172
+      ],
+      "overlap_z": [
+        240.04636024344632,
+        240.08649482843396
+      ]
+    },
+    {
+      "left_step_id": 11632,
+      "left_global_id": "30DQkZ9ht8zp7yoKoHaJJf",
+      "left_domain": "duct_air",
+      "right_step_id": 329232,
+      "right_global_id": "2AdbiYuktauRxkwd2NHhDm",
+      "right_domain": "glycol_mechanical_piping",
+      "overlap_s": [
+        5158077.536088296,
+        5158077.589188296
+      ],
+      "overlap_q": [
+        -297697.0507510599,
+        -297696.9933767276
+      ],
+      "overlap_z": [
+        240.21695055572383,
+        240.26652753594044
+      ]
+    },
+    {
+      "left_step_id": 11632,
+      "left_global_id": "30DQkZ9ht8zp7yoKoHaJJf",
+      "left_domain": "duct_air",
+      "right_step_id": 1077525,
+      "right_global_id": "043njNtdpARthc64Zdozc1",
+      "right_domain": "fire_protection",
+      "overlap_s": [
+        5158077.329172795,
+        5158077.355710705
+      ],
+      "overlap_q": [
+        -297696.9899969694,
+        -297696.9137969693
+      ],
+      "overlap_z": [
+        240.03792753594044,
+        240.1027801433423
+      ]
+    },
+    {
+      "left_step_id": 11632,
+      "left_global_id": "30DQkZ9ht8zp7yoKoHaJJf",
+      "left_domain": "duct_air",
+      "right_step_id": 322987,
+      "right_global_id": "0KM$yMzeP94xVvNhM3aJTZ",
+      "right_domain": "glycol_mechanical_piping",
+      "overlap_s": [
+        5158077.589188295,
+        5158077.704972796
+      ],
+      "overlap_q": [
+        -297697.0524356723,
+        -297697.0103666722
+      ],
+      "overlap_z": [
+        240.04554640112792,
+        240.08730867075235
+      ]
+    },
+    {
+      "left_step_id": 11632,
+      "left_global_id": "30DQkZ9ht8zp7yoKoHaJJf",
+      "left_domain": "duct_air",
+      "right_step_id": 323610,
+      "right_global_id": "0AK4V6DLFef9_jTtY9yT4F",
+      "right_domain": "glycol_mechanical_piping",
+      "overlap_s": [
+        5158077.5891882945,
+        5158077.704972796
+      ],
+      "overlap_q": [
+        -297697.05143567215,
+        -297697.00936667214
+      ],
+      "overlap_z": [
+        240.21714640112793,
+        240.25890867075236
+      ]
+    },
+    {
+      "left_step_id": 11632,
+      "left_global_id": "30DQkZ9ht8zp7yoKoHaJJf",
+      "left_domain": "duct_air",
+      "right_step_id": 323895,
+      "right_global_id": "3gGxWmUw6OMWZXbbmujT$P",
+      "right_domain": "glycol_mechanical_piping",
+      "overlap_s": [
+        5158077.536153795,
+        5158077.578222796
+      ],
+      "overlap_q": [
+        -297696.9994011723,
+        -297696.6538349786
+      ],
+      "overlap_z": [
+        240.04554640112792,
+        240.08730867075235
+      ]
+    },
+    {
+      "left_step_id": 11632,
+      "left_global_id": "30DQkZ9ht8zp7yoKoHaJJf",
+      "left_domain": "duct_air",
+      "right_step_id": 323973,
+      "right_global_id": "3QbhCHjZrQGIoMJJ4A4FiO",
+      "right_domain": "glycol_mechanical_piping",
+      "overlap_s": [
+        5158077.536153795,
+        5158077.578222795
+      ],
+      "overlap_q": [
+        -297696.64271611354,
+        -297696.6009538438
+      ],
+      "overlap_z": [
+        240.09842753594015,
+        240.26652753594044
+      ]
+    },
+    {
+      "left_step_id": 11632,
+      "left_global_id": "30DQkZ9ht8zp7yoKoHaJJf",
+      "left_domain": "duct_air",
+      "right_step_id": 329115,
+      "right_global_id": "1qKqrX001JLXiU71nmbMTI",
+      "right_domain": "glycol_mechanical_piping",
+      "overlap_s": [
+        5158077.536153795,
+        5158077.578222795
+      ],
+      "overlap_q": [
+        -297697.0078353339,
+        -297696.77906173316
+      ],
+      "overlap_z": [
+        240.22979037113515,
+        240.26652753594044
+      ]
+    },
+    {
+      "left_step_id": 11632,
+      "left_global_id": "30DQkZ9ht8zp7yoKoHaJJf",
+      "left_domain": "duct_air",
+      "right_step_id": 1076517,
+      "right_global_id": "3S2Ni2GUcUZxU4XFm$UbkI",
+      "right_domain": "fire_protection",
+      "overlap_s": [
+        5158077.329172795,
+        5158077.3429697845
+      ],
+      "overlap_q": [
+        -297696.96847570396,
+        -297696.9353182348
+      ],
+      "overlap_z": [
+        240.0900801433423,
+        240.26652753594044
+      ]
+    },
+    {
+      "left_step_id": 11632,
+      "left_global_id": "30DQkZ9ht8zp7yoKoHaJJf",
+      "left_domain": "duct_air",
+      "right_step_id": 1077606,
+      "right_global_id": "3NBn5$kQj8YtMsVEq6Ww6v",
+      "right_domain": "fire_protection",
+      "overlap_s": [
+        5158077.329172795,
+        5158077.3504754845
+      ],
+      "overlap_q": [
+        -297697.80360117205,
+        -297696.9772969691
+      ],
+      "overlap_z": [
+        240.03792753594044,
+        240.08235985289048
+      ]
+    },
+    {
+      "left_step_id": 11632,
+      "left_global_id": "30DQkZ9ht8zp7yoKoHaJJf",
+      "left_domain": "duct_air",
+      "right_step_id": 1081497,
+      "right_global_id": "21BS8Ht_r8RPVHJvG8OlML",
+      "right_domain": "fire_protection",
+      "overlap_s": [
+        5158077.329172795,
+        5158077.3504754845
+      ],
+      "overlap_q": [
+        -297696.9264969694,
+        -297696.0710011725
+      ],
+      "overlap_z": [
+        240.1543004337941,
+        240.20235985289048
+      ]
+    },
+    {
+      "left_step_id": 11632,
+      "left_global_id": "30DQkZ9ht8zp7yoKoHaJJf",
+      "left_domain": "duct_air",
+      "right_step_id": 1029860,
+      "right_global_id": "0kjDLHNd27y33KLQf3sdBV",
+      "right_domain": "lighting",
+      "overlap_s": [
+        5158077.329172795,
+        5158077.472108786
+      ],
+      "overlap_q": [
+        -297696.5558889778,
+        -297696.0710011725
+      ],
+      "overlap_z": [
+        240.03792753594044,
+        240.04702399999996
+      ]
+    },
+    {
+      "left_step_id": 11632,
+      "left_global_id": "30DQkZ9ht8zp7yoKoHaJJf",
+      "left_domain": "duct_air",
+      "right_step_id": 1042125,
+      "right_global_id": "2slnYh7rf12qVmvvnfSlWK",
+      "right_domain": "lighting",
+      "overlap_s": [
+        5158077.329172795,
+        5158077.451413295
+      ],
+      "overlap_q": [
+        -297696.48798897775,
+        -297696.0710011725
+      ],
+      "overlap_z": [
+        240.03792753594044,
+        240.04702399999996
+      ]
+    },
+    {
+      "left_step_id": 11789,
+      "left_global_id": "3TlvHi$kP7UcUgaA3NIewm",
+      "left_domain": "duct_air",
+      "right_step_id": 30085,
+      "right_global_id": "3p3x5e$Lo_er0jqS7xXujP",
+      "right_domain": "glycol_mechanical_piping",
+      "overlap_s": [
+        5158082.575903793,
+        5158082.617972794
+      ],
+      "overlap_q": [
+        -297696.8811889789,
+        -297696.5053889789
+      ],
+      "overlap_z": [
+        240.1987188651876,
+        240.24048113481203
+      ]
+    },
+    {
+      "left_step_id": 11789,
+      "left_global_id": "3TlvHi$kP7UcUgaA3NIewm",
+      "left_domain": "duct_air",
+      "right_step_id": 30163,
+      "right_global_id": "2XYl85qxPcgP_bwfSVNpJo",
+      "right_domain": "glycol_mechanical_piping",
+      "overlap_s": [
+        5158082.575903793,
+        5158082.617972794
+      ],
+      "overlap_q": [
+        -297696.8811889789,
+        -297696.5053889789
+      ],
+      "overlap_z": [
+        239.99951886518758,
+        240.041281134812
+      ]
+    },
+    {
+      "left_step_id": 11789,
+      "left_global_id": "3TlvHi$kP7UcUgaA3NIewm",
+      "left_domain": "duct_air",
+      "right_step_id": 1072371,
+      "right_global_id": "3RuwrODMmFHYociVSzZzxl",
+      "right_domain": "fire_protection",
+      "overlap_s": [
+        5158083.257356125,
+        5158083.305768526
+      ],
+      "overlap_q": [
+        -297696.8811889789,
+        -297696.155388979
+      ],
+      "overlap_z": [
+        240.03430043379416,
+        240.08235985289053
+      ]
+    },
+    {
+      "left_step_id": 11789,
+      "left_global_id": "3TlvHi$kP7UcUgaA3NIewm",
+      "left_domain": "duct_air",
+      "right_step_id": 999884,
+      "right_global_id": "3XeDbsD1tLR5vUDavsfkeD",
+      "right_domain": "lighting",
+      "overlap_s": [
+        5158082.100338293,
+        5158082.405138294
+      ],
+      "overlap_q": [
+        -297696.38638897904,
+        -297696.155388979
+      ],
+      "overlap_z": [
+        239.995,
+        240.04702399999996
+      ]
+    },
+    {
+      "left_step_id": 11789,
+      "left_global_id": "3TlvHi$kP7UcUgaA3NIewm",
+      "left_domain": "duct_air",
+      "right_step_id": 1042218,
+      "right_global_id": "1FlgkFFA7Ro_9etLDSAfjP",
+      "right_domain": "lighting",
+      "overlap_s": [
+        5158082.1039882945,
+        5158082.408788294
+      ],
+      "overlap_q": [
+        -297696.48798897903,
+        -297696.155388979
+      ],
+      "overlap_z": [
+        239.995,
+        240.04702399999996
+      ]
+    },
+    {
+      "left_step_id": 13939,
+      "left_global_id": "11pLBVw09$ERj41KFAUFcD",
+      "left_domain": "duct_air",
+      "right_step_id": 35626,
+      "right_global_id": "0PyyRyfc1D3tPi3K3$F$q9",
+      "right_domain": "glycol_mechanical_piping",
+      "overlap_s": [
+        5158064.412274076,
+        5158064.723477236
+      ],
+      "overlap_q": [
+        -297698.4620621093,
+        -297698.3640621094
+      ],
+      "overlap_z": [
+        240.39310899999955,
+        240.4507808373269
+      ]
+    },
+    {
+      "left_step_id": 13939,
+      "left_global_id": "11pLBVw09$ERj41KFAUFcD",
+      "left_domain": "duct_air",
+      "right_step_id": 40504,
+      "right_global_id": "2R7$eSxJWEJ_i2wIS8WVSG",
+      "right_domain": "glycol_mechanical_piping",
+      "overlap_s": [
+        5158064.649596149,
+        5158064.9316383
+      ],
+      "overlap_q": [
+        -297698.3234829941,
+        -297698.2231863232
+      ],
+      "overlap_z": [
+        240.3789987298108,
+        240.4507808373269
+      ]
+    },
+    {
+      "left_step_id": 13939,
+      "left_global_id": "11pLBVw09$ERj41KFAUFcD",
+      "left_domain": "duct_air",
+      "right_step_id": 286856,
+      "right_global_id": "0fm8Qi7AGIDlOdtAN$Gdy7",
+      "right_domain": "glycol_mechanical_piping",
+      "overlap_s": [
+        5158065.2456161715,
+        5158065.298716171
+      ],
+      "overlap_q": [
+        -297698.4450645127,
+        -297698.3919621096
+      ],
+      "overlap_z": [
+        240.4022288751154,
+        240.44236807325981
+      ]
+    },
+    {
+      "left_step_id": 13939,
+      "left_global_id": "11pLBVw09$ERj41KFAUFcD",
+      "left_domain": "duct_air",
+      "right_step_id": 288446,
+      "right_global_id": "103V5REQZLXDlwj_2bDQXT",
+      "right_domain": "glycol_mechanical_piping",
+      "overlap_s": [
+        5158065.245616171,
+        5158065.298716171
+      ],
+      "overlap_q": [
+        -297698.3214950959,
+        -297698.2813605108
+      ],
+      "overlap_z": [
+        240.3903,
+        240.4434
+      ]
+    },
+    {
+      "left_step_id": 13939,
+      "left_global_id": "11pLBVw09$ERj41KFAUFcD",
+      "left_domain": "duct_air",
+      "right_step_id": 290172,
+      "right_global_id": "1_7hnSHl7Z6VXoXKukUy1p",
+      "right_domain": "glycol_mechanical_piping",
+      "overlap_s": [
+        5158065.257548877,
+        5158065.297683463
+      ],
+      "overlap_q": [
+        -297698.3334278034,
+        -297698.28032780346
+      ],
+      "overlap_z": [
+        240.22958083732647,
+        240.2826808373265
+      ]
+    },
+    {
+      "left_step_id": 13939,
+      "left_global_id": "11pLBVw09$ERj41KFAUFcD",
+      "left_domain": "duct_air",
+      "right_step_id": 30665,
+      "right_global_id": "0ryIAzKDHgUt_obPF6OKL8",
+      "right_domain": "glycol_mechanical_piping",
+      "overlap_s": [
+        5158064.9316382995,
+        5158065.2456161715
+      ],
+      "overlap_q": [
+        -297698.3224623034,
+        -297698.28039330343
+      ],
+      "overlap_z": [
+        240.4014188651878,
+        240.44318113481222
+      ]
+    },
+    {
+      "left_step_id": 13939,
+      "left_global_id": "11pLBVw09$ERj41KFAUFcD",
+      "left_domain": "duct_air",
+      "right_step_id": 30743,
+      "right_global_id": "3SvJ5MCuSe9X8x9aQ$MbWg",
+      "right_domain": "glycol_mechanical_piping",
+      "overlap_s": [
+        5158065.256581671,
+        5158065.298650671
+      ],
+      "overlap_q": [
+        -297698.64898632304,
+        -297698.33342780324
+      ],
+      "overlap_z": [
+        240.22979970251427,
+        240.2715619721387
+      ]
+    },
+    {
+      "left_step_id": 13939,
+      "left_global_id": "11pLBVw09$ERj41KFAUFcD",
+      "left_domain": "duct_air",
+      "right_step_id": 30821,
+      "right_global_id": "0nO4IRMgOyz7tCAwUQVFru",
+      "right_domain": "glycol_mechanical_piping",
+      "overlap_s": [
+        5158064.723477234,
+        5158065.2456161715
+      ],
+      "overlap_q": [
+        -297698.4340966095,
+        -297698.39202760934
+      ],
+      "overlap_z": [
+        240.4014188651878,
+        240.44318113481222
+      ]
+    },
+    {
+      "left_step_id": 13939,
+      "left_global_id": "11pLBVw09$ERj41KFAUFcD",
+      "left_domain": "duct_air",
+      "right_step_id": 30900,
+      "right_global_id": "1PBlTemi5p77RTtPjMW3q4",
+      "right_domain": "glycol_mechanical_piping",
+      "overlap_s": [
+        5158065.256581672,
+        5158065.298650673
+      ],
+      "overlap_q": [
+        -297698.6493861227,
+        -297698.4450596084
+      ],
+      "overlap_z": [
+        240.4013905618875,
+        240.44317730212776
+      ]
+    },
+    {
+      "left_step_id": 13939,
+      "left_global_id": "11pLBVw09$ERj41KFAUFcD",
+      "left_domain": "duct_air",
+      "right_step_id": 35686,
+      "right_global_id": "0y1HniVmn0w48Enn6TmeGU",
+      "right_domain": "glycol_mechanical_piping",
+      "overlap_s": [
+        5158064.318216171,
+        5158064.443477237
+      ],
+      "overlap_q": [
+        -297698.43409660936,
+        -297698.3920276093
+      ],
+      "overlap_z": [
+        240.4014188651878,
+        240.44318113481222
+      ]
+    },
+    {
+      "left_step_id": 13939,
+      "left_global_id": "11pLBVw09$ERj41KFAUFcD",
+      "left_domain": "duct_air",
+      "right_step_id": 110706,
+      "right_global_id": "0RgfU0BnqDbiSbIWIhvoht",
+      "right_domain": "glycol_mechanical_piping",
+      "overlap_s": [
+        5158064.318216171,
+        5158064.6516383
+      ],
+      "overlap_q": [
+        -297698.3224623032,
+        -297698.280393303
+      ],
+      "overlap_z": [
+        240.40141886518782,
+        240.44318113481225
+      ]
+    },
+    {
+      "left_step_id": 13939,
+      "left_global_id": "11pLBVw09$ERj41KFAUFcD",
+      "left_domain": "duct_air",
+      "right_step_id": 288374,
+      "right_global_id": "352Bw884K5zlxwpAY8eMez",
+      "right_domain": "glycol_mechanical_piping",
+      "overlap_s": [
+        5158065.256581671,
+        5158065.298650671
+      ],
+      "overlap_q": [
+        -297698.32230893814,
+        -297698.28054666845
+      ],
+      "overlap_z": [
+        240.2826808373265,
+        240.39030000000002
+      ]
+    },
+    {
+      "left_step_id": 14265,
+      "left_global_id": "02aE7WZa93j_EhJb1CU3VF",
+      "left_domain": "duct_air",
+      "right_step_id": 53486,
+      "right_global_id": "2mty_fFE2Jswf0eSRA8oxj",
+      "right_domain": "glycol_mechanical_piping",
+      "overlap_s": [
+        5158078.955638294,
+        5158079.053638294
+      ],
+      "overlap_q": [
+        -297699.8964221095,
+        -297699.5852189486
+      ],
+      "overlap_z": [
+        240.2119000000003,
+        240.23500272895345
+      ]
+    },
+    {
+      "left_step_id": 14265,
+      "left_global_id": "02aE7WZa93j_EhJb1CU3VF",
+      "left_domain": "duct_air",
+      "right_step_id": 53619,
+      "right_global_id": "1ChNagpevjEsO0$5U8qkN0",
+      "right_domain": "glycol_mechanical_piping",
+      "overlap_s": [
+        5158078.838337024,
+        5158078.924939564
+      ],
+      "overlap_q": [
+        -297700.0378102469,
+        -297699.75576809654
+      ],
+      "overlap_z": [
+        240.2119000000003,
+        240.255735594381
+      ]
+    },
+    {
+      "left_step_id": 14265,
+      "left_global_id": "02aE7WZa93j_EhJb1CU3VF",
+      "left_domain": "duct_air",
+      "right_step_id": 1064158,
+      "right_global_id": "2L_PxERBjAsB1I4$8oQ8Iz",
+      "right_domain": "fire_protection",
+      "overlap_s": [
+        5158078.946393904,
+        5158079.843638293
+      ],
+      "overlap_q": [
+        -297699.4817707312,
+        -297699.4076902676
+      ],
+      "overlap_z": [
+        240.2119000000003,
+        240.235063455497
+      ]
+    },
+    {
+      "left_step_id": 14265,
+      "left_global_id": "02aE7WZa93j_EhJb1CU3VF",
+      "left_domain": "duct_air",
+      "right_step_id": 1086027,
+      "right_global_id": "17hkEkb2n8rOBlQoOL2Y4L",
+      "right_domain": "fire_protection",
+      "overlap_s": [
+        5158078.111038294,
+        5158078.945377905
+      ],
+      "overlap_q": [
+        -297699.48177073075,
+        -297699.4076902676
+      ],
+      "overlap_z": [
+        240.2119000000003,
+        240.235063455497
+      ]
+    },
+    {
+      "left_step_id": 16502,
+      "left_global_id": "2j5CWOpiejsnsgjbxxN2$C",
+      "left_domain": "other_flow",
+      "right_step_id": 16572,
+      "right_global_id": "3FiscvVfAfHl63xrGCXNkT",
+      "right_domain": "duct_air",
+      "overlap_s": [
+        5158084.102521225,
+        5158084.452521225
+      ],
+      "overlap_q": [
+        -297698.05769256555,
+        -297698.0576925654
+      ],
+      "overlap_z": [
+        240.205,
+        240.405
+      ]
+    },
+    {
+      "left_step_id": 16502,
+      "left_global_id": "2j5CWOpiejsnsgjbxxN2$C",
+      "left_domain": "other_flow",
+      "right_step_id": 367415,
+      "right_global_id": "1DJF8w10V8lnfjt1O816gq",
+      "right_domain": "duct_air",
+      "overlap_s": [
+        5158084.102521224,
+        5158084.4525212245
+      ],
+      "overlap_q": [
+        -297698.21009256545,
+        -297698.2100925653
+      ],
+      "overlap_z": [
+        240.205,
+        240.405
+      ]
+    },
+    {
+      "left_step_id": 26529,
+      "left_global_id": "3rPoSpocJQ2T2nQpGW$PdQ",
+      "left_domain": "other_flow",
+      "right_step_id": 44888,
+      "right_global_id": "3G4M30Eh0EDXqhMot74yo3",
+      "right_domain": "duct_air",
+      "overlap_s": [
+        5158075.072391265,
+        5158075.3231912665
+      ],
+      "overlap_q": [
+        -297697.9745889767,
+        -297697.8221889767
+      ],
+      "overlap_z": [
+        240.21850628865133,
+        240.4193062886513
+      ]
+    },
+    {
+      "left_step_id": 26529,
+      "left_global_id": "3rPoSpocJQ2T2nQpGW$PdQ",
+      "left_domain": "other_flow",
+      "right_step_id": 26157,
+      "right_global_id": "2_0wa_$i2f38wJOPj1kN1i",
+      "right_domain": "duct_air",
+      "overlap_s": [
+        5158075.097791266,
+        5158075.297791266
+      ],
+      "overlap_q": [
+        -297697.9745889767,
+        -297697.9745889767
+      ],
+      "overlap_z": [
+        240.24390628865132,
+        240.39390628865132
+      ]
+    },
+    {
+      "left_step_id": 26529,
+      "left_global_id": "3rPoSpocJQ2T2nQpGW$PdQ",
+      "left_domain": "other_flow",
+      "right_step_id": 26591,
+      "right_global_id": "17sLgdqFj1nP_jS14ENb2q",
+      "right_domain": "duct_air",
+      "overlap_s": [
+        5158075.097791266,
+        5158075.297791266
+      ],
+      "overlap_q": [
+        -297697.82218897686,
+        -297697.8221889767
+      ],
+      "overlap_z": [
+        240.24390628865132,
+        240.39390628865132
+      ]
+    },
+    {
+      "left_step_id": 31243,
+      "left_global_id": "3rN4A7$Vp7MK4Ede4lNgEg",
+      "left_domain": "other_flow",
+      "right_step_id": 70356,
+      "right_global_id": "3zNCMZm0yiQ1drgRmFn7GW",
+      "right_domain": "duct_air",
+      "overlap_s": [
+        5158070.39122442,
+        5158070.59122442
+      ],
+      "overlap_q": [
+        -297699.27659551066,
+        -297698.2515955105
+      ],
+      "overlap_z": [
+        240.14322889726523,
+        240.46822889726522
+      ]
+    },
+    {
+      "left_step_id": 44736,
+      "left_global_id": "0MoleG2seZha0Ztw_j4LtA",
+      "left_domain": "duct_air",
+      "right_step_id": 1083240,
+      "right_global_id": "12u7NDZNia5mmytrf8Q_eY",
+      "right_domain": "fire_protection",
+      "overlap_s": [
+        5158068.078512185,
+        5158068.137395024
+      ],
+      "overlap_q": [
+        -297699.27899548644,
+        -297699.20279548626
+      ],
+      "overlap_z": [
+        240.0932288972652,
+        240.10278014334224
+      ]
+    },
+    {
+      "left_step_id": 44736,
+      "left_global_id": "0MoleG2seZha0Ztw_j4LtA",
+      "left_domain": "duct_air",
+      "right_step_id": 1083380,
+      "right_global_id": "3bXM4QCYN0oeYYFXC5WGCa",
+      "right_domain": "fire_protection",
+      "overlap_s": [
+        5158067.786860898,
+        5158067.843185399
+      ],
+      "overlap_q": [
+        -297699.26316055964,
+        -297699.218630413
+      ],
+      "overlap_z": [
+        240.36887599999994,
+        240.4252005
+      ]
+    },
+    {
+      "left_step_id": 44736,
+      "left_global_id": "0MoleG2seZha0Ztw_j4LtA",
+      "left_domain": "duct_air",
+      "right_step_id": 1083441,
+      "right_global_id": "10unyCz5FH206JoYwWTECL",
+      "right_domain": "fire_protection",
+      "overlap_s": [
+        5158068.074679605,
+        5158068.131004104
+      ],
+      "overlap_q": [
+        -297699.2631605596,
+        -297699.218630413
+      ],
+      "overlap_z": [
+        240.36887599999994,
+        240.4252005
+      ]
+    },
+    {
+      "left_step_id": 44736,
+      "left_global_id": "0MoleG2seZha0Ztw_j4LtA",
+      "left_domain": "duct_air",
+      "right_step_id": 1086475,
+      "right_global_id": "01OneaMBRbkPWxjdQi_fxe",
+      "right_domain": "fire_protection",
+      "overlap_s": [
+        5158068.045319089,
+        5158068.170588121
+      ],
+      "overlap_q": [
+        -297699.3265955102,
+        -297699.265870728
+      ],
+      "overlap_z": [
+        240.0932288972652,
+        240.11353280431467
+      ]
+    },
+    {
+      "left_step_id": 44736,
+      "left_global_id": "0MoleG2seZha0Ztw_j4LtA",
+      "left_domain": "duct_air",
+      "right_step_id": 29610,
+      "right_global_id": "3rcMz8Z3vlmEJD9Un_Gb2O",
+      "right_domain": "glycol_mechanical_piping",
+      "overlap_s": [
+        5158067.782268061,
+        5158067.889638299
+      ],
+      "overlap_q": [
+        -297699.27103449823,
+        -297699.22896549787
+      ],
+      "overlap_z": [
+        240.1764188651878,
+        240.21818113481223
+      ]
+    },
+    {
+      "left_step_id": 44736,
+      "left_global_id": "0MoleG2seZha0Ztw_j4LtA",
+      "left_domain": "duct_air",
+      "right_step_id": 1070128,
+      "right_global_id": "0aXDZeHfW8Je2YspvAq1Gm",
+      "right_domain": "fire_protection",
+      "overlap_s": [
+        5158067.830485398,
+        5158068.0873796055
+      ],
+      "overlap_q": [
+        -297699.2575959865,
+        -297699.2241949864
+      ],
+      "overlap_z": [
+        240.3855712654481,
+        240.41872873455185
+      ]
+    },
+    {
+      "left_step_id": 44736,
+      "left_global_id": "0MoleG2seZha0Ztw_j4LtA",
+      "left_domain": "duct_air",
+      "right_step_id": 1070210,
+      "right_global_id": "3a7YdoRU3ifmAObFB0KiwC",
+      "right_domain": "fire_protection",
+      "overlap_s": [
+        5158067.7932108985,
+        5158067.826611899
+      ],
+      "overlap_q": [
+        -297699.257474221,
+        -297699.2243167517
+      ],
+      "overlap_z": [
+        240.0932288972652,
+        240.38157600000002
+      ]
+    },
+    {
+      "left_step_id": 44736,
+      "left_global_id": "0MoleG2seZha0Ztw_j4LtA",
+      "left_domain": "duct_air",
+      "right_step_id": 1074123,
+      "right_global_id": "3tHAwH$bBqYHtJQv9zGaEL",
+      "right_domain": "fire_protection",
+      "overlap_s": [
+        5158068.696967755,
+        5158068.7453801595
+      ],
+      "overlap_q": [
+        -297699.3265955102,
+        -297698.20159551024
+      ],
+      "overlap_z": [
+        240.0932288972652,
+        240.17705308233755
+      ]
+    },
+    {
+      "left_step_id": 44736,
+      "left_global_id": "0MoleG2seZha0Ztw_j4LtA",
+      "left_domain": "duct_air",
+      "right_step_id": 1083166,
+      "right_global_id": "1xYsauMtXXI1xmXf8Ebdh$",
+      "right_domain": "fire_protection",
+      "overlap_s": [
+        5158068.091253105,
+        5158068.124654105
+      ],
+      "overlap_q": [
+        -297699.25747422094,
+        -297699.22431675176
+      ],
+      "overlap_z": [
+        240.0932288972652,
+        240.38157599999997
+      ]
+    },
+    {
+      "left_step_id": 44888,
+      "left_global_id": "3G4M30Eh0EDXqhMot74yo3",
+      "left_domain": "duct_air",
+      "right_step_id": 26093,
+      "right_global_id": "22jxH2StA3GpesWkTAavIX",
+      "right_domain": "other_flow",
+      "overlap_s": [
+        5158075.047791265,
+        5158075.347791266
+      ],
+      "overlap_q": [
+        -297697.7694863259,
+        -297697.4694863258
+      ],
+      "overlap_z": [
+        239.96539989840056,
+        240.09530370896823
+      ]
+    },
+    {
+      "left_step_id": 44888,
+      "left_global_id": "3G4M30Eh0EDXqhMot74yo3",
+      "left_domain": "duct_air",
+      "right_step_id": 26321,
+      "right_global_id": "27Z7_KKNo9EGzP16DIWy7V",
+      "right_domain": "other_flow",
+      "overlap_s": [
+        5158075.097791265,
+        5158075.297791266
+      ],
+      "overlap_q": [
+        -297697.7694863259,
+        -297697.5444863259
+      ],
+      "overlap_z": [
+        240.16890628865133,
+        240.39390628865132
+      ]
+    },
+    {
+      "left_step_id": 44888,
+      "left_global_id": "3G4M30Eh0EDXqhMot74yo3",
+      "left_domain": "duct_air",
+      "right_step_id": 60917,
+      "right_global_id": "1HnN$2ulJRqwZpbN_AmdyL",
+      "right_domain": "other_flow",
+      "overlap_s": [
+        5158075.072391266,
+        5158075.297791265
+      ],
+      "overlap_q": [
+        -297698.1093889773,
+        -297697.98967477604
+      ],
+      "overlap_z": [
+        240.24390628865132,
+        240.39390628865132
+      ]
+    },
+    {
+      "left_step_id": 44888,
+      "left_global_id": "3G4M30Eh0EDXqhMot74yo3",
+      "left_domain": "duct_air",
+      "right_step_id": 737381,
+      "right_global_id": "3Mt9lZYnFDWkyZ_Z74$CdI",
+      "right_domain": "domestic_plumbing",
+      "overlap_s": [
+        5158074.612682235,
+        5158074.7351479195
+      ],
+      "overlap_q": [
+        -297698.1093889773,
+        -297698.1040067213
+      ],
+      "overlap_z": [
+        240.07053918753363,
+        240.13924855416403
+      ]
+    },
+    {
+      "left_step_id": 44888,
+      "left_global_id": "3G4M30Eh0EDXqhMot74yo3",
+      "left_domain": "duct_air",
+      "right_step_id": 738071,
+      "right_global_id": "2duYe7FPHR0di5GA527MDv",
+      "right_domain": "domestic_plumbing",
+      "overlap_s": [
+        5158074.516295614,
+        5158074.615280682
+      ],
+      "overlap_q": [
+        -297698.10660516756,
+        -297697.98413949675
+      ],
+      "overlap_z": [
+        240.06695457066078,
+        240.1356639376372
+      ]
+    },
+    {
+      "left_step_id": 44888,
+      "left_global_id": "3G4M30Eh0EDXqhMot74yo3",
+      "left_domain": "duct_air",
+      "right_step_id": 739141,
+      "right_global_id": "0NpcH0dzUKcH0KS1WlhL3W",
+      "right_domain": "domestic_plumbing",
+      "overlap_s": [
+        5158074.517464026,
+        5158074.583756443
+      ],
+      "overlap_q": [
+        -297697.8169278789,
+        -297697.70504377934
+      ],
+      "overlap_z": [
+        240.02020053483443,
+        240.14977275396637
+      ]
+    },
+    {
+      "left_step_id": 44888,
+      "left_global_id": "3G4M30Eh0EDXqhMot74yo3",
+      "left_domain": "duct_air",
+      "right_step_id": 868609,
+      "right_global_id": "05ZihFl9DZKp6LKgKUC__9",
+      "right_domain": "glycol_mechanical_piping",
+      "overlap_s": [
+        5158074.237699537,
+        5158074.256177056
+      ],
+      "overlap_q": [
+        -297697.6813720664,
+        -297697.6507040664
+      ],
+      "overlap_z": [
+        240.0759,
+        240.106568
+      ]
+    },
+    {
+      "left_step_id": 44888,
+      "left_global_id": "3G4M30Eh0EDXqhMot74yo3",
+      "left_domain": "duct_air",
+      "right_step_id": 973078,
+      "right_global_id": "3EoIIi$ulJf2JSDOw3GOtu",
+      "right_domain": "glycol_mechanical_piping",
+      "overlap_s": [
+        5158074.433537018,
+        5158074.457606296
+      ],
+      "overlap_q": [
+        -297697.474773346,
+        -297697.4530877952
+      ],
+      "overlap_z": [
+        240.14666124099242,
+        240.16513875900756
+      ]
+    },
+    {
+      "left_step_id": 44888,
+      "left_global_id": "3G4M30Eh0EDXqhMot74yo3",
+      "left_domain": "duct_air",
+      "right_step_id": 974458,
+      "right_global_id": "2cqwCkpn2j8THq4NFM7Cb_",
+      "right_domain": "glycol_mechanical_piping",
+      "overlap_s": [
+        5158074.2366338,
+        5158074.267613221
+      ],
+      "overlap_q": [
+        -297697.67167656304,
+        -297697.6406971415
+      ],
+      "overlap_z": [
+        240.1359,
+        240.166568
+      ]
+    },
+    {
+      "left_step_id": 44888,
+      "left_global_id": "3G4M30Eh0EDXqhMot74yo3",
+      "left_domain": "duct_air",
+      "right_step_id": 737437,
+      "right_global_id": "2i0rbh5pgmkdFz26lzlClX",
+      "right_domain": "domestic_plumbing",
+      "overlap_s": [
+        5158074.569684735,
+        5158074.658270145
+      ],
+      "overlap_q": [
+        -297698.1093889773,
+        -297698.06101725815
+      ],
+      "overlap_z": [
+        240.07251543092292,
+        240.13368769407492
+      ]
+    },
+    {
+      "left_step_id": 44888,
+      "left_global_id": "3G4M30Eh0EDXqhMot74yo3",
+      "left_domain": "duct_air",
+      "right_step_id": 737509,
+      "right_global_id": "2TKFpJjVtQF5K0jxQdctxq",
+      "right_domain": "domestic_plumbing",
+      "overlap_s": [
+        5158074.520447368,
+        5158074.580772659
+      ],
+      "overlap_q": [
+        -297697.98540245823,
+        -297697.8156429699
+      ],
+      "overlap_z": [
+        240.06685864774312,
+        240.1301030773751
+      ]
+    },
+    {
+      "left_step_id": 44888,
+      "left_global_id": "3G4M30Eh0EDXqhMot74yo3",
+      "left_domain": "duct_air",
+      "right_step_id": 737579,
+      "right_global_id": "1iQkfWauDmxUruAHCdVa7e",
+      "right_domain": "domestic_plumbing",
+      "overlap_s": [
+        5158074.520447464,
+        5158074.580772463
+      ],
+      "overlap_q": [
+        -297697.76931446703,
+        -297697.7094293042
+      ],
+      "overlap_z": [
+        239.95790000000017,
+        240.02020069058943
+      ]
+    },
+    {
+      "left_step_id": 44888,
+      "left_global_id": "3G4M30Eh0EDXqhMot74yo3",
+      "left_domain": "duct_air",
+      "right_step_id": 739243,
+      "right_global_id": "3gKnKjHx_$UTdQ6dPl8IIg",
+      "right_domain": "domestic_plumbing",
+      "overlap_s": [
+        5158074.520447797,
+        5158074.580772797
+      ],
+      "overlap_q": [
+        -297697.7693017608,
+        -297697.70941659797
+      ],
+      "overlap_z": [
+        240.14977259823885,
+        240.50790000000018
+      ]
+    },
+    {
+      "left_step_id": 44888,
+      "left_global_id": "3G4M30Eh0EDXqhMot74yo3",
+      "left_domain": "duct_air",
+      "right_step_id": 749695,
+      "right_global_id": "0n2Ju8QFoHxXFjX8OZ9IGA",
+      "right_domain": "glycol_mechanical_piping",
+      "overlap_s": [
+        5158074.218698667,
+        5158074.240129667
+      ],
+      "overlap_q": [
+        -297698.1093889773,
+        -297697.7393718855
+      ],
+      "overlap_z": [
+        240.06436262805963,
+        240.0856373719404
+      ]
+    },
+    {
+      "left_step_id": 44888,
+      "left_global_id": "3G4M30Eh0EDXqhMot74yo3",
+      "left_domain": "duct_air",
+      "right_step_id": 865451,
+      "right_global_id": "0yGluUDUydOgLBcuWcW49g",
+      "right_domain": "glycol_mechanical_piping",
+      "overlap_s": [
+        5158074.236222796,
+        5158074.257653796
+      ],
+      "overlap_q": [
+        -297698.1093889773,
+        -297697.6813720662
+      ],
+      "overlap_z": [
+        240.08526262805958,
+        240.10653737194036
+      ]
+    },
+    {
+      "left_step_id": 44888,
+      "left_global_id": "3G4M30Eh0EDXqhMot74yo3",
+      "left_domain": "duct_air",
+      "right_step_id": 868541,
+      "right_global_id": "0dtojW_DHgLSpEaWvjJExo",
+      "right_domain": "glycol_mechanical_piping",
+      "overlap_s": [
+        5158074.236222797,
+        5158074.257653795
+      ],
+      "overlap_q": [
+        -297697.67200943833,
+        -297697.6507346944
+      ],
+      "overlap_z": [
+        239.95790000000017,
+        240.07590000000002
+      ]
+    },
+    {
+      "left_step_id": 44888,
+      "left_global_id": "3G4M30Eh0EDXqhMot74yo3",
+      "left_domain": "duct_air",
+      "right_step_id": 965779,
+      "right_global_id": "03rrGtPjfw7VPN1rPy1dL9",
+      "right_domain": "glycol_mechanical_piping",
+      "overlap_s": [
+        5158074.25350343,
+        5158074.448657435
+      ],
+      "overlap_q": [
+        -297697.65480693354,
+        -297697.4596529282
+      ],
+      "overlap_z": [
+        240.1452626280596,
+        240.1665373719404
+      ]
+    },
+    {
+      "left_step_id": 44888,
+      "left_global_id": "3G4M30Eh0EDXqhMot74yo3",
+      "left_domain": "duct_air",
+      "right_step_id": 965853,
+      "right_global_id": "2L87y4csUvjn5viSAh8KCJ",
+      "right_domain": "glycol_mechanical_piping",
+      "overlap_s": [
+        5158074.236222797,
+        5158074.257653795
+      ],
+      "overlap_q": [
+        -297697.67200943833,
+        -297697.6507346944
+      ],
+      "overlap_z": [
+        239.95790000000017,
+        240.13590000000002
+      ]
+    },
+    {
+      "left_step_id": 44888,
+      "left_global_id": "3G4M30Eh0EDXqhMot74yo3",
+      "left_domain": "duct_air",
+      "right_step_id": 972704,
+      "right_global_id": "2Gh7zC9o999ezMMcAgg2Pr",
+      "right_domain": "glycol_mechanical_piping",
+      "overlap_s": [
+        5158074.436222796,
+        5158074.457653797
+      ],
+      "overlap_q": [
+        -297697.4530877953,
+        -297697.15938897704
+      ],
+      "overlap_z": [
+        240.14526262805958,
+        240.16653737194036
+      ]
+    },
+    {
+      "left_step_id": 44888,
+      "left_global_id": "3G4M30Eh0EDXqhMot74yo3",
+      "left_domain": "duct_air",
+      "right_step_id": 1076067,
+      "right_global_id": "3HmSinoyAqvQ0z$QFWzmIc",
+      "right_domain": "fire_protection",
+      "overlap_s": [
+        5158074.954319279,
+        5158074.987720281
+      ],
+      "overlap_q": [
+        -297698.1093889773,
+        -297697.15938897704
+      ],
+      "overlap_z": [
+        240.35003021481364,
+        240.41735810086536
+      ]
+    },
+    {
+      "left_step_id": 45755,
+      "left_global_id": "0HN$X0sO3cp7RhjVUSSvB$",
+      "left_domain": "duct_air",
+      "right_step_id": 57477,
+      "right_global_id": "0o0y4vylpdqXiREjTZ3cAO",
+      "right_domain": "glycol_mechanical_piping",
+      "overlap_s": [
+        5158065.142430939,
+        5158065.184499939
+      ],
+      "overlap_q": [
+        -297697.23098897457,
+        -297696.85518897447
+      ],
+      "overlap_z": [
+        240.2964188651882,
+        240.33818113481263
+      ]
+    },
+    {
+      "left_step_id": 45755,
+      "left_global_id": "0HN$X0sO3cp7RhjVUSSvB$",
+      "left_domain": "duct_air",
+      "right_step_id": 57555,
+      "right_global_id": "08feQ8brUGIvqaesPVGP14",
+      "right_domain": "glycol_mechanical_piping",
+      "overlap_s": [
+        5158065.142430939,
+        5158065.184499939
+      ],
+      "overlap_q": [
+        -297697.23098897457,
+        -297696.85518897447
+      ],
+      "overlap_z": [
+        240.12481886518776,
+        240.1665811348122
+      ]
+    },
+    {
+      "left_step_id": 46889,
+      "left_global_id": "0HNp7nYQjxo_4uQ5mWrKT6",
+      "left_domain": "duct_air",
+      "right_step_id": 53486,
+      "right_global_id": "2mty_fFE2Jswf0eSRA8oxj",
+      "right_domain": "glycol_mechanical_piping",
+      "overlap_s": [
+        5158079.011038293,
+        5158079.053638294
+      ],
+      "overlap_q": [
+        -297699.8964221095,
+        -297699.65458897705
+      ],
+      "overlap_z": [
+        240.1907,
+        240.23500272895345
+      ]
+    },
+    {
+      "left_step_id": 48156,
+      "left_global_id": "3iRck$HvcQr8p9rXFHYYq9",
+      "left_domain": "other_flow",
+      "right_step_id": 50941,
+      "right_global_id": "1Q0zykYrhClK20QouQT41I",
+      "right_domain": "duct_air",
+      "overlap_s": [
+        5158084.085154551,
+        5158084.364407326
+      ],
+      "overlap_q": [
+        -297696.0878661905,
+        -297696.02838897955
+      ],
+      "overlap_z": [
+        240.02,
+        240.22
+      ]
+    },
+    {
+      "left_step_id": 53135,
+      "left_global_id": "2bQ3Bot254FwEKA5hTiFmF",
+      "left_domain": "glycol_mechanical_piping",
+      "right_step_id": 64056,
+      "right_global_id": "3a1TPZ8iomQYiG0ldXEUCa",
+      "right_domain": "duct_air",
+      "overlap_s": [
+        5158059.191138301,
+        5158059.191138301
+      ],
+      "overlap_q": [
+        -297699.986422495,
+        -297699.68642249535
+      ],
+      "overlap_z": [
+        240.2345547622084,
+        240.44885476220838
+      ]
+    },
+    {
+      "left_step_id": 53135,
+      "left_global_id": "2bQ3Bot254FwEKA5hTiFmF",
+      "left_domain": "glycol_mechanical_piping",
+      "right_step_id": 108468,
+      "right_global_id": "2K8wy2nBHwl3$xrJysPtly",
+      "right_domain": "duct_air",
+      "overlap_s": [
+        5158060.9216383,
+        5158060.923738301
+      ],
+      "overlap_q": [
+        -297699.88642249565,
+        -297699.7864224955
+      ],
+      "overlap_z": [
+        240.28491931850368,
+        240.3841902059135
+      ]
+    },
+    {
+      "left_step_id": 53135,
+      "left_global_id": "2bQ3Bot254FwEKA5hTiFmF",
+      "left_domain": "glycol_mechanical_piping",
+      "right_step_id": 929046,
+      "right_global_id": "2Io$PZFrY92SGhybx1vJL_",
+      "right_domain": "domestic_plumbing",
+      "overlap_s": [
+        5158059.191138301,
+        5158060.923738301
+      ],
+      "overlap_q": [
+        -297700.1108829726,
+        -297700.0838949711
+      ],
+      "overlap_z": [
+        240.33220411751662,
+        240.3589953446108
+      ]
+    },
+    {
+      "left_step_id": 72230,
+      "left_global_id": "2oiIeV0bv1gsK4k2_gSiBE",
+      "left_domain": "duct_air",
+      "right_step_id": 893341,
+      "right_global_id": "2rm9exgmb6SRFW5FnyKeGD",
+      "right_domain": "glycol_mechanical_piping",
+      "overlap_s": [
+        5158070.128644298,
+        5158070.155632298
+      ],
+      "overlap_q": [
+        -297698.00712583517,
+        -297697.85472583486
+      ],
+      "overlap_z": [
+        240.1053288972652,
+        240.10929561354712
+      ]
+    },
+    {
+      "left_step_id": 72284,
+      "left_global_id": "3XiDZ_ZfKHC$0XYYkEre8j",
+      "left_domain": "duct_air",
+      "right_step_id": 857932,
+      "right_global_id": "02$XoXZlX7puaddWY7ETJv",
+      "right_domain": "glycol_mechanical_piping",
+      "overlap_s": [
+        5158069.978644297,
+        5158070.005632298
+      ],
+      "overlap_q": [
+        -297697.8221336802,
+        -297697.6697101486
+      ],
+      "overlap_z": [
+        240.0625043864529,
+        240.08929561354708
+      ]
+    },
+    {
+      "left_step_id": 72284,
+      "left_global_id": "3XiDZ_ZfKHC$0XYYkEre8j",
+      "left_domain": "duct_air",
+      "right_step_id": 891374,
+      "right_global_id": "2xePc5$ETB5h6_hSyBOEHO",
+      "right_domain": "domestic_plumbing",
+      "overlap_s": [
+        5158069.696422798,
+        5158069.717853798
+      ],
+      "overlap_q": [
+        -297697.8221336802,
+        -297697.6697101486
+      ],
+      "overlap_z": [
+        240.0652626280596,
+        240.08653737194038
+      ]
+    },
+    {
+      "left_step_id": 72284,
+      "left_global_id": "3XiDZ_ZfKHC$0XYYkEre8j",
+      "left_domain": "duct_air",
+      "right_step_id": 893341,
+      "right_global_id": "2rm9exgmb6SRFW5FnyKeGD",
+      "right_domain": "glycol_mechanical_piping",
+      "overlap_s": [
+        5158070.128644298,
+        5158070.155632298
+      ],
+      "overlap_q": [
+        -297697.8221336802,
+        -297697.6697101486
+      ],
+      "overlap_z": [
+        240.08250438645294,
+        240.10929561354712
+      ]
+    },
+    {
+      "left_step_id": 72284,
+      "left_global_id": "3XiDZ_ZfKHC$0XYYkEre8j",
+      "left_domain": "duct_air",
+      "right_step_id": 1093086,
+      "right_global_id": "2vt$_rDlzEGBNGpakSrd7L",
+      "right_domain": "fire_protection",
+      "overlap_s": [
+        5158069.843636192,
+        5158069.892048593
+      ],
+      "overlap_q": [
+        -297697.8221336802,
+        -297697.6697101486
+      ],
+      "overlap_z": [
+        240.03853989800692,
+        240.08235985289045
+      ]
+    }
+  ],
+  "warnings": [
+    "Residual cross-domain pairs are AABB screens and require exact BRep clearance review.",
+    "Port relationships were preserved; moved local placement endpoints must be field-checked where only one side of a connection was moved."
+  ]
+}
