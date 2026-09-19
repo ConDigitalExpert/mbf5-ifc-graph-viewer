@@ -133,3 +133,162 @@ kbd { border: 1px solid rgba(188, 216, 224, .22); border-radius: 4px; color: var
 @media (max-width: 1060px) { :root { --panel-width: 350px; }.badge-teal { display: none; }.view-cube { right: 20px; }.primary-toolbar { max-width: calc(100% - 120px); overflow-x: auto; scrollbar-width: none; }.primary-toolbar::-webkit-scrollbar { display: none; } }
 @media (max-width: 760px) { body { overflow: auto; }.app-shell { min-height: 100dvh; height: auto; }.topbar { height: 58px; padding: 0 12px; }.topbar-meta { gap: 5px; }.topbar-meta .badge, .topbar-meta .status-line { display: none; }.workspace { height: calc(100dvh - 116px); min-height: 560px; }.viewport-topline { top: 9px; left: 9px; right: 9px; }.viewport-top-actions .compact-button span { display: none; }.compact-button { padding: 7px; }.primary-toolbar { top: 75px; left: 9px; max-width: calc(100% - 18px); }.viewport-float-actions { top: 75px; right: 9px; }.viewport-float-actions .round-button:nth-child(2) { display: none; }.nav-rail { left: 9px; }.view-cube { top: 120px; right: 8px; transform: scale(.84); transform-origin: top right; }.axis-gizmo { right: 12px; bottom: 62px; transform: scale(.84); transform-origin: bottom right; }.selection-hud { left: 65px; bottom: 58px; max-width: calc(100% - 85px); }.viewport-footer { right: 9px; left: 9px; justify-content: center; bottom: 12px; }.viewport-footer #viewport-hint { display: none; }.inspector-panel, .tools-panel { top: 8px; right: 8px; bottom: 8px; left: 8px; width: auto; }.tools-panel { transform: translateX(calc(-100% - 18px)); }.inspector-panel[data-open="false"] { transform: translateX(calc(100% + 18px)); }.panel-resizer { display: none; }.bottom-panel { bottom: 8px; width: calc(100% - 16px); }.section-sliders { grid-template-columns: repeat(3, 1fr); gap: 9px; }.summary-strip { min-height: 58px; overflow-x: auto; padding: 0 12px; }.summary-item { min-width: 100px; padding: 0 12px; }.summary-item.wide { min-width: 180px; } }
 @media (prefers-reduced-motion: reduce) { *, *::before, *::after { scroll-behavior: auto !important; transition-duration: .01ms !important; animation-duration: .01ms !important; } }
+
+/* UI remediation: readable construction controls with the viewport kept primary. */
+:root {
+  --panel-width: 420px;
+  --ui-font: "Avenir Next", "Inter", "Segoe UI", ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, sans-serif;
+}
+
+body, button, input, select { font-family: var(--ui-font); }
+.topbar { height: 72px; padding: 0 26px; }
+.brand-mark, .topbar-icon { width: 40px; height: 40px; }
+.topbar-icon { border-radius: 11px; font-size: 18px; }
+.eyebrow, .section-kicker { font-size: 10px; letter-spacing: .15em; }
+.status-line { font-size: 12px; }
+.viewport-topline { top: 18px; left: 24px; right: 24px; min-height: 58px; padding: 10px 13px 10px 15px; border-radius: 16px; }
+.viewport-title strong { font-size: 14px; }
+.viewport-title small { font-size: 11px; }
+.viewport-top-actions { gap: 6px; }
+.compact-button { min-height: 40px; padding: 8px 11px; border-radius: 10px; font-size: 12px; }
+kbd { font-size: 10px; padding: 4px 6px; }
+.primary-toolbar { top: 94px; left: 24px; gap: 4px; padding: 6px; border-radius: 14px; }
+.tool-button { min-width: 44px; min-height: 40px; height: 40px; padding: 0 11px; border-radius: 10px; font-size: 11px; }
+.tool-glyph { font-size: 16px; }
+.toolbar-divider { height: 25px; }
+.viewport-float-actions { top: 94px; right: 24px; gap: 5px; padding: 6px; border-radius: 13px; }
+.round-button { width: 40px; height: 40px; border-radius: 10px; font-size: 17px; }
+.camera-help { top: 148px; right: 24px; width: 280px; padding: 15px 16px; font-size: 11px; }
+.help-heading { font-size: 13px; }
+.plain-button { min-height: 32px; padding: 6px 8px; font-size: 11px; }
+.nav-rail { left: 24px; padding: 6px; border-radius: 14px; }
+.rail-button { width: 58px; min-height: 54px; border-radius: 10px; }
+.rail-button span { font-size: 19px; }
+.rail-button small { font-size: 10px; }
+.view-cube { top: 154px; right: 30px; transform: scale(1.08); transform-origin: top right; }
+.axis-gizmo { right: 30px; bottom: 70px; transform: scale(1.08); transform-origin: bottom right; }
+.selection-hud { left: 104px; bottom: 70px; max-width: min(430px, calc(100% - 250px)); padding: 12px 14px; border-radius: 11px; }
+.hud-kicker { font-size: 10px; }
+.selection-hud strong { font-size: 13px; }
+.selection-hud span:last-child { font-size: 10px; }
+.walkthrough-hud { padding: 13px 16px; }
+.walkthrough-hud strong { font-size: 13px; }
+.walkthrough-hud small { font-size: 10px; }
+.measure-hud { min-width: 270px; padding: 12px 14px; }
+.measure-hud strong { font-size: 13px; }
+.measure-hud small { font-size: 10px; }
+.viewport-footer { right: 24px; bottom: 20px; padding: 9px 12px; font-size: 10px; }
+.toast { bottom: 24px; padding: 10px 14px; font-size: 11px; }
+.side-panel { top: 16px; bottom: 16px; border-radius: 18px; }
+.tools-panel { left: 16px; width: 360px; }
+.inspector-panel { right: 16px; }
+.side-panel-header { min-height: 76px; padding: 17px 18px; }
+.side-panel-header h2 { font-size: 18px; }
+.close-panel { width: 40px; height: 40px; border-radius: 10px; font-size: 22px; }
+.control-section { padding: 18px; }
+.section-heading { margin-bottom: 13px; font-size: 12px; }
+.control-grid { gap: 8px; margin-top: 9px; }
+.control-button { min-height: 42px; padding: 0 10px; border-radius: 9px; font-size: 11px; }
+.field-label { margin: 13px 0 6px; font-size: 11px; }
+.select-control { min-height: 42px; padding: 0 11px; border-radius: 9px; font-size: 12px; }
+.control-note, .provenance-card p { font-size: 12px; line-height: 1.5; }
+.section-status { font-size: 11px; }
+.status-pill { min-height: 25px; padding: 0 9px; font-size: 9px; }
+.saved-view-row { gap: 7px; }
+.square-button { width: 42px; height: 42px; border-radius: 9px; }
+.view-chip-row { gap: 7px; margin-top: 11px; }
+.view-chip { padding: 7px 9px; border-radius: 7px; font-size: 10px; }
+.provenance-card a { margin-top: 12px; font-size: 11px; }
+.inspector-tabs { padding: 9px 12px 0; }
+.inspector-tab { padding: 11px 13px 12px; border-radius: 8px 8px 0 0; font-size: 12px; }
+.selection-detail { padding: 19px; }
+.empty-detail p { font-size: 14px; }
+.empty-detail small { font-size: 11px; }
+.detail-title { font-size: 17px; }
+.detail-type, .detail-step { font-size: 10px; }
+.detail-focus { padding: 7px 9px; font-size: 10px; }
+.detail-id { padding: 10px; font-size: 10px; }
+.detail-section-label { margin: 18px 0 8px; font-size: 9px; }
+.property-line { padding: 8px 0; font-size: 11px; }
+.detail-copy { padding: 11px; font-size: 11px; }
+.search-box { margin: 13px 15px 8px; padding: 10px 10px 10px 12px; }
+.search-box input { font-size: 12px; }
+.list-caption { padding: 6px 16px 10px; font-size: 10px; }
+.node-list { padding: 0 10px 12px; }
+.node-row { min-height: 58px; gap: 10px; padding: 10px; border-radius: 10px; }
+.node-title { font-size: 12px; }
+.node-meta, .node-step { font-size: 10px; }
+.bottom-panel { bottom: 20px; width: min(980px, calc(100% - 48px)); border-radius: 17px; }
+.bottom-panel-header { padding: 14px 17px 12px; }
+.bottom-panel-header strong { font-size: 14px; }
+.bottom-panel-header > div:first-child > span:last-child { font-size: 10px; }
+.section-sliders { gap: 15px; padding: 16px 17px 18px; }
+.section-sliders label > span { font-size: 11px; }
+.section-sliders output { font-size: 10px; }
+.summary-strip { min-height: 70px; padding: 0 26px; }
+.summary-item { min-width: 145px; padding: 0 19px; }
+.summary-item span { font-size: 9px; }
+.summary-item strong { font-size: 14px; }
+.summary-item.wide strong { font-size: 10px; }
+
+@media (max-width: 1060px) {
+  :root { --panel-width: 370px; }
+  .topbar { padding: 0 18px; }
+  .viewport-topline { left: 16px; right: 16px; }
+  .primary-toolbar { left: 16px; }
+  .viewport-float-actions { right: 16px; }
+  .nav-rail { left: 16px; }
+  .viewport-footer { right: 16px; }
+}
+
+@media (max-width: 760px) {
+  .topbar { height: 62px; padding: 0 12px; }
+  .brand-mark, .topbar-icon { width: 38px; height: 38px; }
+  .viewport-topline { top: 10px; left: 10px; right: 10px; min-height: 52px; padding: 8px 9px 8px 11px; }
+  .viewport-title strong { font-size: 12px; }
+  .viewport-title small { font-size: 10px; }
+  .compact-button { min-height: 42px; padding: 8px; }
+  .primary-toolbar { top: 76px; left: 10px; max-width: calc(100% - 20px); }
+  .tool-button { min-height: 42px; height: 42px; }
+  .viewport-float-actions { top: 76px; right: 10px; }
+  .round-button { width: 42px; height: 42px; }
+  .view-cube { top: 128px; right: 10px; transform: scale(.92); }
+  .axis-gizmo { right: 12px; bottom: 70px; transform: scale(.92); }
+  .nav-rail { left: 10px; }
+  .selection-hud { left: 76px; bottom: 70px; max-width: calc(100% - 96px); }
+  .viewport-footer { right: 10px; left: 10px; justify-content: center; bottom: 12px; }
+  .inspector-panel, .tools-panel { top: 8px; right: 8px; bottom: 8px; left: 8px; width: auto; }
+  .side-panel-header { min-height: 70px; padding: 14px 15px; }
+  .control-section { padding: 15px; }
+  .bottom-panel { bottom: 8px; width: calc(100% - 16px); }
+  .section-sliders { gap: 10px; padding: 13px 14px 15px; }
+  .summary-strip { min-height: 64px; padding: 0 12px; }
+  .summary-item { min-width: 112px; padding: 0 13px; }
+}
+
+/* Saved view dialog: keyboard-first naming without browser-native prompts. */
+.saved-view-dialog { position: fixed; z-index: 80; inset: 0; display: grid; place-items: center; padding: 24px; }
+.saved-view-dialog[hidden] { display: none; }
+.saved-view-backdrop { position: absolute; inset: 0; background: rgba(2, 8, 12, .72); backdrop-filter: blur(10px) saturate(120%); }
+.saved-view-modal { position: relative; z-index: 1; width: min(430px, 100%); overflow: hidden; border: 1px solid rgba(188, 216, 224, .24); border-radius: 18px; background: rgba(10, 21, 27, .97); box-shadow: 0 28px 80px rgba(0, 0, 0, .5); }
+.saved-view-dialog-header { display: flex; align-items: flex-start; justify-content: space-between; gap: 16px; padding: 20px 20px 15px; border-bottom: 1px solid var(--border); background: linear-gradient(180deg, rgba(255, 255, 255, .04), transparent); }
+.saved-view-dialog-header h2 { margin: 5px 0 0; color: var(--text); font-size: 20px; line-height: 1.1; }
+.saved-view-dialog-description { margin: 0; padding: 16px 20px 0; color: var(--muted); font-size: 11px; line-height: 1.5; }
+.saved-view-form { padding: 0 20px 20px; }
+.saved-view-name-input { width: 100%; min-height: 42px; padding: 0 12px; border: 1px solid rgba(188, 216, 224, .2); border-radius: 9px; outline: 0; background: rgba(5, 13, 17, .72); color: var(--text); font-size: 13px; }
+.saved-view-name-input:focus { border-color: rgba(73, 211, 193, .62); box-shadow: 0 0 0 3px rgba(73, 211, 193, .1); }
+.saved-view-name-input[aria-invalid="true"] { border-color: rgba(251, 129, 118, .72); box-shadow: 0 0 0 3px rgba(251, 129, 118, .08); }
+.saved-view-name-meta { display: flex; justify-content: space-between; gap: 12px; margin-top: 7px; color: var(--subtle); font-size: 9px; line-height: 1.4; }
+.saved-view-name-count { flex: none; font-family: ui-monospace, SFMono-Regular, Menlo, monospace; }
+.saved-view-name-error { margin: 9px 0 0; color: var(--red); font-size: 10px; line-height: 1.4; }
+.saved-view-name-error[hidden] { display: none; }
+.saved-view-dialog-actions { display: flex; justify-content: flex-end; gap: 8px; margin-top: 18px; }
+.dialog-button { min-height: 40px; padding: 0 14px; border: 1px solid var(--border); border-radius: 8px; font-size: 10px; font-weight: 760; }
+.dialog-button.secondary { background: rgba(255, 255, 255, .025); color: var(--muted); }
+.dialog-button.secondary:hover, .dialog-button.secondary:focus-visible { border-color: rgba(188, 216, 224, .35); color: var(--text); }
+.dialog-button.primary { border-color: rgba(73, 211, 193, .42); background: var(--teal-soft); color: var(--teal); }
+.dialog-button.primary:hover, .dialog-button.primary:focus-visible { border-color: rgba(73, 211, 193, .72); background: rgba(73, 211, 193, .18); color: var(--text); }
+@media (max-width: 560px) {
+  .saved-view-dialog { align-items: end; padding: 12px; }
+  .saved-view-modal { width: 100%; border-radius: 15px; }
+}

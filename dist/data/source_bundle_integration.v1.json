@@ -1,0 +1,87 @@
+{
+  "schema": "bim-viewer-source-integration-1",
+  "status": "accepted_true_original_source_only",
+  "generated_at_utc": "2026-09-19T03:45:34.478Z",
+  "source_acceptance_status": "accepted_true_original_bundle",
+  "candidate_acceptance_status": "pending",
+  "immutable_original": {
+    "sha256": "b50ea1aa9fefc232b8bf485388245111e6d6bf011eb7ebdaf180096ba162a1ea",
+    "ifc_sha256": "b50ea1aa9fefc232b8bf485388245111e6d6bf011eb7ebdaf180096ba162a1ea",
+    "glb_sha256": "234fab4d1b291496aee192bee7813e2eff44fe7537fbe474ed5090c78e5407a0",
+    "ifc_schema": "IFC2X3",
+    "identity_nodes": 3648
+  },
+  "current_candidate": {
+    "sha256": "1448f524ce0d5c53ff3afcca7ac515024c538cfa71623282f560e98fe163e90e",
+    "ifc_sha256": "1448f524ce0d5c53ff3afcca7ac515024c538cfa71623282f560e98fe163e90e",
+    "glb_sha256": "fb0f4623c534e60404d443686fe6909200e50566061f56f8ba0889317dcaf9cd",
+    "status": "candidate handoff pending"
+  },
+  "staged_mapping": {
+    "path": "coordination_remediation/delivery/staged_source/comparison_source_mapping.v1.json",
+    "sha256": "61fe2f54e7a9ea728ee157b7bf6178a7d02008751fd376f52217c8891e6dfbe7"
+  },
+  "acceptance_report": {
+    "path": "coordination_remediation/independent_review/independent_acceptance_audit.v1.json",
+    "sha256": "e43104f78d97cd3e44358639dcf995d2c961b3e0c24fc1e9430918981c5f5c7c",
+    "overall_decision": "candidate pending; source bundle accepted by reviewer update"
+  },
+  "assets": {
+    "archive": {
+      "source": "viewer/data/MBF5-TEST-COORDINATION.ifc.gz",
+      "path": "data/MBF5-TEST-COORDINATION.original.ifc.gz",
+      "sha256": "934a562efeaa42542bb15885c102001f480f30b5aa344b3efb9c538d8ecb91c5",
+      "bytes": 17761732
+    },
+    "geometry": {
+      "source": "viewer/data/MBF5-TEST-COORDINATION.scene.glb",
+      "path": "data/MBF5-TEST-COORDINATION.original.scene.glb",
+      "sha256": "234fab4d1b291496aee192bee7813e2eff44fe7537fbe474ed5090c78e5407a0",
+      "bytes": 22806260
+    },
+    "geometryManifest": {
+      "source": "viewer/data/MBF5-TEST-COORDINATION.scene.manifest.json",
+      "path": "data/MBF5-TEST-COORDINATION.original.scene.manifest.json",
+      "sha256": "bfa5d33247afc4489ab67b6f2ebda7dfcbe47e39e09c0ce1f27d1d45f8c2ae13",
+      "bytes": 1075
+    },
+    "bridge": {
+      "source": "viewer/data/MBF5-TEST-COORDINATION.scene_bridge.json",
+      "path": "data/MBF5-TEST-COORDINATION.original.scene_bridge.json",
+      "sha256": "3e9660307b142262593a07af3a113da7737456939bb9e77b55a4cc445482d21f",
+      "bytes": 6587836
+    },
+    "bridgeIndex": {
+      "source": "viewer/data/MBF5-TEST-COORDINATION.scene_bridge_index.json",
+      "path": "data/MBF5-TEST-COORDINATION.original.scene_bridge_index.json",
+      "sha256": "34219050918428015a4088a73a80cf95dad1e2601a66a5def363327357e35a6a",
+      "bytes": 2130288
+    },
+    "validation": {
+      "source": "viewer/data/MBF5-TEST-COORDINATION.scene.validation.json",
+      "path": "data/MBF5-TEST-COORDINATION.original.scene.validation.json",
+      "sha256": "e1cae61cdde2e1737d132006cd1b6fa335cf27d0d3a6addb09080091bbf77633",
+      "bytes": 1544
+    },
+    "graphManifest": {
+      "source": "ifc_phase1_knowledge_graph/graph_manifest.json",
+      "path": "data/MBF5-TEST-COORDINATION.original.graph_manifest.json",
+      "sha256": "467c397ada61b3b5e0610a4738d13f7ad6d239a9b1451e3895b02ff149690583",
+      "bytes": 1900
+    }
+  },
+  "original_viewer_index": {
+    "path": "data/MBF5-TEST-COORDINATION.original.viewer_index.json",
+    "sha256": "744237c77480005218a58debdd1d823e61871c218fe72731c895807217333f49"
+  },
+  "legacy_source": {
+    "path": "data/MBF5-TEST-COORDINATION.ceiling-down-150mm.legacy.provenance.json",
+    "status": "preserved_not_authoritative"
+  },
+  "policy": {
+    "copied_full_entity_graph": false,
+    "copied_usdc": false,
+    "copied_uncompressed_ifc": false,
+    "browser_compression": "uncompressed GLB primitives; no Draco"
+  }
+}

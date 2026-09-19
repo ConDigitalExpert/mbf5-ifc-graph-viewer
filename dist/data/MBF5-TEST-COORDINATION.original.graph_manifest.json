@@ -1,0 +1,64 @@
+{
+  "graph_name": "IFC Phase 1 end-to-end knowledge graph",
+  "generated_at_utc": "2026-09-19T02:57:36.202251+00:00",
+  "source": {
+    "path": "/Users/mohamedadel/Downloads/MBF5-TEST-COORDINATION.ifc",
+    "file_name": "MBF5-TEST-COORDINATION.ifc",
+    "bytes": 77137068,
+    "sha256": "b50ea1aa9fefc232b8bf485388245111e6d6bf011eb7ebdaf180096ba162a1ea",
+    "modified_at": "2026-09-18T12:49:39.784765+00:00"
+  },
+  "parser": {
+    "library": "ifcopenshell",
+    "version": "0.8.4.post1",
+    "schema": "IFC2X3",
+    "header": {
+      "file_description": {
+        "type": "file_description",
+        "value": [
+          "ViewDefinition [CoordinationView_V2.0]",
+          "RevitIdentifiers [VersionGUID: fbaaa62f-fd24-441b-964f-1b986c498aa2, NumberOfSaves: 1]",
+          "CoordinateReference [CoordinateBase: Shared Coordinates, ProjectSite: Default Site]"
+        ]
+      },
+      "file_name": {
+        "type": "file_name",
+        "value": "Project Number"
+      },
+      "file_schema": {
+        "type": "file_schema",
+        "value": [
+          "IFC2X3"
+        ]
+      }
+    }
+  },
+  "outputs": {
+    "nodes": "nodes.jsonl.gz",
+    "attribute_edges": "edges.jsonl.gz",
+    "semantic_edges": "semantic_edges.jsonl.gz",
+    "inventory": "inventory.json",
+    "relationship_catalog": "relationship_catalog.json",
+    "validation": "validation.json",
+    "schema": "schema.json",
+    "report": "report.md"
+  },
+  "counts": {
+    "entities": 1325534,
+    "entity_types": 137,
+    "root_entities": 95104,
+    "products": 7542,
+    "elements": 3654,
+    "attribute_reference_edges": 2320356,
+    "semantic_edges": 60873,
+    "property_relation_links": 38832
+  },
+  "validation_summary": {
+    "parse_succeeded": true,
+    "raw_duplicate_step_ids": 0,
+    "dangling_entity_references": 0,
+    "duplicate_global_id_values": 0,
+    "semantic_duplicate_pairs": 0
+  },
+  "generation_seconds": 98.23
+}

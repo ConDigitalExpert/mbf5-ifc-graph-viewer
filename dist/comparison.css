@@ -160,3 +160,188 @@ h2 { margin-bottom: 0; font-size: 14px; font-weight: 720; letter-spacing: -.02em
   .lens-hint { bottom: 14px; max-width: calc(100% - 20px); white-space: nowrap; }
   .lens-hint > span:last-child { overflow: hidden; text-overflow: ellipsis; }
 }
+
+/* UI remediation: the comparison is a review surface first, with clear docks and comfortable targets. */
+:root {
+  --ui-font: "Avenir Next", "Inter", "Segoe UI", ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, sans-serif;
+  --text-strong: #f3fbfa;
+}
+
+body, .comparison-app { overflow-x: hidden; }
+body, button, input { font-family: var(--ui-font); }
+.comparison-header { height: 78px; padding: 0 26px; gap: 22px; }
+.brand-back, .brand-emblem { width: 40px; height: 40px; border-radius: 12px; }
+.brand-back { font-size: 23px; }
+.comparison-brand { gap: 13px; }
+.eyebrow { font-size: 10px; letter-spacing: .15em; }
+h1 { font-size: clamp(20px, 1.7vw, 26px); line-height: 1.05; }
+h2 { font-size: 18px; }
+.comparison-header-actions { gap: 8px; }
+.load-status { gap: 8px; margin-right: 7px; font-size: 12px; }
+.load-status i { width: 8px; height: 8px; }
+.header-button { min-height: 42px; padding: 9px 12px; border-radius: 10px; font-size: 11px; }
+.comparison-workspace { --dock-gap: 18px; overflow: hidden; }
+.pane-header { top: 18px; left: 20px; right: 20px; min-height: 66px; padding: 11px 13px; border-radius: 14px; }
+.pane-title { gap: 10px; }
+.pane-title strong { font-size: 14px; }
+.pane-title small { margin-top: 4px; font-size: 11px; }
+.pane-dot { width: 10px; height: 10px; }
+.pane-badge { padding: 7px 9px; font-size: 9px; }
+.pane-controls { left: 20px; bottom: 20px; gap: 5px; padding: 5px; border-radius: 11px; }
+.pane-controls button { min-width: 52px; min-height: 40px; padding: 8px 10px; border-radius: 8px; font-size: 11px; }
+.picked-label { bottom: 86px; padding: 9px 12px; border-radius: 10px; font-size: 11px; }
+.model-divider span { padding: 8px 6px; font-size: 8px; }
+.viewport-hud { bottom: 20px; min-width: 330px; padding: 12px 15px; border-radius: 11px; }
+.hud-label { font-size: 10px; }
+.viewport-hud strong { font-size: 12px; }
+.viewport-hud small { font-size: 10px; }
+.story-dock, .graph-dock { top: 18px; bottom: 80px; border-radius: 18px; }
+.story-dock { left: var(--dock-gap); width: min(420px, calc(100% - 36px)); }
+.graph-dock { right: var(--dock-gap); width: min(500px, calc(100% - 36px)); max-height: calc(100% - 150px); }
+.dock-header { padding: 17px 18px 15px; }
+.dock-header h2 { font-size: 19px; }
+.dock-close { width: 40px; height: 40px; border-radius: 10px; font-size: 22px; }
+.story-summary { gap: 7px; padding: 13px 15px; }
+.summary-tile { padding: 9px 9px 8px; border-radius: 9px; }
+.summary-tile span { font-size: 8px; }
+.summary-tile strong { font-size: 17px; }
+.summary-tile small { font-size: 9px; }
+.story-list { max-height: 300px; padding: 10px 12px; }
+.story-card { gap: 6px; margin-bottom: 7px; padding: 12px 13px; border-radius: 11px; }
+.story-card-kicker, .story-card-status { font-size: 9px; }
+.story-card h3 { font-size: 13px; line-height: 1.25; }
+.story-card p { font-size: 10px; line-height: 1.4; }
+.story-card-metric { font-size: 10px; }
+.story-detail { padding: 17px 18px 20px; }
+.empty-story { min-height: 220px; }
+.empty-story strong { font-size: 14px; }
+.empty-story small { font-size: 11px; }
+.detail-kicker { font-size: 9px; }
+.story-detail h3 { margin: 6px 0 9px; font-size: 19px; }
+.detail-status { margin-bottom: 12px; padding: 6px 9px; font-size: 9px; }
+.story-detail p { font-size: 11px; line-height: 1.55; }
+.before-after { gap: 8px; margin-top: 14px; }
+.story-side { padding: 10px; border-radius: 9px; }
+.story-side span { margin-bottom: 6px; font-size: 8px; }
+.story-side strong { font-size: 10px; line-height: 1.4; }
+.detail-block { margin-top: 14px; }
+.detail-block-label { margin-bottom: 7px; font-size: 9px; }
+.detail-chip-row { gap: 6px; }
+.detail-chip { padding: 7px 8px; border-radius: 7px; font-size: 10px; }
+.detail-validation { padding: 10px; border-radius: 9px; font-size: 10px; line-height: 1.5; }
+.graph-caption { gap: 10px; padding: 11px 16px; font-size: 10px; }
+.legend-dot { width: 8px; height: 8px; }
+.graph-wrap { padding: 8px 12px 0; }
+.graph-edge { stroke-width: 1.5; }
+.graph-edge-label { font-size: 9px; }
+.graph-node-label { font-size: 10px; }
+.graph-node-subtitle { font-size: 8px; }
+.graph-selection { min-height: 60px; gap: 4px; padding: 11px 16px; }
+.graph-selection span { font-size: 11px; }
+.graph-selection small { font-size: 10px; }
+.comparison-controls { bottom: 70px; gap: 7px; padding: 7px; border-radius: 12px; }
+.control-group { gap: 3px; padding: 3px; border-radius: 9px; }
+.mode-button { min-height: 40px; padding: 8px 11px; border-radius: 8px; font-size: 10px; }
+.range-control { gap: 8px; font-size: 10px; }
+.range-control input { width: 112px; }
+.range-control output { width: 32px; font-size: 10px; }
+.toggle-control { gap: 8px; font-size: 10px; }
+.toggle-track { width: 30px; height: 18px; }
+.toggle-track::after { top: 4px; left: 4px; width: 10px; height: 10px; }
+.toggle-control input:checked + .toggle-track::after { left: 16px; }
+.control-button { min-height: 40px; padding: 8px 10px; border-radius: 8px; font-size: 10px; }
+.timeline { bottom: 17px; gap: 10px; min-width: 360px; padding: 8px 10px; border-radius: 10px; }
+.timeline-label { font-size: 8px; }
+.timeline-line { width: 160px; }
+.timeline-play { width: 32px; height: 32px; border-radius: 8px; font-size: 11px; }
+.comparison-footer { min-height: 46px; padding: 0 22px; font-size: 10px; }
+.footer-metrics { font-size: 9px; }
+.technical-drawer { top: 94px; right: 20px; bottom: 66px; width: min(480px, calc(100% - 40px)); border-radius: 18px; }
+.technical-header { padding: 17px 18px; }
+.technical-content { padding: 18px; }
+.technical-content > p, .technical-footnote { font-size: 11px; line-height: 1.55; }
+.technical-section { margin-bottom: 18px; }
+.technical-label { margin-bottom: 8px; font-size: 9px; }
+.technical-row { grid-template-columns: 130px 1fr; gap: 10px; padding: 8px 0; }
+.technical-row span { font-size: 10px; }
+.technical-row code { font-size: 9px; }
+.technical-source { padding: 10px; font-size: 10px; line-height: 1.5; }
+.technical-alert { display: grid; gap: 5px; margin-bottom: 18px; padding: 12px; border: 1px solid rgba(245, 186, 77, .35); border-radius: 10px; background: rgba(245, 186, 77, .09); color: var(--muted); font-size: 10px; line-height: 1.45; }
+.technical-alert strong { color: var(--amber); font-size: 11px; }
+.comparison-toast { bottom: 76px; padding: 10px 14px; border-radius: 10px; font-size: 11px; }
+
+@media (max-width: 1180px) {
+  .comparison-header { padding: 0 18px; }
+  .story-dock { width: 360px; }
+  .graph-dock { width: 420px; }
+}
+
+@media (max-width: 820px) {
+  .comparison-header { height: 66px; padding: 0 11px; }
+  .brand-back, .brand-emblem { width: 36px; height: 36px; }
+  h1 { font-size: 18px; }
+  .header-button { min-height: 42px; padding: 8px; }
+  .comparison-workspace { min-height: calc(100dvh - 112px); height: calc(100dvh - 112px); }
+  .pane-header { top: 12px; left: 12px; right: 12px; min-height: 58px; padding: 9px 10px; }
+  .pane-title strong { font-size: 12px; }
+  .pane-title small { max-width: 210px; font-size: 10px; }
+  .pane-badge { padding: 6px 7px; font-size: 8px; }
+  .pane-controls { left: 12px; bottom: 12px; }
+  .pane-controls button { min-width: 48px; min-height: 40px; }
+  .story-dock { top: 10px; bottom: 52px; left: 10px; width: min(360px, calc(100% - 20px)); }
+  .graph-dock { top: 10px; right: 10px; bottom: 52px; width: min(380px, calc(100% - 20px)); max-height: calc(100% - 62px); }
+  .comparison-controls { bottom: 52px; max-width: calc(100% - 16px); overflow-x: auto; }
+  .range-control, .toggle-control > span:last-child { display: none; }
+  .timeline { bottom: 10px; min-width: 300px; }
+  .timeline-line { width: 120px; }
+  .comparison-footer { min-height: 46px; padding: 0 10px; }
+  .comparison-footer > div:first-child { max-width: 62%; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+  .footer-metrics { display: none; }
+  .technical-drawer { top: 77px; right: 10px; bottom: 54px; width: calc(100% - 20px); }
+}
+
+.graph-node-list { flex: none; display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 6px; max-height: 126px; overflow: auto; padding: 8px 12px; border-top: 1px solid rgba(203,225,228,.1); scrollbar-color: rgba(203,225,228,.2) transparent; }
+.graph-node-button { min-width: 0; display: grid; gap: 2px; padding: 7px 8px; border: 1px solid rgba(203,225,228,.13); border-radius: 8px; background: rgba(255,255,255,.025); color: var(--muted); text-align: left; }
+.graph-node-button:hover, .graph-node-button:focus-visible, .graph-node-button.active { border-color: rgba(72,212,194,.42); background: rgba(72,212,194,.09); color: var(--text); }
+.graph-node-button > span { color: var(--subtle); font-size: 8px; font-weight: 800; letter-spacing: .08em; text-transform: uppercase; }
+.graph-node-button.issue > span { color: var(--amber); }
+.graph-node-button.system > span { color: var(--teal); }
+.graph-node-button.element > span { color: var(--blue); }
+.graph-node-button strong, .graph-node-button small { overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+.graph-node-button strong { color: var(--text); font-size: 10px; }
+.graph-node-button small { color: var(--subtle); font-size: 8px; }
+
+@media (max-width: 820px) {
+  .graph-node-list { grid-template-columns: repeat(2, minmax(0, 1fr)); max-height: 116px; padding: 7px 10px; }
+  .graph-node-button { padding: 7px; }
+}
+
+@media (max-width: 560px) {
+  body, .comparison-app { overflow-x: hidden; }
+  .comparison-header { height: 62px; gap: 6px; padding: 0 8px; }
+  .comparison-brand { min-width: 0; flex: 1 1 auto; gap: 7px; }
+  .comparison-brand > div:last-child { min-width: 0; }
+  .brand-back, .brand-emblem { width: 29px; height: 29px; border-radius: 9px; }
+  .brand-back { flex: none; font-size: 18px; }
+  .brand-emblem { flex: none; padding: 4px; gap: 2px; }
+  .brand-emblem span { width: 4px; }
+  .brand-emblem span:nth-child(1) { height: 9px; }
+  .brand-emblem span:nth-child(2) { height: 15px; }
+  .brand-emblem span:nth-child(3) { height: 7px; }
+  .comparison-brand .eyebrow { overflow: hidden; font-size: 7px; letter-spacing: .1em; text-overflow: ellipsis; white-space: nowrap; }
+  .comparison-brand h1 { overflow: hidden; font-size: 14px; line-height: 1.05; text-overflow: ellipsis; white-space: nowrap; }
+  .comparison-header-actions { flex: none; gap: 3px; }
+  .comparison-header-actions .load-status { display: none; }
+  .comparison-header-actions .header-button { width: 30px; min-width: 30px; min-height: 34px; padding: 6px 0; overflow: hidden; font-size: 0; }
+  .comparison-header-actions .header-button::before { display: inline-block; font-size: 13px; line-height: 1; }
+  .comparison-header-actions .lens-button::before { content: "↔"; font-size: 15px; }
+  .comparison-header-actions .header-button[data-action="toggle-story"]::before { content: "▤"; }
+  .comparison-header-actions .header-button[data-action="toggle-graph"]::before { content: "◎"; }
+  .comparison-header-actions .header-button[data-action="play"]::before { content: "▶"; font-size: 11px; }
+  .comparison-header-actions .header-button[data-action="toggle-technical"]::before { content: "i"; font-size: 15px; font-weight: 800; }
+  .comparison-workspace { min-height: calc(100dvh - 108px); height: calc(100dvh - 108px); }
+  .comparison-controls { top: 46%; right: auto; bottom: auto; transform: translate(-50%, -50%); }
+  .before-pane .pane-controls { bottom: 64px; }
+  .after-pane .pane-controls { bottom: 62px; }
+  .timeline { bottom: 9px; }
+}

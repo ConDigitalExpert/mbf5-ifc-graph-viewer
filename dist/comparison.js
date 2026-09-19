@@ -1,4 +1,4 @@
-const DATA_URL = "./data/comparison_index.json?v=20260918-change4";
+const DATA_URL = "./data/comparison_index.json?v=20260918-source1";
 
 const els = {
   status: document.querySelector("#comparison-status"),
@@ -10,12 +10,15 @@ const els = {
   storyList: document.querySelector("#story-list"),
   storyDetail: document.querySelector("#story-detail"),
   graph: document.querySelector("#comparison-graph"),
+  graphNodeList: document.querySelector("#graph-node-list"),
   graphSelection: document.querySelector("#graph-selection"),
   technicalContent: document.querySelector("#technical-content"),
   beforeLoading: document.querySelector("#before-loading"),
   afterLoading: document.querySelector("#after-loading"),
   beforePicked: document.querySelector("#before-picked"),
   afterPicked: document.querySelector("#after-picked"),
+  beforeProvenanceLabel: document.querySelector("#before-provenance-label"),
+  provenanceNote: document.querySelector("#comparison-provenance-note"),
   footerMetrics: document.querySelector("#footer-metrics"),
   timelineProgress: document.querySelector("#timeline-progress"),
   opacity: document.querySelector("#overlay-opacity"),
@@ -70,6 +73,51 @@ const formatNumber = (value) => new Intl.NumberFormat("en-CA").format(Number(val
 const formatMeters = (value) => Number.isFinite(Number(value)) ? `${Number(value).toFixed(3)} m` : "—";
 const formatDelta = (values) => Array.isArray(values) ? values.map((value) => `${Number(value).toFixed(1)} mm`).join(" · ") : "—";
 const truncate = (value, length = 24) => { const text = String(value || ""); return text.length > length ? `${text.slice(0, length - 1)}…` : text; };
+
+function displayGroupStatus(status) {
+  const text = String(status || "Candidate revision");
+  return /resolved in revised ifc/i.test(text) ? "Revision candidate" : text;
+}
+
+function sourceSceneReview() {
+  const geometry = state.index?.authoritative_source?.browser_geometry || {};
+  const explicit = geometry.provenance_status || geometry.mapping_status || geometry.scene_mapping_status;
+  if (explicit) return String(explicit);
+  return "Pending delivery handoff";
+}
+
+function sourceSceneReviewShort() {
+  return /valid|pass|verified|approved|accept/i.test(sourceSceneReview()) ? "source mapping reviewed" : "source mapping pending";
+}
+
+function sourceMappingIsReviewed() {
+  return /valid|pass|verified|approved|accept/i.test(sourceSceneReview());
+}
+
+function renderSourceProvenance() {
+  const reviewed = sourceMappingIsReviewed();
+  if (els.beforeProvenanceLabel) els.beforeProvenanceLabel.textContent = reviewed ? "Immutable IFC · source mapping verified" : "Immutable IFC · source mapping pending";
+  if (els.provenanceNote) {
+    els.provenanceNote.innerHTML = reviewed
+      ? "<strong>IFC remains authoritative.</strong> Browser geometry is derived; the true-original source mapping is verified and candidate acceptance remains pending."
+      : "<strong>IFC remains authoritative.</strong> Browser geometry is derived; source mapping and candidate handoff remain visible in Technical details.";
+  }
+}
+
+function panelAction(panel) {
+  if (panel === els.storyDock) return "toggle-story";
+  if (panel === els.graphDock) return "toggle-graph";
+  if (panel === els.technicalDrawer) return "toggle-technical";
+  return null;
+}
+
+function syncPanelState(panel) {
+  if (!panel) return;
+  const open = panel.dataset.open === "true";
+  panel.setAttribute("aria-hidden", String(!open));
+  const action = panelAction(panel);
+  if (action) document.querySelectorAll(`[data-action="${action}"]`).forEach((button) => button.setAttribute("aria-pressed", String(open)));
+}
 
 function setStatus(message, status = "") {
   els.status.className = `load-status ${status}`;
@@ -268,7 +316,7 @@ function renderSummary() {
 }
 
 function renderStoryList() {
-  els.storyList.innerHTML = state.groups.map((group) => `<button class="story-card${group.id === state.selectedGroupId ? " active" : ""}" type="button" data-group="${esc(group.id)}"><span class="story-card-top"><span class="story-card-kicker">${esc(group.kicker)}</span><span class="story-card-status">${esc(group.status)}</span></span><h3>${esc(group.title)}</h3><p>${esc(group.after)}</p><span class="story-card-metric">${esc(group.metric)}</span></button>`).join("");
+  els.storyList.innerHTML = state.groups.map((group) => `<button class="story-card${group.id === state.selectedGroupId ? " active" : ""}" type="button" data-group="${esc(group.id)}"><span class="story-card-top"><span class="story-card-kicker">${esc(group.kicker)}</span><span class="story-card-status">${esc(displayGroupStatus(group.status))}</span></span><h3>${esc(group.title)}</h3><p>${esc(group.after)}</p><span class="story-card-metric">${esc(group.metric)}</span></button>`).join("");
 }
 
 function detailTextForChange(change) {
@@ -283,7 +331,7 @@ function renderGroupDetail(group) {
   const changeCount = group.change_ids?.length || 0;
   const sampleIds = (group.change_ids || []).slice(0, 3);
   const changedCount = renderableStepCount(groupChangedSet(group));
-  els.storyDetail.innerHTML = `<div class="detail-kicker">${esc(group.kicker)}</div><h3>${esc(group.title)}</h3><span class="detail-status">${esc(group.status)}</span><p>${esc(group.why)}</p><div class="before-after"><div class="story-side before"><span>Before</span><strong>${esc(group.before)}</strong></div><div class="story-side after"><span>After</span><strong>${esc(group.after)}</strong></div></div><div class="detail-block"><div class="detail-block-label">Evidence in this view</div><div class="detail-chip-row"><span class="detail-chip accent">${esc(group.metric)}</span><span class="detail-chip">${formatNumber(changeCount)} linked records</span><span class="detail-chip">${formatNumber(changedCount)} visible changes</span><span class="detail-chip">${esc(group.evidence_stage)}</span></div></div><div class="detail-block"><div class="detail-block-label">Validation</div><div class="detail-validation">${esc(group.validation)}</div></div><div class="detail-block"><button type="button" class="control-button" data-action="open-lens">Open change lens</button></div><div class="detail-block"><div class="detail-block-label">Choose an element</div><div class="detail-chip-row">${sampleIds.map((id) => `<button type="button" class="detail-chip" data-change="${esc(id)}">Inspect linked element</button>`).join("")}</div></div>`;
+  els.storyDetail.innerHTML = `<div class="detail-kicker">${esc(group.kicker)}</div><h3>${esc(group.title)}</h3><span class="detail-status">${esc(displayGroupStatus(group.status))}</span><p>${esc(group.why)}</p><div class="before-after"><div class="story-side before"><span>Before snapshot</span><strong>${esc(group.before)}</strong></div><div class="story-side after"><span>After candidate</span><strong>${esc(group.after)}</strong></div></div><div class="detail-block"><div class="detail-block-label">Evidence in this view</div><div class="detail-chip-row"><span class="detail-chip accent">${esc(group.metric)}</span><span class="detail-chip">${formatNumber(changeCount)} linked records</span><span class="detail-chip">${formatNumber(changedCount)} visible changes</span><span class="detail-chip">${esc(group.evidence_stage)}</span></div></div><div class="detail-block"><div class="detail-block-label">Validation</div><div class="detail-validation">${esc(group.validation)}</div></div><div class="detail-block"><button type="button" class="control-button" data-action="open-lens">Open change lens</button></div><div class="detail-block"><div class="detail-block-label">Choose an element</div><div class="detail-chip-row">${sampleIds.map((id) => `<button type="button" class="detail-chip" data-change="${esc(id)}">Inspect linked element</button>`).join("")}</div></div>`;
 }
 
 function renderChangeDetail(change) {
@@ -294,12 +342,23 @@ function renderChangeDetail(change) {
   const parameterChips = change.parameters ? Object.entries(change.parameters).filter(([, value]) => value !== null && value !== undefined).slice(0, 4).map(([key, value]) => `<span class="detail-chip">${esc(key.replaceAll("_", " "))}: ${esc(Array.isArray(value) ? value.map((item) => Number(item).toFixed(2)).join(" / ") : typeof value === "number" ? value.toFixed(3) : value)}</span>`).join("") : "";
   const before = change.before?.level_m !== undefined ? `Elevation ${formatMeters(change.before.level_m)}` : change.before?.state || "Source state";
   const after = change.after?.level_m !== undefined ? `Elevation ${formatMeters(change.after.level_m)}` : change.after?.name || change.after?.state || "Revised state";
-  els.storyDetail.innerHTML = `<div class="detail-kicker">${esc(group?.kicker || "Linked change")}</div><h3>${esc(change.label)}</h3><span class="detail-status">${esc(change.status)} · ${esc(change.discipline || "Coordination")}</span><p>${esc(detailTextForChange(change))}</p><div class="before-after"><div class="story-side before"><span>Original</span><strong>${esc(before)}</strong></div><div class="story-side after"><span>Revised</span><strong>${esc(after)}</strong></div></div><div class="detail-block"><div class="detail-block-label">What this connects</div><div class="detail-chip-row">${delta}${targetLabels}${parameterChips}<span class="detail-chip">${esc(change.trace?.entity_type || "Model element")}</span></div></div><div class="detail-block"><div class="detail-block-label">Why it matters</div><div class="detail-validation">${esc(group?.why || group?.validation || "This element remains linked to its source evidence.")}</div></div><div class="detail-block"><div class="detail-block-label">See the physical difference</div><button type="button" class="control-button" data-action="open-lens">Open change lens</button></div><div class="detail-block"><button type="button" class="control-button" data-action="toggle-technical">Show stable element identity</button></div>`;
+  els.storyDetail.innerHTML = `<div class="detail-kicker">${esc(group?.kicker || "Linked change")}</div><h3>${esc(change.label)}</h3><span class="detail-status">${esc(change.status)} · ${esc(change.discipline || "Coordination")}</span><p>${esc(detailTextForChange(change))}</p><div class="before-after"><div class="story-side before"><span>Before snapshot</span><strong>${esc(before)}</strong></div><div class="story-side after"><span>After candidate</span><strong>${esc(after)}</strong></div></div><div class="detail-block"><div class="detail-block-label">What this connects</div><div class="detail-chip-row">${delta}${targetLabels}${parameterChips}<span class="detail-chip">${esc(change.trace?.entity_type || "Model element")}</span></div></div><div class="detail-block"><div class="detail-block-label">Why it matters</div><div class="detail-validation">${esc(group?.why || group?.validation || "This element remains linked to its source evidence.")}</div></div><div class="detail-block"><div class="detail-block-label">See the physical difference</div><button type="button" class="control-button" data-action="open-lens">Open change lens</button></div><div class="detail-block"><button type="button" class="control-button" data-action="toggle-technical">Show stable element identity</button></div>`;
 }
 
 function renderTechnical(change) {
   if (!change) {
-    els.technicalContent.innerHTML = `<p>Select a change to inspect its stable IFC identity, hashes, scene identity, and source evidence.</p>`;
+    if (!state.index) {
+      els.technicalContent.innerHTML = `<p>Select a change to inspect its stable IFC identity, hashes, scene identity, and source evidence.</p>`;
+      return;
+    }
+    const source = state.index.authoritative_source || {};
+    const revised = state.index.revised_model || {};
+    const sourceGeometry = source.browser_geometry || {};
+    const revisedGeometry = revised.browser_geometry || {};
+    const reviewed = sourceMappingIsReviewed();
+    const alertTitle = reviewed ? "Source scene mapping verified" : "Source scene mapping review pending";
+    const alertCopy = reviewed ? "The true-original source bundle is accepted; candidate handoff remains pending." : `${sourceSceneReview()}. Keep the source snapshot and revised candidate distinct until delivery updates the manifest.`;
+    els.technicalContent.innerHTML = `<div class="technical-alert"><strong>${esc(alertTitle)}</strong><span>${esc(alertCopy)}</span></div><div class="technical-section"><div class="technical-label">Source snapshot</div><div class="technical-row"><span>IFC label</span><code>${esc(source.label || "Authoritative source")}</code></div><div class="technical-row"><span>IFC SHA-256</span><code>${esc(source.sha256 || "—")}</code></div><div class="technical-row"><span>Browser scene</span><code>${esc(sourceGeometry.url || "—")}</code></div><div class="technical-row"><span>Scene identity</span><code>${esc(sourceGeometry.identity || "—")}</code></div></div><div class="technical-section"><div class="technical-label">After candidate</div><div class="technical-row"><span>IFC label</span><code>${esc(revised.label || "Revised model")}</code></div><div class="technical-row"><span>IFC SHA-256</span><code>${esc(revised.sha256 || "—")}</code></div><div class="technical-row"><span>Browser scene</span><code>${esc(revisedGeometry.url || "—")}</code></div><div class="technical-row"><span>Scene identity</span><code>${esc((revisedGeometry.identity_properties || []).join(", ") || "—")}</code></div></div><p class="technical-footnote">Technical IDs support traceability. Construction labels stay primary in the change story.</p>`;
     return;
   }
   const trace = change.trace || {};
@@ -314,7 +373,10 @@ function renderTechnical(change) {
     ["Replacement STEP", trace.replacement_step_id]
   ].filter(([, value]) => value !== null && value !== undefined && value !== "");
   const sourcePaths = (change.provenance?.source_paths || []).map((source) => `<code>${esc(source)}</code>`).join("<br />");
-  els.technicalContent.innerHTML = `<div class="technical-section"><div class="technical-label">Selected change</div>${rows.map(([label, value]) => `<div class="technical-row"><span>${esc(label)}</span><code>${esc(value)}</code></div>`).join("")}</div><div class="technical-section"><div class="technical-label">Comparison data</div><div class="technical-row"><span>Stage</span><code>${esc(change.provenance?.stage_id || "—")}</code></div><div class="technical-row"><span>Status</span><code>${esc(change.status)}</code></div><div class="technical-row"><span>Group</span><code>${esc(change.group_id)}</code></div></div><div class="technical-section"><div class="technical-label">Source provenance</div><div class="technical-source">${sourcePaths || "Embedded in the comparison manifest."}</div></div>`;
+  const reviewed = sourceMappingIsReviewed();
+  const alertTitle = reviewed ? "Source scene mapping verified" : "Source scene mapping review pending";
+  const alertCopy = reviewed ? `${sourceSceneReview()}. Source geometry is accepted; candidate handoff remains pending.` : `${sourceSceneReview()}. This evidence remains a candidate comparison until delivery hands off the corrected scene/index pair.`;
+  els.technicalContent.innerHTML = `<div class="technical-alert"><strong>${esc(alertTitle)}</strong><span>${esc(alertCopy)}</span></div><div class="technical-section"><div class="technical-label">Selected change</div>${rows.map(([label, value]) => `<div class="technical-row"><span>${esc(label)}</span><code>${esc(value)}</code></div>`).join("")}</div><div class="technical-section"><div class="technical-label">Comparison data</div><div class="technical-row"><span>Stage</span><code>${esc(change.provenance?.stage_id || "—")}</code></div><div class="technical-row"><span>Status</span><code>${esc(change.status)}</code></div><div class="technical-row"><span>Group</span><code>${esc(change.group_id)}</code></div></div><div class="technical-section"><div class="technical-label">Source provenance</div><div class="technical-source">${sourcePaths || "Embedded in the comparison manifest."}</div></div>`;
 }
 
 function setLensReveal(value) {
@@ -324,8 +386,8 @@ function setLensReveal(value) {
   const revisedPercent = 100 - sourcePercent;
   els.workspace.style.setProperty("--lens-reveal-percent", `${sourcePercent}%`);
   if (els.lensReveal) els.lensReveal.value = String(numeric);
-  if (els.lensRevealLabel) els.lensRevealLabel.textContent = `Source ${sourcePercent}% · Revised ${revisedPercent}%`;
-  if (els.lensModeReadout) els.lensModeReadout.textContent = sourcePercent === 0 ? "Revised only" : sourcePercent === 100 ? "Original only" : `Original ${sourcePercent}% · Revised ${revisedPercent}%`;
+  if (els.lensRevealLabel) els.lensRevealLabel.textContent = `Source ${sourcePercent}% · Candidate ${revisedPercent}%`;
+  if (els.lensModeReadout) els.lensModeReadout.textContent = sourcePercent === 0 ? "Candidate only" : sourcePercent === 100 ? "Source only" : `Source ${sourcePercent}% · Candidate ${revisedPercent}%`;
 }
 
 function renderLens() {
@@ -350,7 +412,7 @@ function renderLens() {
   const delta = describeChangeDelta(change);
   els.lensKicker.textContent = group.kicker || "Coordination change";
   els.lensTitle.textContent = group.title;
-  els.lensSummary.textContent = group.after || group.why || "The revised model carries the coordinated result.";
+  els.lensSummary.textContent = group.after || group.why || "The candidate revision carries the linked change evidence.";
   els.lensCount.textContent = formatNumber(linkedCount);
   els.lensFocus.textContent = change?.label || "Change set";
   els.lensDelta.textContent = delta;
@@ -396,6 +458,7 @@ function openChangeLens() {
   state.lensOpen = true;
   state.lensActiveChangeId = state.selectedChangeId || group.change_ids?.[0] || null;
   els.changeLens.dataset.open = "true";
+  document.querySelectorAll('[data-action="open-lens"]').forEach((button) => button.setAttribute("aria-pressed", "true"));
   setMode("lens");
   setLensReveal(state.lensReveal);
   renderLens();
@@ -409,6 +472,7 @@ function openChangeLens() {
 function closeChangeLens() {
   state.lensOpen = false;
   els.changeLens.dataset.open = "false";
+  document.querySelectorAll('[data-action="open-lens"], [data-action="close-lens"]').forEach((button) => button.setAttribute("aria-pressed", "false"));
   setMode(state.previousMode || "split");
   applyVisualState();
   showToast("Back to comparison");
@@ -448,7 +512,13 @@ function renderGraph() {
     return `<g class="graph-node ${esc(node.kind)}${active ? " active" : ""}" data-node-id="${esc(node.id)}"><rect x="${pos.x - width / 2}" y="${pos.y - 18}" width="${width}" height="36" rx="9" /><text class="graph-node-label" x="${pos.x}" y="${pos.y - 1}" text-anchor="middle">${esc(label)}</text><text class="graph-node-subtitle" x="${pos.x}" y="${pos.y + 11}" text-anchor="middle">${esc(subtitle)}</text><title>${esc(node.label)}</title></g>`;
   }).join("");
   els.graph.innerHTML = `<defs><marker id="graph-arrow" markerWidth="5" markerHeight="5" refX="4" refY="2.5" orient="auto"><path d="M0,0 L5,2.5 L0,5 z" fill="rgba(159,186,189,.55)" /></marker></defs><g class="graph-edges">${edgeMarkup}</g><g class="graph-nodes">${nodeMarkup}</g>`;
-  els.graph.querySelectorAll("[data-node-id]").forEach((node) => node.addEventListener("click", () => selectGraphNode(node.dataset.nodeId)));
+  if (els.graphNodeList) {
+    els.graphNodeList.innerHTML = nodes.map((node) => {
+      const active = node.id === state.selectedGraphNodeId || node.group_id === state.selectedGroupId;
+      return `<button class="graph-node-button ${esc(node.kind)}${active ? " active" : ""}" type="button" data-node-id="${esc(node.id)}"><span>${esc(node.kind)}</span><strong>${esc(node.label)}</strong><small>${esc(node.subtitle || node.discipline || "Connected coordination interface")}</small></button>`;
+    }).join("");
+  }
+  document.querySelectorAll("[data-node-id]").forEach((node) => node.addEventListener("click", () => selectGraphNode(node.dataset.nodeId)));
 }
 
 function updateGraphSelection(node) {
@@ -610,7 +680,7 @@ function selectGroup(groupId, graphNodeId = `issue:${groupId}`) {
   if (state.lensOpen) renderLens();
   const firstStep = Number([...groupChangedSet(group)].find((step) => state.sides.after?.meshByStep.has(Number(step)) || state.sides.before?.meshByStep.has(Number(step))) || group.focus_step_ids?.find((step) => state.sides.after?.meshByStep.has(Number(step)) || state.sides.before?.meshByStep.has(Number(step))));
   if (Number.isInteger(firstStep)) updatePickedLabels(firstStep, group.title);
-  showToast(`${group.title} · ${group.status}`);
+  showToast(`${group.title} · ${displayGroupStatus(group.status)}`);
 }
 
 function selectChange(changeId, graphNodeId = null) {
@@ -735,7 +805,7 @@ function bindSceneInput(side) {
 function setMode(mode) {
   state.mode = ["overlay", "lens"].includes(mode) ? mode : "split";
   els.workspace.dataset.mode = state.mode;
-  document.querySelectorAll("[data-mode]").forEach((button) => { if (button.matches("button")) button.classList.toggle("active", button.dataset.mode === state.mode); });
+  document.querySelectorAll("[data-mode]").forEach((button) => { if (button.matches("button")) { const active = button.dataset.mode === state.mode; button.classList.toggle("active", active); button.setAttribute("aria-pressed", String(active)); } });
 }
 
 function setOverlayOpacity(value) {
@@ -748,7 +818,7 @@ function setOverlayOpacity(value) {
 function togglePlay() {
   if (state.playTimer) {
     window.clearInterval(state.playTimer); state.playTimer = null;
-    document.querySelectorAll('[data-action="play"]').forEach((button) => { button.textContent = button.id === "timeline-play" ? "▶" : "Play changes"; });
+    document.querySelectorAll('[data-action="play"]').forEach((button) => { button.textContent = button.id === "timeline-play" ? "▶" : "Play changes"; button.setAttribute("aria-pressed", "false"); });
     return;
   }
   state.playIndex = 0;
@@ -760,10 +830,14 @@ function togglePlay() {
   };
   playNext();
   state.playTimer = window.setInterval(playNext, 4200);
-  document.querySelectorAll('[data-action="play"]').forEach((button) => { button.textContent = button.id === "timeline-play" ? "Ⅱ" : "Pause"; });
+  document.querySelectorAll('[data-action="play"]').forEach((button) => { button.textContent = button.id === "timeline-play" ? "Ⅱ" : "Pause"; button.setAttribute("aria-pressed", "true"); });
 }
 
-function togglePanel(panel) { panel.dataset.open = panel.dataset.open !== "true" ? "true" : "false"; }
+function togglePanel(panel) {
+  if (!panel) return;
+  panel.dataset.open = panel.dataset.open !== "true" ? "true" : "false";
+  syncPanelState(panel);
+}
 
 function bindInterface() {
   document.addEventListener("click", (event) => {
@@ -807,6 +881,10 @@ function bindInterface() {
     if (event.key.toLowerCase() === "s") togglePanel(els.storyDock);
     if (event.key.toLowerCase() === "l") openChangeLens();
   });
+  syncPanelState(els.storyDock);
+  syncPanelState(els.graphDock);
+  syncPanelState(els.technicalDrawer);
+  document.querySelectorAll('[data-action="open-lens"]').forEach((button) => button.setAttribute("aria-pressed", "false"));
 }
 
 function bindCameraSync() {
@@ -823,7 +901,7 @@ async function init() {
     if (!response.ok) throw new Error(`Comparison index returned ${response.status}`);
     state.index = await response.json();
     buildChangeMaps();
-    renderSummary(); renderStoryList(); renderGraph(); setOverlayOpacity(.48); setLensReveal(.5); renderLens();
+    renderSourceProvenance(); renderSummary(); renderStoryList(); renderGraph(); renderTechnical(null); setOverlayOpacity(.48); setLensReveal(.5); renderLens();
     state.sides.before = createSide("before", state.index.authoritative_source.browser_geometry.url, $("#before-canvas"), els.beforeLoading, new BABYLON.Color3(.95, .66, .25));
     state.sides.after = createSide("after", state.index.revised_model.browser_geometry.url, $("#after-canvas"), els.afterLoading, new BABYLON.Color3(.24, .82, .72));
     bindSceneInput(state.sides.before); bindSceneInput(state.sides.after);
@@ -831,7 +909,7 @@ async function init() {
     await Promise.all([loadSide(state.sides.before, state.index.authoritative_source.browser_geometry.url), loadSide(state.sides.after, state.index.revised_model.browser_geometry.url)]);
     bindCameraSync();
     refocusCurrentSelection();
-    setStatus(`Comparison ready · ${formatNumber(state.index.summary.comparison_records)} linked records`, "ready");
+    setStatus(`Candidate revision · ${formatNumber(state.index.summary.comparison_records)} linked · ${sourceSceneReviewShort()}`, "ready");
     showToast("Select a story, graph node, or model element");
   } catch (error) {
     console.error(error);

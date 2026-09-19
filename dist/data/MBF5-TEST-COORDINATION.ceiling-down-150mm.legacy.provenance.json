@@ -1,0 +1,20 @@
+{
+  "schema": "bim-viewer-legacy-source-provenance-1",
+  "status": "preserved_quarantined_historical_snapshot",
+  "branch_identity": "stage2_ceiling_down_150mm",
+  "source_sha256": "5a6e38fac83139580949c30ae988cbff532aeaedb8d37aeea5705e9d78035807",
+  "authoritative_source_sha256": "b50ea1aa9fefc232b8bf485388245111e6d6bf011eb7ebdaf180096ba162a1ea",
+  "authoritative_source": false,
+  "reason": "These generic filenames predate the accepted source integration. Their bytes identify the ceiling-down branch and remain available for history/debugging only.",
+  "files": {
+    "MBF5-TEST-COORDINATION.ifc.gz": "42fc2801f91dfda8c381b9cea6e76f7ccb0abe9062de4db3711deaa90c2e7fd8",
+    "MBF5-TEST-COORDINATION.glb": "cce796d4d44c859588b6dc78e43b79506e6a5c8cd3cd19510099b32dedd12caf",
+    "MBF5-TEST-COORDINATION.manifest.json": "33d69c3e6989020e7ce9c5f2c5dfa70c26c7c535b9dabe481d00f0b7d9a9fa00",
+    "MBF5-TEST-COORDINATION.scene.glb": "cce796d4d44c859588b6dc78e43b79506e6a5c8cd3cd19510099b32dedd12caf",
+    "MBF5-TEST-COORDINATION.scene.manifest.json": "dcec4426c80d847616c90916d4f52e7813de964ebf66c5f38f5c972986958f1c",
+    "MBF5-TEST-COORDINATION.scene_bridge.json": "92d3d8860591a949e79c9142fd4ce0faff0b2760e62c35874f0d3381d5c20dfd",
+    "MBF5-TEST-COORDINATION.scene_bridge_index.json": "7f83ca59c7e513da06bc55c3105458a3abeee37648a4ae28ddd5eb8db1b38c0d",
+    "MBF5-TEST-COORDINATION.scene.validation.json": "6f9a1f0d0840990a5cef84e01f00246199b25466c6301d259d836a821e9c2081"
+  },
+  "comparison_index_before_integration_sha256": "93a20591224a75f04b097c7b43f04b8c8d424aa833b3bf3f2080c1a7137492a3"
+}

@@ -6,7 +6,7 @@
     <meta name="theme-color" content="#081116" />
     <meta name="description" content="Ultra-premium OpenUSD-backed BIM coordination viewer connected to the IFC knowledge graph." />
     <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='16' fill='%23081116'/%3E%3Cpath d='M15 45V19l17-9 17 9v26l-17 9-17-9Z' fill='none' stroke='%2349d3c1' stroke-width='4'/%3E%3Cpath d='m15 19 17 9 17-9M32 28v26' fill='none' stroke='%23f5b942' stroke-width='4'/%3E%3C/svg%3E" />
-    <link rel="stylesheet" href="./styles.css?v=20260918-premium5" />
+    <link rel="stylesheet" href="./styles.css?v=20260919-saved-views1" />
     <script src="https://cdn.babylonjs.com/babylon.js"></script>
     <script src="https://cdn.babylonjs.com/loaders/babylonjs.loaders.min.js"></script>
     <title>MBF5 · Coordination Studio</title>
@@ -65,6 +65,26 @@
       </section>
       <section class="summary-strip" aria-label="Model summary"><div class="summary-item"><span>Elements</span><strong id="metric-elements">—</strong></div><div class="summary-item"><span>Ports</span><strong id="metric-ports">—</strong></div><div class="summary-item"><span>Semantic edges</span><strong id="metric-edges">—</strong></div><div class="summary-item"><span>Integrity</span><strong id="metric-integrity">—</strong></div><div class="summary-item wide"><span>Source hash</span><strong id="source-hash">Pending</strong></div></section>
     </main>
-    <script src="./viewer.js?v=20260918-premium5" defer></script>
+    <div id="saved-view-dialog" class="saved-view-dialog" hidden>
+      <div class="saved-view-backdrop" data-saved-view-dismiss="true" aria-hidden="true"></div>
+      <section class="saved-view-modal glass-panel" role="dialog" aria-modal="true" aria-labelledby="saved-view-dialog-title" aria-describedby="saved-view-dialog-description">
+        <div class="saved-view-dialog-header">
+          <div><p class="section-kicker">Saved view</p><h2 id="saved-view-dialog-title">Name this camera view</h2></div>
+          <button class="close-panel" type="button" data-action="cancel-save-view" aria-label="Cancel saving view">×</button>
+        </div>
+        <p id="saved-view-dialog-description" class="saved-view-dialog-description">Save the current camera, projection, and section state for quick return.</p>
+        <form id="saved-view-form" class="saved-view-form" novalidate>
+          <label class="field-label" for="saved-view-name">View name</label>
+          <input id="saved-view-name" class="saved-view-name-input" type="text" maxlength="64" autocomplete="off" spellcheck="false" required aria-describedby="saved-view-name-hint saved-view-name-error" />
+          <div class="saved-view-name-meta"><span id="saved-view-name-hint">Use a short construction-friendly name.</span><span id="saved-view-name-count">0 / 64</span></div>
+          <p id="saved-view-name-error" class="saved-view-name-error" role="alert" hidden></p>
+          <div class="saved-view-dialog-actions">
+            <button class="dialog-button secondary" type="button" data-action="cancel-save-view">Cancel</button>
+            <button class="dialog-button primary" type="submit">Save view</button>
+          </div>
+        </form>
+      </section>
+    </div>
+    <script src="./viewer.js?v=20260919-saved-views1" defer></script>
   </body>
 </html>
