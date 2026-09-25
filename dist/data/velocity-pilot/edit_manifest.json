@@ -1,0 +1,5123 @@
+{
+  "deleted": [],
+  "inserted": [],
+  "instruction": {
+    "format": "bimstudio.edit_instruction.v1",
+    "instruction_id": "stage2-ceiling-down-150mm",
+    "mode": "apply",
+    "operation_count": 23,
+    "sha256": "578e50d31a48cf4d7b098dccdb8e6d2e92183d7853aa156a6ce95abfd0dac6ed"
+  },
+  "notes": [],
+  "operations": [
+    {
+      "details": {
+        "inherited_from_parent": 106,
+        "moved_elements": 263,
+        "placement_edits": 157,
+        "placements_copied": 0,
+        "propagated_elements": 262,
+        "rotation_quaternion": null,
+        "translation_m": [
+          0.0,
+          0.0,
+          -0.15
+        ]
+      },
+      "op_id": "ceiling-translation-001",
+      "operation": "update_placement",
+      "status": "applied",
+      "targets": [
+        {
+          "after_hash": "520e88b0dde826c843273c56b20d5b08b11b1bb06fa767daf2f1c080bf1e3034",
+          "before_hash": "19469f7384dec4737e6cfaa7a78dd792200684af1a98798aac2064d7f70b2ed0",
+          "change": "changed",
+          "global_id": "2B0HM50HKnsteHeL7LrcNv",
+          "ifc_class": "IfcCovering"
+        }
+      ]
+    },
+    {
+      "details": {
+        "inherited_from_parent": 0,
+        "moved_elements": 1,
+        "placement_edits": 1,
+        "placements_copied": 0,
+        "propagated_elements": 0,
+        "rotation_quaternion": null,
+        "translation_m": [
+          0.0,
+          0.0,
+          -0.15
+        ]
+      },
+      "op_id": "ceiling-translation-002",
+      "operation": "update_placement",
+      "status": "applied",
+      "targets": [
+        {
+          "after_hash": "eabf371751665b12b7768a5e38ed4c2ab6ab87719406b678b8406bb2df0dfa8d",
+          "before_hash": "9be1052b76b2906579788e8a258eb931a2f1b2c4d25eac7a9afab15e459421cc",
+          "change": "changed",
+          "global_id": "1d1uy5O3SaouyJP_8cB2d0",
+          "ifc_class": "IfcCovering"
+        }
+      ]
+    },
+    {
+      "details": {
+        "inherited_from_parent": 11,
+        "moved_elements": 23,
+        "placement_edits": 12,
+        "placements_copied": 0,
+        "propagated_elements": 22,
+        "rotation_quaternion": null,
+        "translation_m": [
+          0.0,
+          0.0,
+          -0.15
+        ]
+      },
+      "op_id": "ceiling-translation-003",
+      "operation": "update_placement",
+      "status": "applied",
+      "targets": [
+        {
+          "after_hash": "efdfba695fd3232fcac600d299aad5ec1342242898c780329cf7b5915c40a65c",
+          "before_hash": "64fe2b01b1fcae1f0c0dda7189e6deac9f488afff4f63c3f7182053c66800de9",
+          "change": "changed",
+          "global_id": "3Lenc84YKjvShM_0qyUTPd",
+          "ifc_class": "IfcCovering"
+        }
+      ]
+    },
+    {
+      "details": {
+        "inherited_from_parent": 5,
+        "moved_elements": 11,
+        "placement_edits": 6,
+        "placements_copied": 0,
+        "propagated_elements": 10,
+        "rotation_quaternion": null,
+        "translation_m": [
+          0.0,
+          0.0,
+          -0.15
+        ]
+      },
+      "op_id": "ceiling-translation-004",
+      "operation": "update_placement",
+      "status": "applied",
+      "targets": [
+        {
+          "after_hash": "f2be8173ffaf2b9269687fe10cfe695e33b13044a5abfc01f74076e58a8724b2",
+          "before_hash": "ab24a00dd358e591358daba40f4a31d65f69bc59f5c9f26bbf9aa9f0d86eecb2",
+          "change": "changed",
+          "global_id": "2LRh4LrERTBtJzFJZyteEA",
+          "ifc_class": "IfcCovering"
+        }
+      ]
+    },
+    {
+      "details": {
+        "inherited_from_parent": 1,
+        "moved_elements": 5,
+        "placement_edits": 4,
+        "placements_copied": 0,
+        "propagated_elements": 4,
+        "rotation_quaternion": null,
+        "translation_m": [
+          0.0,
+          0.0,
+          -0.15
+        ]
+      },
+      "op_id": "ceiling-translation-005",
+      "operation": "update_placement",
+      "status": "applied",
+      "targets": [
+        {
+          "after_hash": "64720f8654f6f1dc1369ce68c0ff0c64c230fec6c60bb2cecb9768e76cca5dcb",
+          "before_hash": "dbbb2a160c3c0fb2248c83b905f18a809fc86ce17884af8dad095c386b2293d1",
+          "change": "changed",
+          "global_id": "05Iva7IZaeIhmBVZ2wZPOb",
+          "ifc_class": "IfcCovering"
+        }
+      ]
+    },
+    {
+      "details": {
+        "inherited_from_parent": 0,
+        "moved_elements": 1,
+        "placement_edits": 1,
+        "placements_copied": 0,
+        "propagated_elements": 0,
+        "rotation_quaternion": null,
+        "translation_m": [
+          0.0,
+          0.0,
+          -0.15
+        ]
+      },
+      "op_id": "ceiling-translation-006",
+      "operation": "update_placement",
+      "status": "applied",
+      "targets": [
+        {
+          "after_hash": "bf20a730aed7314548cf19c53aa363cbcfb93041123bca49496d78f7e1794045",
+          "before_hash": "9bd657d2fa111efe8cb9ed713790605fb98374d42adee5ecb8c59f0db2e95b5f",
+          "change": "changed",
+          "global_id": "2K_R2Wt2rnaXzVuEF1l_lP",
+          "ifc_class": "IfcCovering"
+        }
+      ]
+    },
+    {
+      "details": {
+        "inherited_from_parent": 0,
+        "moved_elements": 1,
+        "placement_edits": 1,
+        "placements_copied": 0,
+        "propagated_elements": 0,
+        "rotation_quaternion": null,
+        "translation_m": [
+          0.0,
+          0.0,
+          -0.15
+        ]
+      },
+      "op_id": "ceiling-translation-007",
+      "operation": "update_placement",
+      "status": "applied",
+      "targets": [
+        {
+          "after_hash": "384cebaa71a32744be1855edca828614955f76e6dbdc740222b9224ff9c2f41f",
+          "before_hash": "4917e4a59e3aef58b1683c7aae4e923042a7cd7ad7e50610f0c048b9c8e640bc",
+          "change": "changed",
+          "global_id": "2CeT9aIgdHxBXOFaUshYa9",
+          "ifc_class": "IfcCovering"
+        }
+      ]
+    },
+    {
+      "details": {
+        "inherited_from_parent": 0,
+        "moved_elements": 1,
+        "placement_edits": 1,
+        "placements_copied": 0,
+        "propagated_elements": 0,
+        "rotation_quaternion": null,
+        "translation_m": [
+          0.0,
+          0.0,
+          -0.15
+        ]
+      },
+      "op_id": "ceiling-translation-008",
+      "operation": "update_placement",
+      "status": "applied",
+      "targets": [
+        {
+          "after_hash": "7e230fbbe499151bb371016e7b35ed44a2558e6afb0881e1d159a092b38ee5f3",
+          "before_hash": "abe64efcc46a15d4fc527c0794570ca8e325c9311141bb4fcba27001ce327fb5",
+          "change": "changed",
+          "global_id": "1ZLAEXBKK0lEt7EKVWKket",
+          "ifc_class": "IfcCovering"
+        }
+      ]
+    },
+    {
+      "details": {
+        "inherited_from_parent": 0,
+        "moved_elements": 1,
+        "placement_edits": 1,
+        "placements_copied": 0,
+        "propagated_elements": 0,
+        "rotation_quaternion": null,
+        "translation_m": [
+          0.0,
+          0.0,
+          -0.15
+        ]
+      },
+      "op_id": "ceiling-translation-009",
+      "operation": "update_placement",
+      "status": "applied",
+      "targets": [
+        {
+          "after_hash": "e51d847e256a40ff0fd7e2a29c15ba90cda38c69e7e057a20c7f421428d316d1",
+          "before_hash": "4798bde485d1c9eb28647519f8c29eac8f69c1c653357aedbb07623486412505",
+          "change": "changed",
+          "global_id": "0bI6AFeEIBxqQMPBptbuFx",
+          "ifc_class": "IfcCovering"
+        }
+      ]
+    },
+    {
+      "details": {
+        "inherited_from_parent": 0,
+        "moved_elements": 1,
+        "placement_edits": 1,
+        "placements_copied": 0,
+        "propagated_elements": 0,
+        "rotation_quaternion": null,
+        "translation_m": [
+          0.0,
+          0.0,
+          -0.15
+        ]
+      },
+      "op_id": "ceiling-translation-010",
+      "operation": "update_placement",
+      "status": "applied",
+      "targets": [
+        {
+          "after_hash": "9b4830f19cd9feeaa66c737e6d743cba6bcd29d312d9c45fa571c9bb017e25c5",
+          "before_hash": "6de19a1afaadba52daf8ba96e0987bb22a5ce500ecd473ba7e530892aca11483",
+          "change": "changed",
+          "global_id": "1M3OpxCuopJT9ohGvVBDum",
+          "ifc_class": "IfcCovering"
+        }
+      ]
+    },
+    {
+      "details": {
+        "inherited_from_parent": 0,
+        "moved_elements": 1,
+        "placement_edits": 1,
+        "placements_copied": 0,
+        "propagated_elements": 0,
+        "rotation_quaternion": null,
+        "translation_m": [
+          0.0,
+          0.0,
+          -0.15
+        ]
+      },
+      "op_id": "ceiling-translation-011",
+      "operation": "update_placement",
+      "status": "applied",
+      "targets": [
+        {
+          "after_hash": "70f1c4bbd0ceb9c3b9cf199177a1830fbfcd8a73c08ccdc21cf63725da98a62e",
+          "before_hash": "bb59aab87d1862019d3c3de9cd984a2316c865099d36866b764d43496355923e",
+          "change": "changed",
+          "global_id": "1dULTNYo1KUvvrKMJdPtb8",
+          "ifc_class": "IfcCovering"
+        }
+      ]
+    },
+    {
+      "details": {
+        "inherited_from_parent": 0,
+        "moved_elements": 1,
+        "placement_edits": 1,
+        "placements_copied": 0,
+        "propagated_elements": 0,
+        "rotation_quaternion": null,
+        "translation_m": [
+          0.0,
+          0.0,
+          -0.15
+        ]
+      },
+      "op_id": "ceiling-translation-012",
+      "operation": "update_placement",
+      "status": "applied",
+      "targets": [
+        {
+          "after_hash": "846a0a4422d75e5c79b683393e8c0cea21fa289aec46b4f7ed3caa4650641350",
+          "before_hash": "432ad5f59417c8badfd408f33527a97204acb36b0236ccd38c3047f7decf3910",
+          "change": "changed",
+          "global_id": "3pfFV6U9rhezr2v1L0SHFQ",
+          "ifc_class": "IfcCovering"
+        }
+      ]
+    },
+    {
+      "details": {
+        "inherited_from_parent": 0,
+        "moved_elements": 1,
+        "placement_edits": 1,
+        "placements_copied": 0,
+        "propagated_elements": 0,
+        "rotation_quaternion": null,
+        "translation_m": [
+          0.0,
+          0.0,
+          -0.15
+        ]
+      },
+      "op_id": "ceiling-translation-013",
+      "operation": "update_placement",
+      "status": "applied",
+      "targets": [
+        {
+          "after_hash": "7834c25e348bdb6d3964a4c7029503dea9367228bbd018f091df8f86569bb7e5",
+          "before_hash": "6c9800df7d7200e38715bffa6c4c58f41f9635733666e751ca3356d44dcc145d",
+          "change": "changed",
+          "global_id": "2KGAbkXaJEPPWfbHKG94qv",
+          "ifc_class": "IfcCovering"
+        }
+      ]
+    },
+    {
+      "details": {
+        "inherited_from_parent": 0,
+        "moved_elements": 1,
+        "placement_edits": 1,
+        "placements_copied": 0,
+        "propagated_elements": 0,
+        "rotation_quaternion": null,
+        "translation_m": [
+          0.0,
+          0.0,
+          -0.15
+        ]
+      },
+      "op_id": "ceiling-translation-014",
+      "operation": "update_placement",
+      "status": "applied",
+      "targets": [
+        {
+          "after_hash": "b399b9c5e3152321674881e2e943af619f17d71a51441f7278fd22dd8b66c81b",
+          "before_hash": "d6c732658b9abe451a32cc6a37187fb6741dd24ac787292777e1265166f8ecad",
+          "change": "changed",
+          "global_id": "0WRFMp0456PSGpnmN199ea",
+          "ifc_class": "IfcCovering"
+        }
+      ]
+    },
+    {
+      "details": {
+        "inherited_from_parent": 0,
+        "moved_elements": 1,
+        "placement_edits": 1,
+        "placements_copied": 0,
+        "propagated_elements": 0,
+        "rotation_quaternion": null,
+        "translation_m": [
+          0.0,
+          0.0,
+          -0.15
+        ]
+      },
+      "op_id": "ceiling-translation-015",
+      "operation": "update_placement",
+      "status": "applied",
+      "targets": [
+        {
+          "after_hash": "bbe28b6122a16489c27b9a56b7ff9e5d940f84110a6b18586abec3ae2c34b454",
+          "before_hash": "55ee89b82dab4b4ff4aefda2537567d18b8113dd53e705797f914bb185b8fe6a",
+          "change": "changed",
+          "global_id": "2BkzT8_U8p7Uvr20yJhFSo",
+          "ifc_class": "IfcCovering"
+        }
+      ]
+    },
+    {
+      "details": {
+        "inherited_from_parent": 0,
+        "moved_elements": 1,
+        "placement_edits": 1,
+        "placements_copied": 0,
+        "propagated_elements": 0,
+        "rotation_quaternion": null,
+        "translation_m": [
+          0.0,
+          0.0,
+          -0.15
+        ]
+      },
+      "op_id": "ceiling-translation-016",
+      "operation": "update_placement",
+      "status": "applied",
+      "targets": [
+        {
+          "after_hash": "52010bb184d869338415eafcc57ba20624d2a487cdf482ce69b20f877f63128d",
+          "before_hash": "de3a8ea84fd47fd52a5bf11e35d224478385c495b8c99ce45f4f29690cd93eef",
+          "change": "changed",
+          "global_id": "0l1oZPcGnyvhTvMZjoJ7XO",
+          "ifc_class": "IfcCovering"
+        }
+      ]
+    },
+    {
+      "details": {
+        "inherited_from_parent": 1,
+        "moved_elements": 3,
+        "placement_edits": 2,
+        "placements_copied": 0,
+        "propagated_elements": 2,
+        "rotation_quaternion": null,
+        "translation_m": [
+          0.0,
+          0.0,
+          -0.15
+        ]
+      },
+      "op_id": "ceiling-translation-017",
+      "operation": "update_placement",
+      "status": "applied",
+      "targets": [
+        {
+          "after_hash": "91dcc53e68c2e640584fd7062e0a5b94f5445448463374fc0c807ee3faa1aed4",
+          "before_hash": "d855a37455dc3620ec8e60a7ef4710cc715d8c17e5821c6166bd773807e4081a",
+          "change": "changed",
+          "global_id": "0iI0Q2d_BmrrPOHXWgrSCM",
+          "ifc_class": "IfcCovering"
+        }
+      ]
+    },
+    {
+      "details": {
+        "inherited_from_parent": 6,
+        "moved_elements": 15,
+        "placement_edits": 9,
+        "placements_copied": 0,
+        "propagated_elements": 14,
+        "rotation_quaternion": null,
+        "translation_m": [
+          0.0,
+          0.0,
+          -0.15
+        ]
+      },
+      "op_id": "ceiling-translation-018",
+      "operation": "update_placement",
+      "status": "applied",
+      "targets": [
+        {
+          "after_hash": "df4d974ea2026835301777df12662d46f8f7e34c81579ddf8e62b85178c19f34",
+          "before_hash": "c21df56f6e8745512b26382626b895c69e23b1bdbf5f8da2ab149da82af471a8",
+          "change": "changed",
+          "global_id": "3Fj3VeOfs1uCtyMsqw0QBn",
+          "ifc_class": "IfcCovering"
+        }
+      ]
+    },
+    {
+      "details": {
+        "inherited_from_parent": 2,
+        "moved_elements": 6,
+        "placement_edits": 4,
+        "placements_copied": 0,
+        "propagated_elements": 5,
+        "rotation_quaternion": null,
+        "translation_m": [
+          0.0,
+          0.0,
+          -0.15
+        ]
+      },
+      "op_id": "ceiling-translation-019",
+      "operation": "update_placement",
+      "status": "applied",
+      "targets": [
+        {
+          "after_hash": "4320c67fc94bf65883c7a088dcdffa679517e2d24d836732d3db1fbdc45f1688",
+          "before_hash": "8e4387278caa0cab9b6d7d316e296764813fe99ae5cb976ddda0184e1f48ca26",
+          "change": "changed",
+          "global_id": "2lY7vMeoxmjlGI41A95PPZ",
+          "ifc_class": "IfcCovering"
+        }
+      ]
+    },
+    {
+      "details": {
+        "inherited_from_parent": 6,
+        "moved_elements": 14,
+        "placement_edits": 8,
+        "placements_copied": 0,
+        "propagated_elements": 13,
+        "rotation_quaternion": null,
+        "translation_m": [
+          0.0,
+          0.0,
+          -0.15
+        ]
+      },
+      "op_id": "ceiling-translation-020",
+      "operation": "update_placement",
+      "status": "applied",
+      "targets": [
+        {
+          "after_hash": "1e9cff409f92bc1a98a2f14451988a0e6c0b96d650038830bed1e7480e108f7f",
+          "before_hash": "fdc705821633ab10d39398d9258fde917fc828cf58c2f17845d64d7e973244b4",
+          "change": "changed",
+          "global_id": "0fgHmYNTwSg_QLlFlU2KL2",
+          "ifc_class": "IfcCovering"
+        }
+      ]
+    },
+    {
+      "details": {
+        "inherited_from_parent": 3,
+        "moved_elements": 7,
+        "placement_edits": 4,
+        "placements_copied": 0,
+        "propagated_elements": 6,
+        "rotation_quaternion": null,
+        "translation_m": [
+          0.0,
+          0.0,
+          -0.15
+        ]
+      },
+      "op_id": "ceiling-translation-021",
+      "operation": "update_placement",
+      "status": "applied",
+      "targets": [
+        {
+          "after_hash": "77d3e7adce32e26ff3a7d42df71af79b9b7b3db44ca52fe0e5bc1c8edae799d4",
+          "before_hash": "8100474b5981af4460cfe6191c80f5dad49d5176e75d8dfee2898f319f1e2b76",
+          "change": "changed",
+          "global_id": "3eOdX5HchTJWBNBRO_qRQv",
+          "ifc_class": "IfcCovering"
+        }
+      ]
+    },
+    {
+      "details": {
+        "inherited_from_parent": 2,
+        "moved_elements": 11,
+        "placement_edits": 9,
+        "placements_copied": 0,
+        "propagated_elements": 10,
+        "rotation_quaternion": null,
+        "translation_m": [
+          0.0,
+          0.0,
+          -0.15
+        ]
+      },
+      "op_id": "ceiling-translation-022",
+      "operation": "update_placement",
+      "status": "applied",
+      "targets": [
+        {
+          "after_hash": "5d2a6bc41a40b0b3cf4eb66e8ae9cf6e8e3dd1806b73143195a18dcb815d4296",
+          "before_hash": "ee4707003197d89b0de5bbc4508da8af29033d38796679dd16188c8706a8ab46",
+          "change": "changed",
+          "global_id": "3b5ADX2pgIcCSgf0pB3cNX",
+          "ifc_class": "IfcCovering"
+        }
+      ]
+    },
+    {
+      "details": {
+        "inherited_from_parent": 0,
+        "moved_elements": 1,
+        "placement_edits": 1,
+        "placements_copied": 0,
+        "propagated_elements": 0,
+        "rotation_quaternion": null,
+        "translation_m": [
+          0.0,
+          0.0,
+          -0.15
+        ]
+      },
+      "op_id": "ceiling-translation-023",
+      "operation": "update_placement",
+      "status": "applied",
+      "targets": [
+        {
+          "after_hash": "ce401e525ee6e7df3582851ce585cddcb1915e071ac96c1e644300a22222ea64",
+          "before_hash": "52a2d88a2a8a3bec205d7cc2748d7b4aa1b4055bd537426163855fb1d0b19234",
+          "change": "changed",
+          "global_id": "1s0hj3u3T2FWEBJ8TyW9vP",
+          "ifc_class": "IfcCovering"
+        }
+      ]
+    }
+  ],
+  "output": {
+    "entity_count": 1325990,
+    "name": "model.ifc",
+    "product_count": 7542,
+    "sha256": "2ed04a2e9e1fe471a1af9d4b36ffed212ed969d4feb1655da80e04dd581c7475"
+  },
+  "propagated": [
+    {
+      "after_hash": "5350a029eacf8c65bb0ab3fbf103a8c5b22126ca65b91149d8f6cebcb9ef4806",
+      "before_hash": "95c184ca42bb29b4ec8bb49abf8d8220abd9dbc9ca1ca349b69aecd1d97e9038",
+      "change": "changed",
+      "global_id": "0$TL4M0npYMAg7Zbgdllhc",
+      "ifc_class": "IfcDistributionControlElement",
+      "reason": "hosted_fixture",
+      "source_op_id": "ceiling-translation-001",
+      "via": [
+        "1d1uy5O3SaouyJP_8cB2d0",
+        "2B0HM50HKnsteHeL7LrcNv",
+        "2KGAbkXaJEPPWfbHKG94qv",
+        "3pfFV6U9rhezr2v1L0SHFQ"
+      ]
+    },
+    {
+      "after_hash": "17d7e27afbb52d987ccedc3eb1a16c0e35634677c616b3ce6669e2f2ed2005fa",
+      "before_hash": "f802ac81476ab50cd51368e6c3bb758f5e88c8eb39afad2254f9c700cb5e6a81",
+      "change": "changed",
+      "global_id": "0$utDT3ddSXDgGPo9TJMUh",
+      "ifc_class": "IfcFlowTerminal",
+      "reason": "hosted_fixture",
+      "source_op_id": "ceiling-translation-001",
+      "via": [
+        "1d1uy5O3SaouyJP_8cB2d0",
+        "2B0HM50HKnsteHeL7LrcNv"
+      ]
+    },
+    {
+      "after_hash": "78a8fcdb86eb604c51fde46552a43ade9da9c859bc8f50129a9ab1ab52e12c5d",
+      "before_hash": "5e1e009979c027c6f18cb70522af067c1c693870f6cd6432a74149b68a8e8bdd",
+      "change": "changed",
+      "global_id": "01jLaKDkkpStr9XDEdNwC6",
+      "ifc_class": "IfcDistributionPort",
+      "reason": "connected_port",
+      "source_op_id": "ceiling-translation-001",
+      "via": [
+        "0oZolNuTLVLut5QQp_Mr9i"
+      ]
+    },
+    {
+      "after_hash": "67cf30ac05a82640c1b32c2084017210eb6b0fc3178d61a53b5ea5040deba1d9",
+      "before_hash": "a36b50c4be59ae1aad7c07e8778db6ed205cb09e2afc41c410922151bdf11c7c",
+      "change": "changed",
+      "global_id": "02uu4qPSkhRVXD6z4ZnXLy",
+      "ifc_class": "IfcFlowTerminal",
+      "reason": "hosted_fixture",
+      "source_op_id": "ceiling-translation-022",
+      "via": [
+        "3b5ADX2pgIcCSgf0pB3cNX"
+      ]
+    },
+    {
+      "after_hash": "83063da75119868ac63ea169e65410e262c23162d0de8983ab5f782f1ddc723a",
+      "before_hash": "d1ab4379a7d497340bc1f6e451cc590e84b261e89b72948d6f9b35f12f944245",
+      "change": "changed",
+      "global_id": "03Y6fagssQSb67soS$i2kR",
+      "ifc_class": "IfcFlowTerminal",
+      "reason": "hosted_fixture",
+      "source_op_id": "ceiling-translation-001",
+      "via": [
+        "2B0HM50HKnsteHeL7LrcNv",
+        "3b5ADX2pgIcCSgf0pB3cNX"
+      ]
+    },
+    {
+      "after_hash": "1adf0c10e0a349c7d18a9e7138b353230861c1f6bfcd63ae9df95bdecdbe2b25",
+      "before_hash": "44d73c719dbd0d58c069ffef36cd48bd4078fd6271d50f33235aa00392bb600f",
+      "change": "changed",
+      "global_id": "05D9$mwaBF4CPvpJtsq8lo",
+      "ifc_class": "IfcDistributionPort",
+      "reason": "connected_port",
+      "source_op_id": "ceiling-translation-001",
+      "via": [
+        "23DtkRZFND$yG3vWnz2y8G"
+      ]
+    },
+    {
+      "after_hash": "f509373d22a5d0e7d8ab9666ea914379efa4e9acc6d5a0e82a2a32086bce8976",
+      "before_hash": "c2b6b846190f790ea0d957fe96ef45be184337d636c20d36fcdcf92f22eee130",
+      "change": "changed",
+      "global_id": "06d1msMRsv95ah$iWQIkym",
+      "ifc_class": "IfcFlowTerminal",
+      "reason": "hosted_fixture",
+      "source_op_id": "ceiling-translation-001",
+      "via": [
+        "2B0HM50HKnsteHeL7LrcNv"
+      ]
+    },
+    {
+      "after_hash": "4ffaa6ec2806661608b4d11626224f508429e2725c67af462f97b847c10f7cd9",
+      "before_hash": "e101d6c4fc31ce37664cb191a46d5e9040074114c5504c75cbc4e3e076ab1765",
+      "change": "changed",
+      "global_id": "06pe9x4KPlkCxIxYYgvo$p",
+      "ifc_class": "IfcDistributionPort",
+      "reason": "connected_port",
+      "source_op_id": "ceiling-translation-018",
+      "via": [
+        "2xz_DZ_0fj7ELW$uFwI749"
+      ]
+    },
+    {
+      "after_hash": "5d229811e261573cec77bbd1970fc9f156b8970e863eb5d009e1a97363191134",
+      "before_hash": "ee6d806bfdd5153aa7702012b165c969ba2c580bf69939c89f79015ffb3dfc8d",
+      "change": "changed",
+      "global_id": "06pgcyhd_mBXsS$KHt8NZJ",
+      "ifc_class": "IfcDistributionPort",
+      "reason": "connected_port",
+      "source_op_id": "ceiling-translation-001",
+      "via": [
+        "2VtMwQEWxHjPr_vVfZM$ru"
+      ]
+    },
+    {
+      "after_hash": "47b22efc801dd75e9b9939931f19e4df7f632acd250783073767492bb4ec8162",
+      "before_hash": "35f660e27a6868fd01f067513238f4bf4ce8d34ee5c0acc2f67bf315d7e1353c",
+      "change": "changed",
+      "global_id": "07a3GtekKR1gb5gSQT2j_L",
+      "ifc_class": "IfcFlowTerminal",
+      "reason": "hosted_fixture",
+      "source_op_id": "ceiling-translation-001",
+      "via": [
+        "2B0HM50HKnsteHeL7LrcNv",
+        "3eOdX5HchTJWBNBRO_qRQv"
+      ]
+    },
+    {
+      "after_hash": "0a214d47e1c5e2d2a604a1407011fce884a84d84a59b9231d481a66107c8a521",
+      "before_hash": "20ae6500ef6b18cd77fb7b88fc7b30c511b0cdccd45e334c32fe9e37bb7dce35",
+      "change": "changed",
+      "global_id": "085APIXzPVOp$_LHSXMGyQ",
+      "ifc_class": "IfcFlowTerminal",
+      "reason": "hosted_fixture",
+      "source_op_id": "ceiling-translation-001",
+      "via": [
+        "0fgHmYNTwSg_QLlFlU2KL2",
+        "2B0HM50HKnsteHeL7LrcNv",
+        "3eOdX5HchTJWBNBRO_qRQv"
+      ]
+    },
+    {
+      "after_hash": "9a2c579c4ca544da5ed36a6cb2b34b8f55d3e832acf8e254fae0721653af9ff9",
+      "before_hash": "0061f525309ee211cbacbd3c54dec54c214a2a43763c497eab7db290e5531ace",
+      "change": "changed",
+      "global_id": "08LlIMOlvuiCpDYWgkMxeg",
+      "ifc_class": "IfcBuildingElementProxy",
+      "reason": "hosted_fixture",
+      "source_op_id": "ceiling-translation-003",
+      "via": [
+        "2lY7vMeoxmjlGI41A95PPZ",
+        "3Lenc84YKjvShM_0qyUTPd"
+      ]
+    },
+    {
+      "after_hash": "06e56e5f925c6dac7834ede32a787b2e385c88016611419cbef0321c60ea863c",
+      "before_hash": "cb67475d8c35e590e30ae6a2cd7ea8d26df5871ce4a01a30124bddf1adb726cd",
+      "change": "changed",
+      "global_id": "09AdjPoVU7NxlH3t3IbsHY",
+      "ifc_class": "IfcFlowTerminal",
+      "reason": "hosted_fixture",
+      "source_op_id": "ceiling-translation-003",
+      "via": [
+        "3Lenc84YKjvShM_0qyUTPd"
+      ]
+    },
+    {
+      "after_hash": "425ae442ff8d21f954fd63399de7ed229f939d41214100a017446b73028c62df",
+      "before_hash": "db2cbf6b9083e48bbb01eced7411f858703f4a7670d0f96be51d2b15ee5a8dac",
+      "change": "changed",
+      "global_id": "0A5tBJiTtrKidCPeZ7BGfU",
+      "ifc_class": "IfcDistributionPort",
+      "reason": "connected_port",
+      "source_op_id": "ceiling-translation-005",
+      "via": [
+        "14zWJwnFykGpM2zw0Ox9Mv"
+      ]
+    },
+    {
+      "after_hash": "0428061231f4e6ad18a7d72730308101cd9a26f892456b0abc5a61c82c39f76e",
+      "before_hash": "f88d3b65fc0a27ba93dde30ca83cead96e9d02d8ad86fe683201c7a95d6e7705",
+      "change": "changed",
+      "global_id": "0BFdAejXygjddpaArB4dFx",
+      "ifc_class": "IfcFlowTerminal",
+      "reason": "hosted_fixture",
+      "source_op_id": "ceiling-translation-001",
+      "via": [
+        "0l1oZPcGnyvhTvMZjoJ7XO",
+        "1d1uy5O3SaouyJP_8cB2d0",
+        "2B0HM50HKnsteHeL7LrcNv",
+        "2BkzT8_U8p7Uvr20yJhFSo"
+      ]
+    },
+    {
+      "after_hash": "62e434dba4669058fbb0821a66dade3cc278027f634e45cac06bc308a277ce96",
+      "before_hash": "e9ddaef176ac81119c318695b01b3a021f2b379d2077176ce88a46f8ce0eb7dc",
+      "change": "changed",
+      "global_id": "0BFs39GpSWft08hNZRj2OH",
+      "ifc_class": "IfcDistributionPort",
+      "reason": "connected_port",
+      "source_op_id": "ceiling-translation-003",
+      "via": [
+        "1B18yxYhPbDkOu5P8iWkn8"
+      ]
+    },
+    {
+      "after_hash": "31efd16ab64d265a5ed09fe10133cce900b64844a5de14438156ec453257ac43",
+      "before_hash": "a8283de7933f6c9e69b12f69c9f631b5bfd49d614c946a99515f951d6298eead",
+      "change": "changed",
+      "global_id": "0BZJH4tgrKU9OdRPX1$7tV",
+      "ifc_class": "IfcDistributionPort",
+      "reason": "connected_port",
+      "source_op_id": "ceiling-translation-001",
+      "via": [
+        "2H3aa1Luc9kQUVSn7UtUdp"
+      ]
+    },
+    {
+      "after_hash": "dcced942976c20dbf6a1de653548ffe74fb15d57ac44d1db51a5e049ed8e3fb5",
+      "before_hash": "87867f799540d74d4dcfec65dafdca04552595fc43f4789c4f2d43e1e3a19965",
+      "change": "changed",
+      "global_id": "0Bk$aQIgybU_CWmN1ElJU_",
+      "ifc_class": "IfcFlowTerminal",
+      "reason": "hosted_fixture",
+      "source_op_id": "ceiling-translation-001",
+      "via": [
+        "1d1uy5O3SaouyJP_8cB2d0",
+        "1s0hj3u3T2FWEBJ8TyW9vP",
+        "2B0HM50HKnsteHeL7LrcNv",
+        "2KGAbkXaJEPPWfbHKG94qv"
+      ]
+    },
+    {
+      "after_hash": "209c839f4927d38e225ddf781233a3e1a9c782b2277d8358003bc3446205e394",
+      "before_hash": "863619534d072d423efd4c50a3d8da0a6bad98a764d7a305f281c0c06d449f33",
+      "change": "changed",
+      "global_id": "0CPbwkYF7sFwypLvEBf05t",
+      "ifc_class": "IfcDistributionPort",
+      "reason": "connected_port",
+      "source_op_id": "ceiling-translation-017",
+      "via": [
+        "3H2uaXZOmZczvuSOdBAhr$"
+      ]
+    },
+    {
+      "after_hash": "cb85365489545b0abb0a1317766168fd1e623a74d3fd6e7d5bcf0dcc5c818b93",
+      "before_hash": "4f359e5b879fe4c6402b2672db29b383b995a7ab737e021e35b74ce111858053",
+      "change": "changed",
+      "global_id": "0CWwWOoNcmb33yB5noGFP5",
+      "ifc_class": "IfcFlowTerminal",
+      "reason": "hosted_fixture",
+      "source_op_id": "ceiling-translation-001",
+      "via": [
+        "1d1uy5O3SaouyJP_8cB2d0",
+        "2B0HM50HKnsteHeL7LrcNv"
+      ]
+    },
+    {
+      "after_hash": "98fdd6326609198b8b806133c44e83973cb42353d82db1f0527abaaa4e662071",
+      "before_hash": "69ea1fc0eef4584fac40fba62f7859890c106e7221b5293e0d6e3b1266544730",
+      "change": "changed",
+      "global_id": "0CkKZoMQj_KqyUDSdgbyRD",
+      "ifc_class": "IfcFlowTerminal",
+      "reason": "hosted_fixture",
+      "source_op_id": "ceiling-translation-001",
+      "via": [
+        "2B0HM50HKnsteHeL7LrcNv",
+        "3eOdX5HchTJWBNBRO_qRQv"
+      ]
+    },
+    {
+      "after_hash": "f50565a48d4dcedd2d69b3eb70873adeef5721969eeb05f1cd3520b390e243ac",
+      "before_hash": "23ab6516b061078fb270edd070f8fe8354ead87c0ce0dd9189b390d8318d0bbf",
+      "change": "changed",
+      "global_id": "0D1cMRDiUaSL8BBXAWkY3p",
+      "ifc_class": "IfcDistributionPort",
+      "reason": "connected_port",
+      "source_op_id": "ceiling-translation-001",
+      "via": [
+        "3ugyjPfrD8Na502WXHHiSz"
+      ]
+    },
+    {
+      "after_hash": "79df6baa23652d0f01ab687f55424de3effc4655d5625977f11aad6838f399f1",
+      "before_hash": "a913777c6046ed38952c0271bdab667768a9392bee0afc6cdf707e1f9feee9c9",
+      "change": "changed",
+      "global_id": "0DCTi1q_hqsDduLJDDjHLi",
+      "ifc_class": "IfcDistributionPort",
+      "reason": "connected_port",
+      "source_op_id": "ceiling-translation-022",
+      "via": [
+        "1pUCBCJBBpufw2mDemK5B9"
+      ]
+    },
+    {
+      "after_hash": "f847a10d049e264a8829a0c197b023d6ef88bde98f1f23be809d6e6672869ea1",
+      "before_hash": "3587db94d8fc771e4e9899a9e54a7fb9a03a155a676d9a2c72afe114ae7c85ff",
+      "change": "changed",
+      "global_id": "0DUPo9KIIY3893bsNVJq98",
+      "ifc_class": "IfcDistributionControlElement",
+      "reason": "hosted_fixture",
+      "source_op_id": "ceiling-translation-001",
+      "via": [
+        "2B0HM50HKnsteHeL7LrcNv",
+        "3b5ADX2pgIcCSgf0pB3cNX"
+      ]
+    },
+    {
+      "after_hash": "51e6b06611b12cb2228172459d7b3d63a52fdaf359d31681dfbd7e7962e09799",
+      "before_hash": "06b691115a6a974040b0b8a555237cf6ac6f670932e151ff68e6954e4fb86893",
+      "change": "changed",
+      "global_id": "0DZrWH5AxciLxXPIBOB_2R",
+      "ifc_class": "IfcFlowTerminal",
+      "reason": "hosted_fixture",
+      "source_op_id": "ceiling-translation-020",
+      "via": [
+        "0fgHmYNTwSg_QLlFlU2KL2"
+      ]
+    },
+    {
+      "after_hash": "f060f7ba426b26a6c5443090790a99b8ab1d8cf314037215a2e73b3442ba88c6",
+      "before_hash": "8f05ce513d9123c5a279252184ea1d10d14d3d65e02db8734d103d8fdaaf13ef",
+      "change": "changed",
+      "global_id": "0DpILDUNdX4OIVYA3INLqX",
+      "ifc_class": "IfcFlowTerminal",
+      "reason": "hosted_fixture",
+      "source_op_id": "ceiling-translation-001",
+      "via": [
+        "1d1uy5O3SaouyJP_8cB2d0",
+        "1dULTNYo1KUvvrKMJdPtb8",
+        "2B0HM50HKnsteHeL7LrcNv"
+      ]
+    },
+    {
+      "after_hash": "43a8b6e297ef3eb1d540a0d200510dc83a6490f0bf15b6c7af8777f998f7b12a",
+      "before_hash": "adf52b6ffba823b7d9aa4f109a7a78014fbc067f29d98a5089b360da324042c6",
+      "change": "changed",
+      "global_id": "0EFa_TQTm9dl$ZSGBtUDP3",
+      "ifc_class": "IfcFlowTerminal",
+      "reason": "hosted_fixture",
+      "source_op_id": "ceiling-translation-020",
+      "via": [
+        "0fgHmYNTwSg_QLlFlU2KL2"
+      ]
+    },
+    {
+      "after_hash": "e7c604e13103ed759f6bd313c7890e833490a0ef2185083cf2717a56dda69301",
+      "before_hash": "2dd29b9b5e2d15cf1e9ace976a7b92feafe1de8a04548687a7f8c484b24be41e",
+      "change": "changed",
+      "global_id": "0EmJRM6XoR5b8ON1FTmq_2",
+      "ifc_class": "IfcFlowTerminal",
+      "reason": "hosted_fixture",
+      "source_op_id": "ceiling-translation-001",
+      "via": [
+        "1d1uy5O3SaouyJP_8cB2d0",
+        "2B0HM50HKnsteHeL7LrcNv"
+      ]
+    },
+    {
+      "after_hash": "c2bee3f26c2e6c580d50f7a2aa684604fd23a200222d7f4715d6bb77cfbd5221",
+      "before_hash": "ba06b6fd6efd7a764299740db408d2bbf6f92664bf03f148c4059aa5f89b419d",
+      "change": "changed",
+      "global_id": "0GXRTqi7Nuz2z7XTXd11NO",
+      "ifc_class": "IfcDistributionPort",
+      "reason": "connected_port",
+      "source_op_id": "ceiling-translation-001",
+      "via": [
+        "3kHMT66WHvIby2lce$NyBf"
+      ]
+    },
+    {
+      "after_hash": "664e03e44ce267a6bfc9836bca54675f32ac2720219e8670af4a3f347b999497",
+      "before_hash": "768e0d34323ab66fb81b420876c09ab6adfdf828e8ac642597b2a516c7f04a0b",
+      "change": "changed",
+      "global_id": "0Gmtu0TVYp2UEfdH3_mDqO",
+      "ifc_class": "IfcFlowTerminal",
+      "reason": "hosted_fixture",
+      "source_op_id": "ceiling-translation-001",
+      "via": [
+        "1d1uy5O3SaouyJP_8cB2d0",
+        "2B0HM50HKnsteHeL7LrcNv"
+      ]
+    },
+    {
+      "after_hash": "9e85a7e966c43d688a810aef1c1e5f60d8d75b3f59d9b3ca320197e09230dcf8",
+      "before_hash": "4291a67685e2170ff2988695766d29a31a1bb058caef8f93d729d88af2e21045",
+      "change": "changed",
+      "global_id": "0Gs69Tag0_ol27wW9ucChc",
+      "ifc_class": "IfcFlowTerminal",
+      "reason": "hosted_fixture",
+      "source_op_id": "ceiling-translation-001",
+      "via": [
+        "2B0HM50HKnsteHeL7LrcNv",
+        "3eOdX5HchTJWBNBRO_qRQv"
+      ]
+    },
+    {
+      "after_hash": "b04803c894b92d64f193b99c1a2b63d212daebe2326371b5455aa913186bc4f1",
+      "before_hash": "15380d03040b7f7b0cdef89855babc2bd5ed8cea35561463f6860721563f20d7",
+      "change": "changed",
+      "global_id": "0HSpmveMiC40CkHWLLtdnO",
+      "ifc_class": "IfcDistributionPort",
+      "reason": "connected_port",
+      "source_op_id": "ceiling-translation-001",
+      "via": [
+        "21e6tVXLbZu4Yl1O1YJ5c9"
+      ]
+    },
+    {
+      "after_hash": "89fdbba406322c2935d687fb63987d37e136fb3c7d55054e6d421e1dcead9694",
+      "before_hash": "f0d1600bf3eadbf78ae8007264eafd32dc727a6741f778edcd66015a475204fb",
+      "change": "changed",
+      "global_id": "0HWmW3vau0vOSQkvcFK7WT",
+      "ifc_class": "IfcDistributionPort",
+      "reason": "connected_port",
+      "source_op_id": "ceiling-translation-001",
+      "via": [
+        "3ztq6TvojX$hDVoTJkctPV"
+      ]
+    },
+    {
+      "after_hash": "28c793391a2d485ac1fbacae55b4bdf95d489eca9c90ac2ad519836d6ea76982",
+      "before_hash": "eaaa123ebfa72af51f6edf94ad6c1506282a562e4427a605088c3553a94662e1",
+      "change": "changed",
+      "global_id": "0HlMFBF309oZ$GnCxXo5Jd",
+      "ifc_class": "IfcFlowTerminal",
+      "reason": "hosted_fixture",
+      "source_op_id": "ceiling-translation-001",
+      "via": [
+        "2B0HM50HKnsteHeL7LrcNv"
+      ]
+    },
+    {
+      "after_hash": "ceb67d2a593a54e542b070ca57f5749f007c800e681dfa665089549a1ee963ab",
+      "before_hash": "c15b7a69846997332dcf1bfbdc7b2f9bc17a1702042c3eeb5356b6cc641183e6",
+      "change": "changed",
+      "global_id": "0HvfcaqvBM2mC5Yc_nAcx4",
+      "ifc_class": "IfcDistributionPort",
+      "reason": "connected_port",
+      "source_op_id": "ceiling-translation-004",
+      "via": [
+        "2P4SkcflE6j1dBrkNVu9i0"
+      ]
+    },
+    {
+      "after_hash": "d36a21308f99149900454901c0fa3af010e3916f55ded5ff505f951796b20be4",
+      "before_hash": "5b52c34e3d70c2035fae8fbef6f2a9585afc0e23a5d5d2795275e688e28d9f30",
+      "change": "changed",
+      "global_id": "0Io4YxWZxjvAzGriw51UIy",
+      "ifc_class": "IfcDistributionPort",
+      "reason": "connected_port",
+      "source_op_id": "ceiling-translation-001",
+      "via": [
+        "2slnYh7rf12qVmvvnfSlWK"
+      ]
+    },
+    {
+      "after_hash": "c888a9f58277179e2066b99840b0c1c881e24640519d9e7ab548c4b96e0d9b96",
+      "before_hash": "39340c7ec7c3c82ddd5bdf5ac8a65ad247877a9a13e2cc2f8621ccfd2231d179",
+      "change": "changed",
+      "global_id": "0KgAc7Baaoop23G_3eA4N8",
+      "ifc_class": "IfcDistributionPort",
+      "reason": "connected_port",
+      "source_op_id": "ceiling-translation-001",
+      "via": [
+        "0leciKO0$5wEqJ3eltQucX"
+      ]
+    },
+    {
+      "after_hash": "c412fccac67ba5dc26321bf32978ec486dc040d1a6f445cd7c84a5901ba9c715",
+      "before_hash": "95f63600fd2f92d25c0c1b72ef719171a2f278b6d2694cb19cd7bcf27a877f79",
+      "change": "changed",
+      "global_id": "0LunW6WYTtXtcSZojbQPnj",
+      "ifc_class": "IfcDistributionControlElement",
+      "reason": "hosted_fixture",
+      "source_op_id": "ceiling-translation-001",
+      "via": [
+        "0l1oZPcGnyvhTvMZjoJ7XO",
+        "1d1uy5O3SaouyJP_8cB2d0",
+        "2B0HM50HKnsteHeL7LrcNv"
+      ]
+    },
+    {
+      "after_hash": "ed9669b5832ed6e80b818b5a0d17c2cbe46da892e06d12ee31a253e5c594e5ee",
+      "before_hash": "b973b38337b0e171c68b05281616745eceeed6aceb9bf99f76860573703ad332",
+      "change": "changed",
+      "global_id": "0PslgUxrxsDvZs6OIEV2Ko",
+      "ifc_class": "IfcDistributionPort",
+      "reason": "connected_port",
+      "source_op_id": "ceiling-translation-001",
+      "via": [
+        "0w0KqamUYxb6CGNtRyeGGd"
+      ]
+    },
+    {
+      "after_hash": "a3a9abd6673316277a68541f74fe492e6e792e6156d302cf58351d885fc3eba4",
+      "before_hash": "5f79b8c2b1b6ad991ddeae4b0945a69dcda92c801cc5e4ad6f4f272d0335812a",
+      "change": "changed",
+      "global_id": "0Qjnofloql3ocu1NUrJv9z",
+      "ifc_class": "IfcDistributionPort",
+      "reason": "connected_port",
+      "source_op_id": "ceiling-translation-020",
+      "via": [
+        "0DZrWH5AxciLxXPIBOB_2R"
+      ]
+    },
+    {
+      "after_hash": "cf754315669798420a110deefd780a0fb381aa3c8d75e7eaa653c47c04e18963",
+      "before_hash": "0418a8c4fd290f4bcf44128bfde0146def7a6a3a6138f91994a4f0be488b095a",
+      "change": "changed",
+      "global_id": "0SQcflhQGh7eArbP_9kXpB",
+      "ifc_class": "IfcFlowTerminal",
+      "reason": "hosted_fixture",
+      "source_op_id": "ceiling-translation-001",
+      "via": [
+        "2B0HM50HKnsteHeL7LrcNv",
+        "2K_R2Wt2rnaXzVuEF1l_lP"
+      ]
+    },
+    {
+      "after_hash": "50a62839d35c4806f6f6d6e854f71ba95a21e10041885426f56aad9bb2504a9c",
+      "before_hash": "467d37461f65248373d6b712c7a5e26ace4a25c3ec74af6a60a261e35356f1be",
+      "change": "changed",
+      "global_id": "0TVAwbrN3ionorfnT4xVNA",
+      "ifc_class": "IfcFlowTerminal",
+      "reason": "hosted_fixture",
+      "source_op_id": "ceiling-translation-018",
+      "via": [
+        "3Fj3VeOfs1uCtyMsqw0QBn"
+      ]
+    },
+    {
+      "after_hash": "74a05b4dca17aa770bb745dbe7668fd6258e1809f0c162873d2d7ab297408acb",
+      "before_hash": "d2310cb25e5ff452b34433aabb472b18c3b721098740ef68e492a7c88e935ebb",
+      "change": "changed",
+      "global_id": "0Tev6mHH_EQrVpSqH$hvlG",
+      "ifc_class": "IfcFlowTerminal",
+      "reason": "hosted_fixture",
+      "source_op_id": "ceiling-translation-001",
+      "via": [
+        "1ZLAEXBKK0lEt7EKVWKket",
+        "2B0HM50HKnsteHeL7LrcNv"
+      ]
+    },
+    {
+      "after_hash": "027a2dffdaa1343f1d6c269f5c1e18fa5a68af0a00df8219b10adac7473a4b26",
+      "before_hash": "0a9abbba380207f6e52b09627b5697248f7026ef210b66448161d444bcdbc94d",
+      "change": "changed",
+      "global_id": "0U9zlveYhyUuKJEEi2bNgp",
+      "ifc_class": "IfcFlowTerminal",
+      "reason": "hosted_fixture",
+      "source_op_id": "ceiling-translation-001",
+      "via": [
+        "2B0HM50HKnsteHeL7LrcNv",
+        "3b5ADX2pgIcCSgf0pB3cNX"
+      ]
+    },
+    {
+      "after_hash": "b6665047c25c0f04814f6353debd462b50446368786969cd9ffd02c248c7aae3",
+      "before_hash": "d02dd4bc3e30ead80ad946240ae6fa099e5e06dbde1ca8c63247b75d4cf4a56a",
+      "change": "changed",
+      "global_id": "0Uq4LXlmdEZT$yIgPN0WGX",
+      "ifc_class": "IfcDistributionPort",
+      "reason": "connected_port",
+      "source_op_id": "ceiling-translation-001",
+      "via": [
+        "2w70FU76CWCehJjNx140Dt"
+      ]
+    },
+    {
+      "after_hash": "3b6e01a9eb75494ea17b9c7419e3d2af853686997e2d33db7e367a7e4f72a31f",
+      "before_hash": "039e1f4d3d9f93f1a9686cdf5fe91485bf7be41f55b856402869ad96b637e7d4",
+      "change": "changed",
+      "global_id": "0UtnAmdUL9rY9hrRCNyFQS",
+      "ifc_class": "IfcDistributionPort",
+      "reason": "connected_port",
+      "source_op_id": "ceiling-translation-001",
+      "via": [
+        "3EL1bRnmLfapYOsvYrnlkW"
+      ]
+    },
+    {
+      "after_hash": "fb9af6f6b96b0efc7eca468bab1d0f08aa21807893806fdddc06f69082843139",
+      "before_hash": "4b6900a58048995496116ed2f9612bd5c27e8e1620a13d6522a28e1a8ffc6ccd",
+      "change": "changed",
+      "global_id": "0V5h3Wjvl4RL1RPFQzEBBD",
+      "ifc_class": "IfcFlowTerminal",
+      "reason": "hosted_fixture",
+      "source_op_id": "ceiling-translation-001",
+      "via": [
+        "2B0HM50HKnsteHeL7LrcNv",
+        "2K_R2Wt2rnaXzVuEF1l_lP"
+      ]
+    },
+    {
+      "after_hash": "bed8089b2ae479c8857020de5372cb03c57d006a77eddfb3ca21f0062d3ad8d3",
+      "before_hash": "aa4cc2391671d6b1fa64bac8db43570727b428750498af71e5c546af527cdb70",
+      "change": "changed",
+      "global_id": "0VL71Ucx3qu0RpR95VvP7s",
+      "ifc_class": "IfcFlowTerminal",
+      "reason": "hosted_fixture",
+      "source_op_id": "ceiling-translation-022",
+      "via": [
+        "3b5ADX2pgIcCSgf0pB3cNX"
+      ]
+    },
+    {
+      "after_hash": "9410c188cfced3c14d2351577e6ae0fc01524e159175d91e79cbdbe9f08fc447",
+      "before_hash": "38b0fbe199edcaef6fa013d0ec17592a9d620477e23cec320e287b8060f6f332",
+      "change": "changed",
+      "global_id": "0W3cYFwqwy08hHwdu5daLN",
+      "ifc_class": "IfcDistributionPort",
+      "reason": "connected_port",
+      "source_op_id": "ceiling-translation-001",
+      "via": [
+        "0Gmtu0TVYp2UEfdH3_mDqO"
+      ]
+    },
+    {
+      "after_hash": "6555fa8de0688b5f7fa7f7d82e213d861e0e1ec9315b7c4a953ee4c528e6ba76",
+      "before_hash": "43b2e1da53fc866561793e5981138a0ee0ea9d72dc5bca051a638f94f40c6546",
+      "change": "changed",
+      "global_id": "0WONc$47gi94VqfL_FF69J",
+      "ifc_class": "IfcDistributionPort",
+      "reason": "connected_port",
+      "source_op_id": "ceiling-translation-001",
+      "via": [
+        "1wGoXFnmkBQ4_AvlgvTPFG"
+      ]
+    },
+    {
+      "after_hash": "9cbfad543c13a5ae5fcb9cdb94556464b6f56b18dbc843aa8fd22b41151c38d5",
+      "before_hash": "21826c43f6ad56d5f4e797fc30f2b5e718353504b45bec3a4b17101f3e0836d1",
+      "change": "changed",
+      "global_id": "0XatA39gCVoIqhgJDeV7Aq",
+      "ifc_class": "IfcDistributionPort",
+      "reason": "connected_port",
+      "source_op_id": "ceiling-translation-018",
+      "via": [
+        "0esrJmqkReMB6TkZHrPBJj"
+      ]
+    },
+    {
+      "after_hash": "be0a04d8cad99194702ada6d7dc0944efca0644ba3daf3851020d1015ab54076",
+      "before_hash": "2cd88ac995fe238775e0317fc71282e1d59b3be3b87adc376b581a944132b0f1",
+      "change": "changed",
+      "global_id": "0YgkQkPTh5_F2henTPE4J4",
+      "ifc_class": "IfcFlowTerminal",
+      "reason": "hosted_fixture",
+      "source_op_id": "ceiling-translation-001",
+      "via": [
+        "2B0HM50HKnsteHeL7LrcNv"
+      ]
+    },
+    {
+      "after_hash": "0f0325894d648825f95ce90558d006f7aeebbcc4a343a5e0a0a020254b000efe",
+      "before_hash": "ab172899802adc0a8ef8ddb8d5be0dc033c779c381cbaa09405bd05b0210f880",
+      "change": "changed",
+      "global_id": "0YxlAXLQmZQauvb4WzHXgP",
+      "ifc_class": "IfcFlowTerminal",
+      "reason": "hosted_fixture",
+      "source_op_id": "ceiling-translation-022",
+      "via": [
+        "3b5ADX2pgIcCSgf0pB3cNX"
+      ]
+    },
+    {
+      "after_hash": "a275c02f064cc123de0347902051daa37527395d0179d699698d026bdb4f13a7",
+      "before_hash": "09471a767c64689754e647e9bb737906049525947c75fab0d1a87c3f24324334",
+      "change": "changed",
+      "global_id": "0ZqdS3gUDgJO_zCue9GRyz",
+      "ifc_class": "IfcFlowTerminal",
+      "reason": "hosted_fixture",
+      "source_op_id": "ceiling-translation-001",
+      "via": [
+        "0fgHmYNTwSg_QLlFlU2KL2",
+        "2B0HM50HKnsteHeL7LrcNv",
+        "3eOdX5HchTJWBNBRO_qRQv"
+      ]
+    },
+    {
+      "after_hash": "b1ebebab839209222793e971be134c6c1e60093499ef555544082941036be050",
+      "before_hash": "9b80d9bb1c5765f9c194b4b1ef7932b2f46e2c28bd1a1faa04dfa1b4b7c16fa6",
+      "change": "changed",
+      "global_id": "0ZxWoLtIyMDA2sDseG2gIb",
+      "ifc_class": "IfcDistributionPort",
+      "reason": "connected_port",
+      "source_op_id": "ceiling-translation-001",
+      "via": [
+        "0Gs69Tag0_ol27wW9ucChc"
+      ]
+    },
+    {
+      "after_hash": "7b0a368610eb989c3434f777a50707ff4f3932d3c7b72f9d1b10c12e7c9a02c4",
+      "before_hash": "1143d85da0effbd5859729c0e8c46fe2e982c486af2b4f83f6585da40ead402a",
+      "change": "changed",
+      "global_id": "0_2mCRsDqTzImYpQTmt3oR",
+      "ifc_class": "IfcDistributionPort",
+      "reason": "connected_port",
+      "source_op_id": "ceiling-translation-001",
+      "via": [
+        "3j3ajBePS_CNqZYwcMi2M4"
+      ]
+    },
+    {
+      "after_hash": "44fb65e373f9d3470f04eb290233353933e84504aa3710f544267240492b6a43",
+      "before_hash": "8c2e94cbf91791fce035ca40719478d52ad043b013167cda515a2e3d45089004",
+      "change": "changed",
+      "global_id": "0_7I0MexklPSm0EIIP2_cZ",
+      "ifc_class": "IfcFlowTerminal",
+      "reason": "hosted_fixture",
+      "source_op_id": "ceiling-translation-001",
+      "via": [
+        "1d1uy5O3SaouyJP_8cB2d0",
+        "2B0HM50HKnsteHeL7LrcNv",
+        "2BkzT8_U8p7Uvr20yJhFSo"
+      ]
+    },
+    {
+      "after_hash": "d1d440d7d32a5c752649c05dd22f61f7e66f27cb625d4f7ba10b76347414a2f9",
+      "before_hash": "e7563a942b91b54038bada9c7ba69dacdb45b89b6591c73a178a7235c5001f65",
+      "change": "changed",
+      "global_id": "0_h2Nl4wdJPmHV46c4EvlB",
+      "ifc_class": "IfcDistributionPort",
+      "reason": "connected_port",
+      "source_op_id": "ceiling-translation-001",
+      "via": [
+        "2gcYf3rjPw6G9XpOSSEOBr"
+      ]
+    },
+    {
+      "after_hash": "d5ae1aed4374b82a6a250cd869355b744190271afaf00a993f5ce995ed1d0b7d",
+      "before_hash": "a30ef0641d11fe0b8e7f64fd9effe3a2324f2fda059d0419b07f93cad8d74415",
+      "change": "changed",
+      "global_id": "0_p_qQr0IJBM0TCz4tOaRG",
+      "ifc_class": "IfcFlowTerminal",
+      "reason": "hosted_fixture",
+      "source_op_id": "ceiling-translation-019",
+      "via": [
+        "2lY7vMeoxmjlGI41A95PPZ"
+      ]
+    },
+    {
+      "after_hash": "7e39b8a8c451d07032329f3c2e154661f7d64b79ae22bb3e4881323b4bef0387",
+      "before_hash": "31b1ad3342d909a36b9d5e4f760291faec1fda8cc7935f9773622e3190d87c4b",
+      "change": "changed",
+      "global_id": "0_y2fzjbGY1mnof1TxHghR",
+      "ifc_class": "IfcFlowTerminal",
+      "reason": "hosted_fixture",
+      "source_op_id": "ceiling-translation-001",
+      "via": [
+        "0bI6AFeEIBxqQMPBptbuFx",
+        "2B0HM50HKnsteHeL7LrcNv"
+      ]
+    },
+    {
+      "after_hash": "8341055a04d1c72f2d4bc150339980931f411eb45cf4dff60acdcd8b01e93a39",
+      "before_hash": "1896b4b5c6036ac75e72041c2267669ee545eacbc69d7d629b0494434d824bf8",
+      "change": "changed",
+      "global_id": "0dWm55XOkXjBkXYwlUuUFL",
+      "ifc_class": "IfcDistributionPort",
+      "reason": "connected_port",
+      "source_op_id": "ceiling-translation-001",
+      "via": [
+        "3LM2udawehFqQmd_BPxQUV"
+      ]
+    },
+    {
+      "after_hash": "828bd94fafd9d4c4ecbf0bc246d2669adc4b0820c1bc363cc8d43487ca7e4cef",
+      "before_hash": "27e569d7d2df364b01d2e883edc93d6e1eb3567e090c53f548f794208a5ed7de",
+      "change": "changed",
+      "global_id": "0eV56Lnm6EhwvqEbj$P_ou",
+      "ifc_class": "IfcFlowTerminal",
+      "reason": "hosted_fixture",
+      "source_op_id": "ceiling-translation-001",
+      "via": [
+        "1d1uy5O3SaouyJP_8cB2d0",
+        "1s0hj3u3T2FWEBJ8TyW9vP",
+        "2B0HM50HKnsteHeL7LrcNv",
+        "2KGAbkXaJEPPWfbHKG94qv"
+      ]
+    },
+    {
+      "after_hash": "1a3d3e6077f821f02e79c537df4286381f2275a798d80167f23016d02c873d60",
+      "before_hash": "0ec055abac20365f07a07ef4c853d5fea7f91c2d80a43294d8011e1c4b375753",
+      "change": "changed",
+      "global_id": "0eXPiwgyVd8iIcjOzfbPVd",
+      "ifc_class": "IfcDistributionPort",
+      "reason": "connected_port",
+      "source_op_id": "ceiling-translation-001",
+      "via": [
+        "1PSohUOd1vk$902P3qXKjy"
+      ]
+    },
+    {
+      "after_hash": "83c9f563fae2435a9f37eecaaa7b195564ab4cb2d7d4f532f7aaeb30979d4eb1",
+      "before_hash": "09f0a1e4890dd6ac5b4ee4ec24e438688fd2739d3b4d099f6a07b7e442a147c0",
+      "change": "changed",
+      "global_id": "0esrJmqkReMB6TkZHrPBJj",
+      "ifc_class": "IfcFlowTerminal",
+      "reason": "hosted_fixture",
+      "source_op_id": "ceiling-translation-018",
+      "via": [
+        "2lY7vMeoxmjlGI41A95PPZ",
+        "3Fj3VeOfs1uCtyMsqw0QBn"
+      ]
+    },
+    {
+      "after_hash": "babe93e4f5277d206adbf11e1d95210692bb4ee6b1e6339f15c8c740302aaa65",
+      "before_hash": "eb9f2eeeb5a5118417f873de4e144a6a09d27dbdf911a663bcc0086cf709443e",
+      "change": "changed",
+      "global_id": "0fHON_zkbwdUxm0DWzieaq",
+      "ifc_class": "IfcFlowTerminal",
+      "reason": "hosted_fixture",
+      "source_op_id": "ceiling-translation-001",
+      "via": [
+        "2B0HM50HKnsteHeL7LrcNv",
+        "3eOdX5HchTJWBNBRO_qRQv"
+      ]
+    },
+    {
+      "after_hash": "93563ec37e7b20f4aefe2965a159e48db0cd9341378a2b2a746543cb69142c36",
+      "before_hash": "40dfb5d9777154da059d28c9dd249cbfd2e3676aa1e30834959e6eb6874dd55f",
+      "change": "changed",
+      "global_id": "0fntIVmGp222nvoWTAUFSM",
+      "ifc_class": "IfcDistributionControlElement",
+      "reason": "hosted_fixture",
+      "source_op_id": "ceiling-translation-001",
+      "via": [
+        "0l1oZPcGnyvhTvMZjoJ7XO",
+        "1d1uy5O3SaouyJP_8cB2d0",
+        "2B0HM50HKnsteHeL7LrcNv"
+      ]
+    },
+    {
+      "after_hash": "39a0c10e5d888aa1d34032dea44ea994712d5cfa27811693a523be3c18a23e3a",
+      "before_hash": "39b3d0ed8877af5f6042dbc2fc75b5b8d85802e261495e8c2c10275ed7f70ee1",
+      "change": "changed",
+      "global_id": "0g9A0izUJdqm0B39Fqesru",
+      "ifc_class": "IfcFlowTerminal",
+      "reason": "hosted_fixture",
+      "source_op_id": "ceiling-translation-001",
+      "via": [
+        "1d1uy5O3SaouyJP_8cB2d0",
+        "2B0HM50HKnsteHeL7LrcNv"
+      ]
+    },
+    {
+      "after_hash": "6ef2a3a344d4d39db151521d25762b718ae7c2f70d7976fdab852f43848855af",
+      "before_hash": "179b4e7f4a7eab3dc4461c570ccfff0b7f985f64e035642da58e667529c13f45",
+      "change": "changed",
+      "global_id": "0hIVVAhfiwYcFolrWUVLUN",
+      "ifc_class": "IfcFlowTerminal",
+      "reason": "hosted_fixture",
+      "source_op_id": "ceiling-translation-005",
+      "via": [
+        "05Iva7IZaeIhmBVZ2wZPOb"
+      ]
+    },
+    {
+      "after_hash": "33b3d57b77e33a8aab585892054564868807ab51ae1a46634a5a61a78f9fde2e",
+      "before_hash": "52e1235b8170bb4943e4d64c8a109168a1fd1fb11731042245ff029494523cde",
+      "change": "changed",
+      "global_id": "0i33DP3cVtwKnSzIVw6d_J",
+      "ifc_class": "IfcFlowTerminal",
+      "reason": "hosted_fixture",
+      "source_op_id": "ceiling-translation-001",
+      "via": [
+        "2B0HM50HKnsteHeL7LrcNv",
+        "2lY7vMeoxmjlGI41A95PPZ",
+        "3Lenc84YKjvShM_0qyUTPd"
+      ]
+    },
+    {
+      "after_hash": "74ecfd67cd7b823510da60100e5fdbb304d3c019073f5fb666632d15dda06a28",
+      "before_hash": "c776a113d0c4afbbe58b4385cb6609c0405b92a28d131beafd6668e8ef932d46",
+      "change": "changed",
+      "global_id": "0kAyEnJPRcclZwvpe5cIkq",
+      "ifc_class": "IfcDistributionPort",
+      "reason": "connected_port",
+      "source_op_id": "ceiling-translation-003",
+      "via": [
+        "0pdLLq3CkXOfJNX_37Voi$"
+      ]
+    },
+    {
+      "after_hash": "0190fc215516e563e3ff8fb9821554aad5d4702c610c92b5c1874c9006c3b912",
+      "before_hash": "598d8571c74da4a2f9797fe47f481cc426d6cd4d89ed0b67e238cb968b0bd59f",
+      "change": "changed",
+      "global_id": "0kjDLHNd27y33KLQf3sdBV",
+      "ifc_class": "IfcFlowTerminal",
+      "reason": "hosted_fixture",
+      "source_op_id": "ceiling-translation-001",
+      "via": [
+        "1d1uy5O3SaouyJP_8cB2d0",
+        "1dULTNYo1KUvvrKMJdPtb8",
+        "2B0HM50HKnsteHeL7LrcNv"
+      ]
+    },
+    {
+      "after_hash": "e8266b4d8c1b22bb33492f21b266cf1e800aa97a6554838912446468ee53f00e",
+      "before_hash": "6394a39c348c0d42f26eab29b54c11fcf9d53bcc516989eb4c6cc9bd4b6a2ea3",
+      "change": "changed",
+      "global_id": "0kxPNk4oNRQqSWBWdkDs2F",
+      "ifc_class": "IfcDistributionPort",
+      "reason": "connected_port",
+      "source_op_id": "ceiling-translation-001",
+      "via": [
+        "1wifHDFmfzuNpdZf0XbasX"
+      ]
+    },
+    {
+      "after_hash": "196485578fef315c1f33d7a180671b5de682ed429e2a284ca9ff374881623194",
+      "before_hash": "5a9d0fae24a9e80d236f7c77d30dbd29ef8a0694cb5d0d7d3dcd336f254ab2c7",
+      "change": "changed",
+      "global_id": "0lBkQIF8i_tAnX86CdY9jF",
+      "ifc_class": "IfcFlowTerminal",
+      "reason": "hosted_fixture",
+      "source_op_id": "ceiling-translation-001",
+      "via": [
+        "1d1uy5O3SaouyJP_8cB2d0",
+        "2B0HM50HKnsteHeL7LrcNv",
+        "3pfFV6U9rhezr2v1L0SHFQ"
+      ]
+    },
+    {
+      "after_hash": "ae73959906ee8f63416bd02ec56c95a9427fc2cd9473aeb3620de13f43828591",
+      "before_hash": "41258af41087d4fd16d3f882f02a73a3a0dbe8659b60df5cd9162a438e3f5386",
+      "change": "changed",
+      "global_id": "0leciKO0$5wEqJ3eltQucX",
+      "ifc_class": "IfcDistributionControlElement",
+      "reason": "hosted_fixture",
+      "source_op_id": "ceiling-translation-001",
+      "via": [
+        "1d1uy5O3SaouyJP_8cB2d0",
+        "2B0HM50HKnsteHeL7LrcNv",
+        "3eOdX5HchTJWBNBRO_qRQv"
+      ]
+    },
+    {
+      "after_hash": "aa48a5d2387dceb363e3afc27e892296a85a13be9771d3755e2a720344dedf7e",
+      "before_hash": "8d04d3410fe164e83b3d0544c949c475e263ee97d11e65f545ff3f5733ac0c07",
+      "change": "changed",
+      "global_id": "0mefESKNfMPXZJTmUmkUJi",
+      "ifc_class": "IfcDistributionPort",
+      "reason": "connected_port",
+      "source_op_id": "ceiling-translation-001",
+      "via": [
+        "1OeqsspkwdpyiOqZkVHiUC"
+      ]
+    },
+    {
+      "after_hash": "8b6ce71c09e7d5c4a8842f370f6bd1ca220f25628aa6cced3a2537eaa13c56de",
+      "before_hash": "f6996f5fc7359b54834db8f4bd1c11e260774e5a319ba9ebe0f1b5cda468e345",
+      "change": "changed",
+      "global_id": "0ngytUmBi2jDg6cIiX4CLV",
+      "ifc_class": "IfcFlowTerminal",
+      "reason": "hosted_fixture",
+      "source_op_id": "ceiling-translation-001",
+      "via": [
+        "1d1uy5O3SaouyJP_8cB2d0",
+        "2B0HM50HKnsteHeL7LrcNv"
+      ]
+    },
+    {
+      "after_hash": "17637563549ab5160e3f570cf7fbc2c19aba837446092a4cc2b807cc74f07ce5",
+      "before_hash": "6bb3206ab8f37871aa8a136189069ae09edddde25c0d45072d18760f9f2c71ac",
+      "change": "changed",
+      "global_id": "0nz5fGOeEWIGAz9Hy69ZTy",
+      "ifc_class": "IfcBuildingElementProxy",
+      "reason": "hosted_fixture",
+      "source_op_id": "ceiling-translation-001",
+      "via": [
+        "1d1uy5O3SaouyJP_8cB2d0",
+        "2B0HM50HKnsteHeL7LrcNv"
+      ]
+    },
+    {
+      "after_hash": "5cea0f0bb1751cbc0b4eeef192d9e0e8ff98386c2d23c91f1326b896fb273b7e",
+      "before_hash": "b32760b68ff7a1b1f10de3f59123d01a4e80491e6195efece8f1936b60165b5a",
+      "change": "changed",
+      "global_id": "0oZolNuTLVLut5QQp_Mr9i",
+      "ifc_class": "IfcFlowTerminal",
+      "reason": "hosted_fixture",
+      "source_op_id": "ceiling-translation-001",
+      "via": [
+        "0WRFMp0456PSGpnmN199ea",
+        "1d1uy5O3SaouyJP_8cB2d0",
+        "2B0HM50HKnsteHeL7LrcNv"
+      ]
+    },
+    {
+      "after_hash": "38f4f082e2340a4be6a502f1f439b2654d85b5218fd650f98bd4ee11bec2ab5e",
+      "before_hash": "ee63061a321f00c4ac10718ce9b557b0894cbec4876646524777a2bab8ceb9e2",
+      "change": "changed",
+      "global_id": "0pdLLq3CkXOfJNX_37Voi$",
+      "ifc_class": "IfcDistributionControlElement",
+      "reason": "hosted_fixture",
+      "source_op_id": "ceiling-translation-003",
+      "via": [
+        "2lY7vMeoxmjlGI41A95PPZ",
+        "3Lenc84YKjvShM_0qyUTPd"
+      ]
+    },
+    {
+      "after_hash": "4bac369345bfe64bc13f6661efb683d95ba2569e7aa89b72753c02460118815f",
+      "before_hash": "02cd2b9aa51ba418bf62af2ee8c9d81fd84bbd37dec2b21114647f6200c33639",
+      "change": "changed",
+      "global_id": "0qWarEKG5JQQv$KuyoW6X5",
+      "ifc_class": "IfcDistributionControlElement",
+      "reason": "hosted_fixture",
+      "source_op_id": "ceiling-translation-001",
+      "via": [
+        "1d1uy5O3SaouyJP_8cB2d0",
+        "2B0HM50HKnsteHeL7LrcNv"
+      ]
+    },
+    {
+      "after_hash": "731ee4b0ef0f12879409aa24d57e74df6b41ad972477775ff3e3df3d41a67b25",
+      "before_hash": "6265c0aa3b851c3db0c94da2aef6cfd1d5dea8adacbb56a87a3e557481a57f70",
+      "change": "changed",
+      "global_id": "0rGpc$T8YDaJbPjrqwyAIq",
+      "ifc_class": "IfcDistributionControlElement",
+      "reason": "hosted_fixture",
+      "source_op_id": "ceiling-translation-001",
+      "via": [
+        "0l1oZPcGnyvhTvMZjoJ7XO",
+        "1d1uy5O3SaouyJP_8cB2d0",
+        "2B0HM50HKnsteHeL7LrcNv",
+        "2BkzT8_U8p7Uvr20yJhFSo"
+      ]
+    },
+    {
+      "after_hash": "0a0d1e3b096a7c408b3672d5759d5d8905e9024d99e51de002a2e66c60b51826",
+      "before_hash": "dae754448f0e737d528a49fe4b373534955eea05a0e65a92a4b31b3b9091d4a9",
+      "change": "changed",
+      "global_id": "0rHwNXiZrROGCVgYtuOUWH",
+      "ifc_class": "IfcFlowTerminal",
+      "reason": "hosted_fixture",
+      "source_op_id": "ceiling-translation-018",
+      "via": [
+        "3Fj3VeOfs1uCtyMsqw0QBn"
+      ]
+    },
+    {
+      "after_hash": "0cb5080f0a3dc8f13567c81ef6e90203593ea0babce44c5fc0f2ffb6a40263f6",
+      "before_hash": "9a64e37b53dab7cb94c089db6e6b04a7367e6867ed17963422fae2649377a5fe",
+      "change": "changed",
+      "global_id": "0rQCsRDQrYnBdg1OxgUEVd",
+      "ifc_class": "IfcDistributionPort",
+      "reason": "connected_port",
+      "source_op_id": "ceiling-translation-001",
+      "via": [
+        "0_7I0MexklPSm0EIIP2_cZ"
+      ]
+    },
+    {
+      "after_hash": "d6952f030682986814afebab31dea397e32db49c2bcb74344798224404fcabf4",
+      "before_hash": "ea731dd0ae32a1cf2d47da553d53a8e9083654b1e0f667d96cb0aa59d118fd37",
+      "change": "changed",
+      "global_id": "0rwbb8fzA5_eENrwSaA94H",
+      "ifc_class": "IfcDistributionPort",
+      "reason": "connected_port",
+      "source_op_id": "ceiling-translation-001",
+      "via": [
+        "207sIcmHfYkNVygP$n8Ks8"
+      ]
+    },
+    {
+      "after_hash": "282cdd56724a9ecbef40afe04af94baf4c71d15d1d0ac31201275b8fea634961",
+      "before_hash": "fed7b1d9d51ef3e98c0099eea2003a95288bfbe34a8f1824b0da7d09585b1dcb",
+      "change": "changed",
+      "global_id": "0sYVY_jJFoDsrgeZymVj7N",
+      "ifc_class": "IfcDistributionPort",
+      "reason": "connected_port",
+      "source_op_id": "ceiling-translation-003",
+      "via": [
+        "2w4s2N$VPiJEBiP0K7augC"
+      ]
+    },
+    {
+      "after_hash": "bfd987b618d9e5bd5f194af38cd10619fbddd3c0783c0741d01b6e6cbb24369d",
+      "before_hash": "3f8ffda7e6561ffbe22caee80cd09c6caa9652b78f4d74c58dcc8dc26229e93b",
+      "change": "changed",
+      "global_id": "0tcmTEpb5ooOQ6cQwFQ9xN",
+      "ifc_class": "IfcFlowTerminal",
+      "reason": "hosted_fixture",
+      "source_op_id": "ceiling-translation-001",
+      "via": [
+        "1d1uy5O3SaouyJP_8cB2d0",
+        "1s0hj3u3T2FWEBJ8TyW9vP",
+        "2B0HM50HKnsteHeL7LrcNv",
+        "2KGAbkXaJEPPWfbHKG94qv"
+      ]
+    },
+    {
+      "after_hash": "c62f95955281ef89fc1f7fd535ed8710d604bcc2fcdfda9ad38b87f9b217837c",
+      "before_hash": "61dfbb5c71e114a0f31c940283e6f0f6124f4c2b61bccefcd079cf2d2b5ab00b",
+      "change": "changed",
+      "global_id": "0u6hZdRjvi2jklLqAGrA27",
+      "ifc_class": "IfcDistributionPort",
+      "reason": "connected_port",
+      "source_op_id": "ceiling-translation-018",
+      "via": [
+        "0TVAwbrN3ionorfnT4xVNA"
+      ]
+    },
+    {
+      "after_hash": "a00ccf138ddfabbd98f587885c20eb8f2e98916cb02d292230fafecdc70f3b3c",
+      "before_hash": "5f4b910c32d0a165f1414b7f0e98702f6bbefaac2618e62a908427b077583eda",
+      "change": "changed",
+      "global_id": "0w0KqamUYxb6CGNtRyeGGd",
+      "ifc_class": "IfcFlowTerminal",
+      "reason": "hosted_fixture",
+      "source_op_id": "ceiling-translation-001",
+      "via": [
+        "0iI0Q2d_BmrrPOHXWgrSCM",
+        "2B0HM50HKnsteHeL7LrcNv"
+      ]
+    },
+    {
+      "after_hash": "ce3f187feba4908a4b012589583d7cad4086e4308220dc9b180804b5b5807a4c",
+      "before_hash": "b6d454ca98dec6efa5c5069090f18b799730597e5249a774c9df9d521a993c00",
+      "change": "changed",
+      "global_id": "0wrUr$4wTtpzfrTe9wEDuM",
+      "ifc_class": "IfcFlowTerminal",
+      "reason": "hosted_fixture",
+      "source_op_id": "ceiling-translation-001",
+      "via": [
+        "2B0HM50HKnsteHeL7LrcNv",
+        "3b5ADX2pgIcCSgf0pB3cNX"
+      ]
+    },
+    {
+      "after_hash": "c263e58f00fab0d467ba5710ca617373467d18b65c1a63e2485cc385f6dd262a",
+      "before_hash": "dfc7fa4d8f3b12f50ca78aef185239ce061a6291a495f776b725d1271138aadc",
+      "change": "changed",
+      "global_id": "0za8ZCmwnywiL2XCUnInGw",
+      "ifc_class": "IfcDistributionPort",
+      "reason": "connected_port",
+      "source_op_id": "ceiling-translation-003",
+      "via": [
+        "2izyimh6ktdN7jslZqYR0n"
+      ]
+    },
+    {
+      "after_hash": "f967871c8adb6e56715fe83cea1434f58d58e250ad13bb4f24d0163e05696866",
+      "before_hash": "7791c6fe7234bfa652ff1bff05c64e53557d6d2ca046abf9437841f0b0392441",
+      "change": "changed",
+      "global_id": "1$bqnH8_WeErLocbVQ1I05",
+      "ifc_class": "IfcFlowTerminal",
+      "reason": "hosted_fixture",
+      "source_op_id": "ceiling-translation-001",
+      "via": [
+        "2B0HM50HKnsteHeL7LrcNv",
+        "3eOdX5HchTJWBNBRO_qRQv"
+      ]
+    },
+    {
+      "after_hash": "032a6cf37ebc3523e1383caccb4c34e4a7b75a9f8746f85aaa70430f085ae9cc",
+      "before_hash": "b6e04328a12ba76753c6e278664d1da37745e7060d270e8118d8fbc114204442",
+      "change": "changed",
+      "global_id": "11Rt8OkkgTHzU$sg3kAXt1",
+      "ifc_class": "IfcDistributionPort",
+      "reason": "connected_port",
+      "source_op_id": "ceiling-translation-001",
+      "via": [
+        "3$jfJwVuwG0nz$BhRZvYfV"
+      ]
+    },
+    {
+      "after_hash": "48263b733e2eee1dfa4a74de8948560f6c5f1c578440328fb5c6da7bae55afac",
+      "before_hash": "905039010d3d66d5be6af16e57127df1552cffca23e2f205aa3d47247bfab454",
+      "change": "changed",
+      "global_id": "12YH9j3JxlBHlJjBMw$ZGD",
+      "ifc_class": "IfcDistributionPort",
+      "reason": "connected_port",
+      "source_op_id": "ceiling-translation-021",
+      "via": [
+        "2AnBQHrQVUJjrxI2blhP0W"
+      ]
+    },
+    {
+      "after_hash": "32e7832b6d85521c25ae0812a7a9e2d6f7d320f7c1bb88e60f1f86f51e7fe273",
+      "before_hash": "0ceec57e8a4c63efd1dc65e39fe4f4668b6d585e720d4117d9f7204d00521dae",
+      "change": "changed",
+      "global_id": "12ardIGk$d2k4YcYLhhG5s",
+      "ifc_class": "IfcDistributionPort",
+      "reason": "connected_port",
+      "source_op_id": "ceiling-translation-004",
+      "via": [
+        "3AFBJk3kiBw8yqYOefRVeV"
+      ]
+    },
+    {
+      "after_hash": "8b82618fee40ce74763ca26062df8b7a523f44e7067778bf0dbcc332e2eb594f",
+      "before_hash": "d81511f95da5c02214ad8bdbf90ea32c420aad01e8f5dad0c74d0111dc4deb92",
+      "change": "changed",
+      "global_id": "12mW7wf6VQwZCVPkmct0jz",
+      "ifc_class": "IfcFlowTerminal",
+      "reason": "hosted_fixture",
+      "source_op_id": "ceiling-translation-001",
+      "via": [
+        "0bI6AFeEIBxqQMPBptbuFx",
+        "2B0HM50HKnsteHeL7LrcNv"
+      ]
+    },
+    {
+      "after_hash": "79d6a20ef74a4450ea84bc4c6d92f29ca35b809322665cd55e307cdffa8bd2b8",
+      "before_hash": "e6ec939ad80e2af91928dbeb44263c80b8282dda3dc4ebb6727b21a84865153b",
+      "change": "changed",
+      "global_id": "13AYBjNPCYA9a0Xo0pWeYH",
+      "ifc_class": "IfcDistributionControlElement",
+      "reason": "hosted_fixture",
+      "source_op_id": "ceiling-translation-001",
+      "via": [
+        "1d1uy5O3SaouyJP_8cB2d0",
+        "1dULTNYo1KUvvrKMJdPtb8",
+        "2B0HM50HKnsteHeL7LrcNv"
+      ]
+    },
+    {
+      "after_hash": "50c90fe157acf5249fc67be87f46ea62349ce6b7a157e62295c20319310ab7af",
+      "before_hash": "500906c0fae62bec7c71e53b40e582ca717a590d6692f5025d3d504970ed302e",
+      "change": "changed",
+      "global_id": "13FIalHHANgpQTa1zGyUcw",
+      "ifc_class": "IfcDistributionPort",
+      "reason": "connected_port",
+      "source_op_id": "ceiling-translation-001",
+      "via": [
+        "06d1msMRsv95ah$iWQIkym"
+      ]
+    },
+    {
+      "after_hash": "182cc30f828ce703a43d236f5886ecacc9091de8d99449a513f50b892605ee1c",
+      "before_hash": "dcdd87b39a6ab2b0efe1ef1b740656af058c986c2462ec78a0cbff75e3065d9b",
+      "change": "changed",
+      "global_id": "13Mz0eBkUit5yC$wyLvEYG",
+      "ifc_class": "IfcFlowTerminal",
+      "reason": "hosted_fixture",
+      "source_op_id": "ceiling-translation-001",
+      "via": [
+        "0l1oZPcGnyvhTvMZjoJ7XO",
+        "1d1uy5O3SaouyJP_8cB2d0",
+        "2B0HM50HKnsteHeL7LrcNv"
+      ]
+    },
+    {
+      "after_hash": "3ff3be81aef734f09b6bafa57de5c7e5cdea80d14cb323634a44b46f600a0e8d",
+      "before_hash": "b6d8d1355e04fb40535cc2bf400982c2e320b10790aa0a3a1ba92cf0f21d7770",
+      "change": "changed",
+      "global_id": "14j9wSDHdaD9d7ak2jx0rS",
+      "ifc_class": "IfcFlowTerminal",
+      "reason": "hosted_fixture",
+      "source_op_id": "ceiling-translation-001",
+      "via": [
+        "0bI6AFeEIBxqQMPBptbuFx",
+        "2B0HM50HKnsteHeL7LrcNv"
+      ]
+    },
+    {
+      "after_hash": "bdb69e3c2d2144689a9a08a4e8ed21858cf04f2ab2872ad3efd368193dba7df6",
+      "before_hash": "38d9f7385b8ee8cd5c40a7cb5e475a65832f328bc897e872c0da241e68358850",
+      "change": "changed",
+      "global_id": "14zWJwnFykGpM2zw0Ox9Mv",
+      "ifc_class": "IfcFlowTerminal",
+      "reason": "hosted_fixture",
+      "source_op_id": "ceiling-translation-005",
+      "via": [
+        "05Iva7IZaeIhmBVZ2wZPOb",
+        "3b5ADX2pgIcCSgf0pB3cNX"
+      ]
+    },
+    {
+      "after_hash": "fb21fdf5099a63b523e7cc59a9149b12872d0d47ae6a331886641f2124566ac2",
+      "before_hash": "c64860e3a5bb039bc8866efbd79be0b79bfc70cffa97e4e6eceb7808467b2ce7",
+      "change": "changed",
+      "global_id": "150hFTmzAv6$1X0BDBjB2g",
+      "ifc_class": "IfcDistributionPort",
+      "reason": "connected_port",
+      "source_op_id": "ceiling-translation-001",
+      "via": [
+        "3gsOmWVoez6IckfAvSpPAv"
+      ]
+    },
+    {
+      "after_hash": "b5a5f669ebd84add08b5279dba44eaddcfc323327fc7146ef4bb050bf6f5a46d",
+      "before_hash": "1d8dcda2892a884eabb48da7bf931b3fa28f0f436f217d87dc4c269f63461b9e",
+      "change": "changed",
+      "global_id": "162CFxUogeAHPcsszkccic",
+      "ifc_class": "IfcDistributionPort",
+      "reason": "connected_port",
+      "source_op_id": "ceiling-translation-001",
+      "via": [
+        "3It7RhL9Z5G57Rq9vRkgLT"
+      ]
+    },
+    {
+      "after_hash": "087a13338eb2d7ce97ac9b75e57ec604f5d01b0ad8107aa1c6d370990b5e28c6",
+      "before_hash": "781af2ff084ba217284bc294d388b7ad4ae26487e9da15dd1cb56dd99f406280",
+      "change": "changed",
+      "global_id": "16DoxwD1d9eEEyActABcIS",
+      "ifc_class": "IfcFlowTerminal",
+      "reason": "hosted_fixture",
+      "source_op_id": "ceiling-translation-001",
+      "via": [
+        "1d1uy5O3SaouyJP_8cB2d0",
+        "1dULTNYo1KUvvrKMJdPtb8",
+        "2B0HM50HKnsteHeL7LrcNv"
+      ]
+    },
+    {
+      "after_hash": "3d3b95efbb2370ea2fa2a6aacd6cdef390ba37a526fa7fb0f1f3b1dd04f74ec6",
+      "before_hash": "05e9a0b047c6ba4b9c073b2e6a477d4952d391b670599dd3e81d23be6de18785",
+      "change": "changed",
+      "global_id": "16lURaKbsWH9LSCFndGWGz",
+      "ifc_class": "IfcFlowTerminal",
+      "reason": "hosted_fixture",
+      "source_op_id": "ceiling-translation-001",
+      "via": [
+        "0bI6AFeEIBxqQMPBptbuFx",
+        "2B0HM50HKnsteHeL7LrcNv"
+      ]
+    },
+    {
+      "after_hash": "fffe2726e34e370dbae39d880c54b04780221a433983eaa64a8046fa02f6a3f7",
+      "before_hash": "74d3f2e2bff70e9bddf9c1d07df32ec2dfa00535c2f9288acdbe5b67c8ce307b",
+      "change": "changed",
+      "global_id": "17s55dKrS$XY2e0Oz15twq",
+      "ifc_class": "IfcDistributionPort",
+      "reason": "connected_port",
+      "source_op_id": "ceiling-translation-018",
+      "via": [
+        "3JVfyW0x45q9eKeTagreRD"
+      ]
+    },
+    {
+      "after_hash": "65eecefc26f0b9157583fe39e2dbc034ec83b87c47cc2d204379dcadfc553893",
+      "before_hash": "ed71d1ef33663cbcdb864f42f806b03c931cc9b45a0b3acbbfd4bc96a5ebba58",
+      "change": "changed",
+      "global_id": "190GUbalJY5MvnkS0veo_g",
+      "ifc_class": "IfcDistributionPort",
+      "reason": "connected_port",
+      "source_op_id": "ceiling-translation-001",
+      "via": [
+        "2nIXBE$nTsO23FuBO_Gdqs"
+      ]
+    },
+    {
+      "after_hash": "da83e6f727d13709097889db937322bed10ef264122bbf4a8fa26ca21348261a",
+      "before_hash": "1655fb6134513db411672d4b6aa5886467424057dd303d636d0fbe3efdbaba04",
+      "change": "changed",
+      "global_id": "1AMh5Ds6SzUnBFxyHCd6wW",
+      "ifc_class": "IfcDistributionPort",
+      "reason": "connected_port",
+      "source_op_id": "ceiling-translation-019",
+      "via": [
+        "3uW4nw3gTYn44MdBtC1_cH"
+      ]
+    },
+    {
+      "after_hash": "c3b68a1a95df50bf72780494d807278af7173d9041bb07f28c4d2b67488c63ad",
+      "before_hash": "f8d4814806e091992ed3e56c1e72b22fb00086b8427db1db5dc940918e5558f2",
+      "change": "changed",
+      "global_id": "1B18yxYhPbDkOu5P8iWkn8",
+      "ifc_class": "IfcFlowTerminal",
+      "reason": "hosted_fixture",
+      "source_op_id": "ceiling-translation-003",
+      "via": [
+        "3Lenc84YKjvShM_0qyUTPd"
+      ]
+    },
+    {
+      "after_hash": "83cb86419dd99a1692990fdc872ee6fb60114359f37122b8812e1bc22441eaa3",
+      "before_hash": "6182b6c8a6438b77d2139769d19ec8e08c643c2150f1a1ed5a9124b44c997db8",
+      "change": "changed",
+      "global_id": "1BiGzuuBmvWsHQHtA9oTE4",
+      "ifc_class": "IfcDistributionPort",
+      "reason": "connected_port",
+      "source_op_id": "ceiling-translation-001",
+      "via": [
+        "085APIXzPVOp$_LHSXMGyQ"
+      ]
+    },
+    {
+      "after_hash": "6ab4f2b681aac23b40449f58c5da5b9c18aed8c26876c1ad1dc3a099e24c9f92",
+      "before_hash": "990aa186b62c8868ca07440fe6e19654b376c297c2147c08603121da4d9e9285",
+      "change": "changed",
+      "global_id": "1Cw0I6srfiLr0nUx3QfBbs",
+      "ifc_class": "IfcDistributionPort",
+      "reason": "connected_port",
+      "source_op_id": "ceiling-translation-001",
+      "via": [
+        "0HlMFBF309oZ$GnCxXo5Jd"
+      ]
+    },
+    {
+      "after_hash": "51035ae26b93d2635e032ae5de935bea8064dda255648c36493caee5e15467af",
+      "before_hash": "891c8264bfbaea26fdb86494a4fa3b07f577f821fa5a8887ced0f5b9e56560f6",
+      "change": "changed",
+      "global_id": "1D5SVdZUPkrBVJa$g5OaAS",
+      "ifc_class": "IfcDistributionPort",
+      "reason": "connected_port",
+      "source_op_id": "ceiling-translation-001",
+      "via": [
+        "1PSohUOd1vk$902P3qXKjy"
+      ]
+    },
+    {
+      "after_hash": "9f6d0d07518c9fa9073c144f766f67d2a8dbe8f9c9909411ee5468b659d346a4",
+      "before_hash": "a2f2c50d24928e5e26ae77f58a53eb76a33a9b115408702add32cd003dbcfee6",
+      "change": "changed",
+      "global_id": "1DbzTAJOIpV8MlqopFSGo4",
+      "ifc_class": "IfcDistributionControlElement",
+      "reason": "hosted_fixture",
+      "source_op_id": "ceiling-translation-001",
+      "via": [
+        "1d1uy5O3SaouyJP_8cB2d0",
+        "1s0hj3u3T2FWEBJ8TyW9vP",
+        "2B0HM50HKnsteHeL7LrcNv",
+        "2KGAbkXaJEPPWfbHKG94qv"
+      ]
+    },
+    {
+      "after_hash": "5f64a78489d8d7e3e03dae0ce8ac61b9da7976014896bb4b488f7ec1744af559",
+      "before_hash": "fa16e3b9fb7a1e777f69ce48d6f8a53f5bdbc208e006a4b6325563c23fb49591",
+      "change": "changed",
+      "global_id": "1DrL5DT$S34K1rlZ7jNC_M",
+      "ifc_class": "IfcFlowTerminal",
+      "reason": "hosted_fixture",
+      "source_op_id": "ceiling-translation-001",
+      "via": [
+        "1M3OpxCuopJT9ohGvVBDum",
+        "2B0HM50HKnsteHeL7LrcNv"
+      ]
+    },
+    {
+      "after_hash": "0f20d109f9fe34521b5d1a49d5f7bae09ccb3f86b59cd0ea63adbc5dad9b41ca",
+      "before_hash": "a7d2b590ebff715ef715a1306931a73642d220de6af0b356909308cd7d233ab6",
+      "change": "changed",
+      "global_id": "1FlgkFFA7Ro_9etLDSAfjP",
+      "ifc_class": "IfcFlowTerminal",
+      "reason": "hosted_fixture",
+      "source_op_id": "ceiling-translation-001",
+      "via": [
+        "2B0HM50HKnsteHeL7LrcNv",
+        "3eOdX5HchTJWBNBRO_qRQv"
+      ]
+    },
+    {
+      "after_hash": "9bab7b441214444a34c691cf0d78ce5fedfd2ac0302c06661057729358491b37",
+      "before_hash": "bef2905af2702892b93d08149d8edf8e448f44faab527ea9d0514609c7f6478b",
+      "change": "changed",
+      "global_id": "1GdfZxtOzBikFjVffEvi2t",
+      "ifc_class": "IfcDistributionPort",
+      "reason": "connected_port",
+      "source_op_id": "ceiling-translation-001",
+      "via": [
+        "1LXXK$ZoDrlMHoAgOkt3w0"
+      ]
+    },
+    {
+      "after_hash": "5aee5dfef64182cfedfd58c27f6b5f36e67c003a454cc01d62ee5371e5a2b788",
+      "before_hash": "8855c37f110355a49db2e318d545d57f1596aa8df3a68327b6dcd167d889d351",
+      "change": "changed",
+      "global_id": "1GjtiWBa1e27wCdRMjuDAP",
+      "ifc_class": "IfcDistributionPort",
+      "reason": "connected_port",
+      "source_op_id": "ceiling-translation-021",
+      "via": [
+        "1vPvVxlZK8k973Ca96zPm2"
+      ]
+    },
+    {
+      "after_hash": "31c07879358bcede4179e6a3cc237d3e1fd689f23c14ef558430dabde51e4cb8",
+      "before_hash": "8707b63addb9169ee7a573adb9d33a83177c0ef6603b38043d731fcf661f2ba5",
+      "change": "changed",
+      "global_id": "1IsnEuF2aTOFNICj5m$k_j",
+      "ifc_class": "IfcDistributionPort",
+      "reason": "connected_port",
+      "source_op_id": "ceiling-translation-001",
+      "via": [
+        "3EnraX3lu1UnO_lu7B8vUM"
+      ]
+    },
+    {
+      "after_hash": "fd27403fb0d9441f69e0789fd171461c0de7a797d04c179118307468203af96b",
+      "before_hash": "72bce3f4c940e98ca6c5bbda0c08d1bddbba3a2ea73c4b58c3427db11b892a02",
+      "change": "changed",
+      "global_id": "1LNY1bfCL0fzUmjVl7xj8_",
+      "ifc_class": "IfcDistributionPort",
+      "reason": "connected_port",
+      "source_op_id": "ceiling-translation-001",
+      "via": [
+        "37x1j0IJurjryiykpeexmO"
+      ]
+    },
+    {
+      "after_hash": "b3cda5a09d75f77c8ddecf21ed46597855a1f2b332b56e2d70989bc392d516c9",
+      "before_hash": "b5bf28207a014c182fb15b9435ea1eb7c8b47ed55c4187d25cd49ce809d41281",
+      "change": "changed",
+      "global_id": "1LXXK$ZoDrlMHoAgOkt3w0",
+      "ifc_class": "IfcFlowTerminal",
+      "reason": "hosted_fixture",
+      "source_op_id": "ceiling-translation-001",
+      "via": [
+        "2B0HM50HKnsteHeL7LrcNv",
+        "2LRh4LrERTBtJzFJZyteEA"
+      ]
+    },
+    {
+      "after_hash": "019f3a7299e2a9161666207da080d439b6bb84b002677ad8de1191543e47cbdf",
+      "before_hash": "2e2fa081268bf4b83831cfee6a5e5eaf47803512223fe91f51032a9db8bb3cfa",
+      "change": "changed",
+      "global_id": "1O4ADAsmGbsrGWCHJdkpQS",
+      "ifc_class": "IfcFlowTerminal",
+      "reason": "hosted_fixture",
+      "source_op_id": "ceiling-translation-001",
+      "via": [
+        "2B0HM50HKnsteHeL7LrcNv"
+      ]
+    },
+    {
+      "after_hash": "855ebc839c2cba7338603c0858640d2b836fb99555f5b2cf4abd3936da3ff536",
+      "before_hash": "fb75095c270d4b2364a53aea2c1a776fde93fb5d6dca732e70e884416a56f12e",
+      "change": "changed",
+      "global_id": "1OYlpFdYpYOm7AlcKxR4ps",
+      "ifc_class": "IfcDistributionPort",
+      "reason": "connected_port",
+      "source_op_id": "ceiling-translation-001",
+      "via": [
+        "0DUPo9KIIY3893bsNVJq98"
+      ]
+    },
+    {
+      "after_hash": "6e2d74ae98a134b9d472266681c04f32a67310be4b956dfba31102002ef39619",
+      "before_hash": "3bb6c689d9652fa840161f5a5eb0a5fccec04efd64833ae2b27fed87afe88df8",
+      "change": "changed",
+      "global_id": "1OeqsspkwdpyiOqZkVHiUC",
+      "ifc_class": "IfcFlowTerminal",
+      "reason": "hosted_fixture",
+      "source_op_id": "ceiling-translation-001",
+      "via": [
+        "1d1uy5O3SaouyJP_8cB2d0",
+        "1s0hj3u3T2FWEBJ8TyW9vP",
+        "2B0HM50HKnsteHeL7LrcNv",
+        "2KGAbkXaJEPPWfbHKG94qv"
+      ]
+    },
+    {
+      "after_hash": "783c92067846e3be231331da62e4b1cdb4b823c24fb1876cbf3490f62668999e",
+      "before_hash": "d26314d5bdeb7ad755232f729ab0cae4d4ebd83c92010e6cdd8d31156204762b",
+      "change": "changed",
+      "global_id": "1PQ1SQYSfOAn_i8fxS1m3B",
+      "ifc_class": "IfcDistributionPort",
+      "reason": "connected_port",
+      "source_op_id": "ceiling-translation-001",
+      "via": [
+        "2YdXCMlmW6T3mbEkcb2X$_"
+      ]
+    },
+    {
+      "after_hash": "9150142c1930190ed0312c57f133f1443c6eb33052cc2979fcbb8ca57ea0e9df",
+      "before_hash": "510bdabad7d58eb4493656a574c9700e097aff2f9bfb0bd35abafcd6231641d9",
+      "change": "changed",
+      "global_id": "1PSohUOd1vk$902P3qXKjy",
+      "ifc_class": "IfcFlowTerminal",
+      "reason": "hosted_fixture",
+      "source_op_id": "ceiling-translation-001",
+      "via": [
+        "1d1uy5O3SaouyJP_8cB2d0",
+        "1s0hj3u3T2FWEBJ8TyW9vP",
+        "2B0HM50HKnsteHeL7LrcNv",
+        "2KGAbkXaJEPPWfbHKG94qv"
+      ]
+    },
+    {
+      "after_hash": "4f06704b93484855b83bdf3dbd4ca680ba3fb48bf7861be6652ae574ec8ee27b",
+      "before_hash": "73c6cb1e8ed56049bcc05ce915cc772a60bc1430d82020b7d9d7363cafea339a",
+      "change": "changed",
+      "global_id": "1PV2BpDp7f202glywKGqFY",
+      "ifc_class": "IfcFlowTerminal",
+      "reason": "hosted_fixture",
+      "source_op_id": "ceiling-translation-001",
+      "via": [
+        "1M3OpxCuopJT9ohGvVBDum",
+        "2B0HM50HKnsteHeL7LrcNv"
+      ]
+    },
+    {
+      "after_hash": "b6dc04bcfac053706c049553cad663fe8870b1f2ed8095aa35e37ea2f4663345",
+      "before_hash": "db8c79a0c9e25439b6a0d4ae57077c5d8eeb989374210175a7905b28ed192a66",
+      "change": "changed",
+      "global_id": "1PbP_VK6Hx7k7uHiwOzlA6",
+      "ifc_class": "IfcDistributionControlElement",
+      "reason": "hosted_fixture",
+      "source_op_id": "ceiling-translation-001",
+      "via": [
+        "2B0HM50HKnsteHeL7LrcNv",
+        "3b5ADX2pgIcCSgf0pB3cNX"
+      ]
+    },
+    {
+      "after_hash": "a5638df17d74e5997b21c0e064299ce6226c18e10312f5729d7009d8af821453",
+      "before_hash": "0b13ff5931b1c8858ea9d86aa940bbeef31c93b9c52e31d0ceec98939f486a41",
+      "change": "changed",
+      "global_id": "1SiqQ$kCSeaF5nXej2qDLg",
+      "ifc_class": "IfcBuildingElementProxy",
+      "reason": "hosted_fixture",
+      "source_op_id": "ceiling-translation-001",
+      "via": [
+        "2B0HM50HKnsteHeL7LrcNv",
+        "2K_R2Wt2rnaXzVuEF1l_lP"
+      ]
+    },
+    {
+      "after_hash": "967743390feabf8208614589926cd440d9a5c58662a431d828cbfe30cef4f6cf",
+      "before_hash": "fae664c4208606aaf8be8a640909e2c13dce64c0672b86e99208fc21f465793a",
+      "change": "changed",
+      "global_id": "1T01m_V9yc7N9v8N8Klezf",
+      "ifc_class": "IfcDistributionPort",
+      "reason": "connected_port",
+      "source_op_id": "ceiling-translation-001",
+      "via": [
+        "0eV56Lnm6EhwvqEbj$P_ou"
+      ]
+    },
+    {
+      "after_hash": "9ffd4f0565fa55336d68016e70c53cc6e7db0f66db1828f6aae2bc5233b56497",
+      "before_hash": "529cd3414f8f046f3288864037e3283e1193072b7e7e030f7d187d0b6c6f7d17",
+      "change": "changed",
+      "global_id": "1T8R13oIiqvUf65zPyx7WS",
+      "ifc_class": "IfcFlowTerminal",
+      "reason": "hosted_fixture",
+      "source_op_id": "ceiling-translation-001",
+      "via": [
+        "05Iva7IZaeIhmBVZ2wZPOb",
+        "2B0HM50HKnsteHeL7LrcNv"
+      ]
+    },
+    {
+      "after_hash": "b181c141a9ff56238e0e1cc4f58215d431b5b17ee12379ec9c82149238ea7df6",
+      "before_hash": "282abbb91f1e63b8d4adb89200562fafb34cb00da08edf6315530efc7b12518b",
+      "change": "changed",
+      "global_id": "1U8HSuPzWxbE89oGimcvq3",
+      "ifc_class": "IfcDistributionPort",
+      "reason": "connected_port",
+      "source_op_id": "ceiling-translation-001",
+      "via": [
+        "3fqp1cyzUeYomC$TMJZF7A"
+      ]
+    },
+    {
+      "after_hash": "d42733f9ca6a08473447bdaaae4cd8263a3130ca9950aedd68f16997e719dcea",
+      "before_hash": "086ca284ed589de66970681f55aeb6aa61592554e274891576de864db06542ef",
+      "change": "changed",
+      "global_id": "1VEYUDeWfYPvBH61Ujv6G0",
+      "ifc_class": "IfcDistributionPort",
+      "reason": "connected_port",
+      "source_op_id": "ceiling-translation-001",
+      "via": [
+        "1zVscVZiT8CVi_Qh7jaOgI"
+      ]
+    },
+    {
+      "after_hash": "e489933852778e731c6f80d942230617eb549c56324166129930388cfb289499",
+      "before_hash": "e9659e282b66027537a75bced2878d6bc3ef2741f7a6497a18ca53b18294703a",
+      "change": "changed",
+      "global_id": "1WhJ5ua7LsGniIav6Nconq",
+      "ifc_class": "IfcDistributionPort",
+      "reason": "connected_port",
+      "source_op_id": "ceiling-translation-003",
+      "via": [
+        "3WTzAN0rei$tr6xzisdJnj"
+      ]
+    },
+    {
+      "after_hash": "846b96de0414326ff3df17e07c88259f9aa3a80f311e2d17cf780e6b959efb68",
+      "before_hash": "0d19df955359698f3837e1defdb201b1da1a0eb880d109289860d56c5f545f21",
+      "change": "changed",
+      "global_id": "1X303rvOmx3tT7bwF5elSD",
+      "ifc_class": "IfcDistributionControlElement",
+      "reason": "hosted_fixture",
+      "source_op_id": "ceiling-translation-001",
+      "via": [
+        "2B0HM50HKnsteHeL7LrcNv",
+        "3eOdX5HchTJWBNBRO_qRQv"
+      ]
+    },
+    {
+      "after_hash": "134f87ba5634a8a8fe16d5b14918e2567ebd6b709d0b21f3b0cb9ce335e480b8",
+      "before_hash": "e510445f9a6695aacd03228403c5367be6510708b09d12308f7a3967a23f58d1",
+      "change": "changed",
+      "global_id": "1XPfha_vgEhH5bBqK9EoKa",
+      "ifc_class": "IfcFlowTerminal",
+      "reason": "hosted_fixture",
+      "source_op_id": "ceiling-translation-001",
+      "via": [
+        "1d1uy5O3SaouyJP_8cB2d0",
+        "2B0HM50HKnsteHeL7LrcNv"
+      ]
+    },
+    {
+      "after_hash": "542f93003f32ee852279062dc2322611d9cb9be5f3ac48caf9bb5be102c3a7f2",
+      "before_hash": "357d612f86799f93db79062b1588fb4623a0e0277f88820f31cc1759906f49c4",
+      "change": "changed",
+      "global_id": "1ZTw47AZT60kj9NHVKDU10",
+      "ifc_class": "IfcDistributionPort",
+      "reason": "connected_port",
+      "source_op_id": "ceiling-translation-001",
+      "via": [
+        "3swEe4jliWVvJXpO1BPSE0"
+      ]
+    },
+    {
+      "after_hash": "8b585bb1f859236f346f04f34d41d36a17d6d4bbc72f87f20716ba52924166ed",
+      "before_hash": "56e1ea607e30d43b38218deac7e1abaef9d7e3f69545f134bbc833e74669e4c7",
+      "change": "changed",
+      "global_id": "1aLVa4RymtrYxCsIoOFXXQ",
+      "ifc_class": "IfcDistributionPort",
+      "reason": "connected_port",
+      "source_op_id": "ceiling-translation-001",
+      "via": [
+        "1PbP_VK6Hx7k7uHiwOzlA6"
+      ]
+    },
+    {
+      "after_hash": "bf09baf8006ea5deee5ae1ee2740e0acd63911bf69c4439004db2517a5837d10",
+      "before_hash": "65d684ac67171b1b06d3094fd203f64009e5b760b634faa568b4df87663a6595",
+      "change": "changed",
+      "global_id": "1aZRcJgjO$Q_q3oXoQ0JVc",
+      "ifc_class": "IfcFlowTerminal",
+      "reason": "hosted_fixture",
+      "source_op_id": "ceiling-translation-001",
+      "via": [
+        "0iI0Q2d_BmrrPOHXWgrSCM",
+        "1d1uy5O3SaouyJP_8cB2d0",
+        "2B0HM50HKnsteHeL7LrcNv"
+      ]
+    },
+    {
+      "after_hash": "2e3e41f62d65fc089c304608a78f4b3a5935d90af4fcf9147c3d5469c60f935e",
+      "before_hash": "fe565f9a898a0ba83139ac7e3b8b3bdba78bb5f26050d95923b9b479c219d4d0",
+      "change": "changed",
+      "global_id": "1bGOslrJK1nKyGBorJt$gt",
+      "ifc_class": "IfcDistributionPort",
+      "reason": "connected_port",
+      "source_op_id": "ceiling-translation-003",
+      "via": [
+        "09AdjPoVU7NxlH3t3IbsHY"
+      ]
+    },
+    {
+      "after_hash": "1363f4aeb7737178da9c3e05183bafe0283aef1848f6dfa23f47df8a5ba51d68",
+      "before_hash": "f2a15dc82bf5ae1b6b2000adba8b9e75f47a3310730e7ce3977f542b0040b15d",
+      "change": "changed",
+      "global_id": "1cjnqSep2zna0A9Rz9Z07S",
+      "ifc_class": "IfcDistributionPort",
+      "reason": "connected_port",
+      "source_op_id": "ceiling-translation-020",
+      "via": [
+        "0DZrWH5AxciLxXPIBOB_2R"
+      ]
+    },
+    {
+      "after_hash": "5a4c972cdc9ef3c954b8917cc6925e88e72e1d57f9b2a321c9afe2af59d16491",
+      "before_hash": "b78c52b8b86a94e4d60336d931178cb43cc637dd1ebddf87d582c333a5ea17dc",
+      "change": "changed",
+      "global_id": "1d97LMOOkqU4J4ksA_rEzE",
+      "ifc_class": "IfcDistributionControlElement",
+      "reason": "hosted_fixture",
+      "source_op_id": "ceiling-translation-001",
+      "via": [
+        "1d1uy5O3SaouyJP_8cB2d0",
+        "2B0HM50HKnsteHeL7LrcNv",
+        "3eOdX5HchTJWBNBRO_qRQv"
+      ]
+    },
+    {
+      "after_hash": "bf95c48db3ebfa0a2cafd55dd0d9bf166b7c5fc79db7eac4d83952f1e0b6b739",
+      "before_hash": "324e459c4c15a1cae5a6d767dbd4addefb90dc7f4fcff636726e7b7ae277c428",
+      "change": "changed",
+      "global_id": "1eW5ez$exhV72_SFBCeHJK",
+      "ifc_class": "IfcFlowTerminal",
+      "reason": "hosted_fixture",
+      "source_op_id": "ceiling-translation-001",
+      "via": [
+        "1d1uy5O3SaouyJP_8cB2d0",
+        "2B0HM50HKnsteHeL7LrcNv"
+      ]
+    },
+    {
+      "after_hash": "7c31727a5ef0922143ea45e24be43cb89b83723b399979a32faa44c8f77792ea",
+      "before_hash": "2e5918f76171237589b867e50381b4e22dd51d65c91de39d54aebb30baf26358",
+      "change": "changed",
+      "global_id": "1fFVD8paYbGQgsqP66Jo2m",
+      "ifc_class": "IfcDistributionPort",
+      "reason": "connected_port",
+      "source_op_id": "ceiling-translation-001",
+      "via": [
+        "0DpILDUNdX4OIVYA3INLqX"
+      ]
+    },
+    {
+      "after_hash": "298fa875e752557763cab89d96485ecb4633eefd1925877f11b91b31b0f93d1d",
+      "before_hash": "19308424161725c4550a3bb8fa1d90f110e7825a3a3633886a175bd051bad09e",
+      "change": "changed",
+      "global_id": "1f_bX715lH0XLU3YL4Iei8",
+      "ifc_class": "IfcDistributionPort",
+      "reason": "connected_port",
+      "source_op_id": "ceiling-translation-001",
+      "via": [
+        "3XeDbsD1tLR5vUDavsfkeD"
+      ]
+    },
+    {
+      "after_hash": "17d0415b6c37fc1e511508438c8c14baae103fd33a275dafd99567f31e4f7d43",
+      "before_hash": "15e90aebf212c3472626e6f782db820e1c2e05cd06903a61c73394da9faef9bd",
+      "change": "changed",
+      "global_id": "1gOP1_mHukrmkQZl1drZmD",
+      "ifc_class": "IfcDistributionPort",
+      "reason": "connected_port",
+      "source_op_id": "ceiling-translation-001",
+      "via": [
+        "0Bk$aQIgybU_CWmN1ElJU_"
+      ]
+    },
+    {
+      "after_hash": "ed06916efc74f68ba07b064ed127b47d74b9a65d27120f1289aede6828321202",
+      "before_hash": "cc4ffc8a143fcd6cc0b5e25cc09cdc10d3ebf552f479f9d45f748d2ba035315e",
+      "change": "changed",
+      "global_id": "1gt7TebcEXctxkyP84dH5a",
+      "ifc_class": "IfcDistributionPort",
+      "reason": "connected_port",
+      "source_op_id": "ceiling-translation-001",
+      "via": [
+        "1aZRcJgjO$Q_q3oXoQ0JVc"
+      ]
+    },
+    {
+      "after_hash": "a41a8e3603ba10ed7f158279c49d7ffad5d3bb64acb2c453879d4b1b6a832aa9",
+      "before_hash": "d9377191c360519cae43a047ff50978fc7aec73f56c6590cef116230899f9918",
+      "change": "changed",
+      "global_id": "1igK3kH0jngKyvgyoj1hxB",
+      "ifc_class": "IfcFlowTerminal",
+      "reason": "hosted_fixture",
+      "source_op_id": "ceiling-translation-001",
+      "via": [
+        "1d1uy5O3SaouyJP_8cB2d0",
+        "1s0hj3u3T2FWEBJ8TyW9vP",
+        "2B0HM50HKnsteHeL7LrcNv",
+        "2KGAbkXaJEPPWfbHKG94qv"
+      ]
+    },
+    {
+      "after_hash": "d4aa76b2dea5a57c9849ea18c72fb1f4e4744f8ed1050781f544c2929adde892",
+      "before_hash": "838720fe1c2ff4fbbdf3e418e92f0c45e04ed500c82469fc6c23f4858333d0a0",
+      "change": "changed",
+      "global_id": "1kcL0c_CxiU$Uxw7H6BfgY",
+      "ifc_class": "IfcFlowTerminal",
+      "reason": "hosted_fixture",
+      "source_op_id": "ceiling-translation-022",
+      "via": [
+        "3b5ADX2pgIcCSgf0pB3cNX"
+      ]
+    },
+    {
+      "after_hash": "685b0e8bfe29f7dd5c2a9652326f8c2145f7993952657c6e7e35b8d65c9888ea",
+      "before_hash": "a1d6c92ea766de0522697d652c9933fd03d190f2b90c1ba809bf829382574147",
+      "change": "changed",
+      "global_id": "1ldSnMIZhkakKLb2A6Tp67",
+      "ifc_class": "IfcDistributionControlElement",
+      "reason": "hosted_fixture",
+      "source_op_id": "ceiling-translation-001",
+      "via": [
+        "1d1uy5O3SaouyJP_8cB2d0",
+        "1s0hj3u3T2FWEBJ8TyW9vP",
+        "2B0HM50HKnsteHeL7LrcNv",
+        "2KGAbkXaJEPPWfbHKG94qv"
+      ]
+    },
+    {
+      "after_hash": "6a1c032d5f84ecfe0851442efbd3c2cfa4c7d735905afa8d6645b8a8f18fca99",
+      "before_hash": "595a366c177991e5e9296978297141be5666a04bb7cc7bc3651125f88025e317",
+      "change": "changed",
+      "global_id": "1o21Yiq0UYqkyE$7eLtmq8",
+      "ifc_class": "IfcFlowTerminal",
+      "reason": "hosted_fixture",
+      "source_op_id": "ceiling-translation-001",
+      "via": [
+        "2B0HM50HKnsteHeL7LrcNv"
+      ]
+    },
+    {
+      "after_hash": "906fb82c9f43c81c455e9a7764d5e47ab44e54cbdf34197841e752867f144ac5",
+      "before_hash": "97c423c372db4c674dc09882ac5b1053b3d2cf8ee731376e433d68f1372aa86f",
+      "change": "changed",
+      "global_id": "1oSoevRkFzwN4irTIEWqV1",
+      "ifc_class": "IfcDistributionControlElement",
+      "reason": "hosted_fixture",
+      "source_op_id": "ceiling-translation-001",
+      "via": [
+        "0iI0Q2d_BmrrPOHXWgrSCM",
+        "1d1uy5O3SaouyJP_8cB2d0",
+        "2B0HM50HKnsteHeL7LrcNv"
+      ]
+    },
+    {
+      "after_hash": "411c4871dc82d8600f37d701378cdd66635e2782bb21fbd7ee72560ffac58779",
+      "before_hash": "e5ebbeb02e6d349f13ad1509b36c036b209de4ad0481e8dcfc87818c66a6a663",
+      "change": "changed",
+      "global_id": "1pUCBCJBBpufw2mDemK5B9",
+      "ifc_class": "IfcDistributionControlElement",
+      "reason": "hosted_fixture",
+      "source_op_id": "ceiling-translation-022",
+      "via": [
+        "3b5ADX2pgIcCSgf0pB3cNX"
+      ]
+    },
+    {
+      "after_hash": "f1e0ae2555ebdd752f14f32e294cf65a5af9e87e6ded24f3b24f98f4a678b68c",
+      "before_hash": "ce8e8c62df02ada2cb08c66d6ecfa307f732cdf320ced27f2f8f3d7eb027f339",
+      "change": "changed",
+      "global_id": "1pW5f1MtRIpdBKASFTjm$b",
+      "ifc_class": "IfcFlowTerminal",
+      "reason": "hosted_fixture",
+      "source_op_id": "ceiling-translation-001",
+      "via": [
+        "1M3OpxCuopJT9ohGvVBDum",
+        "1ZLAEXBKK0lEt7EKVWKket",
+        "2B0HM50HKnsteHeL7LrcNv"
+      ]
+    },
+    {
+      "after_hash": "67c6007e4bb794821e65e639b0e28bb9ffdac414f0600fd7752ad189cf00d10e",
+      "before_hash": "31abd5dbea357bf1b01bd63b6243b21aebf20f94f52a69c900ef19e07f499fdf",
+      "change": "changed",
+      "global_id": "1phdG_EISZOTfgxVTC5b1s",
+      "ifc_class": "IfcDistributionPort",
+      "reason": "connected_port",
+      "source_op_id": "ceiling-translation-001",
+      "via": [
+        "2Bixu2KsZM$8HW78VEiC55"
+      ]
+    },
+    {
+      "after_hash": "36409eb1244e4c1777a1ab7cf8e25dd5bb4cb2f594d0368154e5dbc8f5f8f4ee",
+      "before_hash": "24c48a0dd0a58947632573e82139aabc1840ae108935d74e1e26eece34fbd314",
+      "change": "changed",
+      "global_id": "1qYKtRCuWyC2JqC_uTS30f",
+      "ifc_class": "IfcFlowTerminal",
+      "reason": "hosted_fixture",
+      "source_op_id": "ceiling-translation-001",
+      "via": [
+        "0bI6AFeEIBxqQMPBptbuFx",
+        "1d1uy5O3SaouyJP_8cB2d0",
+        "2B0HM50HKnsteHeL7LrcNv"
+      ]
+    },
+    {
+      "after_hash": "3db2a980618c4edb8fdd9fb98f26b79d1b85eeef0731ceae036ebd35b65f7455",
+      "before_hash": "d16c717e3db4ebe9ad450ccd9c9eeca7c493b89945657fbf14f003c6fe5908eb",
+      "change": "changed",
+      "global_id": "1sTHOKtpzSgGUJIZjMt$KQ",
+      "ifc_class": "IfcDistributionPort",
+      "reason": "connected_port",
+      "source_op_id": "ceiling-translation-001",
+      "via": [
+        "0$TL4M0npYMAg7Zbgdllhc"
+      ]
+    },
+    {
+      "after_hash": "7e6c6ae885b692c6a994c8024b46db6b1a93415c555ce5b38344b45a222ee4ca",
+      "before_hash": "cced3ee6ce744e6ba1341c1f23f41d4dc781655dd6a9cf99f037a269bfc1d454",
+      "change": "changed",
+      "global_id": "1t_97UBIiRIbVxTqL5EmP4",
+      "ifc_class": "IfcDistributionPort",
+      "reason": "connected_port",
+      "source_op_id": "ceiling-translation-001",
+      "via": [
+        "16DoxwD1d9eEEyActABcIS"
+      ]
+    },
+    {
+      "after_hash": "92c7616d6061153e5f0a46cf5301642bae5633ad3bbba4c676ee83f1d170e2f2",
+      "before_hash": "2156fc22a1b46c7825cfb01c095424a6a4750c86ad4d94c69e9c62deceeedc68",
+      "change": "changed",
+      "global_id": "1ubzXI4q8QCeRp4oq7VI1E",
+      "ifc_class": "IfcDistributionPort",
+      "reason": "connected_port",
+      "source_op_id": "ceiling-translation-001",
+      "via": [
+        "2mOcKOwQePkEtse0ncV_8H"
+      ]
+    },
+    {
+      "after_hash": "e0ca49f6a95e357a77262aa9925e280fc1d1429220249ee039736092f8980709",
+      "before_hash": "dc6d6edd12928cb0a8eb77b38274c9dcd96a43fd7deab0276d661cb666645155",
+      "change": "changed",
+      "global_id": "1vPvVxlZK8k973Ca96zPm2",
+      "ifc_class": "IfcFlowTerminal",
+      "reason": "hosted_fixture",
+      "source_op_id": "ceiling-translation-021",
+      "via": [
+        "3eOdX5HchTJWBNBRO_qRQv"
+      ]
+    },
+    {
+      "after_hash": "a2a5746afb9c5cb6498e46cf9f3a151786b9f994ceb85279e01b320535c4b95b",
+      "before_hash": "5c8a9ef85cccee0aee8eb86e3c8b78c66731f6ce332e5391f6891d8b8b485d49",
+      "change": "changed",
+      "global_id": "1viUc6y9Rlh20K9izuAfdX",
+      "ifc_class": "IfcDistributionPort",
+      "reason": "connected_port",
+      "source_op_id": "ceiling-translation-001",
+      "via": [
+        "0qWarEKG5JQQv$KuyoW6X5"
+      ]
+    },
+    {
+      "after_hash": "f7ded444acf80c0e35fbac1e21d49a9462633feef5a275df46392c2e34e2284e",
+      "before_hash": "ad81e3c5434c04bfdd690316abd9cc3c1bdf379fcb65487588b2cbb969727d66",
+      "change": "changed",
+      "global_id": "1vyXqHaQhFjhf3NCk7mm3U",
+      "ifc_class": "IfcDistributionPort",
+      "reason": "connected_port",
+      "source_op_id": "ceiling-translation-004",
+      "via": [
+        "3eMfXzrWsnqbsu9SQ7u2IJ"
+      ]
+    },
+    {
+      "after_hash": "cf051e277eda1794915ec4c643d7576f30986cf1190a7aa641e64d97f9914866",
+      "before_hash": "8d7674ef93918c52ae2c10e10b13d7990b0455256c185a79b6216366d2cb12f4",
+      "change": "changed",
+      "global_id": "1wGoXFnmkBQ4_AvlgvTPFG",
+      "ifc_class": "IfcFlowTerminal",
+      "reason": "hosted_fixture",
+      "source_op_id": "ceiling-translation-001",
+      "via": [
+        "1d1uy5O3SaouyJP_8cB2d0",
+        "1dULTNYo1KUvvrKMJdPtb8",
+        "2B0HM50HKnsteHeL7LrcNv"
+      ]
+    },
+    {
+      "after_hash": "da1c1d36465969d06d04882602194e762daa2060e349086e960aa282b7ed9606",
+      "before_hash": "14002c9774b4e612a2be5168092368b66117832ad52072ccd20ce4c1ebe86e4a",
+      "change": "changed",
+      "global_id": "1wifHDFmfzuNpdZf0XbasX",
+      "ifc_class": "IfcBuildingElementProxy",
+      "reason": "hosted_fixture",
+      "source_op_id": "ceiling-translation-001",
+      "via": [
+        "1d1uy5O3SaouyJP_8cB2d0",
+        "2B0HM50HKnsteHeL7LrcNv"
+      ]
+    },
+    {
+      "after_hash": "89302c717da1d2215b327a6aad6832cc83cf450c40d6914b3b672477436f4b1d",
+      "before_hash": "8ec96e9e6d3be271501d9616daeb9909a7dbe504626563f3965b9d40b5aee2d9",
+      "change": "changed",
+      "global_id": "1xK0DhpBvwpS_FRGBD2TmX",
+      "ifc_class": "IfcDistributionPort",
+      "reason": "connected_port",
+      "source_op_id": "ceiling-translation-001",
+      "via": [
+        "0fntIVmGp222nvoWTAUFSM"
+      ]
+    },
+    {
+      "after_hash": "35008a4c398dfaf75f5ea5ec270f3cda23ed22f2504549b5fa8ad74cce1533cd",
+      "before_hash": "aaf82dc580eb44ea46672c2f7153a6c16c88408b51df7e38da74dce4747cb667",
+      "change": "changed",
+      "global_id": "1xxEGbUwMF4IzfRmEQCAPj",
+      "ifc_class": "IfcDistributionPort",
+      "reason": "connected_port",
+      "source_op_id": "ceiling-translation-001",
+      "via": [
+        "2gtWoQoubT8rtIqKkQrhyw"
+      ]
+    },
+    {
+      "after_hash": "5fcb092b3e15e2357d7fd037faface87fb2dbf62b886164da95c8e7ccf5861d0",
+      "before_hash": "39cba326291e651a9b176d7efee237acf601f1ec5046ea07bd878ea1638e089c",
+      "change": "changed",
+      "global_id": "1yEmIzEYlm4t$bEaA8qvrY",
+      "ifc_class": "IfcDistributionPort",
+      "reason": "connected_port",
+      "source_op_id": "ceiling-translation-001",
+      "via": [
+        "0kjDLHNd27y33KLQf3sdBV"
+      ]
+    },
+    {
+      "after_hash": "72991b313c47359459d79390f4b2c98e01bf7d2e3ec00b9a3faed8368d70ea93",
+      "before_hash": "6ee2b683096496249dc9ed792666a165db7fc5b4dac93b65d163429b06b316ca",
+      "change": "changed",
+      "global_id": "1ypDMw3MBYCBKbO_VB3Mic",
+      "ifc_class": "IfcDistributionPort",
+      "reason": "connected_port",
+      "source_op_id": "ceiling-translation-004",
+      "via": [
+        "2P4SkcflE6j1dBrkNVu9i0"
+      ]
+    },
+    {
+      "after_hash": "bde31e6f20ec0bb353534dbe51392b05f7d26220d6c3cb4a2543cbbcb6c15b51",
+      "before_hash": "0e6c5e82396769f9567375c98372a66c9798d7e96de2674d653ce121a50149d1",
+      "change": "changed",
+      "global_id": "1z9hPQ$XuDhcGcZB2HjBxF",
+      "ifc_class": "IfcFlowTerminal",
+      "reason": "hosted_fixture",
+      "source_op_id": "ceiling-translation-001",
+      "via": [
+        "0bI6AFeEIBxqQMPBptbuFx",
+        "1d1uy5O3SaouyJP_8cB2d0",
+        "2B0HM50HKnsteHeL7LrcNv"
+      ]
+    },
+    {
+      "after_hash": "3da4032d6d84267074d4e4c5bb56ad321bcd6481dd2b772cd29c7767a4d8176d",
+      "before_hash": "a8304164de2b65ab04c2946abdb634087b37b61ee5d258e2ebe85b75a6bfd32d",
+      "change": "changed",
+      "global_id": "1zVscVZiT8CVi_Qh7jaOgI",
+      "ifc_class": "IfcBuildingElementProxy",
+      "reason": "hosted_fixture",
+      "source_op_id": "ceiling-translation-001",
+      "via": [
+        "2B0HM50HKnsteHeL7LrcNv",
+        "2CeT9aIgdHxBXOFaUshYa9",
+        "2K_R2Wt2rnaXzVuEF1l_lP"
+      ]
+    },
+    {
+      "after_hash": "18f1c818f32d579d9bb4d491a7115829979b003bbe5d9e59a63e0f45985c145f",
+      "before_hash": "4c3f28ac828cf6059c4ed69367caf984c959a5e9109cca96c61f9ba939fbda04",
+      "change": "changed",
+      "global_id": "1zZ$HmiTTJBtNYs5Rb2BKb",
+      "ifc_class": "IfcFlowTerminal",
+      "reason": "hosted_fixture",
+      "source_op_id": "ceiling-translation-001",
+      "via": [
+        "0l1oZPcGnyvhTvMZjoJ7XO",
+        "1d1uy5O3SaouyJP_8cB2d0",
+        "2B0HM50HKnsteHeL7LrcNv"
+      ]
+    },
+    {
+      "after_hash": "97333744174c93fb2f0e890738e79b263dd6776ebd294887dfd45e915ddd14f9",
+      "before_hash": "24719aabc5aca7d28ac16caf4d34555a02262266290535544935b28d3b9e75ff",
+      "change": "changed",
+      "global_id": "2$u$liytFHRB_C2fZtFE4d",
+      "ifc_class": "IfcFlowTerminal",
+      "reason": "hosted_fixture",
+      "source_op_id": "ceiling-translation-001",
+      "via": [
+        "2B0HM50HKnsteHeL7LrcNv"
+      ]
+    },
+    {
+      "after_hash": "4d527082b9f40ef9219493557d7e4daec92bd28d1f13bd0be3a9ceebeec50312",
+      "before_hash": "76d939ba844d4cb03059aafb419a5e3f43d63a7c0a0b55b1345d36b42f47c53c",
+      "change": "changed",
+      "global_id": "207sIcmHfYkNVygP$n8Ks8",
+      "ifc_class": "IfcFlowTerminal",
+      "reason": "hosted_fixture",
+      "source_op_id": "ceiling-translation-001",
+      "via": [
+        "2B0HM50HKnsteHeL7LrcNv",
+        "3eOdX5HchTJWBNBRO_qRQv"
+      ]
+    },
+    {
+      "after_hash": "4bd3e57f5f40bdafd07af751b9fc3b402bebb82ff5378e6832b12a8796ba440b",
+      "before_hash": "7a305ee557a5c52794d977f13c55a965df3f9203a1d661662477704f574854cd",
+      "change": "changed",
+      "global_id": "20rPEpulyLaft92bTTe0KD",
+      "ifc_class": "IfcDistributionPort",
+      "reason": "connected_port",
+      "source_op_id": "ceiling-translation-001",
+      "via": [
+        "0LunW6WYTtXtcSZojbQPnj"
+      ]
+    },
+    {
+      "after_hash": "515ac6ab6b823f5bb3df943298fab4a1e91bbb6e98c4c4b59c87fecf39ade920",
+      "before_hash": "2dbda1981816ce4893718bcff7691d81296a7da16591b624872e3ea989e8cb69",
+      "change": "changed",
+      "global_id": "21e6tVXLbZu4Yl1O1YJ5c9",
+      "ifc_class": "IfcFlowTerminal",
+      "reason": "hosted_fixture",
+      "source_op_id": "ceiling-translation-001",
+      "via": [
+        "1d1uy5O3SaouyJP_8cB2d0",
+        "2B0HM50HKnsteHeL7LrcNv",
+        "3pfFV6U9rhezr2v1L0SHFQ"
+      ]
+    },
+    {
+      "after_hash": "ac9ccb192a781c5af014b26882bb72fe0812ef6948bffd309d5753b2396c6183",
+      "before_hash": "c67690b5f911006194a4da108eb32f8e71de7cc9e043de64a2d7b6aff9a8cfa1",
+      "change": "changed",
+      "global_id": "23DtkRZFND$yG3vWnz2y8G",
+      "ifc_class": "IfcFlowTerminal",
+      "reason": "hosted_fixture",
+      "source_op_id": "ceiling-translation-001",
+      "via": [
+        "1d1uy5O3SaouyJP_8cB2d0",
+        "2B0HM50HKnsteHeL7LrcNv",
+        "3eOdX5HchTJWBNBRO_qRQv"
+      ]
+    },
+    {
+      "after_hash": "d43017da80c4bc2be52af3424123ee59e8f33950a6de9930a52ebece0e9ab0f7",
+      "before_hash": "456569f6b48e6254533886826680cb859ae552482f41a6864b5e552d84e7f93b",
+      "change": "changed",
+      "global_id": "27cWuqvQPqNImWwQt2ZaQ5",
+      "ifc_class": "IfcDistributionPort",
+      "reason": "connected_port",
+      "source_op_id": "ceiling-translation-003",
+      "via": [
+        "08LlIMOlvuiCpDYWgkMxeg"
+      ]
+    },
+    {
+      "after_hash": "567bf973f4cc5ca5b9abf1d2ffce340bc4f0f995ec021fe50c619ac3076ad7fb",
+      "before_hash": "0bd5f4f40fcb30aa84a18bdcfbfa10772ebc32e7988afda6c8aa5d3f29a5a2c9",
+      "change": "changed",
+      "global_id": "27d6Nn1IGiJ8zYbkYTYPNY",
+      "ifc_class": "IfcDistributionPort",
+      "reason": "connected_port",
+      "source_op_id": "ceiling-translation-001",
+      "via": [
+        "2akMZnR9I_BXMlfr9VQsYz"
+      ]
+    },
+    {
+      "after_hash": "c17e2dc4607391927de7c305479715ad7b0fb0e19b5a51aae7dc66f58632330a",
+      "before_hash": "8db3844b8bf441a69b56369692b71af62b94857bd240c4db5b76d7cb68b7d3ff",
+      "change": "changed",
+      "global_id": "28BlquWBe4EieIyfSOzf2J",
+      "ifc_class": "IfcFlowTerminal",
+      "reason": "hosted_fixture",
+      "source_op_id": "ceiling-translation-003",
+      "via": [
+        "3Lenc84YKjvShM_0qyUTPd"
+      ]
+    },
+    {
+      "after_hash": "e56160321f3d66901c0da269afbd0727f8e046120b80debf14a9c7b8f1ac4a92",
+      "before_hash": "f191e2745fd62e785c7018d8dd0c6e4233c214501f0f2e6bd73d87df10280e2f",
+      "change": "changed",
+      "global_id": "2AUcvJTu0Asdx3HAqpQYXb",
+      "ifc_class": "IfcDistributionPort",
+      "reason": "connected_port",
+      "source_op_id": "ceiling-translation-003",
+      "via": [
+        "34Qe06ufd5xyae8OFgfs33"
+      ]
+    },
+    {
+      "after_hash": "8e4f5bf96af611cd82a9e0039208571a7ad63f8df4b38745cc7155d04a284908",
+      "before_hash": "d5cb362b4dcdd684ffe38fbe7881e5312e12086cc5b8e21eca49ded0db4a2795",
+      "change": "changed",
+      "global_id": "2AnBQHrQVUJjrxI2blhP0W",
+      "ifc_class": "IfcFlowTerminal",
+      "reason": "hosted_fixture",
+      "source_op_id": "ceiling-translation-021",
+      "via": [
+        "3eOdX5HchTJWBNBRO_qRQv"
+      ]
+    },
+    {
+      "after_hash": "10aa562cdf5cecedc53d792ac0a872e75afd44954daa19d40b65a62c20cf6a51",
+      "before_hash": "758601dd0c75a3d6efe8a3d9592bbdad802a90c37a51f9d8ab5ae6c7426e276f",
+      "change": "changed",
+      "global_id": "2Bixu2KsZM$8HW78VEiC55",
+      "ifc_class": "IfcBuildingElementProxy",
+      "reason": "hosted_fixture",
+      "source_op_id": "ceiling-translation-001",
+      "via": [
+        "2B0HM50HKnsteHeL7LrcNv",
+        "2LRh4LrERTBtJzFJZyteEA"
+      ]
+    },
+    {
+      "after_hash": "97d6f76cfe373ddc1f6b46632aa05469fd650cb35e67f07948fae17ff9cdf683",
+      "before_hash": "95da1dd6f5ad9e382fbb002396c345c11f7a445cf5ba3c23fac82bbdfae5c4c3",
+      "change": "changed",
+      "global_id": "2BpBdp1hzIlQlLJC3FLmVY",
+      "ifc_class": "IfcDistributionPort",
+      "reason": "connected_port",
+      "source_op_id": "ceiling-translation-001",
+      "via": [
+        "1FlgkFFA7Ro_9etLDSAfjP"
+      ]
+    },
+    {
+      "after_hash": "4d4b2161355e42fd96d04178e529147862c99a8a1f48d8918f043182df700114",
+      "before_hash": "ba9761f01f67347347d29a33af014411d81160ec263d0feb3fed7ab86e3fd241",
+      "change": "changed",
+      "global_id": "2COObQ5VOr7L3EgPF0BXIl",
+      "ifc_class": "IfcFlowTerminal",
+      "reason": "hosted_fixture",
+      "source_op_id": "ceiling-translation-001",
+      "via": [
+        "1d1uy5O3SaouyJP_8cB2d0",
+        "2B0HM50HKnsteHeL7LrcNv"
+      ]
+    },
+    {
+      "after_hash": "bce9de752f07e134e5e20662e09ae1598c71af8211607f4b10a8af1346468e68",
+      "before_hash": "af9ab3f641e28ec3d50cf915183096282bb35cfac793a0ff4ed38baf51795b1a",
+      "change": "changed",
+      "global_id": "2DzpXxLSZDSe5xzwmgsnN1",
+      "ifc_class": "IfcFlowTerminal",
+      "reason": "hosted_fixture",
+      "source_op_id": "ceiling-translation-001",
+      "via": [
+        "0iI0Q2d_BmrrPOHXWgrSCM",
+        "1d1uy5O3SaouyJP_8cB2d0",
+        "2B0HM50HKnsteHeL7LrcNv"
+      ]
+    },
+    {
+      "after_hash": "7c263b6e2d837fe46a9988f83429598419b0cedf469710ac705ed5b45850ecc1",
+      "before_hash": "577b489c20ef68535c8644bae0da1b185150d65060e15fcd51e0686fcc1fbc8f",
+      "change": "changed",
+      "global_id": "2E8H9NRr6FO4szGS6TDjR3",
+      "ifc_class": "IfcDistributionPort",
+      "reason": "connected_port",
+      "source_op_id": "ceiling-translation-022",
+      "via": [
+        "383fKAl1e7n7TWVr1saQQL"
+      ]
+    },
+    {
+      "after_hash": "12ff855bf19022a6c9d421ecded5ab53578557da2ca7485d066697346d7b4926",
+      "before_hash": "6bf560474ad23f1b9e0403413d4ecb6412e1461817671850e3ad24c571fa8348",
+      "change": "changed",
+      "global_id": "2EOUaJC7GflDQppM211xD8",
+      "ifc_class": "IfcDistributionPort",
+      "reason": "connected_port",
+      "source_op_id": "ceiling-translation-001",
+      "via": [
+        "3lWgtr2UR$XJvT5nsidWe0"
+      ]
+    },
+    {
+      "after_hash": "ecd07fe64a8c0f9cb25eddb56c7d69f0d537ffc16b0b46fa65f56dfd0e5fbe57",
+      "before_hash": "5a90cdc1e68723d8eddf0533251858a29c0ab7cf6d58de58eddce0b36e539bf7",
+      "change": "changed",
+      "global_id": "2FfBTclShNRmJBAxBrZwNu",
+      "ifc_class": "IfcFlowTerminal",
+      "reason": "hosted_fixture",
+      "source_op_id": "ceiling-translation-001",
+      "via": [
+        "1d1uy5O3SaouyJP_8cB2d0",
+        "2B0HM50HKnsteHeL7LrcNv",
+        "2BkzT8_U8p7Uvr20yJhFSo"
+      ]
+    },
+    {
+      "after_hash": "dee1450d3d5281ea5ef922981c4860e18a9505536c4e9bcc53a9d2cc1132e3c9",
+      "before_hash": "74c313099d33b833ac02625c224db60d9c6c74d0b4b965f7fabdf739acfd715b",
+      "change": "changed",
+      "global_id": "2H3aa1Luc9kQUVSn7UtUdp",
+      "ifc_class": "IfcFlowTerminal",
+      "reason": "hosted_fixture",
+      "source_op_id": "ceiling-translation-001",
+      "via": [
+        "0WRFMp0456PSGpnmN199ea",
+        "1d1uy5O3SaouyJP_8cB2d0",
+        "2B0HM50HKnsteHeL7LrcNv"
+      ]
+    },
+    {
+      "after_hash": "df66518a0ff3223a1399081903f47c45f8307845a7113086845ceb7e97e15792",
+      "before_hash": "e35a626921dba39ee66bbe2ec18ac0a38c242409fcaabfe84292b92f94af5e80",
+      "change": "changed",
+      "global_id": "2J7yW27VQlBiniJYkbwrIj",
+      "ifc_class": "IfcFlowTerminal",
+      "reason": "hosted_fixture",
+      "source_op_id": "ceiling-translation-005",
+      "via": [
+        "05Iva7IZaeIhmBVZ2wZPOb"
+      ]
+    },
+    {
+      "after_hash": "7c7b7e8f4cc0fab1bb14a9617fa2c11f1bf8f473d5ccf2225770e9b35438c800",
+      "before_hash": "2e324c538dcbe1d2db6deca6fecd0809d1a1af262ea570c37aaac3af03a47812",
+      "change": "changed",
+      "global_id": "2KI8TINlktAB2gT7JEFrJ5",
+      "ifc_class": "IfcDistributionControlElement",
+      "reason": "hosted_fixture",
+      "source_op_id": "ceiling-translation-001",
+      "via": [
+        "1d1uy5O3SaouyJP_8cB2d0",
+        "1dULTNYo1KUvvrKMJdPtb8",
+        "2B0HM50HKnsteHeL7LrcNv"
+      ]
+    },
+    {
+      "after_hash": "3fb823d30b1c7c689d03be9e11b50639dd5fcb57bc6b39d83962852ce1d20f29",
+      "before_hash": "75d01c16dd9cb2d7a37fc5f149e76edce3280948598aab789a274bc02c588ac4",
+      "change": "changed",
+      "global_id": "2LBwnATUvtEay3x6tE1qvC",
+      "ifc_class": "IfcFlowTerminal",
+      "reason": "hosted_fixture",
+      "source_op_id": "ceiling-translation-001",
+      "via": [
+        "2B0HM50HKnsteHeL7LrcNv",
+        "2K_R2Wt2rnaXzVuEF1l_lP"
+      ]
+    },
+    {
+      "after_hash": "6824dba10fe538a52d3d7280dac0c1407461037b1c2b002a2c37032166071c51",
+      "before_hash": "277e08036f9a61a554732f29cb30000847cc93e7087811c02d505f2094a0b5e9",
+      "change": "changed",
+      "global_id": "2MaON9O6$hTO3B4N3lmcLc",
+      "ifc_class": "IfcFlowTerminal",
+      "reason": "hosted_fixture",
+      "source_op_id": "ceiling-translation-001",
+      "via": [
+        "2B0HM50HKnsteHeL7LrcNv",
+        "2LRh4LrERTBtJzFJZyteEA"
+      ]
+    },
+    {
+      "after_hash": "a572f9baa6d64d2058ab7c5cd84e04dfa4b75cae1dd2ace9b5cdd3775bcf12ee",
+      "before_hash": "b071cbc0c72ad87597bee477a14350acae05628097ad53f57d4c5ad523a6dc18",
+      "change": "changed",
+      "global_id": "2OIUSplD88VYi$i9Jn_gyL",
+      "ifc_class": "IfcFlowTerminal",
+      "reason": "hosted_fixture",
+      "source_op_id": "ceiling-translation-020",
+      "via": [
+        "0fgHmYNTwSg_QLlFlU2KL2",
+        "3eOdX5HchTJWBNBRO_qRQv"
+      ]
+    },
+    {
+      "after_hash": "0ae830728d0a5ee0aaf06a8773b083c41c4393be5098b54da22c0eb450589915",
+      "before_hash": "75b24ff9270727111eaa0a3df9a8d06e4d9f53a9b0a66efe508c30efa94117f4",
+      "change": "changed",
+      "global_id": "2OoVdM0Gy0XPboj2u8wbAM",
+      "ifc_class": "IfcDistributionPort",
+      "reason": "connected_port",
+      "source_op_id": "ceiling-translation-001",
+      "via": [
+        "3OjD62g6G1lAEQ8g7Bq5O7"
+      ]
+    },
+    {
+      "after_hash": "42cd50774e7799aeed9ed52975049ce50c4b72a91d325aa32b4544cff52a934b",
+      "before_hash": "954e4529173d0e402dea73dea56b8a258fa1ce620ffe0bc99633b7a2699c02fa",
+      "change": "changed",
+      "global_id": "2Ord0KQvdaqKyjuV1gQU7Z",
+      "ifc_class": "IfcDistributionPort",
+      "reason": "connected_port",
+      "source_op_id": "ceiling-translation-019",
+      "via": [
+        "3uW4nw3gTYn44MdBtC1_cH"
+      ]
+    },
+    {
+      "after_hash": "ffd6cc2d4681b2d055c43bcce7ea7cf347e381a3842cd5238945359e7dc6bccd",
+      "before_hash": "448c722d2921e709336a83983ff34f7977af03a0a160ec49af21e8f9d746951b",
+      "change": "changed",
+      "global_id": "2P4SkcflE6j1dBrkNVu9i0",
+      "ifc_class": "IfcFlowTerminal",
+      "reason": "hosted_fixture",
+      "source_op_id": "ceiling-translation-004",
+      "via": [
+        "2LRh4LrERTBtJzFJZyteEA"
+      ]
+    },
+    {
+      "after_hash": "1d4d2c791179bfc83825d5809127f10ecca9c0e6aa9491c0cbb2f8e47acb94e0",
+      "before_hash": "5fa05df6965d45b5d260edd10cfaa190e68fa7677ad41df0c84b2ded7b237bbb",
+      "change": "changed",
+      "global_id": "2PgqDYFm_cFugqNcja3vhK",
+      "ifc_class": "IfcDistributionPort",
+      "reason": "connected_port",
+      "source_op_id": "ceiling-translation-001",
+      "via": [
+        "1XPfha_vgEhH5bBqK9EoKa"
+      ]
+    },
+    {
+      "after_hash": "f9ed9383d4309c79b235dd7ea7db01cecd4b4787fd099dfdf2116293cb83fa53",
+      "before_hash": "4c286acfb2ad9fd906b6e8cd4139d63852dc17e480fdfa5fc86a51ce54e54c88",
+      "change": "changed",
+      "global_id": "2R31yaRS5Cec3mHWnMxSzj",
+      "ifc_class": "IfcFlowTerminal",
+      "reason": "hosted_fixture",
+      "source_op_id": "ceiling-translation-001",
+      "via": [
+        "2B0HM50HKnsteHeL7LrcNv",
+        "2CeT9aIgdHxBXOFaUshYa9"
+      ]
+    },
+    {
+      "after_hash": "25c0dcb2ba5ce87f5e7a53121d2f2f3edef0775e0d12fa34cf0a0bfc244c757b",
+      "before_hash": "fce35834faa200439756927e6b4adf4ea6a91e1180b5e9caccf41d882c82ad46",
+      "change": "changed",
+      "global_id": "2T$e$2zdT8INLKkdy1mieB",
+      "ifc_class": "IfcDistributionPort",
+      "reason": "connected_port",
+      "source_op_id": "ceiling-translation-003",
+      "via": [
+        "1B18yxYhPbDkOu5P8iWkn8"
+      ]
+    },
+    {
+      "after_hash": "09e6b9693c30ecc08bb2daf35bd6aafbefdaed62dad2191b85bd41eaeabadf42",
+      "before_hash": "6a9e0dabe9b2bbe0579ae7450c695bbdda36c22639f55335260c2bc6894c3765",
+      "change": "changed",
+      "global_id": "2Tqc$h7BscIxfPb_z0kIrB",
+      "ifc_class": "IfcDistributionPort",
+      "reason": "connected_port",
+      "source_op_id": "ceiling-translation-001",
+      "via": [
+        "3kHMT66WHvIby2lce$NyBf"
+      ]
+    },
+    {
+      "after_hash": "5d06da274e932f3b432016c231f019e5e9ba5a4ba4c8cb51e44ce5c251d713b8",
+      "before_hash": "8533991ce8f5ad1f0573fb4f6a1fffdbf667857985b2f7b612d2dbce605b457d",
+      "change": "changed",
+      "global_id": "2U3r3R8kR419d6WATRAEGT",
+      "ifc_class": "IfcDistributionPort",
+      "reason": "connected_port",
+      "source_op_id": "ceiling-translation-001",
+      "via": [
+        "2iw$4LLmRFQrLGtKw12zQ3"
+      ]
+    },
+    {
+      "after_hash": "a4252f49daa2ef69ef3fb6d70f6f4454161df8ba29872a29ee2a2baa93a4bc5b",
+      "before_hash": "02af2c180f4d93c1647366954e98271f20df3907e6b5ec4e9d48d8d244c5247e",
+      "change": "changed",
+      "global_id": "2UqVn0oxoRPJ9NVlsYDb6Z",
+      "ifc_class": "IfcDistributionPort",
+      "reason": "connected_port",
+      "source_op_id": "ceiling-translation-001",
+      "via": [
+        "30tbstNqWCglvOincUCcBN"
+      ]
+    },
+    {
+      "after_hash": "19a8a22652ecb68ccec31b14f9461f996af7651f9058e5b45c0df62a8045ad7a",
+      "before_hash": "1086a28bdd515c94dfac7831e55e9e74c251e329ca60876ce15bc0b9b0dd1909",
+      "change": "changed",
+      "global_id": "2VZfpOTjxQ5cRD0V5swvDD",
+      "ifc_class": "IfcDistributionPort",
+      "reason": "connected_port",
+      "source_op_id": "ceiling-translation-001",
+      "via": [
+        "1igK3kH0jngKyvgyoj1hxB"
+      ]
+    },
+    {
+      "after_hash": "149aac9c132f5f2aee5e0a486f5558d1934d79ddbb4f7e3bfa49bdc9fd2f3415",
+      "before_hash": "8546e39ffd729e64c7beede3eabc6337080e5b7d361b92ef8203accef3e93915",
+      "change": "changed",
+      "global_id": "2VtMwQEWxHjPr_vVfZM$ru",
+      "ifc_class": "IfcFlowTerminal",
+      "reason": "hosted_fixture",
+      "source_op_id": "ceiling-translation-001",
+      "via": [
+        "2B0HM50HKnsteHeL7LrcNv",
+        "3eOdX5HchTJWBNBRO_qRQv"
+      ]
+    },
+    {
+      "after_hash": "92ca6c6c481418c89dc5789588730986b6dc21d2fabc7b926649f0ce867ce938",
+      "before_hash": "8b6a680e0a1d16da8b2da3e4639a53ed7dd42f49fcb5c50ae5c0470e28e4c481",
+      "change": "changed",
+      "global_id": "2X4OtWE9IjnqLg2__xpoZz",
+      "ifc_class": "IfcFlowTerminal",
+      "reason": "hosted_fixture",
+      "source_op_id": "ceiling-translation-020",
+      "via": [
+        "0fgHmYNTwSg_QLlFlU2KL2",
+        "3eOdX5HchTJWBNBRO_qRQv"
+      ]
+    },
+    {
+      "after_hash": "8dfcdeeb8a7f61a0b41a01b308522963dfe1cb2c781719113d2e5b545be6aaeb",
+      "before_hash": "cf09d50186199b8f4218d991665bdd73c5f592e46dff26c3addcc2e876ece897",
+      "change": "changed",
+      "global_id": "2XgIiyPwvHRG7VkIVnjaCj",
+      "ifc_class": "IfcDistributionPort",
+      "reason": "connected_port",
+      "source_op_id": "ceiling-translation-001",
+      "via": [
+        "2FfBTclShNRmJBAxBrZwNu"
+      ]
+    },
+    {
+      "after_hash": "a2349ce089ce80c9d68f6518faae2c8ba3772dd14d75be864f18b1fbf8218fe7",
+      "before_hash": "bdba4f51ff0767a0fd57617556462293a318f730c168593d0cb36a27fbe24a69",
+      "change": "changed",
+      "global_id": "2YL07w7RF$YW4ld01FnD3n",
+      "ifc_class": "IfcFlowTerminal",
+      "reason": "hosted_fixture",
+      "source_op_id": "ceiling-translation-001",
+      "via": [
+        "2B0HM50HKnsteHeL7LrcNv"
+      ]
+    },
+    {
+      "after_hash": "8d9fb4a92d939a4dd069eea0247e07e94585c6d6edd6b2eacf99c49e326d0c11",
+      "before_hash": "b81f02d45d5e46398662f043ea27932498deb7e44c075ed28e5d04b998658540",
+      "change": "changed",
+      "global_id": "2YdXCMlmW6T3mbEkcb2X$_",
+      "ifc_class": "IfcDistributionControlElement",
+      "reason": "hosted_fixture",
+      "source_op_id": "ceiling-translation-001",
+      "via": [
+        "05Iva7IZaeIhmBVZ2wZPOb",
+        "2B0HM50HKnsteHeL7LrcNv",
+        "2K_R2Wt2rnaXzVuEF1l_lP"
+      ]
+    },
+    {
+      "after_hash": "8bf2fcb8ed456a31621aa801e2f9720f65f12f7894fd1196d1de2410358d369b",
+      "before_hash": "6e8537ee8e58c99345fc92ff28a1729b0782a95e9f041034adf7dbb89bc36533",
+      "change": "changed",
+      "global_id": "2_hzKS1NFsMYnjvKGi5C7_",
+      "ifc_class": "IfcDistributionPort",
+      "reason": "connected_port",
+      "source_op_id": "ceiling-translation-001",
+      "via": [
+        "0ZqdS3gUDgJO_zCue9GRyz"
+      ]
+    },
+    {
+      "after_hash": "6fa3cc20e3894dd82e1db653b34d27b2f26552b631003afad03419902ef36956",
+      "before_hash": "07c64cf058eca84a60809165daaf824a997c78a2f584618773ae91c7e9df8d91",
+      "change": "changed",
+      "global_id": "2akMZnR9I_BXMlfr9VQsYz",
+      "ifc_class": "IfcDistributionControlElement",
+      "reason": "hosted_fixture",
+      "source_op_id": "ceiling-translation-001",
+      "via": [
+        "1d1uy5O3SaouyJP_8cB2d0",
+        "1dULTNYo1KUvvrKMJdPtb8",
+        "2B0HM50HKnsteHeL7LrcNv"
+      ]
+    },
+    {
+      "after_hash": "5e791ffe5a985cfecf3a11d5a60a456148426b7529062ef44e5ca1351f7064ae",
+      "before_hash": "de61b94cfa0efccc46b1eb988a63a61ec45f91c41b0892187ccdd78b8c34e1d4",
+      "change": "changed",
+      "global_id": "2bsDxsaFV1rpFovuks_ayZ",
+      "ifc_class": "IfcDistributionPort",
+      "reason": "connected_port",
+      "source_op_id": "ceiling-translation-001",
+      "via": [
+        "3dbKpw1kmr01NCDiynx6mp"
+      ]
+    },
+    {
+      "after_hash": "33198bb3cf43c0470c9ceb03f34d8d293a7947a50ef8815b9fca8756207d942d",
+      "before_hash": "479c220afa413195c67e51d05d938e3acf8e75a905de5adb78a1b110c4810e35",
+      "change": "changed",
+      "global_id": "2cLHUvJYbdR05stIx0qe$3",
+      "ifc_class": "IfcDistributionPort",
+      "reason": "connected_port",
+      "source_op_id": "ceiling-translation-020",
+      "via": [
+        "2OIUSplD88VYi$i9Jn_gyL"
+      ]
+    },
+    {
+      "after_hash": "4b9afebe1c1798dab8b98bcc921b32dd747675105944c4da211bbb153cc7eca5",
+      "before_hash": "8e3e058e6ca84203878100a600c1fc1130051fb8dff4c60bf78501ea2a37a53c",
+      "change": "changed",
+      "global_id": "2cpGJRynBVJOJoYg4IfBsy",
+      "ifc_class": "IfcDistributionPort",
+      "reason": "connected_port",
+      "source_op_id": "ceiling-translation-001",
+      "via": [
+        "1LXXK$ZoDrlMHoAgOkt3w0"
+      ]
+    },
+    {
+      "after_hash": "51cade2d16a937cfb9e8be2f9b87d3d542a9c13d08d7df6644e4092db627a66a",
+      "before_hash": "e782c571fd2c03ea54f42e59770bc0b2a359f2a021cd76210ee3bca5f312e91a",
+      "change": "changed",
+      "global_id": "2d1LLfP6M5Qyz56EwRyTdg",
+      "ifc_class": "IfcDistributionPort",
+      "reason": "connected_port",
+      "source_op_id": "ceiling-translation-004",
+      "via": [
+        "3qZs5XilIEn_8UWJF1LMF0"
+      ]
+    },
+    {
+      "after_hash": "9952d453b699660fa118e6dcf56fd31b94db33f0fb0e5cba4d34896a7de28b30",
+      "before_hash": "f1f62e3094305309660aace356550e08d99073741073661d74ceeddf8d5b23a0",
+      "change": "changed",
+      "global_id": "2dUG8P0zuXA3xsqX_DglZ1",
+      "ifc_class": "IfcDistributionControlElement",
+      "reason": "hosted_fixture",
+      "source_op_id": "ceiling-translation-001",
+      "via": [
+        "1d1uy5O3SaouyJP_8cB2d0",
+        "1dULTNYo1KUvvrKMJdPtb8",
+        "2B0HM50HKnsteHeL7LrcNv",
+        "3pfFV6U9rhezr2v1L0SHFQ"
+      ]
+    },
+    {
+      "after_hash": "9fa26994171558ecdea9448d85cfee8d2831e4541941a921919aea5b5b3645c9",
+      "before_hash": "13da1cd1e2d006ca42b068468d6e4fd9a0207e3b2df7c569a1f7b8214da4761f",
+      "change": "changed",
+      "global_id": "2en5PPVyPliA5xV5kXaUEL",
+      "ifc_class": "IfcDistributionControlElement",
+      "reason": "hosted_fixture",
+      "source_op_id": "ceiling-translation-020",
+      "via": [
+        "0fgHmYNTwSg_QLlFlU2KL2"
+      ]
+    },
+    {
+      "after_hash": "d08595b22b09cd6fd5f9fa9bc55544b09c01121dae0263cfd2d436da8d2b87f9",
+      "before_hash": "ef5ac109c7d8c447a6f5ea1926efde2b3c446d740f5dd6e729477aa0301809d1",
+      "change": "changed",
+      "global_id": "2fF8oqCXc9zJv$g8xlprk$",
+      "ifc_class": "IfcDistributionPort",
+      "reason": "connected_port",
+      "source_op_id": "ceiling-translation-001",
+      "via": [
+        "3AZalJEOGcCo24Q_AUCO8D"
+      ]
+    },
+    {
+      "after_hash": "9b2f16bb59ce5dc213cd1db36aa5314e0977288b043d478c2d85f927bada5f2d",
+      "before_hash": "bf6671a915d1b1736ead8f222109a4642670aaa25fdebf2b5ebeb3a44c120f9f",
+      "change": "changed",
+      "global_id": "2gcYf3rjPw6G9XpOSSEOBr",
+      "ifc_class": "IfcFlowTerminal",
+      "reason": "hosted_fixture",
+      "source_op_id": "ceiling-translation-001",
+      "via": [
+        "0WRFMp0456PSGpnmN199ea",
+        "1d1uy5O3SaouyJP_8cB2d0",
+        "2B0HM50HKnsteHeL7LrcNv"
+      ]
+    },
+    {
+      "after_hash": "a0c693756bf593255e74fcf8cfaba63a20737112b7ee7ee9b87cf7a3fc185e0c",
+      "before_hash": "ed3672d1ed598b152bdf45d10f447a32ac4344a2434d3a7302f6060a7dd12e86",
+      "change": "changed",
+      "global_id": "2gtWoQoubT8rtIqKkQrhyw",
+      "ifc_class": "IfcFlowTerminal",
+      "reason": "hosted_fixture",
+      "source_op_id": "ceiling-translation-001",
+      "via": [
+        "1d1uy5O3SaouyJP_8cB2d0",
+        "2B0HM50HKnsteHeL7LrcNv"
+      ]
+    },
+    {
+      "after_hash": "648374fa0ee8814ac8e2e55345c393218e8bbe76c5c699b9c9c244b795be371a",
+      "before_hash": "c76c9c3d2984cc34de2fc64c041ac7a06ca1dcc85f221194f3f32ecaf288ed20",
+      "change": "changed",
+      "global_id": "2h1DgVkVVfRHp31xBJyzwg",
+      "ifc_class": "IfcFlowTerminal",
+      "reason": "hosted_fixture",
+      "source_op_id": "ceiling-translation-019",
+      "via": [
+        "2lY7vMeoxmjlGI41A95PPZ"
+      ]
+    },
+    {
+      "after_hash": "7fdea8e1cdb837701aa276fe1576dcd8d459f64b76b4c377694928ae9246b0b6",
+      "before_hash": "a24e6922dd8f00ea0ed4b9e418e4e367d1d70b4d6b8f952809502ea6f95d9695",
+      "change": "changed",
+      "global_id": "2hDW8XIWm298SA4zPEg8gq",
+      "ifc_class": "IfcFlowTerminal",
+      "reason": "hosted_fixture",
+      "source_op_id": "ceiling-translation-001",
+      "via": [
+        "1d1uy5O3SaouyJP_8cB2d0",
+        "2B0HM50HKnsteHeL7LrcNv",
+        "2KGAbkXaJEPPWfbHKG94qv"
+      ]
+    },
+    {
+      "after_hash": "229c89228470fd4a0e893db829fd4c3882c41bfbd419f144ecbe0a3f1c031c3d",
+      "before_hash": "c4bec84b15fe10b40484efb2af36dca70c544ce6cd8ac9f80a69265ad90ae18b",
+      "change": "changed",
+      "global_id": "2hNKEJSLyDkXdJT96wZjXj",
+      "ifc_class": "IfcFlowTerminal",
+      "reason": "hosted_fixture",
+      "source_op_id": "ceiling-translation-004",
+      "via": [
+        "2LRh4LrERTBtJzFJZyteEA"
+      ]
+    },
+    {
+      "after_hash": "9890b47df74e3cd7ae72fee231ff6cfd35e366d9e669c43c0e9c8bca46a14186",
+      "before_hash": "e33871457975fc84ff17452e77cbd90014ceeb46206c415edc7bf03b1f1f1bc5",
+      "change": "changed",
+      "global_id": "2iw$4LLmRFQrLGtKw12zQ3",
+      "ifc_class": "IfcBuildingElementProxy",
+      "reason": "hosted_fixture",
+      "source_op_id": "ceiling-translation-001",
+      "via": [
+        "0bI6AFeEIBxqQMPBptbuFx",
+        "1d1uy5O3SaouyJP_8cB2d0",
+        "2B0HM50HKnsteHeL7LrcNv"
+      ]
+    },
+    {
+      "after_hash": "a01113f692f97a7eaee8de0ebb2fca1b61c1c402cc5b938ed780625fcaf8434f",
+      "before_hash": "1dbd7ee8cc0e82c5c57dce3ab27ac5624590b03f202b94956e064f62722a5b06",
+      "change": "changed",
+      "global_id": "2izyimh6ktdN7jslZqYR0n",
+      "ifc_class": "IfcFlowTerminal",
+      "reason": "hosted_fixture",
+      "source_op_id": "ceiling-translation-003",
+      "via": [
+        "3Lenc84YKjvShM_0qyUTPd"
+      ]
+    },
+    {
+      "after_hash": "32f3eabb3ec3d5cc3ddcb97d19367407eb77e7a50c089a233ec014c059f93407",
+      "before_hash": "d82c36feb5f61efdd05f5a04022619755cff2255edf0761ec75340acf412f3e6",
+      "change": "changed",
+      "global_id": "2jaKpQzVLTEebkxl3NgOWA",
+      "ifc_class": "IfcFlowTerminal",
+      "reason": "hosted_fixture",
+      "source_op_id": "ceiling-translation-001",
+      "via": [
+        "0bI6AFeEIBxqQMPBptbuFx",
+        "2B0HM50HKnsteHeL7LrcNv"
+      ]
+    },
+    {
+      "after_hash": "34ae5eff1b2892c0c76cbb8cf3a13617b655a8dbb20099aa6e12bb75194f9682",
+      "before_hash": "08977db730ddd568aa5284234e11c86d134412744c7b8d193a6cf2807401b884",
+      "change": "changed",
+      "global_id": "2kMfReDFN7QPtpqBYZwmwZ",
+      "ifc_class": "IfcDistributionControlElement",
+      "reason": "hosted_fixture",
+      "source_op_id": "ceiling-translation-003",
+      "via": [
+        "2lY7vMeoxmjlGI41A95PPZ",
+        "3Lenc84YKjvShM_0qyUTPd"
+      ]
+    },
+    {
+      "after_hash": "4c70617d8d37a484aa5c1545f820b67a63f781cd2787f946b77056fad6086b4d",
+      "before_hash": "1d2b8fb8562c29579b5079a8304424ac16c1ee9d22a9195db9615554865eb4b2",
+      "change": "changed",
+      "global_id": "2l$vflHCOq7nNeIUk8OdWX",
+      "ifc_class": "IfcFlowTerminal",
+      "reason": "hosted_fixture",
+      "source_op_id": "ceiling-translation-001",
+      "via": [
+        "2B0HM50HKnsteHeL7LrcNv",
+        "2LRh4LrERTBtJzFJZyteEA"
+      ]
+    },
+    {
+      "after_hash": "4fb9086a81d8801132b457e3cddd42eab726d45cfef8d041c830ea34bad113d1",
+      "before_hash": "f4bf74a4b4bd01f5f5f6e0f426b115e4e20381588c52d70bee094fdfe070211f",
+      "change": "changed",
+      "global_id": "2mOcKOwQePkEtse0ncV_8H",
+      "ifc_class": "IfcFlowTerminal",
+      "reason": "hosted_fixture",
+      "source_op_id": "ceiling-translation-001",
+      "via": [
+        "1d1uy5O3SaouyJP_8cB2d0",
+        "2B0HM50HKnsteHeL7LrcNv"
+      ]
+    },
+    {
+      "after_hash": "d772217c50bf247377d28786ff77385ce2b4419a252ba8dd2634dbc1a931371c",
+      "before_hash": "b28e33b97983f152b40f692167bcd02a1814248945a58856eb3650d3953123e2",
+      "change": "changed",
+      "global_id": "2mPRUbvZ7XKzdNdN9YWVwL",
+      "ifc_class": "IfcDistributionPort",
+      "reason": "connected_port",
+      "source_op_id": "ceiling-translation-001",
+      "via": [
+        "1pW5f1MtRIpdBKASFTjm$b"
+      ]
+    },
+    {
+      "after_hash": "c1f2039c8be42ebaf91277cd9827d15ec7d0912ea15b29d63c23e56892944c4f",
+      "before_hash": "5aeb44850419b657b52e9292e3670c5edd3a9601ed043c01145574f8988b0499",
+      "change": "changed",
+      "global_id": "2nIXBE$nTsO23FuBO_Gdqs",
+      "ifc_class": "IfcFlowTerminal",
+      "reason": "hosted_fixture",
+      "source_op_id": "ceiling-translation-001",
+      "via": [
+        "1d1uy5O3SaouyJP_8cB2d0",
+        "1dULTNYo1KUvvrKMJdPtb8",
+        "2B0HM50HKnsteHeL7LrcNv"
+      ]
+    },
+    {
+      "after_hash": "48719496569bbe857dd41aac9169c544ac84ff281210e6ef9b9c074d615c67f0",
+      "before_hash": "74f1de11dea80d717edd39c878c8cdf744d11340635d8d081a6442fec0a2d119",
+      "change": "changed",
+      "global_id": "2nQU1Jf4IL4Sf2BAh6B2PW",
+      "ifc_class": "IfcFlowTerminal",
+      "reason": "hosted_fixture",
+      "source_op_id": "ceiling-translation-001",
+      "via": [
+        "0bI6AFeEIBxqQMPBptbuFx",
+        "1d1uy5O3SaouyJP_8cB2d0",
+        "2B0HM50HKnsteHeL7LrcNv"
+      ]
+    },
+    {
+      "after_hash": "54394a94d79a03782a60b9ce35f6b3817e1a367bc8a648c137ca7c23bfdc09f5",
+      "before_hash": "646e0f4cc5325e7b49e7284dea2f44b60df9dcf7764ac35f10b8f79ce84b4bfe",
+      "change": "changed",
+      "global_id": "2pkbCAmiifbmMNQee1Rb6n",
+      "ifc_class": "IfcDistributionControlElement",
+      "reason": "hosted_fixture",
+      "source_op_id": "ceiling-translation-001",
+      "via": [
+        "0WRFMp0456PSGpnmN199ea",
+        "1d1uy5O3SaouyJP_8cB2d0",
+        "1s0hj3u3T2FWEBJ8TyW9vP",
+        "2B0HM50HKnsteHeL7LrcNv"
+      ]
+    },
+    {
+      "after_hash": "4a6d9c14dce3aeeec53cea67c371f327cfff4fde3b52cbd77fb9e8a935bbeeaf",
+      "before_hash": "c149187ec4b90f2b74647cb10002d5dd1eec8ddb2df597735f11b6656d3d8cc6",
+      "change": "changed",
+      "global_id": "2rBHPyOS4vcgoUWfY23NRS",
+      "ifc_class": "IfcFlowTerminal",
+      "reason": "hosted_fixture",
+      "source_op_id": "ceiling-translation-001",
+      "via": [
+        "1d1uy5O3SaouyJP_8cB2d0",
+        "2B0HM50HKnsteHeL7LrcNv"
+      ]
+    },
+    {
+      "after_hash": "38e3151de9ad35d0b4a1ec09d2ff20b3bf275bbf0481b0b5650f4094a1142f04",
+      "before_hash": "a0aaed3531e4eb14ea43e389a54ed802678a95dae2f8b7ede274cf019f7756fd",
+      "change": "changed",
+      "global_id": "2rcfJh4gsl2l9F7H75WQbc",
+      "ifc_class": "IfcFlowTerminal",
+      "reason": "hosted_fixture",
+      "source_op_id": "ceiling-translation-020",
+      "via": [
+        "0fgHmYNTwSg_QLlFlU2KL2"
+      ]
+    },
+    {
+      "after_hash": "cfd17e3e7651bf2696db509875296aa0c955fb9b0ec44caff02d9f87d23c6e4a",
+      "before_hash": "c3bd10a7b225f080578a92ad407136c26b1c7df1b2d1205408e63f366c36f643",
+      "change": "changed",
+      "global_id": "2rhsMTFAK0od12P94cPPEP",
+      "ifc_class": "IfcDistributionPort",
+      "reason": "connected_port",
+      "source_op_id": "ceiling-translation-018",
+      "via": [
+        "0rHwNXiZrROGCVgYtuOUWH"
+      ]
+    },
+    {
+      "after_hash": "3bd3c25024443445cb32b52d9cd5b2c3beff9b35df0a3b4216d93ab5d56a1661",
+      "before_hash": "b10129f821df7052604a6400d543ab353a62c310a5c36a22f35acc96d5115d69",
+      "change": "changed",
+      "global_id": "2sTxuVtZYBD6Agme_4mR9_",
+      "ifc_class": "IfcDistributionPort",
+      "reason": "connected_port",
+      "source_op_id": "ceiling-translation-001",
+      "via": [
+        "1oSoevRkFzwN4irTIEWqV1"
+      ]
+    },
+    {
+      "after_hash": "bdf2aba423387399c7f0fb23274a722c49cc9d5e0988a044db95269c1b033370",
+      "before_hash": "a0b9bd6b1c3750d3c57c3a0d76476ea7a72189f5caa94b82ba08431b5849a48a",
+      "change": "changed",
+      "global_id": "2slnYh7rf12qVmvvnfSlWK",
+      "ifc_class": "IfcFlowTerminal",
+      "reason": "hosted_fixture",
+      "source_op_id": "ceiling-translation-001",
+      "via": [
+        "1d1uy5O3SaouyJP_8cB2d0",
+        "1dULTNYo1KUvvrKMJdPtb8",
+        "2B0HM50HKnsteHeL7LrcNv"
+      ]
+    },
+    {
+      "after_hash": "e37fbdad04fcb22ace278e02c4d63fb52e4dba98fb417822eccfc73accfa6a9c",
+      "before_hash": "a7b77b032b16e7e37ba7a0b4faab102660eafdc5a9e71c87c8616dc23731ccea",
+      "change": "changed",
+      "global_id": "2tRDjvShMYfrOCu_2WM7Ub",
+      "ifc_class": "IfcFlowTerminal",
+      "reason": "hosted_fixture",
+      "source_op_id": "ceiling-translation-001",
+      "via": [
+        "0bI6AFeEIBxqQMPBptbuFx",
+        "2B0HM50HKnsteHeL7LrcNv"
+      ]
+    },
+    {
+      "after_hash": "3279bf4f77b1616bef2bd0132fce33315104d5d8d2f90f3b5c9899ce614d25b6",
+      "before_hash": "97065e9ae80ca9313049a66f8c2cbca025a7d67e806965bc21c48b6c25c536e0",
+      "change": "changed",
+      "global_id": "2uXOhsH5n6d56wOoOyI8Kl",
+      "ifc_class": "IfcFlowTerminal",
+      "reason": "hosted_fixture",
+      "source_op_id": "ceiling-translation-018",
+      "via": [
+        "3Fj3VeOfs1uCtyMsqw0QBn"
+      ]
+    },
+    {
+      "after_hash": "3c3b959e351cf58a16b92a867c26de33b02f8b212937f35e414a4dc47e239388",
+      "before_hash": "580ef41b1c16095bc0469b46eecacab5e0845420565510e07923ecee545beb31",
+      "change": "changed",
+      "global_id": "2ubxdGqsQ2kM_BTloCNNBT",
+      "ifc_class": "IfcDistributionPort",
+      "reason": "connected_port",
+      "source_op_id": "ceiling-translation-001",
+      "via": [
+        "3aM7FUSxzhOSavKg7GmKxN"
+      ]
+    },
+    {
+      "after_hash": "670710c445a1aa152ab269ebe58b03d3f6218d024ad081d4027cd7dfdb5b48e4",
+      "before_hash": "4e7556919a0e2ff78a7ddfbefa3ab88ffb8b698ea28978f8a0f6b63760d200c3",
+      "change": "changed",
+      "global_id": "2upzirLrTbVM9KsOznGkgK",
+      "ifc_class": "IfcFlowTerminal",
+      "reason": "hosted_fixture",
+      "source_op_id": "ceiling-translation-001",
+      "via": [
+        "1d1uy5O3SaouyJP_8cB2d0",
+        "2B0HM50HKnsteHeL7LrcNv"
+      ]
+    },
+    {
+      "after_hash": "8261c9c8ba0c246ea806f5fbe6a1927343fda77203b304728cbdf16c248d9987",
+      "before_hash": "41003c7ab7c69ef73e0d52f807f965e0995619c930b4cf3362e31418723b8378",
+      "change": "changed",
+      "global_id": "2v8iqKuDDHuD3drluuYo04",
+      "ifc_class": "IfcFlowTerminal",
+      "reason": "hosted_fixture",
+      "source_op_id": "ceiling-translation-001",
+      "via": [
+        "0fgHmYNTwSg_QLlFlU2KL2",
+        "2B0HM50HKnsteHeL7LrcNv",
+        "2LRh4LrERTBtJzFJZyteEA"
+      ]
+    },
+    {
+      "after_hash": "ebc17b3ed19c21a06bfdc2dd75b9d356fde0071a4f6c961bd08f9f0ed610f3b5",
+      "before_hash": "ddc3f9b926963c270b05998eefc59c4f381b3204d08444bbc038b7de44e4d47a",
+      "change": "changed",
+      "global_id": "2w4s2N$VPiJEBiP0K7augC",
+      "ifc_class": "IfcFlowTerminal",
+      "reason": "hosted_fixture",
+      "source_op_id": "ceiling-translation-003",
+      "via": [
+        "3Lenc84YKjvShM_0qyUTPd"
+      ]
+    },
+    {
+      "after_hash": "f3a582f1c453ac64464e6ae56823c0c551225166e6395692bb65acf27e7d18fa",
+      "before_hash": "5e27dee643cd6e09a270eb4081b83356102be60895eb7e369197b96ff3378780",
+      "change": "changed",
+      "global_id": "2w70FU76CWCehJjNx140Dt",
+      "ifc_class": "IfcFlowTerminal",
+      "reason": "hosted_fixture",
+      "source_op_id": "ceiling-translation-001",
+      "via": [
+        "0iI0Q2d_BmrrPOHXWgrSCM",
+        "1d1uy5O3SaouyJP_8cB2d0",
+        "2B0HM50HKnsteHeL7LrcNv"
+      ]
+    },
+    {
+      "after_hash": "d07419a2bc19a7630d2af97e7b309c531ac765413e20fd96772fa15442d80b34",
+      "before_hash": "234891b5a40e91914038cc8feb95b743415dde28180eea5ccdfa11682474f26a",
+      "change": "changed",
+      "global_id": "2wgvwDgdmwuUp_0EYE9QMw",
+      "ifc_class": "IfcDistributionPort",
+      "reason": "connected_port",
+      "source_op_id": "ceiling-translation-001",
+      "via": [
+        "3OEjmi$NJVWx6LQ6GjmK7q"
+      ]
+    },
+    {
+      "after_hash": "f4bd048fd2e23b2b19dc6f0fd3f6dd7b836070c9a253b37bc1e6a79acb636079",
+      "before_hash": "e02f91fff5d19317f4302c44f2d69255db37e455039bbc15a3440397581cbf5e",
+      "change": "changed",
+      "global_id": "2x$3nAYeyPugTVn4xv4ftL",
+      "ifc_class": "IfcFlowTerminal",
+      "reason": "hosted_fixture",
+      "source_op_id": "ceiling-translation-021",
+      "via": [
+        "3eOdX5HchTJWBNBRO_qRQv"
+      ]
+    },
+    {
+      "after_hash": "0456f3c0bd679d6f6b1f784962dc425be40b7c5470d6906cf53e540f6e759792",
+      "before_hash": "0b33152e04bd931c9da6cfd6b75a369d0273cdfe40405b2b974251b066279d67",
+      "change": "changed",
+      "global_id": "2xz_DZ_0fj7ELW$uFwI749",
+      "ifc_class": "IfcFlowTerminal",
+      "reason": "hosted_fixture",
+      "source_op_id": "ceiling-translation-018",
+      "via": [
+        "3Fj3VeOfs1uCtyMsqw0QBn"
+      ]
+    },
+    {
+      "after_hash": "2afc4f2c39937e8a7814ad04903346a71c181a7f9b65c113be21cd3dd2757b18",
+      "before_hash": "e1712fc66b5c0ef7575c99f8590fd5e59117a2733a4fb08905725b8d967755f6",
+      "change": "changed",
+      "global_id": "2yc9cngIeW1ofs2dOoFJ5F",
+      "ifc_class": "IfcDistributionPort",
+      "reason": "connected_port",
+      "source_op_id": "ceiling-translation-018",
+      "via": [
+        "3dJ6U21Y55vUHWcYs5jona"
+      ]
+    },
+    {
+      "after_hash": "9eb25937731806890faa2cd942665324071254b6bf6b80df4066cfb2995ef0f8",
+      "before_hash": "47a158fc42d00a5512134fea586c25e744b0b75f5ad02ba57de7f795cf091182",
+      "change": "changed",
+      "global_id": "3$G2hyumO5qyTHW8OZR2za",
+      "ifc_class": "IfcDistributionPort",
+      "reason": "connected_port",
+      "source_op_id": "ceiling-translation-001",
+      "via": [
+        "1DbzTAJOIpV8MlqopFSGo4"
+      ]
+    },
+    {
+      "after_hash": "dac9eb45119f9d9ddefcc00fa91bf58b2a67ee56594fe82643d991695f0a6903",
+      "before_hash": "dbe150161265c4c64ee05f66408838e7b03b1e6ea697353536478f619022f93d",
+      "change": "changed",
+      "global_id": "3$M02c4AsNqGCe5mVRHrSJ",
+      "ifc_class": "IfcFlowTerminal",
+      "reason": "hosted_fixture",
+      "source_op_id": "ceiling-translation-001",
+      "via": [
+        "0bI6AFeEIBxqQMPBptbuFx",
+        "1d1uy5O3SaouyJP_8cB2d0",
+        "2B0HM50HKnsteHeL7LrcNv"
+      ]
+    },
+    {
+      "after_hash": "99b81e62e59335d2e8937536fbf8d81bedd16815ffd67252cd3a16bedb7ef6f0",
+      "before_hash": "e9d43273b40cfce200f84496d96d490c5d1fcdbfcf7bddf61f96834810c41ab7",
+      "change": "changed",
+      "global_id": "3$jfJwVuwG0nz$BhRZvYfV",
+      "ifc_class": "IfcDistributionControlElement",
+      "reason": "hosted_fixture",
+      "source_op_id": "ceiling-translation-001",
+      "via": [
+        "0bI6AFeEIBxqQMPBptbuFx",
+        "1M3OpxCuopJT9ohGvVBDum",
+        "1d1uy5O3SaouyJP_8cB2d0",
+        "2B0HM50HKnsteHeL7LrcNv"
+      ]
+    },
+    {
+      "after_hash": "72452e73ef918ccb3ad4608ff28e41d987d84cd4f09aea2466700e6158b2d6ae",
+      "before_hash": "d8f7f369f76dd00473a0d1688eeaa72b3103eee5a572f8c2d474d5d2683f0670",
+      "change": "changed",
+      "global_id": "30WWsxFlz0Ui$auk_9UEHI",
+      "ifc_class": "IfcFlowTerminal",
+      "reason": "hosted_fixture",
+      "source_op_id": "ceiling-translation-001",
+      "via": [
+        "2B0HM50HKnsteHeL7LrcNv",
+        "3b5ADX2pgIcCSgf0pB3cNX"
+      ]
+    },
+    {
+      "after_hash": "478ddd9c0e5516a592e515a6acabb971934f0664b8ab26f1ea931cedcc4c96bc",
+      "before_hash": "5a4ab4fe26dbba62cc807725cec9f0f7648de4de63e9ba94fa2ff7dc8e38c232",
+      "change": "changed",
+      "global_id": "30hIO2IylaZ94EcYLhNu3V",
+      "ifc_class": "IfcDistributionPort",
+      "reason": "connected_port",
+      "source_op_id": "ceiling-translation-003",
+      "via": [
+        "2kMfReDFN7QPtpqBYZwmwZ"
+      ]
+    },
+    {
+      "after_hash": "67081838d083d2018f52c24f5477b799a732fde3bd51c4b6340f01f47ada33ec",
+      "before_hash": "e272e561fd537e2ab4ee6dbdbea32d76d89616edefd8c303ce64c2f1d975b3b7",
+      "change": "changed",
+      "global_id": "30tbstNqWCglvOincUCcBN",
+      "ifc_class": "IfcFlowTerminal",
+      "reason": "hosted_fixture",
+      "source_op_id": "ceiling-translation-001",
+      "via": [
+        "1ZLAEXBKK0lEt7EKVWKket",
+        "2B0HM50HKnsteHeL7LrcNv"
+      ]
+    },
+    {
+      "after_hash": "cc050f6ab032203599cf1733be64d605d840fe36d6ba54850f79ad587ba10e98",
+      "before_hash": "449958f592a27dd490c074c5960b3ee3d2f8607f4178adefa03751621c93631a",
+      "change": "changed",
+      "global_id": "31IrFqCKgTnAQopuHVozGy",
+      "ifc_class": "IfcDistributionPort",
+      "reason": "connected_port",
+      "source_op_id": "ceiling-translation-001",
+      "via": [
+        "3Crzw6e_PFjK4n5Zi1E7Wd"
+      ]
+    },
+    {
+      "after_hash": "2babd44a908834215665bbe890f25ffb423cc7d9504873e702f2734ddc4b13a0",
+      "before_hash": "dac976cf702966cd16a6d065a7062640b1ec9a00ffa647bea84709b2856605bd",
+      "change": "changed",
+      "global_id": "324hQf8kxoiwcgkSKjwVDm",
+      "ifc_class": "IfcDistributionPort",
+      "reason": "connected_port",
+      "source_op_id": "ceiling-translation-001",
+      "via": [
+        "3tKpskpPniuz3w3tihvFjI"
+      ]
+    },
+    {
+      "after_hash": "352f299333a81bbfe3302f71b4ee12707a91f0c60a66af3b8bb97125f279727b",
+      "before_hash": "70d440e984879f2fce05c73710c7cc5b19dfbfad715be2b1fed62a747e7af6ff",
+      "change": "changed",
+      "global_id": "338VI63Te_8DBrL_Qst6ej",
+      "ifc_class": "IfcFlowTerminal",
+      "reason": "hosted_fixture",
+      "source_op_id": "ceiling-translation-001",
+      "via": [
+        "2B0HM50HKnsteHeL7LrcNv"
+      ]
+    },
+    {
+      "after_hash": "dbe08a3aacaed12d30566dec80f11af9cf5742a732b8e9b0672db1dda7fad491",
+      "before_hash": "d21544f4d76eb3a0ee8e533b14896053c6a61e13f99c5b47754856e874c282a9",
+      "change": "changed",
+      "global_id": "33LpxZOx2s8Yk1ZAoT7gaK",
+      "ifc_class": "IfcDistributionPort",
+      "reason": "connected_port",
+      "source_op_id": "ceiling-translation-001",
+      "via": [
+        "3QiMF70L21nYnWfBAvg5Qz"
+      ]
+    },
+    {
+      "after_hash": "a64cea4e6b0f0482b119f3191a00a7f8b24b63414ed85d4594fa45129d5c36a3",
+      "before_hash": "8c21685db838c1282a63b1a3d0d70d3b3b1d8654e832659900e0f3c068c53ab4",
+      "change": "changed",
+      "global_id": "33gVt_ab_8vy50AL19D9b7",
+      "ifc_class": "IfcDistributionPort",
+      "reason": "connected_port",
+      "source_op_id": "ceiling-translation-001",
+      "via": [
+        "0nz5fGOeEWIGAz9Hy69ZTy"
+      ]
+    },
+    {
+      "after_hash": "50eadc3070cead90f98f7a7003e6f38a5d2ed7d1c933e6f0222996ba6153c11e",
+      "before_hash": "e3c6d70aac99a669698ec9648b1693408c9b81b04fa83e1f8eacce6cf7cff00d",
+      "change": "changed",
+      "global_id": "34Qe06ufd5xyae8OFgfs33",
+      "ifc_class": "IfcFlowTerminal",
+      "reason": "hosted_fixture",
+      "source_op_id": "ceiling-translation-003",
+      "via": [
+        "2lY7vMeoxmjlGI41A95PPZ",
+        "3Lenc84YKjvShM_0qyUTPd"
+      ]
+    },
+    {
+      "after_hash": "823c81444a191ec56185ce6f9fd51b3713d1176b7e88d162f1541b6131176df9",
+      "before_hash": "a4c537cf536157f28c4f590df19b07fceb304c313713bb42afe87ded3a29749a",
+      "change": "changed",
+      "global_id": "34t3A2IVt$MrlzWLoUZQo$",
+      "ifc_class": "IfcDistributionPort",
+      "reason": "connected_port",
+      "source_op_id": "ceiling-translation-001",
+      "via": [
+        "1OeqsspkwdpyiOqZkVHiUC"
+      ]
+    },
+    {
+      "after_hash": "3ff9942959c24cdd2f071c7cfb143094456a690e9890039eccca4770caf89831",
+      "before_hash": "b47479d550d779518ca2cd9276aada73227f62b2645a23dce6766f441464d5c7",
+      "change": "changed",
+      "global_id": "35Gi7n4wopWykg5CAP_t_e",
+      "ifc_class": "IfcFlowTerminal",
+      "reason": "hosted_fixture",
+      "source_op_id": "ceiling-translation-001",
+      "via": [
+        "0WRFMp0456PSGpnmN199ea",
+        "1d1uy5O3SaouyJP_8cB2d0",
+        "2B0HM50HKnsteHeL7LrcNv"
+      ]
+    },
+    {
+      "after_hash": "4ededd074870339a89efe618fa33388bdd46773531ebbba34815e10d0b9f154a",
+      "before_hash": "94cdb826f582bd3c1ea33cc9777b28986f2b33759c377405557b0bb887de7e99",
+      "change": "changed",
+      "global_id": "35lf9JmPTkkt8Q1xkl0xIn",
+      "ifc_class": "IfcDistributionControlElement",
+      "reason": "hosted_fixture",
+      "source_op_id": "ceiling-translation-001",
+      "via": [
+        "0WRFMp0456PSGpnmN199ea",
+        "1d1uy5O3SaouyJP_8cB2d0",
+        "2B0HM50HKnsteHeL7LrcNv"
+      ]
+    },
+    {
+      "after_hash": "5e2c9ce07457c6fd7523e65dd94024be55b3fad4f596160e572ffc3fa78f9341",
+      "before_hash": "faa65fc0c96b80c752a676f1026ca6a9004e974bee9f225c1312674ce45b84c8",
+      "change": "changed",
+      "global_id": "35rpx2thzv23znHlnTl3Ey",
+      "ifc_class": "IfcDistributionPort",
+      "reason": "connected_port",
+      "source_op_id": "ceiling-translation-001",
+      "via": [
+        "13AYBjNPCYA9a0Xo0pWeYH"
+      ]
+    },
+    {
+      "after_hash": "ad31e0b8eac94b344bd9444d74858a4aba8cb4ad882eb50160ef9df0d1d984c9",
+      "before_hash": "0fedc15e1ba6672502bc6bca1fb5a80a3bb8c7a8edc86ce29231993d82a3b4c3",
+      "change": "changed",
+      "global_id": "36HBjIy7w3peI4lKvavJ3n",
+      "ifc_class": "IfcDistributionPort",
+      "reason": "connected_port",
+      "source_op_id": "ceiling-translation-020",
+      "via": [
+        "2X4OtWE9IjnqLg2__xpoZz"
+      ]
+    },
+    {
+      "after_hash": "084ee8ae646f3b20da5036b70cc21b4ca48148ab824f58d9af01464818c8289b",
+      "before_hash": "0cd6c9e6cd7c94c20d32e66665a1902be6db8284f41c90e26fbe73ce84f51d34",
+      "change": "changed",
+      "global_id": "37XNQvKa$UtUUUQ5dQPNzs",
+      "ifc_class": "IfcDistributionPort",
+      "reason": "connected_port",
+      "source_op_id": "ceiling-translation-001",
+      "via": [
+        "0i33DP3cVtwKnSzIVw6d_J"
+      ]
+    },
+    {
+      "after_hash": "45677a9d1f15b0c7059560e5eae2efc65a959ab87aa7bfcd4253f0db8753faf7",
+      "before_hash": "ffa9d81c3826304a97d663b709407ed69535ed27be73c4bd29f00199c4e51058",
+      "change": "changed",
+      "global_id": "37x1j0IJurjryiykpeexmO",
+      "ifc_class": "IfcFlowTerminal",
+      "reason": "hosted_fixture",
+      "source_op_id": "ceiling-translation-001",
+      "via": [
+        "0l1oZPcGnyvhTvMZjoJ7XO",
+        "1d1uy5O3SaouyJP_8cB2d0",
+        "2B0HM50HKnsteHeL7LrcNv"
+      ]
+    },
+    {
+      "after_hash": "892a8ce597fcb76202b4e6a3bbd3518ea9ad4ed082a0cacfdd5f7043f90f14a3",
+      "before_hash": "37c143527a37f5cf0c58d3daf4bc3a7e5f098751a32c57540db8bd0b75f2d878",
+      "change": "changed",
+      "global_id": "383fKAl1e7n7TWVr1saQQL",
+      "ifc_class": "IfcDistributionControlElement",
+      "reason": "hosted_fixture",
+      "source_op_id": "ceiling-translation-022",
+      "via": [
+        "3b5ADX2pgIcCSgf0pB3cNX"
+      ]
+    },
+    {
+      "after_hash": "a2efcf6a1423f805db99dba497b50187afd3f0929b3512ee35d9b722dbb1a985",
+      "before_hash": "9b069ef59603076deb4fc7c39bb521e0709fdd9485d710a660d46ad2da2bc9ad",
+      "change": "changed",
+      "global_id": "38zaAHJf7dyv5phZRrf6IW",
+      "ifc_class": "IfcFlowTerminal",
+      "reason": "hosted_fixture",
+      "source_op_id": "ceiling-translation-001",
+      "via": [
+        "2B0HM50HKnsteHeL7LrcNv",
+        "2K_R2Wt2rnaXzVuEF1l_lP"
+      ]
+    },
+    {
+      "after_hash": "8070672388c5526b0a44eea936e28ecf13515c26b65e3b7c05898ddfa2157575",
+      "before_hash": "04d9d5135ac604622878623bf0147e873579d6c86b7aa608a0670ef86ce9e9e2",
+      "change": "changed",
+      "global_id": "39Ioq1lXBho6$LV$zXVV28",
+      "ifc_class": "IfcDistributionPort",
+      "reason": "connected_port",
+      "source_op_id": "ceiling-translation-001",
+      "via": [
+        "3R$TREUeEk$RuurFDUTrDL"
+      ]
+    },
+    {
+      "after_hash": "3f3ff715774c5b6537c69d1e38b15593bb998e87840ea38fbf681ba10c5eeccc",
+      "before_hash": "4f947c1cb14a7ad972fc941282085cdf36aea0733a3dfc6d4c3ccc8aa92160b8",
+      "change": "changed",
+      "global_id": "3AFBJk3kiBw8yqYOefRVeV",
+      "ifc_class": "IfcFlowTerminal",
+      "reason": "hosted_fixture",
+      "source_op_id": "ceiling-translation-004",
+      "via": [
+        "2LRh4LrERTBtJzFJZyteEA"
+      ]
+    },
+    {
+      "after_hash": "1fa0b77284e2f6e2e6afaa728d65f1bdb24a77ad8bfed49260c51eec7eb39d21",
+      "before_hash": "75816a32ddd2dfd86f6d38cc12cc902a56c45dc24e144ddcf445ab0f14335c1f",
+      "change": "changed",
+      "global_id": "3AZalJEOGcCo24Q_AUCO8D",
+      "ifc_class": "IfcFlowTerminal",
+      "reason": "hosted_fixture",
+      "source_op_id": "ceiling-translation-001",
+      "via": [
+        "0bI6AFeEIBxqQMPBptbuFx",
+        "2B0HM50HKnsteHeL7LrcNv"
+      ]
+    },
+    {
+      "after_hash": "5e5e6a5a6f519df1828b6e88431c9697de1d4730a1d15e3dd1cf6fed28af553e",
+      "before_hash": "cdac9a6380a167cc67dded701c135d3fff7d98d247e796f8a47d2b0923118041",
+      "change": "changed",
+      "global_id": "3CBLqe9Rv5VzeeSPMZhxvv",
+      "ifc_class": "IfcDistributionPort",
+      "reason": "connected_port",
+      "source_op_id": "ceiling-translation-001",
+      "via": [
+        "2v8iqKuDDHuD3drluuYo04"
+      ]
+    },
+    {
+      "after_hash": "3a17d956a0ee1048ce3bf8e9b77fb506817b79c73dd5cbc2b8c2b0cf40bbd98b",
+      "before_hash": "d0624d5d288a5e242b9b4478247e03c92aa5f036971c088bfe359e36a69ced8d",
+      "change": "changed",
+      "global_id": "3Crzw6e_PFjK4n5Zi1E7Wd",
+      "ifc_class": "IfcFlowTerminal",
+      "reason": "hosted_fixture",
+      "source_op_id": "ceiling-translation-001",
+      "via": [
+        "1d1uy5O3SaouyJP_8cB2d0",
+        "2B0HM50HKnsteHeL7LrcNv"
+      ]
+    },
+    {
+      "after_hash": "96a92d7b4338f91074cd8ebede2da0dc7ae4d19f845dc5fa83400b653f9b90d0",
+      "before_hash": "afe079917e9bf8ed3fbfdcd8b87493d6bb71cd6988481bad5ae79d77866702c9",
+      "change": "changed",
+      "global_id": "3EBASl3jV$Wz7dY9y0MTmX",
+      "ifc_class": "IfcDistributionPort",
+      "reason": "connected_port",
+      "source_op_id": "ceiling-translation-001",
+      "via": [
+        "2pkbCAmiifbmMNQee1Rb6n"
+      ]
+    },
+    {
+      "after_hash": "f1284e24fac777a44acb0337b626b8956762774dc87254d56e9952a3960f16d6",
+      "before_hash": "b65a677ce45b1083bf7eb62a3fc7d320d64d271801548457ea62f8c158b472df",
+      "change": "changed",
+      "global_id": "3EL1bRnmLfapYOsvYrnlkW",
+      "ifc_class": "IfcDistributionControlElement",
+      "reason": "hosted_fixture",
+      "source_op_id": "ceiling-translation-001",
+      "via": [
+        "0bI6AFeEIBxqQMPBptbuFx",
+        "1M3OpxCuopJT9ohGvVBDum",
+        "1d1uy5O3SaouyJP_8cB2d0",
+        "2B0HM50HKnsteHeL7LrcNv"
+      ]
+    },
+    {
+      "after_hash": "ed757067a642aa252a5e8f9bd2cab4e4d864389cd1a127de84ba3492b131cc85",
+      "before_hash": "4a4013dd1f6d0b1af2ad3ccbb67f76044571a1a7f5d067e4844fcc0933fa20cf",
+      "change": "changed",
+      "global_id": "3En_V5Xb8LH3Fjg3XFRZJa",
+      "ifc_class": "IfcDistributionPort",
+      "reason": "connected_port",
+      "source_op_id": "ceiling-translation-001",
+      "via": [
+        "0rGpc$T8YDaJbPjrqwyAIq"
+      ]
+    },
+    {
+      "after_hash": "7d0ad8261274bd97ae176b3f5387628995919589da765374e4aec88f66e15622",
+      "before_hash": "c422f7dee2c19aeb35957931c12ccd3a398a5651cf35fcd20404a10189290064",
+      "change": "changed",
+      "global_id": "3EnraX3lu1UnO_lu7B8vUM",
+      "ifc_class": "IfcFlowTerminal",
+      "reason": "hosted_fixture",
+      "source_op_id": "ceiling-translation-001",
+      "via": [
+        "1d1uy5O3SaouyJP_8cB2d0",
+        "1dULTNYo1KUvvrKMJdPtb8",
+        "2B0HM50HKnsteHeL7LrcNv",
+        "3pfFV6U9rhezr2v1L0SHFQ"
+      ]
+    },
+    {
+      "after_hash": "45a468ad8548a21f934601e5c043206cecd9a6f6d99b97350eee15f2f6849fba",
+      "before_hash": "bdb2086dc93fd034a40e5107678f33afcaf253c44f767ca8e0e41a77420d1763",
+      "change": "changed",
+      "global_id": "3Eu_3FklbFYrTCs22LetlG",
+      "ifc_class": "IfcDistributionPort",
+      "reason": "connected_port",
+      "source_op_id": "ceiling-translation-020",
+      "via": [
+        "2rcfJh4gsl2l9F7H75WQbc"
+      ]
+    },
+    {
+      "after_hash": "61b06d861db699b4ffcccdf13701c76487765ce4ef57818e13f387aea01c52ee",
+      "before_hash": "83607102a2df074a50fd9c446145d6f877300bdc4b60d6dd3ef09260cb52588f",
+      "change": "changed",
+      "global_id": "3H2uaXZOmZczvuSOdBAhr$",
+      "ifc_class": "IfcDistributionControlElement",
+      "reason": "hosted_fixture",
+      "source_op_id": "ceiling-translation-017",
+      "via": [
+        "0iI0Q2d_BmrrPOHXWgrSCM",
+        "3Fj3VeOfs1uCtyMsqw0QBn"
+      ]
+    },
+    {
+      "after_hash": "31bd2818eba8263fbb002e331a0adf9c71c7665888f9922fe7be3515ba73dc7a",
+      "before_hash": "e39d273c16818661bebe711142dca5277150f8efc52028ecaf6b81f45aab5b3a",
+      "change": "changed",
+      "global_id": "3IHv3469QUudU6bCGUPxwX",
+      "ifc_class": "IfcDistributionPort",
+      "reason": "connected_port",
+      "source_op_id": "ceiling-translation-001",
+      "via": [
+        "1T8R13oIiqvUf65zPyx7WS"
+      ]
+    },
+    {
+      "after_hash": "07a8b49f4babb9a999b4a08593116f61e196e92d3f0c99476111ae46abf03f1f",
+      "before_hash": "24504e24f97319086d0377172f8ef39384942399fa02636dbed15164c8318e67",
+      "change": "changed",
+      "global_id": "3It7RhL9Z5G57Rq9vRkgLT",
+      "ifc_class": "IfcBuildingElementProxy",
+      "reason": "hosted_fixture",
+      "source_op_id": "ceiling-translation-001",
+      "via": [
+        "2B0HM50HKnsteHeL7LrcNv",
+        "3b5ADX2pgIcCSgf0pB3cNX"
+      ]
+    },
+    {
+      "after_hash": "51941b9db4335fbad2e8abcd055c2a5b893a5487250250fcbe2513c21426e0c0",
+      "before_hash": "d7fd4e15a87aa1454fb7e1d5b9daa196b4dba48b32fb12bedbd36b08403efcb6",
+      "change": "changed",
+      "global_id": "3JVfyW0x45q9eKeTagreRD",
+      "ifc_class": "IfcFlowTerminal",
+      "reason": "hosted_fixture",
+      "source_op_id": "ceiling-translation-018",
+      "via": [
+        "3Fj3VeOfs1uCtyMsqw0QBn"
+      ]
+    },
+    {
+      "after_hash": "7dcdc7b64e25f53b9fbffe8d6167cb25ea05ec95535fee4d86002453690dc05c",
+      "before_hash": "755d86a8a512818dbd41a7bd3df340be2c0d0d3fd51c689bd80251cccb28682f",
+      "change": "changed",
+      "global_id": "3JyznWuYq$gOknTgSvCcMx",
+      "ifc_class": "IfcDistributionPort",
+      "reason": "connected_port",
+      "source_op_id": "ceiling-translation-001",
+      "via": [
+        "0Tev6mHH_EQrVpSqH$hvlG"
+      ]
+    },
+    {
+      "after_hash": "e47938c2fd82d8216b09efdeccf95551ee47686c0a242234e5858070e89ad167",
+      "before_hash": "756a2e254fbd3187f2082fe5ee18e6c072ce49a88ce428ae81e98ce9a6f23031",
+      "change": "changed",
+      "global_id": "3LJl9n2jClCrUwy8KZbDn2",
+      "ifc_class": "IfcDistributionPort",
+      "reason": "connected_port",
+      "source_op_id": "ceiling-translation-001",
+      "via": [
+        "3mkG8hgB6s3T59CVL6T$1X"
+      ]
+    },
+    {
+      "after_hash": "79cdbefe46dbc9fd99b5af9849d20e979c8b4a30295383fce3ce295b0f47b3c8",
+      "before_hash": "1a83b6b588640621ed6516111e25948ffc3b665a821bac2270a11fb28f335f1a",
+      "change": "changed",
+      "global_id": "3LM2udawehFqQmd_BPxQUV",
+      "ifc_class": "IfcFlowTerminal",
+      "reason": "hosted_fixture",
+      "source_op_id": "ceiling-translation-001",
+      "via": [
+        "1ZLAEXBKK0lEt7EKVWKket",
+        "2B0HM50HKnsteHeL7LrcNv"
+      ]
+    },
+    {
+      "after_hash": "510688c6209712134b4ad68ce7527bb25eba815486d46a1f9a0847d53cc4380e",
+      "before_hash": "d7bacdceccb20634e540341c22f7e2941ed92ffcbb2f3e079361194cb262a606",
+      "change": "changed",
+      "global_id": "3NYu9uKrR4yP37V0vl400g",
+      "ifc_class": "IfcFlowTerminal",
+      "reason": "hosted_fixture",
+      "source_op_id": "ceiling-translation-001",
+      "via": [
+        "2B0HM50HKnsteHeL7LrcNv",
+        "2K_R2Wt2rnaXzVuEF1l_lP"
+      ]
+    },
+    {
+      "after_hash": "80e28dfb28374c0c6c5c006d0eeb799b621ecfc1ed5882b3081bed5f4a790fab",
+      "before_hash": "980f0f989396ce06ca7f556d4f42ecb230d7bedbbfaf94428e36f2e31b9b66cc",
+      "change": "changed",
+      "global_id": "3NnHFx_8C_z373LGwL6JIt",
+      "ifc_class": "IfcDistributionPort",
+      "reason": "connected_port",
+      "source_op_id": "ceiling-translation-001",
+      "via": [
+        "07a3GtekKR1gb5gSQT2j_L"
+      ]
+    },
+    {
+      "after_hash": "250f61a0db1bdc57251464369aa013976c8c377a5a14198653c646a2de898055",
+      "before_hash": "009b282afd3f2c0269c0d90575eed9f93f6bed9a550d58a8458101bd17bacef3",
+      "change": "changed",
+      "global_id": "3OEjmi$NJVWx6LQ6GjmK7q",
+      "ifc_class": "IfcDistributionControlElement",
+      "reason": "hosted_fixture",
+      "source_op_id": "ceiling-translation-001",
+      "via": [
+        "1d1uy5O3SaouyJP_8cB2d0",
+        "1s0hj3u3T2FWEBJ8TyW9vP",
+        "2B0HM50HKnsteHeL7LrcNv",
+        "2KGAbkXaJEPPWfbHKG94qv"
+      ]
+    },
+    {
+      "after_hash": "b810986df131676d6cb082d7fe7dfa597cc38af2d10e635ef22b73a6c683d9b6",
+      "before_hash": "22fa83d7563d9bd0c46e9f6a78894c7017d134295be51ec8b71a5f7cf7c2c204",
+      "change": "changed",
+      "global_id": "3OZl8TGP9Sy4OwYyIhl4Ur",
+      "ifc_class": "IfcFlowTerminal",
+      "reason": "hosted_fixture",
+      "source_op_id": "ceiling-translation-001",
+      "via": [
+        "2B0HM50HKnsteHeL7LrcNv",
+        "2CeT9aIgdHxBXOFaUshYa9"
+      ]
+    },
+    {
+      "after_hash": "9dc4fcf3ce9dc4e0e212de9c2fee1976606b9e1ce7381142582e5eb08265e83a",
+      "before_hash": "a3b5923c7007bcef7edd9a9a2b65c8103f60874a8a1fe41efd0e501ba995060e",
+      "change": "changed",
+      "global_id": "3OjD62g6G1lAEQ8g7Bq5O7",
+      "ifc_class": "IfcBuildingElementProxy",
+      "reason": "hosted_fixture",
+      "source_op_id": "ceiling-translation-001",
+      "via": [
+        "2B0HM50HKnsteHeL7LrcNv",
+        "2CeT9aIgdHxBXOFaUshYa9"
+      ]
+    },
+    {
+      "after_hash": "edcd05151402b3c9e9dad80b428ace448bc2ac67b8ac6dbe953a5a0f42e70b24",
+      "before_hash": "b2967fce5f953a678edd84817c40f87ce219cf452cf8ea39da3c67ece7dbd8c9",
+      "change": "changed",
+      "global_id": "3QiMF70L21nYnWfBAvg5Qz",
+      "ifc_class": "IfcDistributionControlElement",
+      "reason": "hosted_fixture",
+      "source_op_id": "ceiling-translation-001",
+      "via": [
+        "0WRFMp0456PSGpnmN199ea",
+        "1d1uy5O3SaouyJP_8cB2d0",
+        "2B0HM50HKnsteHeL7LrcNv"
+      ]
+    },
+    {
+      "after_hash": "33971e3c0d88788c380c67cd630bc5f8a06b09973b0f8a9830e06b53ca2c038c",
+      "before_hash": "775b1e3c1d179d6311e801f59f3d6a356684c8a6d4410da5c26da1f0f2f2e389",
+      "change": "changed",
+      "global_id": "3R$TREUeEk$RuurFDUTrDL",
+      "ifc_class": "IfcFlowTerminal",
+      "reason": "hosted_fixture",
+      "source_op_id": "ceiling-translation-001",
+      "via": [
+        "2B0HM50HKnsteHeL7LrcNv",
+        "3eOdX5HchTJWBNBRO_qRQv"
+      ]
+    },
+    {
+      "after_hash": "61b548c786212ccda040a9879773b17d8593552ede7969a67f78716bd58fa608",
+      "before_hash": "42253670b5f442cf2519d309d78cdea5034a96170914e5f02e40f7b7cebc38d9",
+      "change": "changed",
+      "global_id": "3SniW2yapuS3$tlp67s$LP",
+      "ifc_class": "IfcDistributionPort",
+      "reason": "connected_port",
+      "source_op_id": "ceiling-translation-001",
+      "via": [
+        "2KI8TINlktAB2gT7JEFrJ5"
+      ]
+    },
+    {
+      "after_hash": "17b446dab51fc658f786064e4826add025b85441e75062713dfb3c69af987111",
+      "before_hash": "1a9daac55bec49a0ec616bd9ceaff169aeb6a12ad67d765f43a6998acc05dc0e",
+      "change": "changed",
+      "global_id": "3SqYWlnBSBAGTXS8$Gn3g_",
+      "ifc_class": "IfcDistributionPort",
+      "reason": "connected_port",
+      "source_op_id": "ceiling-translation-001",
+      "via": [
+        "35lf9JmPTkkt8Q1xkl0xIn"
+      ]
+    },
+    {
+      "after_hash": "0ed1f5a2affdeb4ba6890ef351a8645bfb119e29f1e543d7581662c48a23a41a",
+      "before_hash": "463d1026e18225237549f80c40ce50285914a2a822806d08e5d385f4d5a9d73b",
+      "change": "changed",
+      "global_id": "3Tqm2hVg20cmEuN8wCRyBY",
+      "ifc_class": "IfcFlowTerminal",
+      "reason": "hosted_fixture",
+      "source_op_id": "ceiling-translation-001",
+      "via": [
+        "0l1oZPcGnyvhTvMZjoJ7XO",
+        "1d1uy5O3SaouyJP_8cB2d0",
+        "2B0HM50HKnsteHeL7LrcNv"
+      ]
+    },
+    {
+      "after_hash": "a6c372f122495e9400e768f29edebccb6b31e32631bbd5dfafd6b9c59b0e09d9",
+      "before_hash": "35f61372a3d800e2316bc9056dfb00556908c38b79d3080a36260de8b1074f77",
+      "change": "changed",
+      "global_id": "3UWcf9T$lnVLoDltirruXO",
+      "ifc_class": "IfcFlowTerminal",
+      "reason": "hosted_fixture",
+      "source_op_id": "ceiling-translation-001",
+      "via": [
+        "0bI6AFeEIBxqQMPBptbuFx",
+        "1d1uy5O3SaouyJP_8cB2d0",
+        "2B0HM50HKnsteHeL7LrcNv"
+      ]
+    },
+    {
+      "after_hash": "d4a9e197bdea6b34e28138d595bc844f21973eb1851f5eecb11ff7d8200fcf99",
+      "before_hash": "527e03740994f451ebf59afc9a10470e461bcd63c3e6fe7b52efc5987e6c25cc",
+      "change": "changed",
+      "global_id": "3Uh8qSqFWQKwHbe5zORGWG",
+      "ifc_class": "IfcFlowTerminal",
+      "reason": "hosted_fixture",
+      "source_op_id": "ceiling-translation-003",
+      "via": [
+        "3Lenc84YKjvShM_0qyUTPd"
+      ]
+    },
+    {
+      "after_hash": "6e519c04ac42399e5596773e04d9c3db077b97ec6762f38a6ce865e28e12628f",
+      "before_hash": "1ce714b32820ba3c3a6625a5e2febfbd50830a931717d0a4c45073ab9015b4d7",
+      "change": "changed",
+      "global_id": "3V$rAOhJAq$tgICotFPdw6",
+      "ifc_class": "IfcDistributionPort",
+      "reason": "connected_port",
+      "source_op_id": "ceiling-translation-001",
+      "via": [
+        "0CkKZoMQj_KqyUDSdgbyRD"
+      ]
+    },
+    {
+      "after_hash": "c01670bdac5047518f72b13428aabecc7530f63dd2475690c0e8cbf093bcf841",
+      "before_hash": "51f8b314dc45df3c1567372e78c1c6c27c41ba96e536544c690051fcb8dd7fe8",
+      "change": "changed",
+      "global_id": "3VDgX4939K5UgQnHzSg1Xy",
+      "ifc_class": "IfcFlowTerminal",
+      "reason": "hosted_fixture",
+      "source_op_id": "ceiling-translation-001",
+      "via": [
+        "2B0HM50HKnsteHeL7LrcNv"
+      ]
+    },
+    {
+      "after_hash": "a5da19fc2e7f6529cf00d05301e75de57c23e89631aa17bedbeb18c2cac6bce7",
+      "before_hash": "8ff00b15c3e5530ffc4b3c906728b60adb06a97390a79da8858eacb874299197",
+      "change": "changed",
+      "global_id": "3WTzAN0rei$tr6xzisdJnj",
+      "ifc_class": "IfcFlowTerminal",
+      "reason": "hosted_fixture",
+      "source_op_id": "ceiling-translation-003",
+      "via": [
+        "3Lenc84YKjvShM_0qyUTPd"
+      ]
+    },
+    {
+      "after_hash": "70aa6fa2adb996563b42ccdc2e923afacc659a4385544da626dfd70d3349d078",
+      "before_hash": "38b721d6a677d236a98f51cc3e95b3665ea0a06000a3911f51baa53891b98cb6",
+      "change": "changed",
+      "global_id": "3XMDXgSv5NjAYXp0FrxycJ",
+      "ifc_class": "IfcFlowTerminal",
+      "reason": "hosted_fixture",
+      "source_op_id": "ceiling-translation-001",
+      "via": [
+        "2B0HM50HKnsteHeL7LrcNv"
+      ]
+    },
+    {
+      "after_hash": "dba751bdc7c5ea57c7a333d024a3595b51734b5561dd083ba89e32ab296105bd",
+      "before_hash": "8d538f387796c604cf0b2290d5246cbcb23f5271afc8229e6b2cafc67d3bc217",
+      "change": "changed",
+      "global_id": "3XeDbsD1tLR5vUDavsfkeD",
+      "ifc_class": "IfcFlowTerminal",
+      "reason": "hosted_fixture",
+      "source_op_id": "ceiling-translation-001",
+      "via": [
+        "2B0HM50HKnsteHeL7LrcNv",
+        "3eOdX5HchTJWBNBRO_qRQv"
+      ]
+    },
+    {
+      "after_hash": "355c71f22ac663186cf29982580cd025808c01ee3fc510cebc20bbf9222b9f42",
+      "before_hash": "f1215d25852365110402ae90ba332213978db4adae3a88f8d6b03c20609a91a8",
+      "change": "changed",
+      "global_id": "3Y6yBL_cttHSu1j3Aibh0h",
+      "ifc_class": "IfcFlowTerminal",
+      "reason": "hosted_fixture",
+      "source_op_id": "ceiling-translation-001",
+      "via": [
+        "1d1uy5O3SaouyJP_8cB2d0",
+        "2B0HM50HKnsteHeL7LrcNv",
+        "2KGAbkXaJEPPWfbHKG94qv",
+        "3pfFV6U9rhezr2v1L0SHFQ"
+      ]
+    },
+    {
+      "after_hash": "0220f201109b14e3238e2f4166118e57279a3f4e65397edaacf796c39e4507f3",
+      "before_hash": "c20a120aff72f47af985265a122242dfe4f22288c6a58347243dc9c768f2ef1b",
+      "change": "changed",
+      "global_id": "3Y_07XmDnFbj4YL1cEPTkc",
+      "ifc_class": "IfcFlowTerminal",
+      "reason": "hosted_fixture",
+      "source_op_id": "ceiling-translation-001",
+      "via": [
+        "2B0HM50HKnsteHeL7LrcNv"
+      ]
+    },
+    {
+      "after_hash": "6487a1cec0a69339385231bd7bb91dd5dfa3378a2fa63a20f025a6713de8d808",
+      "before_hash": "ad7bd2545f4b1065a258b1427a479b62850392fa03788f1562055ce4e3cf379c",
+      "change": "changed",
+      "global_id": "3ZRz3EFWrGyBEiHIces8SZ",
+      "ifc_class": "IfcFlowTerminal",
+      "reason": "hosted_fixture",
+      "source_op_id": "ceiling-translation-001",
+      "via": [
+        "0bI6AFeEIBxqQMPBptbuFx",
+        "2B0HM50HKnsteHeL7LrcNv"
+      ]
+    },
+    {
+      "after_hash": "b62ea8f33945e6503a9a21dd17664a87702538f4ba2e7eb82feea708c36d4f43",
+      "before_hash": "322bb74fa0c5867c6e91d176a50c25d69b13a6b622f4dce8b946c23caad762e7",
+      "change": "changed",
+      "global_id": "3aM7FUSxzhOSavKg7GmKxN",
+      "ifc_class": "IfcFlowTerminal",
+      "reason": "hosted_fixture",
+      "source_op_id": "ceiling-translation-001",
+      "via": [
+        "1d1uy5O3SaouyJP_8cB2d0",
+        "2B0HM50HKnsteHeL7LrcNv"
+      ]
+    },
+    {
+      "after_hash": "630b88d816ae122c5793cad59d4f538cd7298732ed8208b8c5a542d2d63c4d91",
+      "before_hash": "b181300e334c8998afef4e996b374ec7d78c2134e1d0773238153b4e7a166402",
+      "change": "changed",
+      "global_id": "3aZHCG8V3PQ9a$FsKBaiOg",
+      "ifc_class": "IfcFlowTerminal",
+      "reason": "hosted_fixture",
+      "source_op_id": "ceiling-translation-001",
+      "via": [
+        "1d1uy5O3SaouyJP_8cB2d0",
+        "2B0HM50HKnsteHeL7LrcNv"
+      ]
+    },
+    {
+      "after_hash": "0c88c896a7b790859a8d250d0a7c6949a731ac1e9804a01604660695ce0bc358",
+      "before_hash": "30640aa4c4660e85f832e7d06cd3ff5367178619f8f64077a87667ddcb9ebbcd",
+      "change": "changed",
+      "global_id": "3bPsMQwKsGTVZAE7G3SUyy",
+      "ifc_class": "IfcFlowTerminal",
+      "reason": "hosted_fixture",
+      "source_op_id": "ceiling-translation-001",
+      "via": [
+        "2B0HM50HKnsteHeL7LrcNv"
+      ]
+    },
+    {
+      "after_hash": "9f4a7eae402f96c9044081f21d8d2e34cf22694a63635c047d26cddf65e8b389",
+      "before_hash": "444a6b321b61735e86a37b306fc6ab3153f3e63697a1288efb8e43db4fb7a1ce",
+      "change": "changed",
+      "global_id": "3cjd6bcLVOUTdEVZuUbEm9",
+      "ifc_class": "IfcDistributionPort",
+      "reason": "connected_port",
+      "source_op_id": "ceiling-translation-001",
+      "via": [
+        "1SiqQ$kCSeaF5nXej2qDLg"
+      ]
+    },
+    {
+      "after_hash": "4af33f4f6bd792866998a2b087b2c58297df0baf814212a7582b2af8b50486f7",
+      "before_hash": "e87b912e4582b6a582d7a5033b74f63a56de481881246d943be69120e8967f1d",
+      "change": "changed",
+      "global_id": "3d4BFHtCZ$apbP2H_aFwFH",
+      "ifc_class": "IfcFlowTerminal",
+      "reason": "hosted_fixture",
+      "source_op_id": "ceiling-translation-020",
+      "via": [
+        "0fgHmYNTwSg_QLlFlU2KL2"
+      ]
+    },
+    {
+      "after_hash": "267ec0463fe41105dc0f4e886075fb383d447df8b6528bccfeadb175776aff66",
+      "before_hash": "362e52ad00193e77ec7672ff0c9529ec73dc640610f1050ca0342c3b29f293d9",
+      "change": "changed",
+      "global_id": "3dJ6U21Y55vUHWcYs5jona",
+      "ifc_class": "IfcFlowTerminal",
+      "reason": "hosted_fixture",
+      "source_op_id": "ceiling-translation-018",
+      "via": [
+        "2lY7vMeoxmjlGI41A95PPZ",
+        "3Fj3VeOfs1uCtyMsqw0QBn"
+      ]
+    },
+    {
+      "after_hash": "9fef54f3a8c42e368db5d033a7c02d396bd089c925fcb5c6e35d9b5f34c33dfa",
+      "before_hash": "8f01740030cd6728087107c42f524e7a1762d24a5394ae82cee550b8670132c4",
+      "change": "changed",
+      "global_id": "3dbKpw1kmr01NCDiynx6mp",
+      "ifc_class": "IfcFlowTerminal",
+      "reason": "hosted_fixture",
+      "source_op_id": "ceiling-translation-001",
+      "via": [
+        "2B0HM50HKnsteHeL7LrcNv"
+      ]
+    },
+    {
+      "after_hash": "7c88622baa399f756520e4a7b0d023cf397ee9f7f1df528486b3a960a605239f",
+      "before_hash": "f39af800e8a46e538e595ae480d915cab202948c6423882207c020797f509aa9",
+      "change": "changed",
+      "global_id": "3eMfXzrWsnqbsu9SQ7u2IJ",
+      "ifc_class": "IfcFlowTerminal",
+      "reason": "hosted_fixture",
+      "source_op_id": "ceiling-translation-004",
+      "via": [
+        "2LRh4LrERTBtJzFJZyteEA"
+      ]
+    },
+    {
+      "after_hash": "cff5db2480176a542bb03b95b97e10a96975554e4aa8498b836ea064c4787bfc",
+      "before_hash": "cdc3b16e88c7e211256e83778002171d1c62c01686db3e9923679724bbe84d6f",
+      "change": "changed",
+      "global_id": "3fqp1cyzUeYomC$TMJZF7A",
+      "ifc_class": "IfcFlowTerminal",
+      "reason": "hosted_fixture",
+      "source_op_id": "ceiling-translation-001",
+      "via": [
+        "2B0HM50HKnsteHeL7LrcNv"
+      ]
+    },
+    {
+      "after_hash": "24f4a0a5cc87a1132cdbd98cddf9c21f62ec8908ef6a9997bbfd6bdee8b26c01",
+      "before_hash": "ed33abd49d0a489aea1bcd56f122c88a69ca0eabce505e118f453bc51296eaa3",
+      "change": "changed",
+      "global_id": "3gkCQH44Uiu2rMyK$GABZs",
+      "ifc_class": "IfcDistributionPort",
+      "reason": "connected_port",
+      "source_op_id": "ceiling-translation-001",
+      "via": [
+        "1d97LMOOkqU4J4ksA_rEzE"
+      ]
+    },
+    {
+      "after_hash": "18eb66ac6632afea344901c6fa24243bfc4742ef2eb295cafb40fe9693fa31ab",
+      "before_hash": "b4920609ecd25e4ed1d30faff32063fe5ae9640e5e3d63a9b298dc01aa6a4dcb",
+      "change": "changed",
+      "global_id": "3gsOmWVoez6IckfAvSpPAv",
+      "ifc_class": "IfcFlowTerminal",
+      "reason": "hosted_fixture",
+      "source_op_id": "ceiling-translation-001",
+      "via": [
+        "2B0HM50HKnsteHeL7LrcNv",
+        "3b5ADX2pgIcCSgf0pB3cNX"
+      ]
+    },
+    {
+      "after_hash": "779e6b2e7aecafc99f66f21bb9ab43a8eee245603a2f0b2e434f595a1efee0b8",
+      "before_hash": "0d031e71d757f8e3dedc740ff6a60a00fccb52ae5943b36304dd97fbb297c617",
+      "change": "changed",
+      "global_id": "3i59UmFEqSxcaY8i5Y4NGy",
+      "ifc_class": "IfcDistributionPort",
+      "reason": "connected_port",
+      "source_op_id": "ceiling-translation-001",
+      "via": [
+        "0SQcflhQGh7eArbP_9kXpB"
+      ]
+    },
+    {
+      "after_hash": "96b05e3c43b5ddd3bf3820593a9afafb9a0cef82af7273bcec4f8e9d33846b07",
+      "before_hash": "574da343de258603eceb886367e7a8cafe30adcee864c0eb43dd35e49d42a9ac",
+      "change": "changed",
+      "global_id": "3j3ajBePS_CNqZYwcMi2M4",
+      "ifc_class": "IfcDistributionControlElement",
+      "reason": "hosted_fixture",
+      "source_op_id": "ceiling-translation-001",
+      "via": [
+        "0iI0Q2d_BmrrPOHXWgrSCM",
+        "1d1uy5O3SaouyJP_8cB2d0",
+        "2B0HM50HKnsteHeL7LrcNv"
+      ]
+    },
+    {
+      "after_hash": "363e8891da3347ddd82d55c6c9ea2464ae1187b8e45fb5da3a693dc1525cf7a7",
+      "before_hash": "9180c3be757d0ec5bc7a810dc886619621f532573c9e1aa6cfe782000d823ada",
+      "change": "changed",
+      "global_id": "3j6Gi4MnVwALyWPNU4udDk",
+      "ifc_class": "IfcFlowTerminal",
+      "reason": "hosted_fixture",
+      "source_op_id": "ceiling-translation-022",
+      "via": [
+        "3b5ADX2pgIcCSgf0pB3cNX"
+      ]
+    },
+    {
+      "after_hash": "ba7b8467344ae77a601c37a1b2bcce53c9b3394a0aad749d640bddd99a6facb1",
+      "before_hash": "bf31f1d5dbb3c20dc197408403565e3c394cda974fb8739c7798352bc7c0f1df",
+      "change": "changed",
+      "global_id": "3k8ghbSoJxqvrxR5syMO$f",
+      "ifc_class": "IfcDistributionPort",
+      "reason": "connected_port",
+      "source_op_id": "ceiling-translation-001",
+      "via": [
+        "03Y6fagssQSb67soS$i2kR"
+      ]
+    },
+    {
+      "after_hash": "7feea74a8d121d49bf7ec84ebe6746ce0f3789e82d05321666da60c475c7988f",
+      "before_hash": "badeb958b54a18469ecc025004f256a0631665c7c4ec2e0806912ed34651594d",
+      "change": "changed",
+      "global_id": "3kHMT66WHvIby2lce$NyBf",
+      "ifc_class": "IfcFlowTerminal",
+      "reason": "hosted_fixture",
+      "source_op_id": "ceiling-translation-001",
+      "via": [
+        "0l1oZPcGnyvhTvMZjoJ7XO",
+        "1d1uy5O3SaouyJP_8cB2d0",
+        "2B0HM50HKnsteHeL7LrcNv"
+      ]
+    },
+    {
+      "after_hash": "c90b6d616025e9fc1de5d4a6b4ff63d9377186db263ee51abeede13fda4c4675",
+      "before_hash": "5f5b7ac302d6b3c31a8a8e921e8bc37dfdd6a62d6e426362b0cfe2953aae96df",
+      "change": "changed",
+      "global_id": "3kImtxCNuNwVuhhhVgtrAP",
+      "ifc_class": "IfcDistributionPort",
+      "reason": "connected_port",
+      "source_op_id": "ceiling-translation-001",
+      "via": [
+        "0fHON_zkbwdUxm0DWzieaq"
+      ]
+    },
+    {
+      "after_hash": "dcddd0994ceaafdf69870d9b209e480f2a25157d50ff19c22e11d9445490e26e",
+      "before_hash": "e3c386f80626eda80c82ea59e3e8b0fc54bfbc609760d6665fe4cf734e033da9",
+      "change": "changed",
+      "global_id": "3kcFsPqkzX$P0ZFFy5GDZv",
+      "ifc_class": "IfcFlowTerminal",
+      "reason": "hosted_fixture",
+      "source_op_id": "ceiling-translation-018",
+      "via": [
+        "3Fj3VeOfs1uCtyMsqw0QBn"
+      ]
+    },
+    {
+      "after_hash": "2d7daf7b5dafaa27e4c361d5fce9b0a53484ed68cd37b23c6d4a679ecbc44872",
+      "before_hash": "b4d8173e5b6d9da3aee09d13a11ed2fbfeff6437072b6dcad95eaf9a3dcb81f4",
+      "change": "changed",
+      "global_id": "3l3JahubPQUEqth3mHvu27",
+      "ifc_class": "IfcDistributionPort",
+      "reason": "connected_port",
+      "source_op_id": "ceiling-translation-001",
+      "via": [
+        "1ldSnMIZhkakKLb2A6Tp67"
+      ]
+    },
+    {
+      "after_hash": "c312db04907d066c8fabfe75c09a5a17de62863658cc2ddf62c86af9effceb6d",
+      "before_hash": "d045d414def0e7cf4f7763a8bdb78f51564bc2c1f777f0d23ede23a74edd1874",
+      "change": "changed",
+      "global_id": "3lWgtr2UR$XJvT5nsidWe0",
+      "ifc_class": "IfcFlowTerminal",
+      "reason": "hosted_fixture",
+      "source_op_id": "ceiling-translation-001",
+      "via": [
+        "2B0HM50HKnsteHeL7LrcNv",
+        "3eOdX5HchTJWBNBRO_qRQv"
+      ]
+    },
+    {
+      "after_hash": "d5318bfa78d26716cde0a7549e90ee71bc50df280c4ac5b1aa84d897081a2d34",
+      "before_hash": "7cad6b3632a4efc54f946d301759ad688c5626382bd92c2c1ef4eb7ae38308c1",
+      "change": "changed",
+      "global_id": "3mQOqK7cmxE83Udm2JmK_a",
+      "ifc_class": "IfcDistributionPort",
+      "reason": "connected_port",
+      "source_op_id": "ceiling-translation-001",
+      "via": [
+        "3$M02c4AsNqGCe5mVRHrSJ"
+      ]
+    },
+    {
+      "after_hash": "7cc4c00eba7162cbbb894da6e5237cc8c45fc8ee70ac49951ddc5a54f1da95d5",
+      "before_hash": "27562cfdf23a01c0a98f31f2a70e07cfe7e0a5de654024b50434204297bcf823",
+      "change": "changed",
+      "global_id": "3mkG8hgB6s3T59CVL6T$1X",
+      "ifc_class": "IfcFlowTerminal",
+      "reason": "hosted_fixture",
+      "source_op_id": "ceiling-translation-001",
+      "via": [
+        "2B0HM50HKnsteHeL7LrcNv",
+        "3eOdX5HchTJWBNBRO_qRQv"
+      ]
+    },
+    {
+      "after_hash": "1debd79bf4d9d2917137b98e122dcba643d0ede9a95e8e3cb9cdfd7692c8f6c7",
+      "before_hash": "29ee404d76b46387f4a96bd119abd7f3a156b5487c68c3f545af89d8f861c30f",
+      "change": "changed",
+      "global_id": "3nTUrt2ghwvpGPU9rs8k0P",
+      "ifc_class": "IfcDistributionPort",
+      "reason": "connected_port",
+      "source_op_id": "ceiling-translation-001",
+      "via": [
+        "1$bqnH8_WeErLocbVQ1I05"
+      ]
+    },
+    {
+      "after_hash": "6227d0c72f1db6a9e98c2aab1bd52c47630c9c4798f6752e776d6fb03b859d8f",
+      "before_hash": "8f5a08bf29a207ff862ecc84de14b48019cc5764df312ae7d635980e2243c224",
+      "change": "changed",
+      "global_id": "3nVLo$l2kVUY_rfgQCPnDS",
+      "ifc_class": "IfcFlowTerminal",
+      "reason": "hosted_fixture",
+      "source_op_id": "ceiling-translation-022",
+      "via": [
+        "3b5ADX2pgIcCSgf0pB3cNX"
+      ]
+    },
+    {
+      "after_hash": "f36e4c9f2915bf480abd3de25b5cbe25845c5fa61e354dcc748171d1d532c5c2",
+      "before_hash": "8cc178477080ffce29cdad1409ffb4f3127b3a4542e6a2a9af761bd60f9c1cba",
+      "change": "changed",
+      "global_id": "3ppIYYIImpfZK2u$xBYwcU",
+      "ifc_class": "IfcDistributionPort",
+      "reason": "connected_port",
+      "source_op_id": "ceiling-translation-001",
+      "via": [
+        "3xiEMmbWsT9ceZkv8u15cS"
+      ]
+    },
+    {
+      "after_hash": "4db548c2ce1434a4ae58e0526b29ea200639e73184a68102d453b9fe84b09afb",
+      "before_hash": "219632eda0331a3e83d3edd1805f65a80e4773834af6ca3ebbc2e25e66c8f69f",
+      "change": "changed",
+      "global_id": "3qKHAmoWkuvaolEFaAQQnQ",
+      "ifc_class": "IfcDistributionPort",
+      "reason": "connected_port",
+      "source_op_id": "ceiling-translation-020",
+      "via": [
+        "2en5PPVyPliA5xV5kXaUEL"
+      ]
+    },
+    {
+      "after_hash": "b3c9d85d27000a209371d925ec5d6adb1f1c77b15e062a970c6b61dc0f8f2d9e",
+      "before_hash": "5bdaddfe92dba4e52e2c0dc87b0d8dea37ecac33de97b871a0fcfd25181e5ef8",
+      "change": "changed",
+      "global_id": "3qWqR6qDLWq435F85VqahE",
+      "ifc_class": "IfcFlowTerminal",
+      "reason": "hosted_fixture",
+      "source_op_id": "ceiling-translation-001",
+      "via": [
+        "0l1oZPcGnyvhTvMZjoJ7XO",
+        "1d1uy5O3SaouyJP_8cB2d0",
+        "2B0HM50HKnsteHeL7LrcNv"
+      ]
+    },
+    {
+      "after_hash": "e4d6803a0485944410506c412813e0cb7878a8e3966cf3f67e27e4f451e973b9",
+      "before_hash": "46f0d6ae7702ecaaee7f62ab45fd650e7c4e528b7cfa976bf23071d5a806890d",
+      "change": "changed",
+      "global_id": "3qZs5XilIEn_8UWJF1LMF0",
+      "ifc_class": "IfcDistributionControlElement",
+      "reason": "hosted_fixture",
+      "source_op_id": "ceiling-translation-004",
+      "via": [
+        "0fgHmYNTwSg_QLlFlU2KL2",
+        "2LRh4LrERTBtJzFJZyteEA"
+      ]
+    },
+    {
+      "after_hash": "a97a27ed90d6a26a7c8795315d7fa66b9a541f9eabeedd11ec833d639eae2cf2",
+      "before_hash": "381412550e9937a617b25abe990ed6caea34237644e3cdaec0f49910532a6d7b",
+      "change": "changed",
+      "global_id": "3rgSCeZ9sVd1DLtOuWmiAl",
+      "ifc_class": "IfcDistributionPort",
+      "reason": "connected_port",
+      "source_op_id": "ceiling-translation-001",
+      "via": [
+        "2dUG8P0zuXA3xsqX_DglZ1"
+      ]
+    },
+    {
+      "after_hash": "f14410835d007b30b96fa59874d2b1d90de666d7e3cdc6ce9c2317310d961662",
+      "before_hash": "749759e3d12e46afca54290b57b36d7faea65dbdb257d2a151fb45d497d7c0ca",
+      "change": "changed",
+      "global_id": "3sbBl4N7Rgw7hJVKET3su_",
+      "ifc_class": "IfcDistributionPort",
+      "reason": "connected_port",
+      "source_op_id": "ceiling-translation-021",
+      "via": [
+        "2x$3nAYeyPugTVn4xv4ftL"
+      ]
+    },
+    {
+      "after_hash": "bff52032bd183059fda73cec750589f447558051736e6e53ec033d9d0104eb45",
+      "before_hash": "8745a93e006f9981b17127c08a5d85fac785a0601c413368e3aa0faaa9f8a8d9",
+      "change": "changed",
+      "global_id": "3smj6p2MioPNilYdH6aCQP",
+      "ifc_class": "IfcDistributionPort",
+      "reason": "connected_port",
+      "source_op_id": "ceiling-translation-001",
+      "via": [
+        "1X303rvOmx3tT7bwF5elSD"
+      ]
+    },
+    {
+      "after_hash": "73e8fb3a0cdc34035db9a660d631b51de1d66d148697906bc50ed9ab998bdc1c",
+      "before_hash": "8db17d29931231e8f72d11eecade27aaa1c0dafef5804efb8828690edc4ea221",
+      "change": "changed",
+      "global_id": "3swEe4jliWVvJXpO1BPSE0",
+      "ifc_class": "IfcFlowTerminal",
+      "reason": "hosted_fixture",
+      "source_op_id": "ceiling-translation-001",
+      "via": [
+        "1d1uy5O3SaouyJP_8cB2d0",
+        "2B0HM50HKnsteHeL7LrcNv",
+        "2KGAbkXaJEPPWfbHKG94qv",
+        "3pfFV6U9rhezr2v1L0SHFQ"
+      ]
+    },
+    {
+      "after_hash": "df9be8f4d1209dd9651a991fa18756fe66959a4c0000c2d3898e775b3df47b44",
+      "before_hash": "c027dbc6d31179da331cae624d4323b1618ed2e6b66fe862b8a70a5a07423a7f",
+      "change": "changed",
+      "global_id": "3tKpskpPniuz3w3tihvFjI",
+      "ifc_class": "IfcFlowTerminal",
+      "reason": "hosted_fixture",
+      "source_op_id": "ceiling-translation-001",
+      "via": [
+        "1d1uy5O3SaouyJP_8cB2d0",
+        "2B0HM50HKnsteHeL7LrcNv",
+        "2KGAbkXaJEPPWfbHKG94qv"
+      ]
+    },
+    {
+      "after_hash": "c0b7a0b3f109cff736f26107327c7e6bfef97d48f757b92b475117f68f9688c9",
+      "before_hash": "277b89711d043146e21ea6a3284c7cd4183ed71d1ed628b81d99c46fb2cc4d2c",
+      "change": "changed",
+      "global_id": "3tlXEuFI6qE$NqhE1jiIbF",
+      "ifc_class": "IfcDistributionPort",
+      "reason": "connected_port",
+      "source_op_id": "ceiling-translation-003",
+      "via": [
+        "3WTzAN0rei$tr6xzisdJnj"
+      ]
+    },
+    {
+      "after_hash": "ea6668f23c620cc63df81ac3a6e0bf93c08e49440dd043b6c07cbd314bc4f986",
+      "before_hash": "1652535d38f2bc2d45026a7d867b617776c3d1400b026adf848ae1e0cbcb094f",
+      "change": "changed",
+      "global_id": "3uAa5H$3YCBfewKgMAX8Br",
+      "ifc_class": "IfcFlowTerminal",
+      "reason": "hosted_fixture",
+      "source_op_id": "ceiling-translation-001",
+      "via": [
+        "2B0HM50HKnsteHeL7LrcNv"
+      ]
+    },
+    {
+      "after_hash": "ed12e8f55ea76873edf0f342fb05c61593f8211247323e751464ff52ae0f0bd5",
+      "before_hash": "00907661f2cb018efbfdbdb38f9fd19eecaa3c6b05e9142ac7ce3b79221d8f88",
+      "change": "changed",
+      "global_id": "3uQTINtmYcWDFqNNt7fH5I",
+      "ifc_class": "IfcFlowTerminal",
+      "reason": "hosted_fixture",
+      "source_op_id": "ceiling-translation-001",
+      "via": [
+        "0bI6AFeEIBxqQMPBptbuFx",
+        "2B0HM50HKnsteHeL7LrcNv"
+      ]
+    },
+    {
+      "after_hash": "97ca95e6893b5e8810daf26f2304ee626002bf6f7a56331ef441dea1c130bb1d",
+      "before_hash": "281607d45d608ce99c6172602415761360a03e9ddda3c33bd56769ba1e8d3203",
+      "change": "changed",
+      "global_id": "3uW4nw3gTYn44MdBtC1_cH",
+      "ifc_class": "IfcFlowTerminal",
+      "reason": "hosted_fixture",
+      "source_op_id": "ceiling-translation-019",
+      "via": [
+        "2lY7vMeoxmjlGI41A95PPZ"
+      ]
+    },
+    {
+      "after_hash": "1a54337852493be8e3810f6156982d0c0cfc26f65934d3f506e8a473453d1e78",
+      "before_hash": "0507845f54deb186464ed26fb232f7a9c6de7d1d6d76f1c43e7e65654f70e8f7",
+      "change": "changed",
+      "global_id": "3ugyjPfrD8Na502WXHHiSz",
+      "ifc_class": "IfcFlowTerminal",
+      "reason": "hosted_fixture",
+      "source_op_id": "ceiling-translation-001",
+      "via": [
+        "1d1uy5O3SaouyJP_8cB2d0",
+        "1dULTNYo1KUvvrKMJdPtb8",
+        "2B0HM50HKnsteHeL7LrcNv"
+      ]
+    },
+    {
+      "after_hash": "3c2454897ac936d7e5c0ec3793dea0dbaacf40fe760f606eae9dc62131c3012a",
+      "before_hash": "b5a471be34a92598376e0704b9cdf522d38247374d77741253feb803643447b3",
+      "change": "changed",
+      "global_id": "3vrXnufB74K6x_HYCj5nkJ",
+      "ifc_class": "IfcDistributionPort",
+      "reason": "connected_port",
+      "source_op_id": "ceiling-translation-001",
+      "via": [
+        "0wrUr$4wTtpzfrTe9wEDuM"
+      ]
+    },
+    {
+      "after_hash": "7637f90fc8d0bf7069076cb83e53f235ce629145d34b411c6df88011671844ba",
+      "before_hash": "091a8640f68375c72458c12c161e93c90d96ea04076c1eb2d391d23bb01cf7f8",
+      "change": "changed",
+      "global_id": "3xeQJcVOnhB5GmNG_hJwyl",
+      "ifc_class": "IfcDistributionPort",
+      "reason": "connected_port",
+      "source_op_id": "ceiling-translation-001",
+      "via": [
+        "0YgkQkPTh5_F2henTPE4J4"
+      ]
+    },
+    {
+      "after_hash": "e63ab744aa8245c5a41d8bc66211445a5714d56397a9e885d488ccae48b953c1",
+      "before_hash": "0cd6e82a11f7437b1c313ddf1ee151f690315c066b51ac6a83a8d76dcea09fa0",
+      "change": "changed",
+      "global_id": "3xiEMmbWsT9ceZkv8u15cS",
+      "ifc_class": "IfcFlowTerminal",
+      "reason": "hosted_fixture",
+      "source_op_id": "ceiling-translation-001",
+      "via": [
+        "1d1uy5O3SaouyJP_8cB2d0",
+        "1s0hj3u3T2FWEBJ8TyW9vP",
+        "2B0HM50HKnsteHeL7LrcNv",
+        "2KGAbkXaJEPPWfbHKG94qv"
+      ]
+    },
+    {
+      "after_hash": "19c5c1adb14d00701a6aa5dd77c357538379097e94f2c7722c3be11d5af879b1",
+      "before_hash": "65e5b75f54236e9dbb11f67faa49bfb9275a7efa7701e0e555931ee9a17c0d15",
+      "change": "changed",
+      "global_id": "3yoJGfDKQrHL5uGRJHnCmJ",
+      "ifc_class": "IfcDistributionPort",
+      "reason": "connected_port",
+      "source_op_id": "ceiling-translation-001",
+      "via": [
+        "3Tqm2hVg20cmEuN8wCRyBY"
+      ]
+    },
+    {
+      "after_hash": "5c2c30b9c0d6c768530928828193fa6bbfe92b48322dc5b6bdbe6f54e97cb3af",
+      "before_hash": "8739c35930b45309e3fc60b31961dc5dea575fefdb8a2c190724a768cd6bb824",
+      "change": "changed",
+      "global_id": "3ztq6TvojX$hDVoTJkctPV",
+      "ifc_class": "IfcDistributionControlElement",
+      "reason": "hosted_fixture",
+      "source_op_id": "ceiling-translation-001",
+      "via": [
+        "05Iva7IZaeIhmBVZ2wZPOb",
+        "2B0HM50HKnsteHeL7LrcNv",
+        "2K_R2Wt2rnaXzVuEF1l_lP"
+      ]
+    }
+  ],
+  "propagation": {
+    "connected_ports": true,
+    "hosted_fixtures": {
+      "candidates": [
+        {
+          "ifc_class": "IfcFlowTerminal",
+          "tokens": [
+            "light",
+            "lighting",
+            "grille",
+            "diffuser",
+            "troffer",
+            "ceiling",
+            "tyco",
+            "sprinkler"
+          ]
+        },
+        {
+          "ifc_class": "IfcDistributionControlElement",
+          "tokens": [
+            "ceiling",
+            "smoke",
+            "speaker"
+          ]
+        },
+        {
+          "ifc_class": "IfcBuildingElementProxy",
+          "tokens": [
+            "ceiling mounted",
+            "exit sign - ceiling"
+          ]
+        }
+      ],
+      "footprint_tolerance_m": 0.5,
+      "host_classes": [
+        "IfcCovering"
+      ],
+      "vertical_window_m": null
+    }
+  },
+  "schema": "bimstudio.edit_manifest.v1",
+  "snapshot_definition": "bimstudio.entity_snapshot.v2",
+  "source": {
+    "entity_count": 1325534,
+    "ifc_schema": "IFC2X3",
+    "name": "model.ifc",
+    "product_count": 7542,
+    "sha256": "b50ea1aa9fefc232b8bf485388245111e6d6bf011eb7ebdaf180096ba162a1ea",
+    "unit_scale_m": 0.001
+  },
+  "status": "applied",
+  "summary": {
+    "deleted": 0,
+    "direct_targets": 23,
+    "inserted": 0,
+    "moved_products": 371,
+    "placement_edits": 228,
+    "placements_copied": 0,
+    "propagated": 348
+  }
+}

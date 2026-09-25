@@ -1,5 +1,23 @@
 # MBF5 OpenUSD BIM Scene Viewer
 
+## Velocity pilot candidate
+
+[Open the Velocity pilot model](./dist/velocity-pilot.html). This separate page
+publishes the exact candidate from the 25 September 2026 noncommercial Velocity
+exercise. Its browser scene is generated from that IFC, with all 3,648 represented
+products mapped by STEP ID and GlobalId. The page includes a compressed IFC download
+and an introduced-clash CSV. The hallway model remains the default home page.
+
+The ceiling edit moves 371 products down 150 mm. Coordination review is still open:
+1,277 hard and 5,468 soft clashes were reported, including 8 new hard clashes.
+The page explicitly labels the model as a candidate and grants no approval.
+Raw counts reflect the default rules; the covering rule also includes insulation.
+The new scene uses IFC-to-glTF directly and does not claim an OpenUSD artifact.
+
+Pilot assets live in `dist/data/velocity-pilot/`. `publication-validation.json`
+records the source/geometry hashes and full represented-product coverage. Saved
+camera views use a separate storage key so they do not replace hallway views.
+
 ## Standalone before-and-after comparison
 
 The separate [`Hallway Change Studio`](./dist/comparison.html) presents the original IFC and the revised hallway-coordination model side by side or as an overlay. Its **Change lens** turns a selected issue into a full-viewport before/after curtain: the camera automatically frames the changed set, surrounding context can be ghosted and made non-pickable, the exact selected element gets a focus marker, and a Source ↔ Revised slider reveals the physical difference in place. It connects rendered elements to a human-readable change story and a true nodes-and-edges graph. Stable IFC identifiers, hashes, scene identity, and source provenance are available in the secondary technical drawer and [`comparison_index.json`](./dist/data/comparison_index.json).

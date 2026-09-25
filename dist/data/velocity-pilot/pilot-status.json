@@ -1,0 +1,67 @@
+{
+  "schema": "velocity.public_pilot_status.v1",
+  "candidate_only": true,
+  "approval": "not_granted",
+  "purpose": "noncommercial pilot",
+  "date": "2026-09-25",
+  "source_sha256": "2ed04a2e9e1fe471a1af9d4b36ffed212ed969d4feb1655da80e04dd581c7475",
+  "products": 7542,
+  "moved_products": 371,
+  "translation_m": [
+    0,
+    0,
+    -0.15
+  ],
+  "clash": {
+    "baseline": {
+      "by_set": {
+        "mep_vs_ceiling": 5925,
+        "mep_vs_mep": 904,
+        "mep_vs_structure": 472
+      },
+      "by_severity": {
+        "hard": 1376,
+        "soft": 5925
+      },
+      "clashes_found": 7301,
+      "clashes_reported": 7301,
+      "elements_indexed": 3202,
+      "hard_open": 1376,
+      "max_clashes": 50000,
+      "soft_open": 5925,
+      "truncated": false
+    },
+    "candidate": {
+      "by_set": {
+        "mep_vs_ceiling": 5468,
+        "mep_vs_mep": 802,
+        "mep_vs_structure": 475
+      },
+      "by_severity": {
+        "hard": 1277,
+        "soft": 5468
+      },
+      "clashes_found": 6745,
+      "clashes_reported": 6745,
+      "elements_indexed": 3202,
+      "hard_open": 1277,
+      "max_clashes": 50000,
+      "soft_open": 5468,
+      "truncated": false
+    },
+    "delta": {
+      "introduced": 11,
+      "persistent": 6734,
+      "resolved": 567,
+      "unknown": 0
+    },
+    "introduced_hard": 8
+  },
+  "coordination_accepted": false,
+  "limitations": [
+    "8 introduced hard clashes remain for review.",
+    "Default covering rule includes insulation; counts require domain triage.",
+    "Native Mac/Linux clash-engine discrepancy remains unresolved.",
+    "These are explicit pre-authored edits, not automatic document-to-IFC generation."
+  ]
+}

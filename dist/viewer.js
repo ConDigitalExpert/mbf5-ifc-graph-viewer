@@ -1,8 +1,8 @@
 /* global BABYLON */
 
-const DATA_URL = "./data/viewer_index.json";
+const DATA_URL = document.body.dataset.indexUrl || "./data/viewer_index.json";
 const DEFAULT_GEOMETRY_URL = "./data/MBF5-TEST-COORDINATION.hallway-coordination.scene.glb";
-const SAVED_VIEWS_KEY = "mbf5-coordination-saved-views-v1";
+const SAVED_VIEWS_KEY = document.body.dataset.savedViewsKey || "mbf5-coordination-saved-views-v1";
 
 const els = {
   schema: document.querySelector("#schema-badge"),
@@ -191,7 +191,7 @@ function boundsForMeshes(meshes) {
 }
 
 function createBabylonViewer() {
-  const canvas = document.createElement("canvas"); canvas.className = "model-canvas"; canvas.setAttribute("aria-label", "OpenUSD-backed BIM scene rendered as glTF"); els.viewer.insertBefore(canvas, els.viewer.firstChild);
+  const canvas = document.createElement("canvas"); canvas.className = "model-canvas"; canvas.setAttribute("aria-label", "IFC-linked BIM scene rendered as glTF"); els.viewer.insertBefore(canvas, els.viewer.firstChild);
   const engine = new BABYLON.Engine(canvas, true, { antialias: true, stencil: true, preserveDrawingBuffer: false }); const pixelRatio = window.devicePixelRatio || 1; engine.setHardwareScalingLevel(Math.max(1.15, Math.min(1.5, pixelRatio)));
   const scene = new BABYLON.Scene(engine); scene.clearColor = new BABYLON.Color4(.025, .05, .062, 1); scene.imageProcessingConfiguration.toneMappingEnabled = true; scene.imageProcessingConfiguration.toneMappingType = BABYLON.ImageProcessingConfiguration.TONEMAPPING_ACES; scene.imageProcessingConfiguration.exposure = 1.08; scene.imageProcessingConfiguration.contrast = 1.13;
   const orbitCamera = new BABYLON.ArcRotateCamera("bim-orbit-camera", -Math.PI / 2.35, Math.PI / 2.95, 50, BABYLON.Vector3.Zero(), scene);
@@ -344,7 +344,7 @@ function switchTab(tab) { document.querySelectorAll("[data-tab]").forEach((butto
 function toggleFullscreen() { if (!document.fullscreenElement) document.documentElement.requestFullscreen?.(); else document.exitFullscreen?.(); }
 function copyText(value) { navigator.clipboard?.writeText(value).then(() => showToast("Copied to clipboard")).catch(() => showToast("Copy unavailable in this browser")); }
 
-function populateSummary(index, bridge) { const stats = index.stats || {}; els.schema.textContent = `${index.schema || "IFC"} · USD`; els.nodeCount.textContent = `${formatNumber(index.nodes.length)}`; els.metricElements.textContent = formatNumber(stats.ifc_elements); els.metricPorts.textContent = formatNumber(stats.ifc_distribution_ports); els.metricEdges.textContent = formatNumber(stats.semantic_edges); els.metricIntegrity.textContent = stats.dangling_entity_references === 0 ? "0" : formatNumber(stats.dangling_entity_references); els.sourceHash.textContent = `SHA-256 ${String(index.source_sha256 || "").slice(0, 16)}…`; els.frameworkBadge.textContent = `${bridge?.framework?.working_scene || "OpenUSD"} / ${bridge?.framework?.browser_runtime || "Babylon.js"}`; const stage2State = index.stage2_state || index.stage2?.state || "prepared-dry-run-only"; const stageLabel = stage2State === "applied-hallway-coordination" ? "candidate hallway stage · handoff pending" : stage2State.replaceAll("-", " "); els.stage2State.textContent = stageLabel; }
+function populateSummary(index, bridge) { const stats = index.stats || {}; els.schema.textContent = `${index.schema || "IFC"} · ${index.working_scene_framework === "IFC / glTF" ? "glTF" : "USD"}`; els.nodeCount.textContent = `${formatNumber(index.nodes.length)}`; els.metricElements.textContent = formatNumber(stats.ifc_elements); els.metricPorts.textContent = formatNumber(stats.ifc_distribution_ports); els.metricEdges.textContent = formatNumber(stats.semantic_edges); els.metricIntegrity.textContent = stats.dangling_entity_references === 0 ? "0" : formatNumber(stats.dangling_entity_references); els.sourceHash.textContent = `SHA-256 ${String(index.source_sha256 || "").slice(0, 16)}…`; els.frameworkBadge.textContent = `${bridge?.framework?.working_scene || "OpenUSD"} / ${bridge?.framework?.browser_runtime || "Babylon.js"}`; const stage2State = index.stage2_state || index.stage2?.state || "prepared-dry-run-only"; const stageLabel = stage2State === "applied-hallway-coordination" ? "candidate hallway stage · handoff pending" : stage2State.replaceAll("-", " "); els.stage2State.textContent = stageLabel; }
 
 function bindInterfaceControls() {
   els.search.addEventListener("input", (event) => { state.searchTerm = event.target.value; els.searchClear.hidden = !state.searchTerm; renderNodeList(); }); els.searchClear.addEventListener("click", () => { state.searchTerm = ""; els.search.value = ""; els.searchClear.hidden = true; renderNodeList(); els.search.focus(); });

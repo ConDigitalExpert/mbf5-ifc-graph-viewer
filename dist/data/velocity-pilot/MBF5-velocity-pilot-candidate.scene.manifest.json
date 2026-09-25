@@ -1,0 +1,26 @@
+{
+  "schema": "phase1-viewer-geometry-1",
+  "source_file": "candidate.ifc",
+  "source_sha256": "2ed04a2e9e1fe471a1af9d4b36ffed212ed969d4feb1655da80e04dd581c7475",
+  "source_ifc_schema": "IFC2X3",
+  "mesh_elements_requested": 3648,
+  "mesh_elements_written": 3648,
+  "failed_elements": [],
+  "linear_deflection_m": 0.005,
+  "angular_deflection_deg": 0.5,
+  "coordinate_mode": "local model coordinates; world = local + model_origin_m",
+  "model_origin_m": [
+    504265.9855,
+    5142047.22375,
+    237.105
+  ],
+  "model_offset_m": [
+    -504265.9855,
+    -5142047.22375,
+    -237.105
+  ],
+  "element_identity": "glTF node name id-<IFC STEP id>",
+  "output_file": "MBF5-velocity-pilot-candidate.scene.glb",
+  "output_bytes": 17903898,
+  "elapsed_seconds": 90.73
+}

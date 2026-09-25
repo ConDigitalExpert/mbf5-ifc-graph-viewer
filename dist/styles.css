@@ -292,3 +292,12 @@ kbd { font-size: 10px; padding: 4px 6px; }
   .saved-view-dialog { align-items: end; padding: 12px; }
   .saved-view-modal { width: 100%; border-radius: 15px; }
 }
+
+/* A distinct review boundary for the published Velocity pilot candidate. */
+.pilot-entry { color: var(--teal); text-decoration: none; font-size: 12px; font-weight: 600; }
+.pilot-entry:hover { text-decoration: underline; }
+.pilot-notice { display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 8px 20px; padding: 10px 22px; border-bottom: 1px solid rgba(245,185,66,.35); background: #302714; color: #f5d99f; font-size: 12px; line-height: 1.5; }
+.pilot-notice strong { margin-right: 12px; }
+.pilot-notice nav { display: flex; gap: 18px; flex-wrap: wrap; }
+.pilot-notice a { color: #fff1cb; text-decoration: underline; text-underline-offset: 3px; }
+@media (max-width: 760px) { .pilot-entry { max-width: 88px; font-size: 10px; } .pilot-notice { padding: 8px 12px; font-size: 11px; } .pilot-notice strong { display: block; } }
