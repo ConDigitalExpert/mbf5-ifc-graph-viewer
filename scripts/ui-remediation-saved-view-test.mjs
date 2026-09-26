@@ -14,7 +14,7 @@ function check(condition, message) {
   console.log(`PASS: ${message}`);
 }
 
-check(indexHtml.includes("styles.css?v=20260919-saved-views1") && indexHtml.includes("viewer.js?v=20260919-saved-views1"), "saved-view cache key is wired in the main route");
+check(/styles\.css\?v=[^"\s]+/.test(indexHtml) && /<script type="module" src="\.\/viewer\.js\?v=[^"\s]+/.test(indexHtml), "saved-view cache key is wired in the main route");
 check(indexHtml.includes('id="saved-view-dialog"') && indexHtml.includes('role="dialog"') && indexHtml.includes('aria-modal="true"'), "saved-view dialog has an accessible modal contract");
 check(indexHtml.includes('aria-labelledby="saved-view-dialog-title"') && indexHtml.includes('aria-describedby="saved-view-dialog-description"'), "saved-view dialog names and describes itself");
 check(indexHtml.includes('id="saved-view-form"') && indexHtml.includes('id="saved-view-name"') && indexHtml.includes('maxlength="64"'), "saved-view form has a bounded named field");

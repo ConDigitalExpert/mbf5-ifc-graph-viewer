@@ -9,7 +9,9 @@
     "typecheck": "tsc --noEmit",
     "jev:shadow": "tsx src/intelligence/jev/cli.ts",
     "jev:shadow:example": "tsx src/intelligence/jev/cli.ts --example",
-    "test:jev": "tsx --test tests/**/*.test.ts"
+    "test:jev": "tsx --test tests/**/*.test.ts",
+    "test:viewer": "node --test tests/viewer-*.test.mjs",
+    "test:ui-contract": "node scripts/ui-remediation-saved-view-test.mjs"
   },
   "dependencies": {
     "@typesafe-ai/sdk": "0.6.0"

@@ -301,3 +301,10 @@ kbd { font-size: 10px; padding: 4px 6px; }
 .pilot-notice nav { display: flex; gap: 18px; flex-wrap: wrap; }
 .pilot-notice a { color: #fff1cb; text-decoration: underline; text-underline-offset: 3px; }
 @media (max-width: 760px) { .pilot-entry { max-width: 88px; font-size: 10px; } .pilot-notice { padding: 8px 12px; font-size: 11px; } .pilot-notice strong { display: block; } }
+
+/* Closed drawers must not receive focus or scroll their offscreen content into view. */
+.side-panel[data-open="false"], .bottom-panel[data-open="false"] { visibility: hidden; pointer-events: none; }
+button:disabled, input:disabled { cursor: wait; opacity: .45; }
+
+/* Leave the camera toolbar clear when Pan adds a fifth rail control. */
+.nav-rail { top: 164px; transform: none; }
